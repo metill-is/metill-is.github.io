@@ -1,0 +1,19 @@
+[
+  {
+    "listing": "/articles.html",
+    "items": [
+      "/articles/workforce/index.html",
+      "/articles/asylum/index.html"
+    ]
+  },
+  {
+    "listing": "/index.html",
+    "items": []
+  },
+  {
+    "listing": "/dashboards.html",
+    "items": [
+      "/dashboards/immigration/index.html"
+    ]
+  }
+]

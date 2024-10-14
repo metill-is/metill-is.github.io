@@ -1,11 +1,20 @@
 ---
-title: "metill-is.github.io"
+pagetitle: "Metill"
+section-divs: false
+toc: false
+editor: source
+listing:
+    - id: election-content
+      template: ejs/election-content.ejs
+      contents: elections.yml
+      sort: "date desc"
+      max-items: 3
 ---
 
-This is a Quarto website.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+## Kosningavaktin
 
-```{r}
-1 + 1
-```
+Að neðan má finna lista yfir greiningar og gögn sem hjálpa þér að ná yfir helstu umræðuefni komandi kosninga
+
+::: {#election-content .column-page}
+:::

@@ -1,0 +1,29 @@
+```{=html}
+<div class="container-md">
+  <% for (const item of items) { %>
+    <h2 class="mt-4 mb-3"><%= item.category %></h2>
+    <p class="mb-4"><%= item.description %></p>
+    <% for (const tile of item.tiles) { %>
+      <div class="row mb-4">
+        <div class="col-12">
+          <a class="fp-card-link" href="<%= tile.href %>" passHref>
+            <div class="card fp-card">
+              <div class="row fp-card-body g-0">
+                <div class="col-md-4">
+                  <img src="<%= tile.image %>" class="img-fluid rounded-start" alt="<%= tile.title %>">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title"><%= tile.title %></h5>
+                    <p class="card-text"><%= tile.description %></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    <% } %>
+  <% } %>
+</div>
+```

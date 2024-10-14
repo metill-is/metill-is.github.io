@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>metill-is.github.io</title>
+<title>Metill</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,50 +20,14 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<link href="./favicon/favicon-32x32.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -74,18 +38,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
-  "copy-button": false,
-  "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -100,80 +52,197 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-election-content .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-category','listing-description','listing-tiles',{ data: ['index'] },{ data: ['categories'] }],
+      
+      searchColumns: ["listing-category","listing-description","listing-tiles"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-election-content'] = new List('listing-election-content', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+<meta property="og:title" content="Metill">
+<meta property="og:description" content="Notum gögn til að upplýsa, ekki sannfæra.">
+<meta property="og:image" content="https://metill.is/articles/asylum/Figures/cover_fp.png">
+<meta property="og:site_name" content="Metill">
+<meta property="og:image:height" content="1937">
+<meta property="og:image:width" content="3120">
+<meta name="twitter:title" content="Metill">
+<meta name="twitter:description" content="Notum gögn til að upplýsa, ekki sannfæra.">
+<meta name="twitter:image" content="https://metill.is/articles/asylum/Figures/cover_fp.png">
+<meta name="twitter:creator" content="@bggjonsson">
+<meta name="twitter:site" content="@bggjonsson">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image-height" content="1937">
+<meta name="twitter:image-width" content="3120">
+</head><body class="fullcontent"><nav class="navbar m-0 p-0 bg-primary">
+
+  <div class="container bg-primary text-secondary justify-content-center flex-wrap align-items-baseline">
+    <div class="d-flex flex-row">
+      <header class="blog-header m-0 p-0 justify-content-center">
+          <div class="col-12 d-flex">
+            <a href="./index.html" style="text-decoration: none;">
+              <h1 class="navbar-brand text-secondary m-3 pb-0 mb-0">
+                Metill 
+              </h1>
+            </a>
+          </div>   
+      </header>
+    </div>  
+        <div class="col-12 d-flex justify-content-center">
+          <a class="p-2 pt-0 link-secondary navbar-link text-secondary" href="./elections.qmd" style="text-decoration: none;">Kosningar</a>
+          <a class="p-2 pt-0 link-secondary navbar-link text-secondary" href="./articles.html" style="text-decoration: none;">Greinar</a>
+          <a class="p-2 pt-0 link-secondary navbar-link text-secondary" href="./about.html" style="text-decoration: none;">Um Metil</a>
+        </div>
+  </div>
+</nav>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="style.css">
 
 
-<link rel="stylesheet" href="styles.css">
-</head>
 
-<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">metill-is.github.io</span>
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
-<span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
-<span class="menu-text">About</span></a>
-  </li>  
-</ul>
-          </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
-</div>
-      </div> <!-- /container-fluid -->
-    </nav>
-</header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
-    </div>
+    
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">metill-is.github.io</h1>
-</div>
+<main class="content page-columns page-full" id="quarto-document-content">
 
 
 
-<div class="quarto-title-meta">
 
+<h2 id="kosningavaktin" class="anchored">Kosningavaktin</h2>
+<p>Að neðan má finna lista yfir greiningar og gögn sem hjálpa þér að ná yfir helstu umræðuefni komandi kosninga</p>
+<div id="listing-election-content" class="column-page quarto-listing quarto-listing-container-custom">
+<div class="container-md">
+  
+    <h2 class="mt-4 mb-3 anchored">Útlendingar</h2>
+    <p class="mb-4">Útlendingamál eru mikið í fréttum. Þessar samantekir hjálpa þér að ná yfir þetta umræðuefni</p>
+    
+      <div class="row mb-4">
+        <div class="col-12">
+          <a class="fp-card-link" href="./dashboards/immigration/index.html" passhref="">
+            <div class="card fp-card">
+              <div class="row fp-card-body g-0">
+                <div class="col-md-4">
+                  <img src="dashboards/immigration/img/innfl.png" class="img-fluid rounded-start" alt="Innflytjendur á Íslandi">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title anchored">Innflytjendur á Íslandi</h5>
+                    <p class="card-text">Íbúum á Íslandi hefur fjölgað verulega undanfarinn áratug. Að miklu leyti hefur þessi fjölgun verið drifin áfram af innflytjendum. Hvað eru þessir innflytjendur stórt hlutfall af þjóðinni? Hvernig gengur þeim á vinnumarkaðinum? Hvaðan koma þeir?</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    
+      <div class="row mb-4">
+        <div class="col-12">
+          <a class="fp-card-link" href="./articles/asylum/index.html" passhref="">
+            <div class="card fp-card">
+              <div class="row fp-card-body g-0">
+                <div class="col-md-4">
+                  <img src="articles/asylum/Figures/cover_fp.png" class="img-fluid rounded-start" alt="Tímabundin vernd og hælisleitendur">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title anchored">Tímabundin vernd og hælisleitendur</h5>
+                    <p class="card-text">Hvar bíða flestir einstaklingar eftir niðurstöðu í hælisumsókn sinni? Hvaða land hefur tekið við flestum hælisleitendum? Hvernig tengist löggjöf skilgreiningu á gögnum? Hér eru gögn um fjölda einstaklinga sem njóta tímabundinnar verndar eða hælis, fjölda samþykktra verndar- og hælisumsókna og fjölda umsókna í bið tekin saman úr gögnum  Eurostat.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
     
   
+    <h2 class="mt-4 mb-3 anchored">Vinnumarkaður og Hagkerfi</h2>
+    <p class="mb-4">Vinnumarkaður og Hagkerfi</p>
     
-  </div>
+      <div class="row mb-4">
+        <div class="col-12">
+          <a class="fp-card-link" href="./articles/workforce/index.html" passhref="">
+            <div class="card fp-card">
+              <div class="row fp-card-body g-0">
+                <div class="col-md-4">
+                  <img src="articles/workforce/figures/hlutf_opinbert_fp.png" class="img-fluid rounded-start" alt="Vinnuafl">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title anchored">Vinnuafl</h5>
+                    <p class="card-text">Reglulega sjást fyrirsagnir þar sem talað er um að opinbert starfsfólk sé allt of margt og að hlutfall þess af heildarfjölda vinnandi fólks sé of hátt. Hér kryf ég reglulega nýjustu gögnin til að geta vitað hvort slíkar fullyrðingar séu teknar úr samhengi eða endurspegli raunveruleikann.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    
   
-
-
-</header>
-
-
-<p>This is a Quarto website.</p>
-<p>To learn more about Quarto websites visit <a href="https://quarto.org/docs/websites" class="uri">https://quarto.org/docs/websites</a>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
 </div>
 </div>
+
 
 
 
@@ -270,7 +339,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/metill\.is");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -599,6 +668,25 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="./about.html">
+<p>About</p>
+</a>
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 
 
 

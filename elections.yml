@@ -1,0 +1,19 @@
+- category: Útlendingar
+  description: "Útlendingamál eru mikið í fréttum. Þessar samantekir hjálpa þér að ná yfir þetta umræðuefni"
+  tiles:
+    - title: "Innflytjendur á Íslandi"
+      href: dashboards/immigration/index.qmd
+      description: "Íbúum á Íslandi hefur fjölgað verulega undanfarinn áratug. Að miklu leyti hefur þessi fjölgun verið drifin áfram af innflytjendum. Hvað eru þessir innflytjendur stórt hlutfall af þjóðinni? Hvernig gengur þeim á vinnumarkaðinum? Hvaðan koma þeir?"
+      image: dashboards/immigration/img/innfl.png
+    - title: "Tímabundin vernd og hælisleitendur"
+      href: articles/asylum/index.qmd
+      description: "Hvar bíða flestir einstaklingar eftir niðurstöðu í hælisumsókn sinni? Hvaða land hefur tekið við flestum hælisleitendum? Hvernig tengist löggjöf skilgreiningu á gögnum? Hér eru gögn um fjölda einstaklinga sem njóta tímabundinnar verndar eða hælis, fjölda samþykktra verndar- og hælisumsókna og fjölda umsókna í bið tekin saman úr gögnum  Eurostat."
+      image: articles/asylum/Figures/cover_fp.png
+
+- category: Vinnumarkaður og Hagkerfi
+  description: "Vinnumarkaður og Hagkerfi"
+  tiles:
+    - title: "Vinnuafl"
+      href: articles/workforce/index.qmd
+      description: "Reglulega sjást fyrirsagnir þar sem talað er um að opinbert starfsfólk sé allt of margt og að hlutfall þess af heildarfjölda vinnandi fólks sé of hátt. Hér kryf ég reglulega nýjustu gögnin til að geta vitað hvort slíkar fullyrðingar séu teknar úr samhengi eða endurspegli raunveruleikann."
+      image: articles/workforce/figures/hlutf_opinbert_fp.png
