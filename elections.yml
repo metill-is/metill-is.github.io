@@ -25,8 +25,8 @@
   tiles:
     - title: "Vinnumarkaður"
       href: articles/workforce/index.qmd
-      description: "Er opinberu starfsfólki að fjölga hraðar en í einkageirum?"
-      image: articles/workforce/figures/hlutf_opinbert_fp.png
+      description: "Fjöldi starfandi á almennum og opinberum vinnumarkaði"
+      image: articles/workforce/figures/almennur_fjoldi_methaedir.png
     - title: "Verðbólga"
       href: dashboards/inflation/index.qmd
       description: "Baráttan við verðbólgudrauginn"
