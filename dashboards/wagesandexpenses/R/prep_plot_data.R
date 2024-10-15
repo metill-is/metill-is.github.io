@@ -45,7 +45,7 @@ prep_plot_data <- function(d, ord_var, nm) {
       "Percent" = value_perc,
       "Value per person" = value_per_n
     ) |>
-    write_csv(here("data", out_name))
+    write_csv(here("dashboards", "wagesandexpenses", "data", out_name))
 
   return(plot_dat)
 }

@@ -1,0 +1,16 @@
+---
+title: "Verðbólga"
+description: "Þróun verðbólgu á Íslandi"
+href: dashboards/inflation/index.qmd
+format: 
+  dashboard:
+    orientation: columns
+image: img/img.png
+---
+
+
+```{r setup}
+library(here)
+library(metill)
+theme_set(theme_metill(type = "blog"))
+```

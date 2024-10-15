@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Þróun verðbólgu á Íslandi">
 
-<title>Metill</title>
+<title>Verðbólga – Metill</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,20 +24,26 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<link href="./favicon/favicon-32x32.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<link href="../../favicon/favicon-32x32.png" rel="icon" type="image/png">
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-dashboard/quarto-dashboard.js"></script>
+<script src="../../site_libs/quarto-dashboard/stickythead.js"></script>
+<script src="../../site_libs/quarto-dashboard/datatables.min.js" kdttablesentinel="true"></script>
+<script src="../../site_libs/quarto-dashboard/pdfmake.min.js" kdttablesentinel="true"></script>
+<script src="../../site_libs/quarto-dashboard/vfs_fonts.js" kdttablesentinel="true"></script>
+<script src="../../site_libs/quarto-dashboard/web-components.js" type="module"></script>
+<script src="../../site_libs/quarto-dashboard/components.js"></script>
+<link href="../../site_libs/quarto-dashboard/datatables.min.css" rel="stylesheet" kdttablesentinel="true">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -52,54 +59,27 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-election-content .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-category','listing-description','listing-tiles',{ data: ['index'] },{ data: ['categories'] }],
-      
-      searchColumns: ["listing-category","listing-description","listing-tiles"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-election-content'] = new List('listing-election-content', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-<meta property="og:title" content="Metill">
-<meta property="og:image" content="https://metill.is/articles/asylum/Figures/cover_fp.png">
+<meta property="og:title" content="Verðbólga – Metill">
+<meta property="og:description" content="Þróun verðbólgu á Íslandi">
+<meta property="og:image" content="https://metill.is/dashboards/inflation/img/img.png">
 <meta property="og:site_name" content="Metill">
-<meta property="og:image:height" content="1937">
-<meta property="og:image:width" content="3120">
-<meta name="twitter:title" content="Metill">
-<meta name="twitter:image" content="https://metill.is/articles/asylum/Figures/cover_fp.png">
+<meta property="og:image:height" content="1490">
+<meta property="og:image:width" content="2400">
+<meta name="twitter:title" content="Verðbólga – Metill">
+<meta name="twitter:description" content="Þróun verðbólgu á Íslandi">
+<meta name="twitter:image" content="https://metill.is/dashboards/inflation/img/img.png">
 <meta name="twitter:creator" content="@bggjonsson">
 <meta name="twitter:site" content="@bggjonsson">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image-height" content="1937">
-<meta name="twitter:image-width" content="3120">
-</head><body class="fullcontent"><nav class="navbar m-0 p-0 bg-primary">
+<meta name="twitter:image-height" content="1490">
+<meta name="twitter:image-width" content="2400">
+</head><body class="quarto-dashboard dashboard-fill fullcontent"><nav class="navbar m-0 p-0 bg-primary">
 
   <div class="container bg-primary text-secondary justify-content-center flex-wrap align-items-baseline">
     <div class="d-flex flex-row">
       <header class="blog-header m-0 p-0 justify-content-center">
           <div class="col-12 d-flex">
-            <a href="./index.html" style="text-decoration: none;">
+            <a href="../../index.html" style="text-decoration: none;">
               <h1 class="navbar-brand text-secondary m-3 pb-0 mb-0">
                 Metill 
               </h1>
@@ -108,173 +88,54 @@ ul.task-list li input[type="checkbox"] {
       </header>
     </div>  
         <div class="col-12 d-flex justify-content-center">
-          <a class="p-2 pt-0 link-secondary navbar-link text-secondary" href="./index.html" style="text-decoration: none;">Kosningar</a>
-          <a class="p-2 pt-0 link-secondary navbar-link text-secondary" href="./articles.html" style="text-decoration: none;">Greinar</a>
-          <a class="p-2 pt-0 link-secondary navbar-link text-secondary" href="./about.html" style="text-decoration: none;">Um Metil</a>
+          <a class="p-2 pt-0 link-secondary navbar-link text-secondary" href="../../index.html" style="text-decoration: none;">Kosningar</a>
+          <a class="p-2 pt-0 link-secondary navbar-link text-secondary" href="../../articles.html" style="text-decoration: none;">Greinar</a>
+          <a class="p-2 pt-0 link-secondary navbar-link text-secondary" href="../../about.html" style="text-decoration: none;">Um Metil</a>
         </div>
   </div>
 </nav>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../../style.css">
+<link rel="stylesheet" href="../styles.css">
 
 
 
 
+<header id="quarto-dashboard-header">
+<nav class="navbar navbar-expand-md slim" data-bs-theme="dark">
+  <div class="navbar-container container-fluid">
+    <button class="navbar-toggler hidden" type="button" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-controls="dashboard-collapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>    
+
+
+    <div class="navbar-brand-container">       
+
+      <div class="navbar-title">
+        <div class="navbar-title-text"><a href="#">Verðbólga</a></div>
+        
+        
+      </div>
+    </div>
+</div>
+</nav>
+</header>
 <div id="quarto-search-results"></div>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-layout-custom quarto-dashboard-content bslib-gap-spacing html-fill-container bslib-page-fill">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
 
+<div class="bslib-grid-item html-fill-item bslib-grid" data-layout="fill" style="display: grid; grid-template-columns: ;
+grid-auto-rows: minmax(0, 1fr);">
+<div id="3ade8a4a-fb1d-4a6c-8409-ac45482d5fc9" class="hidden">
 
-
-
-<h1 class="column-page" id="kosningavaktin">Kosningavaktin</h1>
-<div id="listing-election-content" class="column-page quarto-listing quarto-listing-container-custom">
-<div class="container-md">
-  
-    <h2 class="mt-4 mb-3 anchored">Útlendingar</h2>
-    <div class="row row-cols-1 row-cols-md-2 g-4">
-      
-        <div class="col">
-          <a class="fp-card-link" href="./dashboards/immigration/index.html" passhref="">
-            <div class="card fp-card h-100">
-              <div class="card-header fp-card-header">
-                <h5 class="card-title mb-0 anchored">Innflytjendur á Íslandi</h5>
-                <p class="card-text mb-0">Fjöldi og afdrif innflytjenda</p>
-              </div>
-              <div class="card-body">
-                <img src="dashboards/immigration/img/innfl.png" class="img-fluid" alt="Innflytjendur á Íslandi">
-              </div>
-            </div>
-          </a>
-        </div>
-      
-        <div class="col">
-          <a class="fp-card-link" href="./articles/asylum/index.html" passhref="">
-            <div class="card fp-card h-100">
-              <div class="card-header fp-card-header">
-                <h5 class="card-title mb-0 anchored">Tímabundin vernd og hælisleitendur</h5>
-                <p class="card-text mb-0">Samantekt á gögnum Eurostat um hælisleitendur</p>
-              </div>
-              <div class="card-body">
-                <img src="articles/asylum/Figures/cover_fp.png" class="img-fluid" alt="Tímabundin vernd og hælisleitendur">
-              </div>
-            </div>
-          </a>
-        </div>
-      
-    </div>
-  
-    <h2 class="mt-4 mb-3 anchored">Heimili</h2>
-    <div class="row row-cols-1 row-cols-md-2 g-4">
-      
-        <div class="col">
-          <a class="fp-card-link" href="./dashboards/properties/index.html" passhref="">
-            <div class="card fp-card h-100">
-              <div class="card-header fp-card-header">
-                <h5 class="card-title mb-0 anchored">Fasteignir</h5>
-                <p class="card-text mb-0">Samantekt á gögnum um fasteignauppbyggingu og þróun verðs</p>
-              </div>
-              <div class="card-body">
-                <img src="dashboards/properties/img/fp.png" class="img-fluid" alt="Fasteignir">
-              </div>
-            </div>
-          </a>
-        </div>
-      
-        <div class="col">
-          <a class="fp-card-link" href="./dashboards/wagesandexpenses/index.html" passhref="">
-            <div class="card fp-card h-100">
-              <div class="card-header fp-card-header">
-                <h5 class="card-title mb-0 anchored">Tekjur, eignir og skuldir Íslendinga</h5>
-                <p class="card-text mb-0">Skattframtöl veita innsýn í fjárhagslega stöðu Íslendinga</p>
-              </div>
-              <div class="card-body">
-                <img src="dashboards/wagesandexpenses/img/image.png" class="img-fluid" alt="Tekjur, eignir og skuldir Íslendinga">
-              </div>
-            </div>
-          </a>
-        </div>
-      
-    </div>
-  
-    <h2 class="mt-4 mb-3 anchored">Efnahagur</h2>
-    <div class="row row-cols-1 row-cols-md-2 g-4">
-      
-        <div class="col">
-          <a class="fp-card-link" href="./articles/workforce/index.html" passhref="">
-            <div class="card fp-card h-100">
-              <div class="card-header fp-card-header">
-                <h5 class="card-title mb-0 anchored">Vinnumarkaður</h5>
-                <p class="card-text mb-0">Er opinberu starfsfólki að fjölga hraðar en í einkageirum?</p>
-              </div>
-              <div class="card-body">
-                <img src="articles/workforce/figures/hlutf_opinbert_fp.png" class="img-fluid" alt="Vinnumarkaður">
-              </div>
-            </div>
-          </a>
-        </div>
-      
-        <div class="col">
-          <a class="fp-card-link" href="./dashboards/inflation/index.html" passhref="">
-            <div class="card fp-card h-100">
-              <div class="card-header fp-card-header">
-                <h5 class="card-title mb-0 anchored">Verðbólga</h5>
-                <p class="card-text mb-0">Baráttan við verðbólgudrauginn</p>
-              </div>
-              <div class="card-body">
-                <img src="dashboards/inflation/img/img.png" class="img-fluid" alt="Verðbólga">
-              </div>
-            </div>
-          </a>
-        </div>
-      
-    </div>
-  
-</div>
-<div class="listing-no-matching d-none">
-No matching items
 </div>
 </div>
 
 
-
-
-</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -704,7 +565,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="./about.html">
+    <a class="nav-link" href="../../about.html">
 <p>About</p>
 </a>
   </li>  
@@ -716,6 +577,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </footer>
 
+<script type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (_event) {
+  if (window.bslib.Card) {
+    window.bslib.Card.initializeAllCards();
+  }
+}); 
+</script>
+  
 
 
 

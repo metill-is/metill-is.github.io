@@ -6,6 +6,20 @@ format:
   dashboard:
     orientation: columns
 image: img/image.png
-css: styles.css
 ---
 
+
+```{r setup}
+library(here)
+library(metill)
+theme_set(theme_metill(type = "blog"))
+source(here("dashboards", "properties", "R", "plot_fp_interactive.R"))
+```
+
+# Uppbygging
+
+```{r}
+plot_fp_interactive()
+```
+
+# Verð

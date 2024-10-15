@@ -14,7 +14,5 @@ listing:
 
 # Kosningavaktin {.column-page}
 
-Nú styttist í kosningar. Að neðan má finna lista yfir greiningar og gögn sem hjálpa þér að ná yfir helstu umræðuefni komandi kosninga.
-
 ::: {#election-content .column-page}
 :::

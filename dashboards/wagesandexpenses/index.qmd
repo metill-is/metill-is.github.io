@@ -6,7 +6,6 @@ format:
   dashboard:
     orientation: columns
 image: img/image.png
-css: styles.css
 ---
 
 ```{r setup}
@@ -18,8 +17,9 @@ box::use(
 ) 
 
 box::use(
-  dashboards /wagesandexpenses / R / make_deciles_plot[make_deciles_plot],
-  dashboards /wagesandexpenses / R / make_fig_fasteignir_tekjur[make_fig_fasteignir_tekjur]
+  dashboards / wagesandexpenses / R / make_deciles_plot[make_deciles_plot],
+  dashboards / wagesandexpenses / R / make_fig_fasteignir_tekjur[make_fig_fasteignir_tekjur],
+  dashboards / wagesandexpenses / R / skuldir_hlutf_tekjur_interactive[skuldir_hlutf_tekjur]
 )
 
 d <- here("dashboards", "wagesandexpenses", "data", "deciles.parquet") |>
@@ -28,6 +28,14 @@ d <- here("dashboards", "wagesandexpenses", "data", "deciles.parquet") |>
 d$value <- vnv_convert(d$value, d$year)
 ```
 
-# Tekjur
+# Skuldir
 
-# Fasteignalán
+```{r}
+skuldir_hlutf_tekjur(d)
+```
+
+# Vaxtagjöld
+
+```{r}
+make_fig_fasteignir_tekjur(d)
+```

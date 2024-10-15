@@ -1,0 +1,15 @@
+{
+  "hash": "da101d82f9df53868c4783d7351805d9",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Verðbólga\"\ndescription: \"Þróun verðbólgu á Íslandi\"\nhref: dashboards/inflation/index.qmd\nformat: \n  dashboard:\n    orientation: columns\nimage: img/img.png\n---\n\n::: {.cell}\n\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -20,10 +20,14 @@
       href: dashboards/wagesandexpenses/index.qmd
       description: "Skattframtöl veita innsýn í fjárhagslega stöðu Íslendinga"
       image: dashboards/wagesandexpenses/img/image.png
-- category: Vinnumarkaður
-  description: "Vinnumarkaður"
+- category: Efnahagur
+  description: "Efnahagur"
   tiles:
-    - title: "Fjöldi starfandi"
+    - title: "Vinnumarkaður"
       href: articles/workforce/index.qmd
       description: "Er opinberu starfsfólki að fjölga hraðar en í einkageirum?"
       image: articles/workforce/figures/hlutf_opinbert_fp.png
+    - title: "Verðbólga"
+      href: dashboards/inflation/index.qmd
+      description: "Baráttan við verðbólgudrauginn"
+      image: dashboards/inflation/img/img.png

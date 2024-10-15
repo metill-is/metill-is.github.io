@@ -25,17 +25,17 @@ make_deciles_plot <- function(d, ord_var, nm) {
     ],
     glue[glue],
     here[here],
+    metill[theme_metill],
     patchwork[plot_annotation, wrap_plots],
     scales[breaks_pretty, label_number, label_percent, number, percent],
     stringr[str_c]
   )
 
   box::use(
-    R / plot_theme[theme_metill],
-    R / prep_plot_data[prep_plot_data]
+    dashboards / wagesandexpenses / R / prep_plot_data[prep_plot_data]
   )
 
-  theme_set(theme_metill())
+  theme_set(theme_metill(type = "blog"))
 
   plot_dat <- prep_plot_data(d, ord_var, nm)
 

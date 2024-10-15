@@ -7,7 +7,6 @@ format:
   dashboard:
     orientation: columns
 image: img/innfl.png
-css: styles.css
 ---
 
 

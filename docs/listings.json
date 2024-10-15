@@ -15,7 +15,8 @@
     "items": [
       "/dashboards/immigration/index.html",
       "/dashboards/properties/index.html",
-      "/dashboards/wagesandexpenses/index.html"
+      "/dashboards/wagesandexpenses/index.html",
+      "/dashboards/inflation/index.html"
     ]
   }
 ]

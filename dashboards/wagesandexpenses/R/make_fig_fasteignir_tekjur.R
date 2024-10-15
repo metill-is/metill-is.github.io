@@ -9,11 +9,18 @@ make_fig_fasteignir_tekjur <- function(d) {
       geom_point_interactive,
       girafe,
       opts_hover,
-      opts_hover_inv
+      opts_hover_inv,
+      opts_toolbar,
+      opts_tooltip,
+      opts_zoom
     ],
     ggplot2[
       aes,
       coord_cartesian,
+      element_blank,
+      element_line,
+      element_rect,
+      element_text,
       ggplot,
       labs,
       margin,
@@ -22,23 +29,25 @@ make_fig_fasteignir_tekjur <- function(d) {
       scale_x_continuous,
       scale_y_continuous,
       theme,
-      theme_set
+      theme_classic,
+      theme_set,
+      `%+replace%`
     ],
     ggtext[element_markdown, element_textbox_simple],
     glue[glue],
     here[here],
+    metill[theme_metill],
     patchwork[plot_annotation, wrap_plots],
     scales[breaks_pretty, label_number, label_percent, number, percent],
     stringr[str_c]
   )
 
   box::use(
-    R / plot_theme[theme_metill],
-    R / prep_plot_data[prep_plot_data],
-    R / make_fig_vaxtagjold_hlutf_tekjur[make_fig_vaxtagjold_hlutf_tekjur]
+    dashboards / wagesandexpenses / R / prep_plot_data[prep_plot_data],
+    dashboards / wagesandexpenses / R / make_fig_vaxtagjold_hlutf_tekjur[make_fig_vaxtagjold_hlutf_tekjur]
   )
 
-  theme_set(theme_metill())
+  theme_set(theme_metill(type = "blog"))
 
   title_font_size_sub <- 20
 
@@ -370,13 +379,22 @@ make_fig_fasteignir_tekjur <- function(d) {
     )
 
 
-  out <- girafe(
+  girafe(
     ggobj = p,
+    width_svg = 12,
+    height_svg = 0.621 * 12,
+    bg = "transparent",
     options = list(
-      opts_hover_inv(css = "opacity:0.1;"),
-      opts_hover(css = "stroke-width:2;")
+      opts_tooltip(
+        opacity = 0.8,
+        use_fill = TRUE,
+        use_stroke = FALSE,
+        css = "padding:5pt;font-family: Open Sans;font-size:1rem;color:white"
+      ),
+      opts_hover(css = ""),
+      opts_hover_inv(css = "opacity:0.05"),
+      opts_toolbar(saveaspng = TRUE),
+      opts_zoom(max = 1)
     )
   )
-
-  out
 }
