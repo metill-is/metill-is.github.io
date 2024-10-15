@@ -1,0 +1,11 @@
+---
+title: "Fasteignir"
+description: "Yfirlit yfir fjölda fasteigna og verð þeirra"
+href: dashboards/wagesandexpenses/index.qmd
+format: 
+  dashboard:
+    orientation: columns
+image: img/image.png
+css: styles.css
+---
+

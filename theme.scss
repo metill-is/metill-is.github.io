@@ -77,6 +77,22 @@ body > nav > div > div.col-12.d-flex.justify-content-center {
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 }
 
+.fp-card-header {
+  background-color: $body-bg;
+
+  h5 {
+    color: $primary;
+    font-weight: 600;
+    font-size: 1.25rem;
+  }
+
+  p {
+    color: #6c757d;
+    font-size: 0.875rem;
+  }
+}
+
+
 .fp-card-body {
   padding: 1rem;
 }
@@ -125,34 +141,3 @@ body > nav > div > div.col-12.d-flex.justify-content-center {
 
 /* Styles for dashboards */
 
-.sidebar {
-  background-color: $secondary;
-  padding: 1rem;
-  border-radius: 0.25rem;
-}
-
-// CSS Styles for the div containing the plot
-.girafe {
-  max-width: 100%;
-  max-height: 100%;
-  margin: 0 !important;
-}
-
-
-// CSS styles for the plots in the dashboard
-// The left and right margin should be 0 for small screens
-// but scale with the width of the page to keep the figure
-// from being too tall
-.girafe_container_std {
-  margin: 0 !important;
-  max-width: 100% !important;
-  max-height: 75vh;
-  transition: all 0.4s ease-in-out;
-  align-items: center !important;
-}
-
-
-
-.bslib-grid {
-  padding-top: 0 !important;
-}

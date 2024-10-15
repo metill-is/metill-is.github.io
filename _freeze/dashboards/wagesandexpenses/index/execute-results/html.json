@@ -1,0 +1,17 @@
+{
+  "hash": "6d5f255a7f2d856041d9e2c892639a19",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Tekjur, gjöld og skuldir\"\ndescription: \"Yfirlit yfir tekjur, gjöld og skuldir Íslendinga\"\nhref: dashboards/wagesandexpenses/index.qmd\nformat: \n  dashboard:\n    orientation: columns\nimage: img/image.png\ncss: styles.css\n---\n\n\n\n\n\n\n\n\n# Tekjur\n\n# Fasteignalán",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

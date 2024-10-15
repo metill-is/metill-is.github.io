@@ -13,7 +13,9 @@
   {
     "listing": "/dashboards.html",
     "items": [
-      "/dashboards/immigration/index.html"
+      "/dashboards/immigration/index.html",
+      "/dashboards/properties/index.html",
+      "/dashboards/wagesandexpenses/index.html"
     ]
   }
 ]

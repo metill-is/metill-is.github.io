@@ -20,43 +20,6 @@ rikisfong <- d |>
     rikisfang != "Ísland"
   )
 
-
-d |>
-  mutate(
-    p = n / sum(n),
-    .by = ar
-  ) |>
-  semi_join(
-    rikisfong,
-    by = join_by(rikisfang)
-  ) |>
-  filter(ar == max(ar)) |>
-  mutate(
-    rikisfang = glue::glue("{rikisfang} ({hlutf(p, accuracy=0.001)})") |>
-      fct_reorder(p)
-  ) |>
-  arrange(desc(p)) |>
-  mutate(
-    p = cumsum(p)
-  ) |>
-  ggplot(aes(p, rikisfang)) +
-  geom_segment(
-    aes(xend = 0, yend = rikisfang),
-    lty = 2,
-    alpha = 0.4,
-    linewidth = 0.3
-  ) +
-  geom_point() +
-  scale_x_continuous(
-    labels = label_hlutf(),
-    limits = c(0, NA),
-    expand = expansion(c(0, 0.1)),
-    guide = guide_axis_truncated()
-  ) +
-  scale_y_discrete(
-    guide = guide_axis_truncated()
-  )
-
 d |>
   filter(
     ar == max(ar),
@@ -65,7 +28,7 @@ d |>
   arrange(desc(n)) |>
   mutate(
     rikisfang = if_else(
-      row_number() <= 65,
+      row_number() <= 40,
       rikisfang,
       "Annað"
     )
@@ -128,5 +91,5 @@ d |>
 
 ggsave(
   filename = here::here("dashboards", "immigration", "img", "innfl.png"),
-  width = 8, height = 1 * 8, scale = 1.3
+  width = 8, height = 0.621 * 8, scale = 1.3
 )
