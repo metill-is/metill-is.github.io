@@ -31,3 +31,10 @@
       href: dashboards/inflation/index.qmd
       description: "Baráttan við verðbólgudrauginn"
       image: dashboards/inflation/img/img.png
+- category: Stjórnmálaflokkar
+  description: "Stjórnmálaflokkar"
+  tiles:
+    - title: "Fjármál stjórnmálaflokkanna"
+      href: articles/party_funds/index.qmd
+      description: "Rýnt í ársreikninga stjórnmálaflokkanna"
+      image: articles/party_funds/Figures/cover_fp.png

@@ -8,7 +8,6 @@ listing:
       template: ejs/election-content.ejs
       contents: elections.yml
       sort: "date desc"
-      max-items: 3
 ---
 
 
