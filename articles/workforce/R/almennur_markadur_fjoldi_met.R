@@ -6,46 +6,54 @@ library(ggh4x)
 library(ggforce)
 theme_set(theme_metill(type = "standalone"))
 
-d <- vroom::vroom("greinar/vinnuafl/data/vinnuafl.csv")
+d <- vroom::vroom("articles/workforce/data/vinnuafl.csv")
 
-prev_record <- d |> 
-  filter(bakgrunnur == "Alls", kyn == "Alls",
-         rekstrarform != "Alls starfandi") |> 
-  count(dags, tegund, wt = starfandi) |> 
+prev_record <- d |>
+  filter(
+    bakgrunnur == "Alls", kyn == "Alls",
+    rekstrarform != "Alls starfandi"
+  ) |>
+  count(dags, tegund, wt = starfandi) |>
   filter(
     tegund == "Annad",
     dags == clock::date_build(2018, 8)
-  ) |> 
+  ) |>
   pull(n)
 
-min_2024 <- d |> 
-  filter(bakgrunnur == "Alls", kyn == "Alls",
-         rekstrarform != "Alls starfandi") |> 
-  count(dags, tegund, wt = starfandi) |> 
+min_2024 <- d |>
+  filter(
+    bakgrunnur == "Alls", kyn == "Alls",
+    rekstrarform != "Alls starfandi"
+  ) |>
+  count(dags, tegund, wt = starfandi) |>
   filter(
     tegund == "Annad",
     dags == clock::date_build(2024, 1)
-  ) |> 
+  ) |>
   pull(n)
 
-d |> 
-  filter(bakgrunnur == "Alls", kyn == "Alls",
-         rekstrarform != "Alls starfandi") |> 
-  count(dags, tegund, wt = starfandi) |> 
+d |>
+  filter(
+    bakgrunnur == "Alls", kyn == "Alls",
+    rekstrarform != "Alls starfandi"
+  ) |>
+  count(dags, tegund, wt = starfandi) |>
   filter(
     tegund == "Annad",
     dags == clock::date_build(2024, 3)
-  ) |> 
+  ) |>
   pull(n)
 
- p <- d |> 
-  filter(bakgrunnur == "Alls", kyn == "Alls",
-         rekstrarform != "Alls starfandi") |> 
-  count(dags, tegund, wt = starfandi) |> 
+p <- d |>
+  filter(
+    bakgrunnur == "Alls", kyn == "Alls",
+    rekstrarform != "Alls starfandi"
+  ) |>
+  count(dags, tegund, wt = starfandi) |>
   filter(tegund == "Annad") |>
   ggplot(aes(dags, n)) +
   geom_texthline(
-    yintercept = prev_record, 
+    yintercept = prev_record,
     lty = 2,
     label = "Starfandi í janúar 2024 voru bara 1% færri en í ágúst 2018",
     hjust = 0.05,
@@ -54,12 +62,12 @@ d |>
   ) +
   geom_line() +
   geom_point(
-    data = ~filter(.x, month(dags) == 1),
+    data = ~ filter(.x, month(dags) == 1),
     col = "#377eb8",
     size = 2
   ) +
   geom_point(
-    data = ~filter(.x, month(dags) == 8),
+    data = ~ filter(.x, month(dags) == 8),
     col = "#e41a1c",
     size = 2
   ) +
@@ -107,7 +115,13 @@ d |>
 
 ggsave(
   plot = p,
-  filename = "greinar/vinnuafl/figures/almennur_fjoldi_methaedir.png",
+  filename = "articles/workforce/figures/almennur_fjoldi_methaedir.png",
+  width = 8, height = 0.621 * 8, scale = 1.3
+)
+
+ggsave(
+  plot = p + theme_metill(type = "blog"),
+  filename = "articles/workforce/figures/almennur_fjoldi_methaedir_fp.png",
   width = 8, height = 0.621 * 8, scale = 1.3
 )
 
@@ -117,17 +131,17 @@ ggsave(
 
 
 
-d |> 
+d |>
   filter(
     bakgrunnur == "Alls",
     rekstrarform != "Alls starfandi",
     tegund == "Opinbert"
-  ) |> 
-  count(dags, tegund, wt = starfandi) |> 
+  ) |>
+  count(dags, tegund, wt = starfandi) |>
   ggplot(aes(dags, n)) +
   geom_line() +
   geom_point(
-    data = ~filter(.x, month(dags) == 7),
+    data = ~ filter(.x, month(dags) == 7),
     col = "#e41a1c",
     size = 2
   ) +
@@ -162,41 +176,41 @@ d |>
   )
 
 
-d |> 
+d |>
   filter(
     bakgrunnur == "Alls",
     rekstrarform != "Alls starfandi",
     tegund == "Opinbert"
-  ) |> 
-  count(dags, tegund, wt = starfandi) |> 
+  ) |>
+  count(dags, tegund, wt = starfandi) |>
   mutate(
     ar = year(dags),
     man = month(dags)
-  ) |> 
+  ) |>
   mutate(
     p = n / mean(n[man == 1]),
     .by = ar
-  ) |> 
+  ) |>
   ggplot(aes(man, p)) +
   geom_line(aes(group = ar))
 
 
-d |> 
+d |>
   filter(
     bakgrunnur == "Íslenskur bakgrunnur",
     rekstrarform != "Alls starfandi"
-  ) |> 
-  count(dags, tegund, wt = starfandi) |> 
+  ) |>
+  count(dags, tegund, wt = starfandi) |>
   filter(tegund == "Annad") |>
   ggplot(aes(dags, n)) +
   geom_line() +
   geom_point(
-    data = ~filter(.x, month(dags) == 1),
+    data = ~ filter(.x, month(dags) == 1),
     col = "#377eb8",
     size = 2
   ) +
   geom_point(
-    data = ~filter(.x, month(dags) == 8),
+    data = ~ filter(.x, month(dags) == 8),
     col = "#e41a1c",
     size = 2
   ) +

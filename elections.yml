@@ -26,7 +26,7 @@
     - title: "Vinnumarkaður"
       href: articles/workforce/index.qmd
       description: "Fjöldi starfandi á almennum og opinberum vinnumarkaði"
-      image: articles/workforce/figures/almennur_fjoldi_methaedir.png
+      image: articles/workforce/figures/almennur_fjoldi_methaedir_fp.png
     - title: "Verðbólga"
       href: dashboards/inflation/index.qmd
       description: "Baráttan við verðbólgudrauginn"
