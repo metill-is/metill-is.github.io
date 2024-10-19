@@ -111,7 +111,7 @@ make_plot4a <- function() {
     ) |>
     ggplot(aes(value - 1, land, col = colour, data_id = geo)) +
     geom_text_interactive(
-      aes(x = 0, label = str_c(land, " "), data_id = land),
+      aes(x = 0, label = str_c(land, " ")),
       hjust = 1,
       size = 3.5
     ) +
@@ -186,7 +186,7 @@ make_plot4a <- function() {
     ) |>
     ggplot(aes(value - 1, land, col = colour, data_id = geo)) +
     geom_text_interactive(
-      aes(x = 0, label = str_c(land, " "), data_id = land),
+      aes(x = 0, label = str_c(land, " ")),
       hjust = 1,
       size = 3.5
     ) +
@@ -225,8 +225,6 @@ make_plot4a <- function() {
       subtitle = "Saksóttir (2022)"
     )
 
-  p2
-
   p3 <- plot_dat |>
     mutate(
       values = values / pop
@@ -253,7 +251,6 @@ make_plot4a <- function() {
       p = foreign_country / reporting_country
     ) |>
     filter(
-      # year(time) < 2022,
       leg_stat == "Suspected person"
     ) |>
     mutate(
@@ -266,7 +263,7 @@ make_plot4a <- function() {
     ggplot(aes(time, p, data_id = geo)) +
     geom_line_interactive(
       data = ~ filter(.x, colour == litur_annad),
-      aes(group = land, colour = litur_annad),
+      aes(group = land, colour = colour),
       alpha = 0.3,
       col = litur_annad
     ) +
@@ -347,7 +344,7 @@ make_plot4a <- function() {
     ggplot(aes(time, p, data_id = geo)) +
     geom_line_interactive(
       data = ~ filter(.x, colour == litur_annad),
-      aes(group = land, colour = litur_annad),
+      aes(group = land, colour = colour),
       alpha = 0.3,
       col = litur_annad
     ) +

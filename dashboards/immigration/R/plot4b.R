@@ -3,12 +3,18 @@ make_plot4b <- function() {
   library(eurostat)
   library(metill)
   library(ggh4x)
+  theme_set(theme_metill(type = "blog"))
   library(geomtextpath)
+  library(patchwork)
   library(glue)
   library(ggtext)
-  library(patchwork)
   library(ggiraph)
-  theme_set(theme_metill(type = "blog"))
+
+
+  caption <- str_c(
+    "Mynd eftir @bggjonsson hjá metill.is byggð á gögnum Eurostat um fanga og fólksfjölda",
+    "\nGögn og kóði: https://github.com/bgautijonsson/fangelsi"
+  )
 
   litur_island <- "#08306b"
   litur_danmork <- "#e41a1c"
@@ -16,15 +22,6 @@ make_plot4b <- function() {
   litur_noregur <- "#7f0000"
   litur_svithjod <- "#fd8d3c"
   litur_annad <- "#737373"
-
-
-
-  offenders <- get_eurostat(
-    "crim_just_ctz"
-  )
-
-  offenders <- offenders |>
-    label_eurostat()
 
   pop <- get_eurostat(
     "migr_pop1ctz",
@@ -53,15 +50,27 @@ make_plot4b <- function() {
       )
     )
 
-  plot_dat <- offenders |>
+  prisoners <- get_eurostat(
+    "crim_pris_ctz"
+  )
+
+  prisoners <- prisoners |>
+    label_eurostat()
+
+  plot_dat <- prisoners |>
     filter(
-      unit != "Per hundred thousand inhabitants"
+      unit != "Number"
     ) |>
     select(
       -freq,
       -unit
     ) |>
     rename(time = TIME_PERIOD) |>
+    pivot_wider(names_from = citizen, values_from = values) |>
+    mutate(
+      hlutf_erl = `Foreign country` / Total
+    ) |>
+    pivot_longer(c(-geo, -time, -hlutf_erl), names_to = "citizen", values_to = "values") |>
     inner_join(
       metill::country_names(),
       by = join_by(geo == country)
@@ -73,135 +82,119 @@ make_plot4b <- function() {
           .by = c(geo, land, citizen)
         ),
       by = join_by(land, geo, time, citizen)
+    ) |>
+    mutate(
+      per_pop = values / pop * 100000
+    ) |>
+    select(-values, -pop) |>
+    pivot_wider(names_from = citizen, values_from = per_pop) |>
+    janitor::clean_names() |>
+    mutate(
+      diff = foreign_country / reporting_country,
+      colour = case_when(
+        land == "Ísland" ~ litur_island,
+        land == "Danmörk" ~ litur_danmork,
+        land == "Finnland" ~ litur_finnland,
+        land == "Noregur" ~ litur_noregur,
+        land == "Svíþjóð" ~ litur_svithjod,
+        TRUE ~ litur_annad
+      ),
+      linewidth = 1 * (land == "Ísland"),
+      size = as_factor(linewidth)
+    ) |>
+    pivot_longer(c(foreign_country, reporting_country, diff)) |>
+    filter(
+      !land %in% c("Liechtenstein", "Grikkland", "Malta"),
+      year(time) >= 2009
     )
 
   p1 <- plot_dat |>
+    filter(name != "diff") |>
     mutate(
-      values = values / pop
-    ) |>
-    select(-pop) |>
-    pivot_wider(names_from = citizen, values_from = values) |>
-    janitor::clean_names() |>
-    mutate(
-      value = foreign_country / reporting_country
-    ) |>
-    filter(
-      time == max(time),
-      .by = land
-    ) |>
-    filter(
-      value > 1,
-      leg_stat == "Suspected person"
+      name = fct_recode(
+        name,
+        "Erlent ríkisfang" = "foreign_country",
+        "Innlent ríkisfang" = "reporting_country"
+      )
     ) |>
     drop_na() |>
-    mutate(
-      colour = case_when(
-        land == "Ísland" ~ litur_island,
-        land == "Danmörk" ~ litur_danmork,
-        land == "Finnland" ~ litur_finnland,
-        land == "Noregur" ~ litur_noregur,
-        land == "Svíþjóð" ~ litur_svithjod,
-        TRUE ~ litur_annad
-      ),
-      linewidth = 1 * (land == "Ísland"),
-      size = as_factor(linewidth)
-    ) |>
-    mutate(
-      land = fct_reorder(land, value)
-    ) |>
-    ggplot(aes(value - 1, land, col = colour, data_id = geo)) +
-    geom_text_interactive(
-      aes(x = 0, label = str_c(land, " "), data_id = land),
-      hjust = 1,
-      size = 3.5
+    ggplot(aes(time, value)) +
+    geom_line(
+      data = ~ filter(.x, colour == litur_annad),
+      aes(group = land, colour = litur_annad),
+      alpha = 0.3,
+      col = litur_annad
     ) +
-    geom_segment_interactive(
-      aes(xend = 0, yend = land),
-      linewidth = 0.1, alpha = 1
+    geom_line(
+      data = ~ filter(.x, colour != litur_annad, land != "Ísland"),
+      aes(group = land, colour = colour),
+      linewidth = 1
     ) +
-    geom_point_interactive(size = 3) +
-    scale_y_discrete(
+    geom_textline(
+      data = ~ filter(.x, land == "Ísland"),
+      aes(group = land, colour = colour, label = land),
+      linewidth = 1.8,
+      size = 5,
+      hjust = 0.8,
+      text_smoothing = 20,
+      fontface = "bold"
+    ) +
+    scale_x_date(
+      breaks = breaks_width("2 year", offset = "2 year"),
+      labels = label_date_short(),
       guide = guide_axis_truncated()
     ) +
-    scale_x_continuous(
+    scale_y_continuous(
       limits = c(NA, NA),
-      expand = expansion(c(0, 0.1)),
-      breaks = seq(0, 10, by = 2),
-      labels = \(x) {
-        out <- number(x, suffix = "x fleiri", accuracy = 1, big.mark = ".", decimal.mark = ",")
-        if_else(
-          out == "0x fleiri",
-          "Jafnmargir",
-          out
-        )
-      },
+      expand = expansion(c(0.05, 0.05)),
       guide = guide_axis_truncated()
     ) +
     scale_colour_identity() +
-    coord_cartesian(clip = "off", xlim = c(-1, NA)) +
-    theme(
-      axis.line.y = element_blank(),
-      axis.text.y = element_blank(),
-      axis.ticks.y = element_blank()
-    ) +
+    facet_wrap("name") +
     labs(
       x = NULL,
       y = NULL,
-      subtitle = "Grunaðir um glæp (2022)"
+      subtitle = "Fjöldi fanga á hverja 100.000 íbúa með viðeigandi ríkisfang"
     )
+
 
   p2 <- plot_dat |>
-    mutate(
-      values = values / pop
-    ) |>
-    select(-pop) |>
-    pivot_wider(names_from = citizen, values_from = values) |>
-    janitor::clean_names() |>
-    mutate(
-      value = foreign_country / reporting_country
-    ) |>
+    filter(name == "diff") |>
+    drop_na() |>
     filter(
-      time == max(time),
+      all(value > 1),
       .by = land
     ) |>
-    filter(
-      value > 1,
-      leg_stat == "Prosecuted person"
-    ) |>
-    drop_na() |>
-    mutate(
-      colour = case_when(
-        land == "Ísland" ~ litur_island,
-        land == "Danmörk" ~ litur_danmork,
-        land == "Finnland" ~ litur_finnland,
-        land == "Noregur" ~ litur_noregur,
-        land == "Svíþjóð" ~ litur_svithjod,
-        TRUE ~ litur_annad
-      ),
-      linewidth = 1 * (land == "Ísland"),
-      size = as_factor(linewidth)
-    ) |>
-    mutate(
-      land = fct_reorder(land, value)
-    ) |>
-    ggplot(aes(value - 1, land, col = colour, data_id = geo)) +
-    geom_text_interactive(
-      aes(x = 0, label = str_c(land, " "), data_id = land),
-      hjust = 1,
-      size = 3.5
+    ggplot(aes(time, value - 1)) +
+    geom_line(
+      data = ~ filter(.x, colour == litur_annad),
+      aes(group = land, colour = litur_annad),
+      alpha = 0.3,
+      col = litur_annad
     ) +
-    geom_segment_interactive(
-      aes(xend = 0, yend = land),
-      linewidth = 0.1, alpha = 1
+    geom_line(
+      data = ~ filter(.x, colour != litur_annad, land != "Ísland"),
+      aes(group = land, colour = colour),
+      linewidth = 1
     ) +
-    geom_point_interactive(size = 3) +
-    scale_y_discrete(
+    geom_textline(
+      data = ~ filter(.x, land == "Ísland"),
+      aes(group = land, colour = colour, label = land),
+      linewidth = 1.8,
+      size = 5,
+      hjust = 0.8,
+      text_smoothing = 20,
+      fontface = "bold"
+    ) +
+    scale_x_date(
+      breaks = breaks_width("2 year", offset = "year"),
+      labels = label_date_short(),
       guide = guide_axis_truncated()
     ) +
-    scale_x_continuous(
-      limits = c(0, NA),
-      expand = expansion(c(0, 0.1)),
-      breaks = seq(0, 10, by = 1),
+    scale_y_continuous(
+      limits = c(0, 10),
+      expand = expansion(c(0, 0.05)),
+      breaks = breaks_extended(6),
       labels = \(x) {
         out <- number(x, suffix = "x fleiri", accuracy = 1, big.mark = ".", decimal.mark = ",")
         if_else(
@@ -213,189 +206,74 @@ make_plot4b <- function() {
       guide = guide_axis_truncated()
     ) +
     scale_colour_identity() +
-    coord_cartesian(clip = "off", xlim = c(-1, NA)) +
     theme(
-      axis.line.y = element_blank(),
-      axis.text.y = element_blank(),
-      axis.ticks.y = element_blank()
+      axis.text.x = element_blank(),
+      axis.line.x = element_blank(),
+      axis.ticks.x = element_blank()
     ) +
     labs(
       x = NULL,
       y = NULL,
-      subtitle = "Saksóttir (2022)"
+      subtitle = "Hve mikið fleiri eru fangar með erlent ríkisfang en fangar með innlent ríkisfang (á höfðatölu)?"
     )
 
-  p2
 
   p3 <- plot_dat |>
-    mutate(
-      values = values / pop
-    ) |>
-    select(-pop) |>
-    pivot_wider(names_from = citizen, values_from = values) |>
-    janitor::clean_names() |>
-    # filter(
-    #   leg_stat == "Prosecuted person"
-    # ) |>
-    mutate(
-      colour = case_when(
-        land == "Ísland" ~ litur_island,
-        land == "Danmörk" ~ litur_danmork,
-        land == "Finnland" ~ litur_finnland,
-        land == "Noregur" ~ litur_noregur,
-        land == "Svíþjóð" ~ litur_svithjod,
-        TRUE ~ litur_annad
-      ),
-      linewidth = 1 * (land == "Ísland"),
-      size = as_factor(linewidth)
-    ) |>
-    mutate(
-      p = foreign_country / reporting_country
-    ) |>
-    filter(
-      # year(time) < 2022,
-      leg_stat == "Suspected person"
-    ) |>
-    mutate(
-      leg_stat = fct_recode(
-        leg_stat,
-        "Saksóttir" = "Prosecuted person",
-        "Grunaðir" = "Suspected person"
-      )
-    ) |>
-    ggplot(aes(time, p, data_id = geo)) +
-    geom_line_interactive(
+    distinct(land, time, hlutf_erl, colour, linewidth, size) |>
+    ggplot(aes(time, hlutf_erl)) +
+    geom_line(
       data = ~ filter(.x, colour == litur_annad),
       aes(group = land, colour = litur_annad),
       alpha = 0.3,
       col = litur_annad
     ) +
-    geom_line_interactive(
-      data = ~ filter(.x, colour != litur_annad),
+    geom_line(
+      data = ~ filter(.x, colour != litur_annad, land != "Ísland"),
       aes(group = land, colour = colour),
       linewidth = 1
     ) +
+    geom_textline(
+      data = ~ filter(.x, land == "Ísland"),
+      aes(group = land, colour = colour, label = land),
+      linewidth = 1.8,
+      size = 5,
+      hjust = 0.8,
+      text_smoothing = 20,
+      fontface = "bold"
+    ) +
     scale_x_date(
-      breaks = breaks_width("2 year", offset = "1 year"),
+      breaks = breaks_width("2 year", offset = "2 year"),
       labels = label_date_short(),
       guide = guide_axis_truncated()
     ) +
     scale_y_continuous(
-      limits = c(0, 8),
+      limits = c(0, 1),
       expand = expansion(c(0, 0.05)),
       breaks = breaks_extended(6),
-      labels = \(x) {
-        out <- number(x, suffix = "x fleiri", accuracy = 1, big.mark = ".", decimal.mark = ",")
-        if_else(
-          out == "0x fleiri",
-          "Jafnmargir",
-          out
-        )
-      },
+      labels = label_hlutf(),
       guide = guide_axis_truncated()
     ) +
     scale_colour_identity() +
-    scale_hjust_manual(
-      values = c(0.3, 0.4, 0.25, 0.2)
-    ) +
-    coord_cartesian(ylim = c(0, 8)) +
-    theme(
-      plot.margin = margin(t = 5, r = 35, b = 5, l = 5)
-    ) +
+    coord_cartesian(ylim = c(0, 1)) +
     labs(
       x = NULL,
       y = NULL,
-      subtitle = "Grunaðir (Þróun)"
-    )
-
-  p4 <- plot_dat |>
-    mutate(
-      values = values / pop
-    ) |>
-    select(-pop) |>
-    pivot_wider(names_from = citizen, values_from = values) |>
-    janitor::clean_names() |>
-    # filter(
-    #   leg_stat == "Prosecuted person"
-    # ) |>
-    mutate(
-      colour = case_when(
-        land == "Ísland" ~ litur_island,
-        land == "Danmörk" ~ litur_danmork,
-        land == "Finnland" ~ litur_finnland,
-        land == "Noregur" ~ litur_noregur,
-        land == "Svíþjóð" ~ litur_svithjod,
-        TRUE ~ litur_annad
-      ),
-      linewidth = 1 * (land == "Ísland"),
-      size = as_factor(linewidth)
-    ) |>
-    mutate(
-      p = foreign_country / reporting_country
-    ) |>
-    filter(
-      # year(time) < 2022,
-      leg_stat == "Prosecuted person"
-    ) |>
-    mutate(
-      leg_stat = fct_recode(
-        leg_stat,
-        "Saksóttir" = "Prosecuted person",
-        "Grunaðir" = "Suspected person"
-      )
-    ) |>
-    ggplot(aes(time, p, data_id = geo)) +
-    geom_line_interactive(
-      data = ~ filter(.x, colour == litur_annad),
-      aes(group = land, colour = litur_annad),
-      alpha = 0.3,
-      col = litur_annad
-    ) +
-    geom_line_interactive(
-      data = ~ filter(.x, colour != litur_annad),
-      aes(group = land, colour = colour),
-      linewidth = 1
-    ) +
-    scale_x_date(
-      breaks = breaks_width("2 year", offset = "1 year"),
-      labels = label_date_short(),
-      guide = guide_axis_truncated()
-    ) +
-    scale_y_continuous(
-      limits = c(0, 8),
-      expand = expansion(c(0, 0.05)),
-      breaks = breaks_extended(6),
-      labels = \(x) {
-        out <- number(x, suffix = "x fleiri", accuracy = 1, big.mark = ".", decimal.mark = ",")
-        if_else(
-          out == "0x fleiri",
-          "Jafnmargir",
-          out
-        )
-      },
-      guide = guide_axis_truncated()
-    ) +
-    scale_colour_identity() +
-    scale_hjust_manual(
-      values = c(0.3, 0.4, 0.25, 0.2)
-    ) +
-    coord_cartesian(ylim = c(0, 8)) +
-    theme(
-      plot.margin = margin(t = 5, r = 35, b = 5, l = 5)
-    ) +
-    labs(
-      x = NULL,
-      y = NULL,
-      subtitle = "Saksóttir (Þróun)"
+      subtitle = "Hlutfall fanga með erlent ríkisfang"
     )
 
 
-  p <- (p1 + p2) /
-    (p3 + p4) +
+  p <- p1 + p2 + p3 +
+    plot_layout(ncol = 1) +
     plot_annotation(
-      title = "Samanburður á tíðni gruns um glæp og saksóknar meðal innflytjenda og innfæddra",
-      subtitle = "Hve mikið fleiri eru grunaðir með erlent ríkisfang en grunaðir með innlent ríkisfang (á höfðatölu)?",
+      title = "Samanburður á ríkisfangi fanga",
+      subtitle = str_c(
+        "Hlutfallslegur munur á fjölda fanga eftir ríkisfangi er lágur á Íslandi ",
+        "miðað við önnur Evrópulönd", " | ",
+        "Önnur\nNorðurlönd sýnd í lit"
+      ),
+      caption = caption
     )
+
 
 
   girafe(
