@@ -14,7 +14,7 @@ library(here)
 
 Sys.setlocale("LC_ALL", "is_IS.UTF-8")
 
-theme_set(theme_metill())
+theme_set(theme_metill(type = "blog"))
 
 
 caption <- "Mynd eftir @bggjonsson hjá metill.is byggð á gögnum Eurostat um fólksflutninga: https://metill.is/greinar/flottafolk\nGögn og kóði: https://github.com/bgautijonsson/Metill.is/tree/master/greinar/flottafolk"
@@ -28,17 +28,17 @@ litur_luxemborg <- "black"
 litur_total <- "#005824"
 litur_annad <- "#737373"
 
-d <- here("greinar", "flottafolk", "data", "raw_data.csv") |>
+d <- here("articles", "asylum", "data", "raw_data.csv") |>
   read_csv()
 
-data_hist <- here("greinar", "flottafolk", "data", "data_hist.csv") |>
+data_hist <- here("articles", "asylum", "data", "data_hist.csv") |>
   read_csv()
 
 
 d |>
   filter(
     year(time) >= 2024,
-    month(time) <= 6,
+    month(time) <= 7,
     name %in% c("grants", "asylum_applicants_non_ukraine")
   ) |>
   filter(is.na(value)) |>
@@ -186,13 +186,13 @@ p3 <- plot_dat |>
 
 p <- p1 + p2 + p3 +
   plot_annotation(
-    title = "Umsóknir um vernd í Evrópulöndum (2024 janúar - júní)",
+    title = "Umsóknir um vernd í Evrópulöndum (2024 janúar - júlí)",
     subtitle = "Sýnt sem fjöldi á 100.000 íbúa móttökulands",
     caption = caption
   )
 
 ggsave(
   plot = p,
-  filename = here("greinar", "flottafolk", "figures", "figure_vernd_2024.png"),
+  filename = here("articles", "asylum", "Figures", "figure_vernd_2024.png"),
   width = 8, height = 0.4 * 8, scale = 1.8
 )

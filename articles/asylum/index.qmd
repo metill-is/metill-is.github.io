@@ -3,7 +3,7 @@ title: "Tímabundin vernd og hælisleitendur"
 pagetitle: "Tímabundin vernd og hælisleitendur"
 subtitle: "Hvað segja gögnin um fjölda hælisleitenda og umsækjendur um tímabundna vernd ás Íslandi?"
 description: "Hvar bíða flestir einstaklingar eftir niðurstöðu í hælisumsókn sinni? Hvaða land hefur tekið við flestum hælisleitendum? Hvernig tengist löggjöf skilgreiningu á gögnum? Hér eru gögn um fjölda einstaklinga sem njóta tímabundinnar verndar eða hælis, fjölda samþykktra verndar- og hælisumsókna og fjölda umsókna í bið tekin saman úr gögnum  Eurostat."
-date: "2024/09/29"
+date: "2024/10/19"
 draft: false
 categories:
     - stjórnmál
@@ -39,7 +39,7 @@ library(here)
 
 Sys.setlocale("LC_ALL", "is_IS.UTF-8")
 
-theme_set(theme_metill())
+theme_set(theme_metill(type = "blog"))
 
 source("R/make_plot.R")
 source("R/ggiraph1.R")
@@ -105,9 +105,14 @@ Myndir og tafla hér að neðan sýna stutta samantekt á tölunum. Fyrir neðan
 
 ![](Figures/figure_vernd_2023.png){.column-page}
 
-### Samtals
+### Samtals (2022 - 2023)
 
 ![](Figures/figure_vernd_2022-2023.png){.column-page}
+
+### 2024
+
+![](Figures/figure_vernd_2024.png){.column-page}
+
 :::
 
 ## Töflur

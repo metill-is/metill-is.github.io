@@ -1,8 +1,6 @@
 make_ggiraph1 <- function(
     width = 16,
-    height = 0.4 * 16
-    ) {
-  
+    height = 0.4 * 16) {
   n_countries <- length(unique(data_hist$land))
   end_date <- max(data_hist$end_date, na.rm = T)
   label_function <- function(x) {
@@ -20,13 +18,13 @@ make_ggiraph1 <- function(
     }
   }
   last_date_label <- glue("2023\ntil {month(end_date, label = TRUE, abbr = FALSE)}")
-  
+
   #### Plot 1 ####
-  
-  plot_dat <- data_hist |> 
+
+  plot_dat <- data_hist |>
     filter(
       name == "total"
-    ) |> 
+    ) |>
     mutate(
       tooltip = glue(
         str_c(
@@ -43,8 +41,8 @@ make_ggiraph1 <- function(
       ),
       .by = land
     )
-  
-  p1 <- plot_dat |>  
+
+  p1 <- plot_dat |>
     ggplot(aes(time, per_pop)) +
     geom_text_interactive(
       aes(
@@ -58,7 +56,7 @@ make_ggiraph1 <- function(
       size = 4,
       vjust = 1,
       hjust = 0
-    ) + 
+    ) +
     geom_line_interactive(
       data = ~ filter(.x, colour == litur_annad),
       aes(group = land, colour = colour, data_id = land),
@@ -89,7 +87,7 @@ make_ggiraph1 <- function(
       labels = label_number(),
       expand = expansion(c(0.05, 0.05)),
       guide = guide_axis_truncated()
-    )  +
+    ) +
     scale_colour_identity() +
     coord_cartesian(clip = "off", ylim = c(0, 800)) +
     theme(
@@ -102,32 +100,32 @@ make_ggiraph1 <- function(
       title = "Fjöldi nýrra flóttamanna á höfðatölu",
       subtitle = "Sýnt sem fjöldi á 100.000 íbúa"
     )
-  
+
   #### Plot 2 ####
-  
-  plot_dat <- data_hist |> 
+
+  plot_dat <- data_hist |>
     bind_rows(
-      data_hist |> 
+      data_hist |>
         filter(
           year(time) == 2023
-        ) |> 
+        ) |>
         mutate(
           time = time + years(1)
         )
-    ) |> 
+    ) |>
     filter(
       name == "total"
     ) |>
     mutate(
       per_pop = coalesce(per_pop, 0)
-    ) |> 
-    arrange(time, per_pop) |> 
+    ) |>
+    arrange(time, per_pop) |>
     mutate(
       placement = row_number(),
       .by = time
-    ) 
-  
-  p2 <- plot_dat |>  
+    )
+
+  p2 <- plot_dat |>
     ggplot(aes(time, placement)) +
     geom_step_interactive(
       data = ~ filter(.x, colour == litur_annad),
@@ -145,7 +143,7 @@ make_ggiraph1 <- function(
       linewidth = 1.5
     ) +
     geom_text_interactive(
-      data = ~ group_by(.x, land) |> 
+      data = ~ group_by(.x, land) |>
         filter(land == "Ísland", time == max(time)),
       aes(label = land, colour = colour, data_id = land),
       hjust = 0,
@@ -153,14 +151,14 @@ make_ggiraph1 <- function(
       size = 5
     ) +
     geom_text_interactive(
-      data = ~ group_by(.x, land) |> 
+      data = ~ group_by(.x, land) |>
         filter(colour != litur_annad, land != "Ísland", time == max(time)),
       aes(label = land, colour = colour, data_id = land),
       hjust = 0,
       nudge_x = 30
     ) +
     geom_text_interactive(
-      data = ~ group_by(.x, land) |> 
+      data = ~ group_by(.x, land) |>
         filter(colour == litur_annad, time == max(time)),
       aes(label = land, colour = colour, data_id = land),
       hjust = 0,
@@ -183,7 +181,7 @@ make_ggiraph1 <- function(
       limits = c(1, n_countries),
       expand = expansion(c(0.05, 0.05)),
       guide = guide_axis_truncated()
-    )  +
+    ) +
     scale_colour_identity() +
     coord_cartesian(clip = "off") +
     theme(
@@ -196,19 +194,19 @@ make_ggiraph1 <- function(
       title = "Evrópulöndum raðað eftir fjölda nýrra flóttamanna á höfðatölu",
       subtitle = "1: Flestir flóttamenn | 30: Fæstir flóttamenn"
     )
-  
+
   #### Plot 3 ####
-  
-  plot_dat <- data_hist |> 
+
+  plot_dat <- data_hist |>
     filter(
       name == "total"
-    ) |> 
-    arrange(time, per_pop) |> 
+    ) |>
+    arrange(time, per_pop) |>
     mutate(
       per_pop = cumsum(per_pop),
       value = cumsum(value),
       .by = land
-    ) |> 
+    ) |>
     mutate(
       tooltip = glue(
         str_c(
@@ -223,8 +221,8 @@ make_ggiraph1 <- function(
       ),
       .by = land
     )
-  
-  p3 <- plot_dat |>  
+
+  p3 <- plot_dat |>
     ggplot(aes(time, per_pop)) +
     geom_text_interactive(
       aes(
@@ -269,7 +267,7 @@ make_ggiraph1 <- function(
       labels = label_number(),
       expand = expansion(c(0.05, 0.05)),
       guide = guide_axis_truncated()
-    )  +
+    ) +
     scale_colour_identity() +
     coord_cartesian(clip = "off", ylim = c(0, 5000)) +
     theme(
@@ -282,35 +280,35 @@ make_ggiraph1 <- function(
       title = "Uppsafnaður fjöldi nýrra flóttamanna á höfðatölu",
       subtitle = "Sýnt sem fjöldi á 100.000 íbúa"
     )
-  
+
   #### Plot 4 ####
-  
-  plot_dat <- data_hist |> 
+
+  plot_dat <- data_hist |>
     bind_rows(
-      data_hist |> 
+      data_hist |>
         filter(
           year(time) == 2023
-        ) |> 
+        ) |>
         mutate(
           time = time + years(1),
           per_pop = 0
         )
-    ) |> 
+    ) |>
     filter(
       name == "total"
-    ) |> 
+    ) |>
     mutate(
       per_pop = coalesce(per_pop, 0),
       per_pop = cumsum(per_pop),
       .by = land
-    ) |> 
-    arrange(time, per_pop) |> 
+    ) |>
+    arrange(time, per_pop) |>
     mutate(
       placement = row_number(),
       .by = time
     )
-  
-  p4 <- plot_dat |>  
+
+  p4 <- plot_dat |>
     ggplot(aes(time, placement)) +
     geom_step_interactive(
       data = ~ filter(.x, colour == litur_annad),
@@ -328,7 +326,7 @@ make_ggiraph1 <- function(
       linewidth = 1.5
     ) +
     geom_text_interactive(
-      data = ~ group_by(.x, land) |> 
+      data = ~ group_by(.x, land) |>
         filter(land == "Ísland", time == max(time)),
       aes(label = land, colour = colour, data_id = land),
       hjust = 0,
@@ -336,14 +334,14 @@ make_ggiraph1 <- function(
       size = 5
     ) +
     geom_text_interactive(
-      data = ~ group_by(.x, land) |> 
+      data = ~ group_by(.x, land) |>
         filter(colour != litur_annad, land != "Ísland", time == max(time)),
       aes(label = land, colour = colour, data_id = land),
       hjust = 0,
       nudge_x = 30
     ) +
     geom_text_interactive(
-      data = ~ group_by(.x, land) |> 
+      data = ~ group_by(.x, land) |>
         filter(colour == litur_annad, time == max(time)),
       aes(label = land, colour = colour, data_id = land),
       hjust = 0,
@@ -366,7 +364,7 @@ make_ggiraph1 <- function(
       limits = c(1, n_countries),
       expand = expansion(c(0.05, 0.05)),
       guide = guide_axis_truncated()
-    )  +
+    ) +
     scale_colour_identity() +
     coord_cartesian(clip = "off") +
     theme(
@@ -379,7 +377,7 @@ make_ggiraph1 <- function(
       title = "Evrópulöndum raðað eftir uppsöfnuðum fjölda frá 2008",
       subtitle = "1: Flestir flóttamenn | 30: Fæstir flóttamenn"
     )
-  
+
   p <- p1 + p2 + p3 + p4 +
     plot_layout(nrow = 2) +
     plot_annotation(
@@ -396,26 +394,27 @@ make_ggiraph1 <- function(
       plot.background = element_blank(),
       panel.background = element_blank()
     )
-  
+
   girafe(
     ggobj = p,
-    bg = "#f0efef",
+    bg = "transparent",
     width_svg = width,
     height_svg = height,
     options = list(
       opts_tooltip(
-        opacity = 0.8, 
+        opacity = 0.8,
         use_fill = FALSE,
-        use_stroke = TRUE, 
-        css = "padding:5pt;font-family: Open Sans;font-size:1rem;color:white"),
+        use_stroke = TRUE,
+        css = "padding:5pt;font-family: Open Sans;font-size:1rem;color:white"
+      ),
       opts_hover(
         css = girafe_css(
           css = "",
           text = "stroke:none;fill-opacity:1;"
-        ), 
+        ),
         nearest_distance = 50
       ),
-      opts_hover_inv(css = "opacity:0.05"), 
+      opts_hover_inv(css = "opacity:0.05"),
       opts_toolbar(saveaspng = TRUE),
       opts_zoom(max = 1)
     )

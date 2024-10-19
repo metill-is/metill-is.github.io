@@ -45,6 +45,8 @@ source(here("dashboards", "immigration", "R", "plot2a.R"))
 source(here("dashboards", "immigration", "R", "plot2b.R"))
 source(here("dashboards", "immigration", "R", "plot3a.R"))
 source(here("dashboards", "immigration", "R", "plot3b.R"))
+source(here("dashboards", "immigration", "R", "plot4a.R"))
+source(here("dashboards", "immigration", "R", "plot4b.R"))
 
 
 caption <- "Mynd eftir @bggjonsson hjá metill.is byggð á gögnum Eurostat um fólksflutninga: https://metill.is/greinar/innflytjendur\nGögn og kóði: https://github.com/bgautijonsson/Metill.is/tree/master/greinar/innflytjendur"
@@ -119,4 +121,21 @@ make_plot2a()
 #| eval: true
 #| title: "Hlutfall með vinnu"
 make_plot2b()
+```
+
+# Afbrot
+
+## Column {.tabset}
+
+
+```{r}
+#| eval: true
+#| title: "Grunaðir og saksóttir"
+make_plot4a()
+```
+
+```{r}
+#| eval: true
+#| title: "Fangar"
+make_plot4b()
 ```
