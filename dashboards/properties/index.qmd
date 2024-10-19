@@ -21,5 +21,3 @@ source(here("dashboards", "properties", "R", "plot_fp_interactive.R"))
 ```{r}
 plot_fp_interactive()
 ```
-
-# Verð

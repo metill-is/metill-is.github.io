@@ -6,8 +6,9 @@ library(patchwork)
 library(geomtextpath)
 library(ggiraph)
 library(glue)
+library(ggh4x)
 
-theme_set(theme_metill(type = "blog"))
+theme_set(theme_metill())
 
 litur_island <- "#08306b"
 
@@ -239,9 +240,23 @@ p <- wrap_plots(list(p3, p1, p2)) +
 p
 
 ggsave(
-  "dashboards/properties/img/fp.png",
+  "dashboards/properties/img/fp_with_background.png",
   p,
   width = 8,
   height = 0.621 * 8,
-  scale = 1.4
+  scale = 1.55
+)
+
+ggsave(
+  "dashboards/properties/img/fp.png",
+  p &
+    theme(
+      plot.background = element_blank(),
+      panel.background = element_blank(),
+      legend.background = element_blank(),
+      strip.background = element_rect(fill = "transparent")
+    ),
+  width = 8,
+  height = 0.621 * 8,
+  scale = 1.55
 )

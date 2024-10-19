@@ -30,7 +30,7 @@ make_plot3b <- function() {
       n_group = cut(
         n,
         breaks = c(
-          -Inf, 1, 10, 100, 500, 1000, 10000, Inf
+          -Inf, 0, 10, 100, 500, 1000, 10000, Inf
         ),
         labels = c(
           "Engin",

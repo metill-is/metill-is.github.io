@@ -22,6 +22,7 @@ d_iceland |>
   ggplot(aes(year, population / dwellings)) +
   geom_line()
 
+
 bind_rows(d_iceland, d_gleeson) |>
   inner_join(
     read_csv("dashboards/properties/data/pop.csv")
@@ -32,29 +33,6 @@ bind_rows(d_iceland, d_gleeson) |>
     .by = country
   ) |>
   filter(
-    country %in% c(
-      "Iceland",
-      "Norway",
-      "Finland",
-      "Denmark",
-      "Sweden",
-      "UK",
-      "USA",
-      "Germany",
-      "France",
-      "Austria",
-      "Australia",
-      "Switzerland",
-      "Canada",
-      "New Zealand",
-      "Belgium",
-      "Poland",
-      "Netherlands",
-      "Italy",
-      "Ireland",
-      "Spain",
-      "Portugal"
-    ),
     between(year, 2007, 2023)
   ) |>
   inner_join(

@@ -86,23 +86,6 @@ make_plot1a()
 make_plot1b()
 ```
 
-# Atvinna
-
-## Column {width:60%} {.tabset}
-
-```{r}
-#| eval: true
-#| title: "Atvinnuþátttaka"
-make_plot2a()
-```
-
-
-```{r}
-#| eval: true
-#| title: "Hlutfall með vinnu"
-make_plot2b()
-```
-
 # Upprunaland
 
 ## Column {.tabset}
@@ -119,4 +102,21 @@ make_plot3a()
 #| title: "Landakort"
 
 make_plot3b()
+```
+
+# Atvinna
+
+## Column {width:60%} {.tabset}
+
+```{r}
+#| eval: true
+#| title: "Atvinnuþátttaka"
+make_plot2a()
+```
+
+
+```{r}
+#| eval: true
+#| title: "Hlutfall með vinnu"
+make_plot2b()
 ```

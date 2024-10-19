@@ -125,33 +125,58 @@ d |>
   rename(
     atv = atvinnugrein_balkar
   ) |> 
+  mutate(
+    starfandi = slider::slide_dbl(starfandi, mean, .before = 11),
+    .by = c(atv, bakgrunnur)
+  ) |> 
   filter(
-    atv != "Alls - Starfandi",
     bakgrunnur != "Alls",
-    dags == max(dags),
-    str_detect(atv, "^[A-Z]+ ")
+    dags %in% clock::date_build(c(2023, 2018, 2013), 1, 1),
+    str_detect(atv, "^[A-Z]+ |Alls")
   ) |> 
   janitor::remove_constant() |> 
   mutate(
     hlutf = starfandi / sum(starfandi),
-    .by = c(atv)
+    .by = c(atv, dags)
   ) |>
   filter(bakgrunnur == "Innflytjendur") |> 
   janitor::clean_names() |> 
-  select(atv, starfandi, hlutf) |> 
-  arrange(desc(hlutf)) |> 
+  select(atv, dags, starfandi, hlutf) |> 
+  pivot_wider(
+    names_from = dags, 
+    values_from = c(starfandi, hlutf), 
+    names_vary = "slowest"
+  ) |> 
+  slice(c(1, 3:17, 2)) |> 
   gt() |> 
   tab_header(
-    title = "Fjöldi og hlutfall innflytjenda meðal starfandi innan atvinnugreina"
+    title = "Fjöldi og hlutfall innflytjenda meðal starfandi eftir atvinnugrein"
+  ) |> 
+  tab_spanner(
+    "2013",
+    columns = 2:3
+  ) |> 
+  tab_spanner(
+    "2018",
+    columns = 4:5
+  ) |> 
+  tab_spanner(
+    "2023",
+    columns = 6:7
   ) |> 
   cols_label(
     atv = "Atvinnugrein",
-    starfandi = "Fjöldi (n)",
-    hlutf = "Hlutfall (%)"
+    contains("starfandi") ~ "Fjöldi (n)",
+    contains("hlutf") ~ "Hlutfall (%)"
   ) |> 
   fmt_percent(
-    columns = hlutf
+    columns = contains("hlutf")
   ) |> 
   fmt_integer(
-    columns = starfandi
-  )
+    columns = contains("starfandi")
+  ) |> 
+  gt_color_rows(
+    columns = c(3, 5, 7),
+    palette = "Greys"
+  ) |> 
+  sub_missing() 

@@ -35,7 +35,7 @@ d <- hg_data(url)
 d_pop <- d |>
   filter(
     Kyn == "Alls",
-    parse_number(Aldur) > 20
+    Aldur == "Alls"
   ) |>
   collect()
 

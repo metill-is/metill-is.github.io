@@ -224,7 +224,7 @@ make_plot2a <- function() {
   ) /
     p3 +
     plot_annotation(
-      title = "Atvinnuþátttaka eftir fæðingarlandi",
+      title = "Atvinnuþátttaka í Evrópulöndum eftir fæðingarlandi",
       subtitle = str_c(
         "Hlutfall eintaklinga 20 - 64 ára með vinnu eða í leit að vinnu | ",
         "Láttu músina yfir land til að einblína á það"
