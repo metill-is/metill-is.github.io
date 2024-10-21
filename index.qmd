@@ -13,5 +13,12 @@ listing:
 
 # Kosningavaktin {.column-page}
 
+```{r}
+source("R/election_tracker_plot.R")
+make_election_tracker_plot()
+```
+
+## Málefni
+
 ::: {#election-content .column-page}
 :::
