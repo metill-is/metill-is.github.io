@@ -237,7 +237,10 @@ CCCC
   ) +
     plot_annotation(
       title = "Samantekt á fylgi stjórnmálaflokka",
-      subtitle = "Niðustöður mismunandi kannana vegnar saman með Bayesísku tölfræðilíkani"
+      subtitle = str_c(
+        "Niðustöður mismunandi kannana vegnar saman með tölfræðilíkani | ",
+        "Láttu músina yfir flokk til að einblína á hann"
+      )
     )
 
   girafe(
