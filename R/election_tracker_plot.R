@@ -15,12 +15,12 @@ make_election_tracker_plot <- function() {
     "Sjálfstæðisflokkurinn", "#377eb8",
     "Framsóknarflokkurinn", "#41ab5d",
     "Samfylkingin", "#e41a1c",
-    "Vinstri Græn", "#00441b",
-    "Viðreisn", "#ff7d14",
-    "Píratar", "#984ea3",
+    "Vinstri Græn", "#006d2c",
+    "Viðreisn", "#f16913",
+    "Píratar", "#6a51a3",
     "Miðflokkurinn", "#08306b",
     "Flokkur Fólksins", "#FBB829",
-    "Sósíalistaflokkurinn", "#67000d",
+    "Sósíalistaflokkurinn", "#a50f15",
     "Annað", "grey50"
   )
 
