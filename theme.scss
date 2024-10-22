@@ -41,13 +41,43 @@ $headings-font-family:          "Bookman", "Playfair Display";
 $carousel-control-color:        $primary;
 $carousel-caption-color:        $primary;
 $carousel-indicator-active-bg:  $primary;
+$icelandic-blue: #02529C;
+$icelandic-red: #DC1E35;
+$icelandic-white: #FFFFFF;
+
 
 /*-- scss:rules --*/  
 
 
+.icelandic-text {
+  font-size: 60px; /* Adjust the font size as needed */
+  font-weight: bold; /* Optional: makes the text bold */
+  background: linear-gradient(to bottom,
+      $icelandic-blue 0%, $icelandic-blue 48%,
+      $icelandic-white 48%, $icelandic-white 53%,
+      $icelandic-red 53%, $icelandic-red 61%,
+      $icelandic-white 61%, $icelandic-white 66%,
+      $icelandic-blue 66%, $icelandic-blue 100%);
+  background-clip: text;
+  -webkit-background-clip: text; /* For Safari compatibility */
+  color: transparent;
+  -webkit-text-fill-color: transparent; /* For Safari compatibility */
+  -webkit-text-stroke: 0.9px $secondary; /* For Safari and Chrome */
+  text-stroke: 0.9px $secondary; /* For future compatibility */
+}
+
+.icelandic-text:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+
+
+
+
 body > nav > div > div.d-flex.flex-row > header > div > a > h1 {
-  font-size: 48px;
-  font-family: "Playfair Display";
+  font-size: 54px;
+  font-family: "Merriweather";
 }
 
   
@@ -57,6 +87,10 @@ body > nav > div > div.col-12.d-flex.justify-content-center {
   border-top: 1px solid $secondary;
   width: 100%;
   font-family: "Segoe UI";
+
+  a:hover {
+    transform: scale(1.03);
+  }
 }
  
 .card { 
