@@ -50,7 +50,6 @@ $icelandic-white: #FFFFFF;
 
 
 .icelandic-text {
-  font-size: 60px; /* Adjust the font size as needed */
   font-weight: bold; /* Optional: makes the text bold */
   background: linear-gradient(to bottom,
       $icelandic-blue 0%, $icelandic-blue 48%,
@@ -62,8 +61,8 @@ $icelandic-white: #FFFFFF;
   -webkit-background-clip: text; /* For Safari compatibility */
   color: transparent;
   -webkit-text-fill-color: transparent; /* For Safari compatibility */
-  -webkit-text-stroke: 0.9px $secondary; /* For Safari and Chrome */
-  text-stroke: 0.9px $secondary; /* For future compatibility */
+  -webkit-text-stroke: 0.7px $secondary; /* For Safari and Chrome */
+  text-stroke: 0.7px $secondary; /* For future compatibility */
 }
 
 .icelandic-text:hover {
@@ -76,7 +75,7 @@ $icelandic-white: #FFFFFF;
 
 
 body > nav > div > div.d-flex.flex-row > header > div > a > h1 {
-  font-size: 54px;
+  font-size: clamp(44px, 5vw, 54px);
   font-family: "Merriweather";
 }
 
@@ -92,7 +91,8 @@ body > nav > div > div.col-12.d-flex.justify-content-center {
     transform: scale(1.03);
   }
 }
- 
+
+
 .card { 
   background-color: $secondary;
   transition: 0.5s;
