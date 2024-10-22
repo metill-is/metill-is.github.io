@@ -7,18 +7,19 @@ listing:
     - id: election-content
       template: ejs/election-content.ejs
       contents: elections.yml
-      sort: "date desc"
 ---
 
 
 # Kosningavaktin {.column-page}
 
 ```{r}
+#| column: page
 source("R/election_tracker_plot.R")
 make_election_tracker_plot()
 ```
 
 # Málefni {.column-page}
+
 
 ::: {#election-content .column-page}
 :::
