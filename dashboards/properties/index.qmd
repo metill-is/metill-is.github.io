@@ -14,9 +14,16 @@ library(here)
 library(metill)
 theme_set(theme_metill(type = "blog"))
 source(here("dashboards", "properties", "R", "plot_fp_interactive.R"))
+source(here("dashboards", "properties", "R", "plot_timeseries_interactive.R"))
 ```
 
-# Uppbygging
+# Þróun
+
+```{r}
+plot_timeseries_interactive()
+```
+
+# Samanburður
 
 ```{r}
 plot_fp_interactive()
