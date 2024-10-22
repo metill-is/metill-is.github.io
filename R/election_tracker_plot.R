@@ -23,6 +23,13 @@ make_election_tracker_plot <- function() {
     "Sósíalistaflokkurinn", "#a50f15",
     "Annað", "grey50"
   )
+  
+  point_shapes <- c(
+    "Gallup" = 21,
+    "Maskína" = 22,
+    "Prósent" = 23,
+    "Félagsvísindastofnun" = 24
+  )
 
   # read data
   gallup_data <- read_csv(here("data", "gallup_data.csv"))
@@ -135,9 +142,12 @@ make_election_tracker_plot <- function() {
       n = 500
     ) +
     geom_point_interactive(
-      aes(y = p_poll),
+      aes(y = p_poll, shape = fyrirtaeki, color = litur, fill = litur),  # Added fill aesthetic
       alpha = 0.3
     ) +
+    scale_shape_manual(values = point_shapes, guide = "none") +
+    scale_color_identity() +
+    scale_fill_identity() +
     scale_x_date(
       guide = ggh4x::guide_axis_truncated(
         trunc_upper = clock::date_build(2024, 11, 30)
@@ -165,7 +175,6 @@ make_election_tracker_plot <- function() {
       guide = ggh4x::guide_axis_truncated(),
       labels = label_percent()
     ) +
-    scale_colour_identity() +
     coord_cartesian(
       xlim = clock::date_build(2024, c(8, 11), c(1, 30))
     ) +
@@ -174,7 +183,7 @@ make_election_tracker_plot <- function() {
       y = NULL,
       subtitle = "Kapphlaupið"
     )
-
+  
   p3 <- d |>
     ggplot(aes(dags, mean, colour = litur, data_id = flokkur)) +
     geom_vline(
@@ -197,9 +206,16 @@ make_election_tracker_plot <- function() {
       n = 500
     ) +
     geom_point_interactive(
-      aes(y = p_poll),
+      aes(y = p_poll, shape = fyrirtaeki, color = litur, fill = litur),  # Added fill aesthetic
       alpha = 0.2
     ) +
+    scale_shape_manual(
+      values = point_shapes,
+      name = "Könnunarfyrirtæki:"
+    ) +
+    scale_color_identity() +
+    scale_fill_identity() +
+    guides(shape = guide_legend(override.aes = list(alpha = 0.8))) +
     scale_x_date(
       guide = ggh4x::guide_axis_truncated(
         trunc_upper = clock::date_build(2024, 11, 30)
@@ -217,12 +233,17 @@ make_election_tracker_plot <- function() {
       guide = ggh4x::guide_axis_truncated(),
       labels = label_percent()
     ) +
-    scale_colour_identity() +
     labs(
       x = NULL,
       y = NULL,
       subtitle = "Fylgisþróun",
       caption = "Unnið af Brynjólfi Gauta Guðrúnar Jónssyni og Rafael Daniel Vias"
+    ) +
+    theme(
+      legend.position = "bottom",
+      legend.background = element_rect(fill = "white", color = NA),
+      legend.key.size = unit(1.5, "lines"),
+      legend.box.margin = margin(6, 6, 6, 6)
     )
 
   design <- "
