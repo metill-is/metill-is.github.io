@@ -31,9 +31,13 @@
       href: dashboards/inflation/index.qmd
       description: "Baráttan við verðbólgudrauginn"
       image: dashboards/inflation/img/img.png
-- category: Stjórnmálaflokkar
-  description: "Stjórnmálaflokkar"
+- category: Hið Opinbera
+  description: "Hið opinbera"
   tiles:
+    - title: "Landspítalinn"
+      href: articles/hospital/index.qmd
+      description: "Hvaða upplýsingar eru til um rekstur Landspítalans?"
+      image: articles/hospital/hjukthyngd_fp.png
     - title: "Fjármál stjórnmálaflokkanna"
       href: articles/party_funds/index.qmd
       description: "Rýnt í ársreikninga stjórnmálaflokkanna"
