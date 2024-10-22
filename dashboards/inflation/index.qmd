@@ -22,7 +22,7 @@ library(plotly)
 library(metill)
 library(glue)
 library(ggh4x)
-theme_set(theme_metill())
+theme_set(theme_metill(type = "blog"))
 ```
 
 ```{r}

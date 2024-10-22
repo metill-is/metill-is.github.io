@@ -14,7 +14,7 @@
   tiles:
     - title: "Fasteignir"
       href: dashboards/properties/index.qmd
-      description: "Samantekt á gögnum um fasteignauppbyggingu og þróun verðs"
+      description: "Samantekt á gögnum um fasteignauppbyggingu"
       image: dashboards/properties/img/fp.png
     - title: "Tekjur, eignir og skuldir Íslendinga"
       href: dashboards/wagesandexpenses/index.qmd
