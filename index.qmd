@@ -1,6 +1,5 @@
 ---
 pagetitle: "Metill"
-section-divs: false
 toc: false
 editor: source
 listing:
@@ -9,8 +8,9 @@ listing:
       contents: elections.yml
 ---
 
-
 # Kosningavaktin {.column-page}
+
+
 
 ```{r}
 #| column: page

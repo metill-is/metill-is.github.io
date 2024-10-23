@@ -10,6 +10,12 @@ make_election_tracker_plot <- function() {
 
   theme_set(theme_metill(type = "blog"))
 
+  caption <- str_c(
+    "Samantektin byggir á fylgiskönnunum Félagsvísindastofnunar, Gallup, Maskínu og Prósents ",
+    "ásamt niðurstöðum kosninga og kjörsókn 2021", "\n",
+    "Unnið af Brynjólfi Gauta Guðrúnar Jónssyni og Rafael Daniel Vias"
+  )
+
   colors <- tribble(
     ~flokkur, ~litur,
     "Sjálfstæðisflokkurinn", "#377eb8",
@@ -23,7 +29,7 @@ make_election_tracker_plot <- function() {
     "Sósíalistaflokkurinn", "#a50f15",
     "Annað", "grey50"
   )
-  
+
   point_shapes <- c(
     "Gallup" = 21,
     "Maskína" = 22,
@@ -81,6 +87,9 @@ make_election_tracker_plot <- function() {
 
   p1 <- d |>
     filter(dags == max(dags)) |>
+    distinct(
+      flokkur, mean, litur
+    ) |>
     mutate(
       flokkur_ordered = fct_reorder(flokkur, mean)
     ) |>
@@ -142,7 +151,7 @@ make_election_tracker_plot <- function() {
       n = 500
     ) +
     geom_point_interactive(
-      aes(y = p_poll, shape = fyrirtaeki, color = litur, fill = litur),  # Added fill aesthetic
+      aes(y = p_poll, shape = fyrirtaeki, color = litur, fill = litur), # Added fill aesthetic
       alpha = 0.3
     ) +
     scale_shape_manual(values = point_shapes, guide = "none") +
@@ -183,7 +192,7 @@ make_election_tracker_plot <- function() {
       y = NULL,
       subtitle = "Kapphlaupið"
     )
-  
+
   p3 <- d |>
     ggplot(aes(dags, mean, colour = litur, data_id = flokkur)) +
     geom_vline(
@@ -206,7 +215,7 @@ make_election_tracker_plot <- function() {
       n = 500
     ) +
     geom_point_interactive(
-      aes(y = p_poll, shape = fyrirtaeki, color = litur, fill = litur),  # Added fill aesthetic
+      aes(y = p_poll, shape = fyrirtaeki, color = litur, fill = litur), # Added fill aesthetic
       alpha = 0.2
     ) +
     scale_shape_manual(
@@ -236,12 +245,11 @@ make_election_tracker_plot <- function() {
     labs(
       x = NULL,
       y = NULL,
-      subtitle = "Fylgisþróun",
-      caption = "Unnið af Brynjólfi Gauta Guðrúnar Jónssyni og Rafael Daniel Vias"
+      subtitle = "Fylgisþróun"
     ) +
     theme(
       legend.position = "bottom",
-      legend.background = element_rect(fill = "white", color = NA),
+      legend.background = element_rect(fill = "transparent", color = NA),
       legend.key.size = unit(1.5, "lines"),
       legend.box.margin = margin(6, 6, 6, 6)
     )
@@ -259,8 +267,12 @@ CCCC
     plot_annotation(
       title = "Samantekt á fylgi stjórnmálaflokka",
       subtitle = str_c(
-        "Niðustöður mismunandi kannana vegnar saman með tölfræðilíkani | ",
+        "Niðustöður mismunandi kannana og kosninga 2021 vegnar saman með tölfræðilíkani | ",
         "Láttu músina yfir flokk til að einblína á hann"
+      ),
+      caption = caption,
+      theme = theme(
+        plot.caption = element_text(size = 8)
       )
     )
 
