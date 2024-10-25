@@ -18,6 +18,7 @@ source("R/election_tracker_plot.R")
 make_election_tracker_plot()
 ```
 
+
 # Málefni {.column-page}
 
 ::: {#election-content .column-page}
