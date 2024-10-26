@@ -653,4 +653,4 @@ Hér nota ég *GAM* til að smootha gögnin og nota svo árstíðaleiðrétt smo
 
 # Fjöldi starfandi á almennum vinnumarkaði
 
-![](Figures/almennur_fjoldi_methaedir.png){.column-page}
+![](figures/almennur_fjoldi_methaedir.png){.column-page}
