@@ -93,7 +93,7 @@ make_election_tracker_table <- function() {
       )
     ) |>
     tab_footnote(
-      "Unnið af Brynjólfi Gauta Guðrúnar Jónssyni ásamt Agnari Frey Helgasyni, Hafsteini Einarssyni og Rafael Daniel Vias"
+      "Unnið af Brynjólfi Gauta Guðrúnar Jónssyni, Agnari Frey Helgasyni, Hafsteini Einarssyni og Rafael Daniel Vias"
     ) |>
     tab_options(
       table.background.color = "#fdfcfc"
