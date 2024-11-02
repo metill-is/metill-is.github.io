@@ -11,7 +11,11 @@ make_election_tracker_plot <- function() {
   theme_set(theme_metill(type = "blog"))
 
   caption <- str_c(
-    "Samantektin byggir á fylgiskönnunum Félagsvísindastofnunar, Gallup, Maskínu og Prósents ", "\n",
+    "Matið styðst við kannanir Félagsvísindastofnunar, ",
+    "Fréttablaðs ásamt Stöð 2 og Vísi, ",
+    "Gallup, Maskínu, ",
+    "MMR og Prósents frá upphafi árs 2016 til dagsins í dag ",
+    "ásamt niðurstöðum kosninga 2016, 2017 og 2021\n",
     "Unnið af Brynjólfi Gauta Guðrúnar Jónssyni, Agnari Frey Helgasyni, Hafsteini Einarssyni og Rafael Daniel Vias"
   )
 
