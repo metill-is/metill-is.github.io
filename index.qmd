@@ -31,8 +31,17 @@ make_election_tracker_table()
 
 :::
 
+::: {.photo-of-the-week .column-screen}
+
+# Mynd vikunnar
+
+![](Figures/col_plot_applicants_monthly_fp.png)
+
+:::
 
 # Málefni {.column-page}
+
+
 
 ::: {#election-content .column-page}
 :::

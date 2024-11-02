@@ -290,7 +290,7 @@ CCCC
   p <- wrap_plots(
     p1, p2, p3,
     design = design,
-    heights = c(0.6, 1)
+    heights = c(0.45, 1)
   ) +
     plot_annotation(
       title = "Samantekt á fylgi stjórnmálaflokka",
@@ -307,7 +307,7 @@ CCCC
   girafe(
     ggobj = p,
     width_svg = 11,
-    height_svg = 0.9 * 11,
+    height_svg = 1.1 * 11,
     bg = "transparent",
     options = list(
       opts_tooltip(
