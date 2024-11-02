@@ -95,6 +95,11 @@ make_election_tracker_plot <- function() {
       flokkur_ordered = fct_reorder(flokkur, mean)
     ) |>
     ggplot(aes(mean, flokkur_ordered, color = litur, data_id = flokkur)) +
+    geom_vline(
+      xintercept = seq(0, 0.25, by = 0.05),
+      alpha = 0.4,
+      linewidth = 0.05
+    ) +
     geom_text_interactive(
       aes(label = flokkur, x = 0),
       hjust = 1,
@@ -132,9 +137,23 @@ make_election_tracker_plot <- function() {
 
   p2 <- d |>
     ggplot(aes(dags, mean, colour = litur, data_id = flokkur)) +
-    geom_vline(
-      xintercept = clock::date_build(2024, 11, 30),
-      alpha = 0.4
+    annotate(
+      geom = "segment",
+      x = clock::date_build(2021, 8, 1),
+      xend = clock::date_build(2024, 11, 30),
+      y = seq(0, 0.3, by = 0.05),
+      yend = seq(0, 0.3, by = 0.05),
+      alpha = 0.4,
+      linewidth = 0.05
+    ) +
+    annotate(
+      geom = "segment",
+      x = clock::date_build(2024, 11, 30),
+      xend = clock::date_build(2024, 11, 30),
+      y = 0,
+      yend = 0.3,
+      alpha = 0.4,
+      linewidth = 0.5
     ) +
     annotate(
       geom = "label",
@@ -174,7 +193,8 @@ make_election_tracker_plot <- function() {
           1, 8, 15, 22,
           1, 8, 15, 22, 30
         )
-      )
+      ),
+      expand = expansion(add = c(0, 6))
     ) +
     scale_y_continuous(
       breaks = seq(0, 0.3, by = 0.05),
@@ -206,9 +226,23 @@ make_election_tracker_plot <- function() {
 
   p3 <- d |>
     ggplot(aes(dags, mean, colour = litur, data_id = flokkur)) +
-    geom_vline(
-      xintercept = clock::date_build(2024, 11, 30),
-      alpha = 0.4
+    annotate(
+      geom = "segment",
+      x = clock::date_build(2021, 8, 1),
+      xend = clock::date_build(2024, 11, 30),
+      y = seq(0, 0.3, by = 0.05),
+      yend = seq(0, 0.3, by = 0.05),
+      alpha = 0.4,
+      linewidth = 0.05
+    ) +
+    annotate(
+      geom = "segment",
+      x = clock::date_build(2024, 11, 30),
+      xend = clock::date_build(2024, 11, 30),
+      y = 0,
+      yend = 0.3,
+      alpha = 0.4,
+      linewidth = 0.5
     ) +
     annotate(
       geom = "label",
@@ -258,7 +292,8 @@ make_election_tracker_plot <- function() {
         from = clock::date_build(2021, 1),
         to = clock::date_build(2024, 11, 30),
         by = "2 month"
-      )
+      ),
+      expand = expansion(add = c(0, 25))
     ) +
     scale_y_continuous(
       breaks = seq(0, 0.3, by = 0.05),
@@ -303,6 +338,9 @@ CCCC
         plot.caption = element_text(size = 8)
       )
     )
+
+  p
+
 
   girafe(
     ggobj = p,
