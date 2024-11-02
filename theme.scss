@@ -129,9 +129,7 @@ body > nav > div > div.col-12.d-flex.justify-content-center {
 }
 
 .photo-of-the-week {
-  padding-top: 0rem;
-  padding-bottom: 0rem;
-  padding-inline: clamp(0rem, 10%, 16rem);
+  padding: 0;  // No padding by default for small screens
   background-color: hsla(0, 0%, 98%, 1);
   margin: 0;
   border: none;
@@ -139,6 +137,16 @@ body > nav > div > div.col-12.d-flex.justify-content-center {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   border-radius: 0.25rem;
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  
+  @media (min-width: 768px) {  // Medium screens and up
+    padding-left: clamp(0rem, 10%, 24rem);
+    padding-right: clamp(0rem, 10%, 24rem);
+  }
+
+  @media (min-width: 1200px) {  // Large screens
+    padding-left: clamp(0rem, 15%, 32rem);
+    padding-right: clamp(0rem, 15%, 32rem);
+  }
   
   &:hover {
     transform: translateY(-2px);
