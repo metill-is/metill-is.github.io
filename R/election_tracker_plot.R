@@ -12,7 +12,7 @@ make_election_tracker_plot <- function() {
 
   caption <- str_c(
     "Samantektin byggir á fylgiskönnunum Félagsvísindastofnunar, Gallup, Maskínu og Prósents ", "\n",
-    "Unnið af Agnari Frey Helgasyni, Brynjólfi Gauta Guðrúnar Jónssyni, Hafsteini Einarssyni og Rafael Daniel Vias"
+    "Unnið af Brynjólfi Gauta Guðrúnar Jónssyni ásamt Agnari Frey Helgasyni, Hafsteini Einarssyni og Rafael Daniel Vias"
   )
 
   colors <- tribble(
