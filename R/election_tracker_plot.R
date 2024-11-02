@@ -20,11 +20,11 @@ make_election_tracker_plot <- function() {
     "Sjálfstæðisflokkurinn", "#377eb8",
     "Framsóknarflokkurinn", "#41ab5d",
     "Samfylkingin", "#e41a1c",
-    "Vinstri Græn", "#006d2c",
+    "Vinstri græn", "#006d2c",
     "Viðreisn", "#f16913",
     "Píratar", "#6a51a3",
     "Miðflokkurinn", "#08306b",
-    "Flokkur Fólksins", "#FBB829",
+    "Flokkur fólksins", "#FBB829",
     "Sósíalistaflokkurinn", "#a50f15",
     "Annað", "grey50"
   )
@@ -41,6 +41,7 @@ make_election_tracker_plot <- function() {
   polling_data <- read_csv(here("data", "polling_data.csv")) |>
     mutate(
       p_poll = n / sum(n),
+      flokkur = str_to_sentence(flokkur),
       .by = c(date, fyrirtaeki)
     ) |>
     rename(dags = date)
@@ -54,12 +55,16 @@ make_election_tracker_plot <- function() {
       q95 = quantile(value, 0.95),
       .by = c(dags, flokkur)
     ) |>
+    mutate(
+      flokkur = str_to_sentence(flokkur)
+    ) |>
     inner_join(
       colors
     ) |>
     inner_join(
       polling_data
     )
+
 
   coverage_data <- read_parquet(
     here("data", "y_rep_draws_no_polling_bias.parquet")
@@ -69,6 +74,9 @@ make_election_tracker_plot <- function() {
       lower = quantile(value, 0.5 - coverage / 2),
       upper = quantile(value, 0.5 + coverage / 2),
       .by = c(dags, flokkur)
+    ) |>
+    mutate(
+      flokkur = str_to_sentence(flokkur)
     ) |>
     inner_join(
       colors

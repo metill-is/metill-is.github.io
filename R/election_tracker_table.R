@@ -11,11 +11,11 @@ make_election_tracker_table <- function() {
     "Sjálfstæðisflokkurinn", "#377eb8",
     "Framsóknarflokkurinn", "#41ab5d",
     "Samfylkingin", "#e41a1c",
-    "Vinstri Græn", "#006d2c",
+    "Vinstri græn", "#006d2c",
     "Viðreisn", "#f16913",
     "Píratar", "#6a51a3",
     "Miðflokkurinn", "#08306b",
-    "Flokkur Fólksins", "#FBB829",
+    "Flokkur fólksins", "#FBB829",
     "Sósíalistaflokkurinn", "#a50f15",
     "Annað", "grey50"
   )
@@ -28,6 +28,7 @@ make_election_tracker_table <- function() {
   polling_data <- read_csv(here("data", "polling_data.csv")) |>
     mutate(
       p_poll = n / sum(n),
+      flokkur = str_to_sentence(flokkur),
       .by = c(date, fyrirtaeki)
     ) |>
     rename(dags = date)
@@ -38,6 +39,9 @@ make_election_tracker_table <- function() {
       q5 = quantile(value, 0.05),
       q95 = quantile(value, 0.95),
       .by = c(dags, flokkur)
+    ) |>
+    mutate(
+      flokkur = str_to_sentence(flokkur)
     ) |>
     inner_join(
       colors
@@ -50,7 +54,7 @@ make_election_tracker_table <- function() {
     gt() |>
     cols_label(
       flokkur = "",
-      mean = "Fylgisspá",
+      mean = "Fylgismat",
       q5 = "Neðri",
       q95 = "Efri"
     ) |>
@@ -70,7 +74,7 @@ make_election_tracker_table <- function() {
       decimals = 0
     ) |>
     tab_header(
-      title = glue("Fylgispá stjórnmálaflokka fyrir {day_suffix}"),
+      title = glue("Fylgismat stjórnmálaflokka fyrir {day_suffix}"),
       subtitle = glue(
         str_c(
           "Síðasta könnun: {max(polling_data$dags)}"
