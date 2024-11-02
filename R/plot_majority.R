@@ -22,50 +22,14 @@ colors <- tribble(
   "Annað", "grey50"
 )
 
-# read data
-gallup_data <- read_csv(here("data", "gallup_data.csv"))
-maskina_data <- read_csv(here("data", "maskina_data.csv"))
-prosent_data <- read_csv(here("data", "prosent_data.csv"))
-felagsvisindastofnun_data <- read_csv(here("data", "felagsvisindastofnun_data.csv"))
 
 samsteypa_flokkar <- c(
-  "xS" = "Samfylkingin",
+  #"xS" = "Samfylkingin",
+  "xD" = "Sjálfstæðisflokkurinn",
   "xM" = "Miðflokkurinn",
-  # "xD" = "Sjálfstæðisflokkurinn",
   "xC" = "Viðreisn"
-  # "xF" = "Flokkur Fólksins"
+  #"xF" = "Flokkur Fólksins"
 )
-
-# combine data
-poll_data <- bind_rows(
-  maskina_data,
-  prosent_data,
-  gallup_data,
-  felagsvisindastofnun_data
-) |>
-  mutate(
-    flokkur = if_else(
-      flokkur %in% samsteypa_flokkar,
-      "Samsteypa",
-      "Annað"
-    )
-  ) |>
-  summarise(
-    n = sum(n),
-    .by = c(date, fyrirtaeki, flokkur)
-  ) |>
-  mutate(
-    p = n / sum(n),
-    .by = c(date, fyrirtaeki)
-  ) |>
-  select(
-    dags = date,
-    fyrirtaeki,
-    flokkur,
-    p_poll = p
-  )
-
-
 
 d <- read_parquet(here("data", "y_rep_draws.parquet")) |>
   mutate(
@@ -81,16 +45,13 @@ d <- read_parquet(here("data", "y_rep_draws.parquet")) |>
   ) |>
   mutate(
     value = value / sum(value),
-    .by = c(.iteration, .chain, .draw, dags)
-  ) |>
+    .by = c(.draw, dags)
+  ) |> 
   summarise(
     mean = mean(value),
     q5 = quantile(value, 0.05),
     q95 = quantile(value, 0.95),
     .by = c(dags, flokkur)
-  ) |>
-  inner_join(
-    poll_data
   ) |>
   mutate(
     litur = if_else(flokkur == "Samsteypa", "#e41a1c", "grey50")
@@ -151,7 +112,7 @@ p2 <- d |>
     x = clock::date_build(2024, 11, 30),
     y = 0.5,
     hjust = 0.5,
-    vjust = 0.5,
+    vjust = 1,
     angle = 90,
     fill = "#faf9f9"
   ) +
@@ -160,10 +121,6 @@ p2 <- d |>
     span = 0.12,
     se = 0,
     n = 500
-  ) +
-  geom_point_interactive(
-    aes(y = p_poll),
-    alpha = 0.3
   ) +
   scale_x_date(
     guide = ggh4x::guide_axis_truncated(
@@ -215,7 +172,7 @@ p3 <- d |>
     x = clock::date_build(2024, 11, 30),
     y = 0.5,
     hjust = 0.5,
-    vjust = 0.5,
+    vjust = 1,
     angle = 90,
     fill = "#faf9f9"
   ) +
@@ -225,10 +182,6 @@ p3 <- d |>
     se = 0,
     n = 500
   ) +
-  geom_point_interactive(
-    aes(y = p_poll),
-    alpha = 0.2
-  ) +
   scale_x_date(
     guide = ggh4x::guide_axis_truncated(
       trunc_upper = clock::date_build(2024, 11, 30)
@@ -236,9 +189,9 @@ p3 <- d |>
     limits = c(NA_Date_, clock::date_build(2024, 11, 30)),
     labels = label_date_short(),
     breaks = seq.Date(
-      from = clock::date_build(2021, 1),
+      from = clock::date_build(2016, 1),
       to = clock::date_build(2024, 11, 30),
-      by = "2 month"
+      by = "3 month"
     )
   ) +
   scale_y_continuous(

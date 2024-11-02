@@ -10,6 +10,9 @@ listing:
 
 # Kosningavaktin {.column-page}
 
+:::{.panel-tabset}
+
+## Mynd {.column-page}
 
 
 ```{r}
@@ -17,6 +20,16 @@ listing:
 source("R/election_tracker_plot.R")
 make_election_tracker_plot()
 ```
+
+## Tafla {.column-body}
+
+
+```{r}
+source("R/election_tracker_table.R")
+make_election_tracker_table()
+```
+
+:::
 
 
 # Málefni {.column-page}

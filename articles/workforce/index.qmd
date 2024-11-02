@@ -212,7 +212,7 @@ table_dat |>
   ) |> 
   tab_source_note(heimild) |> 
   tab_options(
-    table.background.color = "#faf9f9"
+    table.background.color = "#fdfcfc"
   ) 
 ```
 

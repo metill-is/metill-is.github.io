@@ -7,3 +7,5 @@
 
 /.quarto/
 **/**.csv
+**/**.rds
+**/**.parquet

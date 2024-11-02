@@ -11,9 +11,8 @@ make_election_tracker_plot <- function() {
   theme_set(theme_metill(type = "blog"))
 
   caption <- str_c(
-    "Samantektin byggir á fylgiskönnunum Félagsvísindastofnunar, Gallup, Maskínu og Prósents ",
-    "ásamt niðurstöðum kosninga og kjörsókn 2021", "\n",
-    "Unnið af Brynjólfi Gauta Guðrúnar Jónssyni og Rafael Daniel Vias"
+    "Samantektin byggir á fylgiskönnunum Félagsvísindastofnunar, Gallup, Maskínu og Prósents ", "\n",
+    "Unnið af Agnari Frey Helgasyni, Brynjólfi Gauta Guðrúnar Jónssyni, Hafsteini Einarssyni og Rafael Daniel Vias"
   )
 
   colors <- tribble(
@@ -39,45 +38,12 @@ make_election_tracker_plot <- function() {
   )
 
   # read data
-  gallup_data <- read_csv(here("data", "gallup_data.csv"))
-  maskina_data <- read_csv(here("data", "maskina_data.csv"))
-  prosent_data <- read_csv(here("data", "prosent_data.csv"))
-  felagsvisindastofnun_data <- read_csv(here("data", "felagsvisindastofnun_data.csv"))
-  election_data <- read_csv(here("data", "election_data.csv")) |>
+  polling_data <- read_csv(here("data", "polling_data.csv")) |>
     mutate(
-      p = n / sum(n),
-      .by = date
-    ) |>
-    inner_join(
-      colors
-    ) |>
-    filter(
-      flokkur != "Annað"
-    ) |>
-    filter(
-      date >= clock::date_build(2021, 1, 1)
-    )
-
-  # combine data
-  poll_data <- bind_rows(
-    maskina_data,
-    prosent_data,
-    gallup_data,
-    felagsvisindastofnun_data
-  ) |>
-    mutate(
-      flokkur = if_else(flokkur == "Lýðræðisflokkurinn", "Annað", flokkur)
-    ) |>
-    mutate(
-      p = n / sum(n),
+      p_poll = n / sum(n),
       .by = c(date, fyrirtaeki)
     ) |>
-    select(
-      dags = date,
-      fyrirtaeki,
-      flokkur,
-      p_poll = p
-    )
+    rename(dags = date)
 
 
 
@@ -92,7 +58,7 @@ make_election_tracker_plot <- function() {
       colors
     ) |>
     inner_join(
-      poll_data
+      polling_data
     )
 
   coverage_data <- read_parquet(
@@ -108,7 +74,7 @@ make_election_tracker_plot <- function() {
       colors
     ) |>
     filter(
-      dags <= max(poll_data$dags)
+      dags <= max(polling_data$dags)
     )
 
 
@@ -173,7 +139,7 @@ make_election_tracker_plot <- function() {
       fill = "#faf9f9"
     ) +
     geom_line_interactive(
-      data = ~ filter(.x, dags <= max(poll_data$dags)),
+      data = ~ filter(.x, dags <= max(polling_data$dags)),
       linewidth = 1
     ) +
     geom_point_interactive(
@@ -253,12 +219,17 @@ make_election_tracker_plot <- function() {
       n = 500
     ) +
     geom_point_interactive(
-      aes(y = p_poll, shape = fyrirtaeki, color = litur, fill = litur), # Added fill aesthetic
+      aes(
+        y = p_poll,
+        shape = fyrirtaeki,
+        color = litur,
+        fill = litur
+      ),
       alpha = 0.2
     ) +
     geom_point_interactive(
-      data = election_data,
-      aes(y = p, x = date, shape = " Kosningar"),
+      data = ~ filter(.x, fyrirtaeki == "Kosning"),
+      aes(y = p_poll, x = dags, shape = " Kosningar"),
       alpha = 1,
       size = 4
     ) +
@@ -284,7 +255,12 @@ make_election_tracker_plot <- function() {
     scale_y_continuous(
       breaks = seq(0, 0.3, by = 0.05),
       guide = ggh4x::guide_axis_truncated(),
-      labels = label_percent()
+      labels = label_percent(),
+      expand = expansion()
+    ) +
+    coord_cartesian(
+      xlim = clock::date_build(c(2021, 2024), c(9, 11), c(1, 30)),
+      ylim = c(0, 0.32)
     ) +
     labs(
       x = NULL,
@@ -306,7 +282,7 @@ CCCC
   p <- wrap_plots(
     p1, p2, p3,
     design = design,
-    heights = c(0.7, 1)
+    heights = c(0.6, 1)
   ) +
     plot_annotation(
       title = "Samantekt á fylgi stjórnmálaflokka",

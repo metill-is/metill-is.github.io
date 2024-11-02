@@ -224,7 +224,7 @@ make_plot2b <- function() {
   ) /
     p3 +
     plot_annotation(
-      title = "Hlutfall með vinnu í Evrópulöndum eftir fæðingarlandi",
+      title = "Hlutfall með vinnu í Evrópulöndum eftir fæðingarlandi (innlendis/erlendis)",
       subtitle = str_c(
         "Hlutfall eintaklinga 20 - 64 ára með vinnu | ",
         "Láttu músina yfir land til að einblína á það"

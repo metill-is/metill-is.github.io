@@ -14,6 +14,8 @@ d_fasteignir <- tibble(
   unnest_longer(c(-name)) |>
   mutate_at(vars(-name), parse_number) |>
   mutate(
+    fjolbyli_fjoldi = coalesce(fjolbyli_fjoldi, 0),
+    serbyli_fjoldi = coalesce(serbyli_fjoldi, 0),
     fjoldi_nyjar = fjolbyli_fjoldi + serbyli_fjoldi
   ) |>
   mutate(
@@ -67,3 +69,23 @@ d |>
     country = "Iceland"
   ) |>
   write_parquet("greinar/fasteignafjoldi/data/data_iceland.parquet")
+
+
+
+d_fasteignir |>
+  summarise(
+    fjoldi_nyjar = sum(fjoldi_nyjar, na.rm = TRUE),
+    fjoldi_kop = fjoldi[sveitarfelag == "Kópavogsbær"],
+    fjoldi_gbr = fjoldi[sveitarfelag == "Garðabær"],
+    fjoldi_hfj = fjoldi[sveitarfelag == "Hafnarfjarðarkaupstaður"],
+    fjoldi_sel = fjoldi[sveitarfelag == "Seltjarnarnesbær"],
+    .by = ar
+  ) |>
+  mutate(
+    nyjar_ar = slider::slide_dbl(fjoldi_nyjar, sum, .before = 5, .complete = TRUE),
+    fjoldi_annad = fjoldi_gbr + fjoldi_kop
+  ) |>
+  drop_na() |>
+  ggplot(aes(ar, nyjar_ar)) +
+  geom_line(aes(col = "Nýjar fasteignir á landsvísu síðustu 7 ár")) +
+  geom_line(aes(ar, fjoldi_annad, col = "Samtals fasteignir í Gbr og Kóp"))
