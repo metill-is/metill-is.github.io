@@ -163,30 +163,6 @@ body > nav > div > div.col-12.d-flex.justify-content-center {
   text-decoration: none;
 }
 
-.accordion-button {
-  cursor: pointer;
-  width: 100%;
-  text-align: left;
-  padding: 15px;
-  border: none;
-  outline: none;
-  transition: 0.4s;
-}
-
-.accordion-button.collapsed::after {
-  content: '\002B';
-  float: right;
-}
-
-.accordion-button:not(.collapsed)::after {
-  content: "\2212";
-}
-
-.accordion-collapse {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-}
 
 .hero-row {
   background-color: $secondary;
