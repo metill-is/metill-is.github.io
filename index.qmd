@@ -103,6 +103,13 @@ d <- read_parquet(here("data", "y_rep_draws.parquet")) |>
     q95 = quantile(value, 0.95),
     .by = c(dags, flokkur)
   ) |>
+  mutate(
+    flokkur = if_else(
+      flokkur == "Annað",
+      "Lýðræðisflokkurinn",
+      flokkur
+    )
+  ) |> 
   inner_join(
     colors
   ) |>

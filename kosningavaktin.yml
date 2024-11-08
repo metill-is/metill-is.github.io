@@ -1,0 +1,17 @@
+- category: Kannanir
+  tiles:
+    - title: "Prósent: 8. nóvember"
+      href: Kosningar/Posts/prosent_nov8/index.qmd
+      description: "Niðurstöður könnunar bornar saman við spá tölfræðilíkansins"
+      image: Kosningar/Posts/prosent_nov8/prosent_nov8_prediction_transparent.png
+- category: Kosningalíkanið
+  description: Umfjallanir um kosningalíkanið
+  tiles:
+    - title: "Um kosningalíkanið"
+      href: Kosningar/UmLikanid.qmd
+      description: "Umfjöllun um spálíkanið á mannamáli"
+      image: Figures/election_prediction_transparent.png
+    - title: "Tölfræðileg aðferð"
+      href: Kosningar/Adferdir.qmd
+      description: "Tölfræðin á bak við kosningalíkanið"
+      image: Kosningar/Figures/model_math.png

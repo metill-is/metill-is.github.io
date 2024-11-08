@@ -1,0 +1,79 @@
+---
+title: "Prósent 8. nóvember"
+subtitle: "Niðurstöður könnunar bornar saman við spá tölfræðilíkansins"
+description: "Líkanið okkar byggir á sögulegum gögnum um fylgi flokkanna, efnahagsbreytum og fyrri kosningaúrslitum. Að auki metum við kerfisbundinn bjaga í könnunum hvers könnunaraðila með því að bera saman kannanir þeirra við raunveruleg úrslit kosninga. Með því að bæta þessum bjaga við spáð fylgi flokkanna getum við spáð fyrir um niðurstöður nýrra kannana og borið saman við raunverulegar niðurstöður hennar"
+title-block-banner: true 
+language:
+  title-block-author-single: "Höfundur"
+  title-block-author-plural: "Höfundar"
+  title-block-affiliation-single: "Stofnun"
+  title-block-affiliation-plural: "Stofnun"
+  title-block-published: "Síðast uppfært"
+  toc-title-website: "Efnisyfirlit"
+format:
+  html:
+    toc: true
+figure: prosent_nov8_prediction_transparent.png
+---
+
+
+Prósent birti í dag nýja könnun á fylgi stjórnmálaflokkanna. Hér munum við bera saman niðurstöður könnunarinnar við spá kosningalíkansins okkar og meta hvort niðurstöðurnar séu í samræmi við væntingar. 
+
+Með því að bera saman spá líkansins við raunverulegar niðurstöður kannana getum við metið hvort þróun fylgis flokkanna sé í samræmi við söguleg mynstur eða hvort eitthvað óvænt sé að gerast.
+
+![](prosent_nov8_prediction.png)
+
+Athygli vekur að Sósíalistaflokkurinn mælist með 6,7% fylgi í könnuninni, sem er töluvert hærra en spágildi líkansins sem var 4,5% *(90% spábil: 2,8-6,5%)*. Þetta er umtalsverð hækkun fyrir flokkinn og gefur til kynna að fylgi hans sé að aukast meira en gæti talist hrein tilviljun.
+
+Aðrir flokkar mælast nær spágildum líkansins. Samfylkingin mælist með 21,6% sem er  í samræmi við spána (21,8%), Viðreisn með 17,1% samanborið við spá upp á 16,9%, og Miðflokkurinn með 15,1% á móti 15,4% spá. Þetta bendir til þess að fylgisþróun þessara flokka sé nokkuð fyrirsjáanleg og í samræmi við væntingar líkansins.
+
+Lýðræðisflokkurinn mælist með 1,4% fylgi sem er við neðri mörk spágildisins (90% öryggisbil: 0,9-3,9%), en mikil óvissa er í spám fyrir flokka með lágt fylgi og þá sértaklega nýja flokka.
+
+*Nánari upplýsingar um aðferðafræði líkansins má finna [hér](../UmLikanid.qmd).*
+
+```{r}
+library(tidyverse)
+library(gt)
+library(here)
+here(
+  "Kosningar", 
+  "posts", 
+  "prosent_nov8", 
+  "prosent_nov8.csv"
+  ) |> 
+  read_csv() |> 
+  arrange(desc(true)) |> 
+  gt() |> 
+  cols_move(
+    true,
+    after = flokkur
+  ) |> 
+  cols_label(
+    flokkur = "Flokkur",
+    true = "Könnun",
+    mean = "Miðgildi",
+    q5 = "Neðri",
+    q95 = "Efri"
+  ) |> 
+  cols_align(columns = -flokkur, "center") |> 
+  tab_spanner(
+    columns = q5:q95,
+    label = "90% Spábil"
+  ) |> 
+  tab_spanner(
+    columns = mean:q95,
+    label = "Spá"
+  ) |> 
+  fmt_percent(
+    decimals = 1
+  ) |> 
+  tab_options(
+    table.background.color = "transparent"
+  ) |>
+  opt_table_font(
+    font = google_font("Lato")
+  ) |> 
+  tab_header(
+    title = "Spáð og raunverulegt fylgismat könnunar"
+  )
+```
