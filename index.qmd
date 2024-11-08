@@ -19,6 +19,7 @@ execute:
   freeze: false
 citation-location: margin
 reference-location: margin
+image: Figures/election_prediction.png
 ---
 
 ```{r setup}
