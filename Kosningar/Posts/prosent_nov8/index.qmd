@@ -29,7 +29,7 @@ Aðrir flokkar mælast nær spágildum líkansins. Samfylkingin mælist með 21,
 
 Lýðræðisflokkurinn mælist með 1,4% fylgi sem er við neðri mörk spágildisins (90% öryggisbil: 0,9-3,9%), en mikil óvissa er í spám fyrir nýja flokka.
 
-*Nánari upplýsingar um aðferðafræði líkansins má finna [hér](../UmLikanid.qmd).*
+*Nánari upplýsingar um aðferðafræði líkansins má finna [hér](../../UmLikanid.qmd).*
 
 ```{r}
 library(tidyverse)

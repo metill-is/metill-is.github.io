@@ -88,6 +88,28 @@ coverage_data <- read_parquet(here("data", "y_rep_draws.parquet")) |>
     flokkur_ordered = fct_reorder(flokkur_ordered, mean)
   )
 
+coverage_data_prev <- read_parquet(here("data", "y_rep_draws_prev.parquet")) |>
+  reframe(
+    mean = median(value),
+    coverage = c(0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.95),
+    lower = quantile(value, 0.5 - coverage / 2),
+    upper = quantile(value, 0.5 + coverage / 2),
+    .by = c(dags, flokkur)
+  ) |>
+  inner_join(
+    colors
+  ) |>
+  mutate(
+    flokkur = if_else(
+      flokkur == "Annað",
+      "Lýðræðisflokkurinn",
+      flokkur
+    ),
+    flokkur = str_to_sentence(flokkur),
+    flokkur_ordered = glue("<b style='color:{litur}'>{flokkur}</b>"),
+    flokkur_ordered = fct_reorder(flokkur_ordered, mean)
+  )
+
 polling_data <- read_csv(here("data", "polling_data.csv")) |>
   mutate(
     p_poll = n / sum(n),
@@ -164,7 +186,7 @@ Við vonum að líkanið komi að notum við að greina stöðu mála í íslens
 
 Hér að neðan má sjá nýjustu spána um úrslit alþingiskosninganna, en hún byggir á gögnum fram til 8. nóvember. Spáin byggir á 4 þúsund hermunum úr tölfræðilíkaninu okkar, en það þýðir að við notum bestu fyrirliggjandi gögn og látum líkanið búa til 4 þúsund ólíkar sviðsmyndir um hvernig fylgið gæti þróast fram til kjördags. 
 
-Dálkurinn „spá“ sýnir miðgildi allra þessara ólíku sviðsmynda og það sem við myndum að jafnaði búast við að yrði fylgi flokka í kosningunum. Það er hins vegar enn langt til kosninga og margt sem getur gerst fram að kjördegi. Dálkarnir undir ,,90% óvissubil" ná utan um þessa óvissu með því að sýna á hvaða bili 9 af hverjum 10 sviðsmyndum okkar liggja í kringum miðgildið. Öll gildi á þessu bili má segja að séu raunhæf þegar kemur að líklegum niðurstöðum kosninganna eins og staðan er í dag.
+Dálkurinn „spá“ sýnir miðgildi allra þessara ólíku sviðsmynda og það sem við myndum að jafnaði búast við að yrði fylgi flokka í kosningunum. Það er hins vegar enn langt til kosninga og margt sem getur gerst fram að kjördegi. Dálkarnir undir ,,90% óvissubil" ná utan um þessa óvissu með því að sýna á hvaða bili 9 af hv  erjum 10 sviðsmyndum okkar liggja í kringum miðgildið. Öll gildi á þessu bili má segja að séu raunhæf þegar kemur að líklegum niðurstöðum kosninganna eins og staðan er í dag.
 
 *Vegna námundunar getur summa fylgis allra flokkanna verið önnur en 100%.*
 
@@ -172,8 +194,17 @@ Dálkurinn „spá“ sýnir miðgildi allra þessara ólíku sviðsmynda og þa
 source("R/spa.R")
 ```
 
+::: {.panel-tabset}
+
+### Nýjasta spá
 
 ![](Figures/election_prediction.png){.column-page}
+
+### Fyrri spá
+
+![](Figures/election_prediction_prev.png){.column-page}
+
+:::
 
 ::: {.callout-note collapse="true"}
 
@@ -186,7 +217,7 @@ tribble(
   ~Fyrirtæki,  ~Frá, ~Til, ~Birt,
   "Gallup", "1. okt", "31. okt", "1. nóv",
   "Maskína", "1. nóv", "6. nóv", "7. nóv",
-  "Prósent", "25. okt", "31. okt", "1. nóv"
+  "Prósent", "1. nóv", "7. nóv", "8. nóv"
 ) |> 
   gt() |> 
   cols_align(
