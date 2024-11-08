@@ -155,6 +155,17 @@ Við vonum að líkanið komi að notum við að greina stöðu mála í íslens
 
 ## Spá um úrslit kosninganna
 
+Hér að neðan má sjá nýjustu spána um úrslit alþingiskosninganna, en hún byggir á gögnum fram til 8. nóvember. Spáin byggir á 4 þúsund hermunum úr tölfræðilíkaninu okkar, en það þýðir að við notum bestu fyrirliggjandi gögn og látum líkanið búa til 4 þúsund ólíkar sviðsmyndir um hvernig fylgið gæti þróast fram til kjördags. 
+
+Dálkurinn „spá“ sýnir miðgildi allra þessara ólíku sviðsmynda og það sem við myndum að jafnaði búast við að yrði fylgi flokka í kosningunum. Það er hins vegar enn langt til kosninga og margt sem getur gerst fram að kjördegi. Dálkarnir undir ,,90% óvissubil" ná utan um þessa óvissu með því að sýna á hvaða bili 9 af hverjum 10 sviðsmyndum okkar liggja í kringum miðgildið. Öll gildi á þessu bili má segja að séu raunhæf þegar kemur að líklegum niðurstöðum kosninganna eins og staðan er í dag.
+
+```{r}
+source("R/spa.R")
+```
+
+
+![](Figures/election_prediction.png){.column-page}
+
 ::: {.callout-note collapse="true"}
 
 ### Nýjustu kannanir í líkaninu
@@ -222,16 +233,6 @@ tribble(
 ```
 
 :::
-
-Hér að neðan má sjá nýjustu spánna um úrslit alþingiskosninganna. Hún byggir á gögnum fram til 8. nóvember. Enn er langt til kosninga og margt sem getur gerst fram að kjördegi, sem skýrir mikla óvissu í kringum spáð fylgi flokkanna.
-
-Spáin byggir á 4000 hermunum úr tölfræðilíkani, þar sem fylgi flokkanna breytist með ólíkum hætti. Dálkurinn „Spá“ sýnir miðgildi allra spáa, en óvissubilið inniheldur 90% allra spáa, þannig að bæði „Neðri“ og „Efri“ mörk eru raunhæfar niðurstöður kosninganna eins og staðan er í dag.
-
-```{r}
-source("R/spa.R")
-```
-
-![](Figures/election_prediction.png){.column-page}
 
 ## Mat á fylgi flokka frá byrjun ágúst 2024
 
