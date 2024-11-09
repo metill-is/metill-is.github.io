@@ -86,6 +86,9 @@ coverage_data <- read_parquet(here("data", "y_rep_draws.parquet")) |>
     flokkur = str_to_sentence(flokkur),
     flokkur_ordered = glue("<b style='color:{litur}'>{flokkur}</b>"),
     flokkur_ordered = fct_reorder(flokkur_ordered, mean)
+  ) |> 
+  filter(
+    (flokkur != "Lýðræðisflokkurinn") | (dags >= clock::date_build(2024, 10, 21))
   )
 
 coverage_data_prev <- read_parquet(here("data", "y_rep_draws_prev.parquet")) |>
@@ -108,6 +111,9 @@ coverage_data_prev <- read_parquet(here("data", "y_rep_draws_prev.parquet")) |>
     flokkur = str_to_sentence(flokkur),
     flokkur_ordered = glue("<b style='color:{litur}'>{flokkur}</b>"),
     flokkur_ordered = fct_reorder(flokkur_ordered, mean)
+  ) |> 
+  filter(
+    (flokkur != "Lýðræðisflokkurinn") | (dags >= clock::date_build(2024, 10, 21))
   )
 
 polling_data <- read_csv(here("data", "polling_data.csv")) |>
@@ -116,7 +122,17 @@ polling_data <- read_csv(here("data", "polling_data.csv")) |>
     flokkur = str_to_sentence(flokkur),
     .by = c(date, fyrirtaeki)
   ) |>
-  rename(dags = date)
+  rename(dags = date) |> 
+  mutate(
+    flokkur = if_else(
+      flokkur == "Annað",
+      "Lýðræðisflokkurinn",
+      flokkur
+    )
+  ) |> 
+  filter(
+    (flokkur != "Lýðræðisflokkurinn") | (dags >= clock::date_build(2024, 10, 21))
+  )
 
 d <- read_parquet(here("data", "y_rep_draws.parquet")) |>
   summarise(
@@ -140,7 +156,10 @@ d <- read_parquet(here("data", "y_rep_draws.parquet")) |>
   ) |> 
   inner_join(
     polling_data
-  ) 
+  ) |> 
+  filter(
+    (flokkur != "Lýðræðisflokkurinn") | (dags >= clock::date_build(2024, 10, 21))
+  )
 
 ```
 
