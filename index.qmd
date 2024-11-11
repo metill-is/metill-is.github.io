@@ -207,23 +207,16 @@ Við vonum að líkanið komi að notum við að greina stöðu mála í íslens
 source("R/spa.R")
 ```
 
-::: {.panel-tabset}
+Hér að neðan má sjá nýjasta matið okkar á mögulegum úrslitum kosninganna. Til að forðast ímynd um meiri vissu en er til staðar námundum við fylgið í næstu heiltölu. Vegna þess geta tölur í töflunni hækkað eða lækkað þótt matið á fylgi hafi breyst lítið. Sömuleiðis getur summa alls fylgis verið önnur en 100%.
 
-### Nýjasta spá
+**Nýjasta uppfærsla: 8. nóvember**
 
-![](Figures/election_prediction.png){.column-page}
+![](Figures/Prediction/Background/2024-11-04_background.png){.column-page}
 
-### Fyrri spá
+Spálíkanið gefur okkur ekki aðeins eina tölu heldur líkindadreifingu yfir mögulegar útkomur kosninganna.Taflan við hlið myndarinnar sýnir „miðgildi“ og „90% óvissubil“. Miðgildi er skilgreint þannig að jafnlíklegt er að útkoma fyrir ofan og neðan það verði raunin, og því getum við sagt að miðgildið skipti líkindadreifingunni í tvennt. 
 
-![](Figures/election_prediction_prev.png){.column-page}
+Sömuleiðis þýðir 90% óvissubil að af 100 sviðsmyndum sem við reiknum út frá líkindadreifingunni, lenda 90 innan þess bils. Hins vegar lenda líka fimm fyrir neðan það bil og fimm fyrir ofan. Öll gildi á þessu bili má segja að séu raunhæf þegar kemur að líklegum niðurstöðum kosninganna eins og staðan er í dag.
 
-:::
-
-Hér að ofan má sjá nýjustu spána um úrslit alþingiskosninganna, en hún byggir á gögnum fram til 8. nóvember. Spáin byggir á 4 þúsund hermunum úr tölfræðilíkaninu okkar, en það þýðir að við notum bestu fyrirliggjandi gögn og látum líkanið búa til 4 þúsund ólíkar sviðsmyndir um hvernig fylgið gæti þróast fram til kjördags. 
-
-Dálkurinn „spá“ sýnir miðgildi allra þessara ólíku sviðsmynda og það sem við myndum að jafnaði búast við að yrði fylgi flokka í kosningunum. Það er hins vegar enn langt til kosninga og margt sem getur gerst fram að kjördegi. Dálkarnir undir ,,90% óvissubil" ná utan um þessa óvissu með því að sýna á hvaða bili 9 af hverjum 10 sviðsmyndum okkar liggja í kringum miðgildið. Öll gildi á þessu bili má segja að séu raunhæf þegar kemur að líklegum niðurstöðum kosninganna eins og staðan er í dag.
-
-*Vegna námundunar getur summa fylgis allra flokkanna verið önnur en 100%.*
 
 ::: {.callout-note collapse="true"}
 
@@ -290,6 +283,18 @@ tribble(
     table.background.color = "#fdfcfc"
   )
 ```
+
+:::
+
+### Fyrri spár
+
+::: {.panel-tabset .nav-pills}
+
+#### 7. nóvember
+
+Nýjasta könnun í spánni er könnun Maskínu sem var birt 7. nóvember
+
+![](Figures/Prediction/Background/2024-11-03_background.png){.column-page}
 
 :::
 
