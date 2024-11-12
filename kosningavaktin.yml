@@ -1,9 +1,9 @@
 - category: Kannanir
   tiles:
     - title: "Prósent: 8. nóvember"
-      href: Kosningar/Posts/prosent_nov8/index.qmd
-      description: "Niðurstöður könnunar bornar saman við spá tölfræðilíkansins"
-      image: Kosningar/Posts/prosent_nov8/prosent_nov8_prediction_transparent.png
+      href: kosningar/posts/prosent8nov/index.qmd
+      description: "Getur líkanið spáð fyrir um niðurstöður könnunar?"
+      image: kosningar/posts/prosent8nov/prosent8nov_transparent.png
 - category: Kosningalíkanið
   description: Umfjallanir um kosningalíkanið
   tiles:

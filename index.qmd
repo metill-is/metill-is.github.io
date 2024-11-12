@@ -309,7 +309,7 @@ Hér má sjá mat okkar á þróun raunfylgis flokkanna mánuðina fyrir kosning
 source("R/kosningabarattan.R")
 make_kosningabarattan_plot(d, coverage_data, colors, polling_data, point_shapes)
 ```
-
+ 
 ## Mat á fylgi flokka frá kosningunum 2021
 
 Hér má sjá sömu mynd og að ofan, nema fyrir allt kjörtímabilið. 
