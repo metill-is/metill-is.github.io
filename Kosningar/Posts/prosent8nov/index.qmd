@@ -36,8 +36,8 @@ library(tidyverse)
 library(gt)
 library(here)
 here(
-  "kosningar", 
-  "posts", 
+  "Kosningar", 
+  "Posts", 
   "prosent8nov", 
   "prosent8nov.csv"
   ) |> 
