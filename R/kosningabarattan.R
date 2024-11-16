@@ -2,6 +2,16 @@
 make_kosningabarattan_plot <- function(d, coverage_data, colors, polling_data, point_shapes) {
   p <- d |>
     ggplot(aes(dags, median, colour = litur, data_id = flokkur)) +
+    # annotate(
+    #  geom = "segment",
+    #  x = clock::date_build(2024, 8, 1),
+    #  xend = clock::date_build(2024, 11, 30),
+    #  y = 0.05,
+    #  yend = 0.05,
+    #  alpha = 0.4,
+    #  linewidth = 0.4,
+    #  linetype = "dashed"
+    # ) +
     annotate(
       geom = "segment",
       x = clock::date_build(2021, 8, 1),
@@ -48,7 +58,7 @@ make_kosningabarattan_plot <- function(d, coverage_data, colors, polling_data, p
       aes(
         x = x,
         label = label,
-        col = litur,
+        colour = litur,
         y = 0.3,
         data_id = flokkur
       ),
@@ -60,14 +70,14 @@ make_kosningabarattan_plot <- function(d, coverage_data, colors, polling_data, p
     geom_ribbon_interactive(
       data = coverage_data |>
         filter(
-          dags <= max(polling_data$dags),
-          coverage <= 0.7
+          # dags <= max(polling_data$dags)
+          coverage >= 0.3
         ),
       aes(
         x = dags,
         ymin = lower,
         ymax = upper,
-        alpha = -coverage,
+        alpha = -sqrt(coverage),
         fill = litur,
         data_id = flokkur,
         group = str_c(flokkur, coverage)
@@ -75,9 +85,10 @@ make_kosningabarattan_plot <- function(d, coverage_data, colors, polling_data, p
       inherit.aes = FALSE
     ) +
     geom_line_interactive(
-      data = ~ filter(.x, dags <= max(polling_data$dags)),
+      #data = ~ filter(.x, dags <= max(polling_data$dags)),
       linewidth = 0.6,
-      alpha = 0.5
+      alpha = 0.5,
+      aes(data_id = flokkur)
     ) +
     geom_point_interactive(
       aes(y = p_poll, shape = fyrirtaeki, fill = litur),
@@ -115,7 +126,7 @@ make_kosningabarattan_plot <- function(d, coverage_data, colors, polling_data, p
     scale_colour_identity() +
     scale_fill_identity() +
     scale_alpha_continuous(
-      range = c(0.05, 0.15)
+      range = c(0.03, 0.04)
     ) +
     scale_shape_manual(
       values = point_shapes,
