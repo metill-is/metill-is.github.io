@@ -49,7 +49,7 @@ $icelandic-white: #FFFFFF;
 /*-- scss:rules --*/  
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth !important;
 }
 
 .icelandic-text {
