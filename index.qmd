@@ -301,7 +301,9 @@ make_fylgisthroun_plot(d, coverage_data, colors, polling_data, point_shapes)
 
 # Mynd vikunnar
 
-![](Figures/col_plot_applicants_monthly_fp.png)
+Föstudaginn 15. nóvember uppfærði Hagstofa Íslands gögn um [starfandi samkvæmt skrám eftir rekstrarformum](https://hagstofa.is/utgafur/frettasafn/vinnumarkadur/uppfaerdar-tolur-um-fjolda-starfandi-samkvaemt-skram-eftir-rekstrarformum/) eftir að upp komst að einstaklingar í fæðingarorlofi voru ranglega skráðir sem opinbert starfsfólk. Þetta hafði þó lítil sem engin áhrif á myndina að neðan, enda lækkuðu tölurnar um fjölda opinbers starfsfólks frekar jafnt yfir öll árin. 
+
+![](Figures/hlutf_opinbert_fp.png)
 
 :::
 
