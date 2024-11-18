@@ -1,5 +1,5 @@
 
-theme_set(theme_metill(type = "blog"))
+
 d |> 
   filter(
     rekstrarform != "Alls starfandi",
