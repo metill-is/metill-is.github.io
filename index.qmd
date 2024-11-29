@@ -274,7 +274,7 @@ Hér má finna ýmis gögn sem varpa ljósi á stöðu flokkanna fyrir komandi a
 
 Til að meta áhrif þessara þátta notum við fylgiskannanir fyrir alþingiskosningarnar 2016, 2017 og 2021, og úrslit þeirra, ásamt því að nota söguleg gögn um gengi ríkisstjórnarflokka og áhrif efnahagsstærða á það frá 1971 til 2021.
 
-Við vonum að líkanið komi að notum við að greina stöðu mála í íslenskum stjórnmálum í aðdraganda alþingiskosninganna. Eins og sjá má á vikmörkum fylgisspáa er mikilvægasta niðurstaða líkansins við birtingu sú að óvissan er gríðarlega mikil – það á ekki að koma okkur á óvart þó fylgi flokkanna breytist um nokkur prósentustig á lokametrunum. Á næstu vikum kynnum við til sögunnar fleiri gögn byggð á kosningaspánni, svo sem spár yfir fjölda þingmanna og möguleg stjórnarmynstur.
+Við vonum að líkanið komi að notum við að greina stöðu mála í íslenskum stjórnmálum í aðdraganda alþingiskosninganna. Eins og sjá má á vikmörkum fylgisspáa er mikilvægasta niðurstaða líkansins við birtingu sú að óvissan er gríðarlega mikil – það á ekki að koma okkur á óvart þó fylgi flokkanna breytist um nokkur prósentustig á lokametrunum.
 
 [Um líkanið](Kosningar/UmLikanid.qmd){.btn .btn-outline-primary .btn role="button" data-toggle="tooltip" title="Smelltu hér til að lesa um aðferðafræði spálíkansins"}
 

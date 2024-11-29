@@ -4656,5 +4656,96 @@
     "keepFlags": [false],
     "source": ["json"],
     "download_date": ["2024-11-27"]
+  },
+  "cb3f0946263f17fe634d345fc73efd3d": {
+    "id": ["migr_asytpsm"],
+    "time_format": ["date"],
+    "filters": {
+      "age": ["TOTAL"],
+      "citizen": ["TOTAL"],
+      "sex": ["T"]
+    },
+    "type": ["code"],
+    "select_time": null,
+    "stringsAsFactors": [false],
+    "keepFlags": [false],
+    "source": ["json"],
+    "download_date": ["2024-11-29"]
+  },
+  "e272b770a53083fde0c6c5ef6d0169cd": {
+    "id": ["demo_pjan"],
+    "time_format": ["date"],
+    "filters": {
+      "age": ["TOTAL"],
+      "sex": ["T"]
+    },
+    "type": ["code"],
+    "select_time": null,
+    "stringsAsFactors": [false],
+    "keepFlags": [false],
+    "source": ["json"],
+    "download_date": ["2024-11-29"]
+  },
+  "a4e66791b8391b2afe558f1e3cca9962": {
+    "id": ["migr_asypenctzm"],
+    "time_format": ["date"],
+    "filters": {
+      "age": ["TOTAL"],
+      "citizen": ["TOTAL", "UA"],
+      "sex": ["T"]
+    },
+    "type": ["code"],
+    "select_time": null,
+    "stringsAsFactors": [false],
+    "keepFlags": [false],
+    "source": ["json"],
+    "download_date": ["2024-11-29"]
+  },
+  "259914dc00b3929977fbccc572a7bb8c": {
+    "id": ["migr_asytpfm"],
+    "time_format": ["date"],
+    "filters": {
+      "age": ["TOTAL"],
+      "citizen": ["TOTAL"],
+      "sex": ["T"]
+    },
+    "type": ["code"],
+    "select_time": null,
+    "stringsAsFactors": [false],
+    "keepFlags": [false],
+    "source": ["json"],
+    "download_date": ["2024-11-29"]
+  },
+  "46f619fa6d2f4e601acdf857068968c5": {
+    "id": ["migr_asydcfstq"],
+    "time_format": ["date"],
+    "filters": {
+      "age": ["TOTAL"],
+      "citizen": ["TOTAL", "UA"],
+      "decision": ["TOTAL", "TOTAL_POS"],
+      "sex": ["T"]
+    },
+    "type": ["code"],
+    "select_time": null,
+    "stringsAsFactors": [false],
+    "keepFlags": [false],
+    "source": ["json"],
+    "download_date": ["2024-11-29"]
+  },
+  "7e3116cab87e60c146f4f406b222a036": {
+    "id": ["migr_asyappctzm"],
+    "time_format": ["date"],
+    "filters": {
+      "age": ["TOTAL"],
+      "asyl_app": ["ASY_APP"],
+      "citizen": ["TOTAL", "UA"],
+      "sex": ["T"]
+    },
+    "type": ["code"],
+    "select_time": null,
+    "stringsAsFactors": [false],
+    "keepFlags": [false],
+    "source": ["json"],
+    "download_date": ["2024-11-29"]
   }
 }
