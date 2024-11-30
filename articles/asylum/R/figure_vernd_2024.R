@@ -38,7 +38,7 @@ data_hist <- here("articles", "asylum", "data", "data_hist.csv") |>
 d |>
   filter(
     year(time) >= 2024,
-    month(time) <= 9,
+    month(time) <= 7,
     name %in% c("grants", "asylum_applicants_non_ukraine")
   ) |>
   filter(is.na(value)) |>
