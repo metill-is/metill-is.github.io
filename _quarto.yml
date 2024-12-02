@@ -7,12 +7,6 @@ project:
     port: 4212
 
 website:
-  announcement: 
-    icon: info-circle
-    dismissable: true
-    content: "**Ný færsla** - [Kosningaspá Metils: Uppgjör](/Kosningar/Posts/uppgjor/index.qmd)"
-    type: primary
-    position: below-navbar
   title: Metill
   description: Notum gögn til að upplýsa, ekki sannfæra.
   site-url: https://metill.is

@@ -1,6 +1,6 @@
 ---
 title: "Kosningaspá Metils: Uppgjör"
-subtitle: "Hversu vel stóð kosningaspá Metils sig?"
+subtitle: "Hversu vel tókst til með kosningaspá Metils?"
 description: "Hér lítum við aftur á veg og skoðum hvernig kosningaspá Metils stóð sig í samanburði við úrslit kosninganna og fylgiskannanir. Niðurstöðurnar sýna að Metill og Gallup voru næst úrslitum kosninganna með 1,0 prósentustiga meðalfrávik."
 title-block-banner: true 
 draft: false
@@ -52,6 +52,6 @@ Að lokum sýnum við mynd hér að ofan með þróun meðalfráviks mánuðinn 
 
 Samanburðurinn hér að ofan sýnir að strax í fyrstu spá Metils 7. nóvember birtist ágæt mynd af niðurstöðum kosninganna og var hún talsvert nær úrslitunum en kannanir sem birtust um svipað leyti. Þegar leið á nóvember lækkaði meðalfrávik Metils jafnt og þétt, en það sama má segja um kannanir Gallup. Kannanir tveggja kannanafyrirtækja færðust þó á sama tíma lengra frá úrslitunum en kannanir þeirra í upphafi nóvember mánaðar. Má það að mestu leyti rekja til þess að fylgi við Viðreisn var mælt mun hærra en það varð í kosningunum og fylgi við Sjálfstæðisflokkinn mun lægra en það varð. Sem dæmi má nefna þá var fylgi við Sjálfstæðisflokkinn 12% og fylgi við Viðreisn 21,5% í könnun Prósents sem birt var 15. nóvember, en í kosningaspá Metils frá 16. nóvember var Sjálftæðisflokknum spáð 17% fylgi og Viðreisn 16% fylgi.
 
-Heilt yfir teljum við að vel hafi tekist upp með kosningaspá Metils, en niðurstöður kosninganna munu nýtast vel við áframhaldandi þróun kosningalíkansins. Við þökkum fyrir góðar viðtökur og mikinn áhuga og vonum að lesendur hafi haft gagn og gaman af því að fylgjast með kosningaspánni.
+Heilt yfir teljum við að vel hafi tekist til með kosningaspá Metils, en niðurstöður kosninganna munu nýtast vel við áframhaldandi þróun kosningalíkansins. Við þökkum fyrir góðar viðtökur og mikinn áhuga og vonum að lesendur hafi haft gagn og gaman af því að fylgjast með kosningaspánni.
 
 Brynjólfur, Agnar, Hafsteinn og Rafael

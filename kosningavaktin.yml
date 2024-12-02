@@ -9,7 +9,7 @@
   tiles:
     - title: "Kosningaspá Metils: Uppgjör"
       href: Kosningar/Posts/uppgjor/index.qmd
-      description: "Hversu vel stóð kosningaspá Metils sig?"
+      description: "Hversu vel tókst til með kosningaspá Metils?"
       image: Kosningar/Posts/uppgjor/Figures/time_series_transparent.png
     - title: "Um kosningalíkanið"
       href: Kosningar/UmLikanid.qmd
