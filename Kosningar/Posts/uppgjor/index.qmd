@@ -1,0 +1,56 @@
+---
+title: "Kosningaspá Metils: Uppgjör"
+subtitle: "Hversu vel stóð kosningaspá Metils sig?"
+description: "Hér lítum við aftur á veg og skoðum hvernig kosningaspá Metils stóð sig í samanburði við úrslit kosninganna og fylgiskannanir. Niðurstöðurnar sýna að Metill og Gallup voru næst úrslitum kosninganna með 1,0 prósentustiga meðalfrávik."
+title-block-banner: true 
+draft: false
+language:
+  title-block-author-single: "Höfundur"
+  title-block-author-plural: "Höfundar"
+  title-block-affiliation-single: "Stofnun"
+  title-block-affiliation-plural: "Stofnun"
+  title-block-published: "Síðast uppfært"
+  toc-title-website: "Efnisyfirlit"
+format:
+  html:
+    toc: true
+---
+
+
+
+## Hvernig tókst okkur til? 
+
+Nú í kjölfar kosninganna er ágætt að taka stöðuna og leggja mat á hversu nálægt kosningaspá Metils var úrslitunum og bera hana saman við fylgiskannanir sem birtust í aðdraganda kosninganna. Tilgangur kosningaspárinnar var jú eftir allt saman að leiðrétta að einhverju leyti meint frávik á milli fylgiskannana og kosninga. Hér er rétt að árétta að markmið spárinnar er auðvitað allt annað en markmið kannana – spáin reynir að spá fyrir um úrslit kosninganna en kannanir endurspegla stuðning við flokka ef kosið væri á deginum sem könnun er framkvæmd. Við teljum þetta þó eðlilegan og gagnlegan samanburð í aðdraganda kosninga.
+
+Meginniðurstöðurnar eru eftirfarandi:
+
+* Í stóra samhenginu voru lokakannanir fyrirtækjanna fjögurra ekki svo fjarri úrslitunum og voru nær úrslitum kosninganna en í kosningunum 2021. Það er einkar gleðilegt enda endurspeglar það að heilt yfir eru íslensk kannanafyrirtæki með trausta aðferðafræði sem skilar áreiðanlegum niðurstöðum.
+* Af fjórum kannanafyrirtækjum og tveimur kosningaspám voru Metill og Gallup næst úrslitum kosninganna, en meðalfrávik beggja frá úrslitum kosninganna var 1,0 prósentustig. Kosningaspa.is kom þar næst á eftir með 1,2 prósentustiga meðalfrávik, Félagsvísindastofnun var með 1,4, Maskína með 1,5 og Prósent loks með 1,7.
+* Við vanmátum fylgi Samfylkingarinnar verulega og ofmátum fylgi Framsóknarflokks, Pírata og Vinstri grænna miðað við kannanafyrirtækin. Á móti kemur að við vorum mun nær fylgi Sjálfstæðisflokksins, Flokks fólksins og Sósíalistaflokksins. Fylgi Viðreisnar var að jafnaði hærra í lokakönnunum en í kosningunum, en við vanmátum fylgi við flokkinn á móti. Niðurstöður fyrir aðra flokka voru sambærilegar. 
+* Þegar lengra var í kosningar er munurinn á kosningaspá Metils og könnunum meiri. Spá okkar frá 8. nóvember var nær úrslitum kosninganna en lokakönnun eins fyrirtækis og spáin frá 16. nóvember var nær úrslitunum en lokakannanir tveggja annarra fyrirtækja. Aftur gekk Gallup betur en öðrum aðilum, en síðustu tvær vikurnar fyrir kosningar voru frávik kannana þeirra frá úrslitunum svipuð og frávik kosningaspárinnar.
+
+
+## Nánari upplýsingar
+
+Algeng leið til að leggja mat á forspárgildi kosningaspálíkana er að reikna meðalfrávik spáa frá fylgi allra helstu flokka í kosningum. Sem dæmi þá spáðum við Viðreisn 14,9% fylgi í lokaspá okkar, en flokkurinn fékk 15,8% upp úr kjörkössunum. Því var frávikið fyrir þann flokk 0,9 prósentustig (15,8-14,9=0,9). Með því að reikna frávikið með þessum hætti fyrir alla flokka og taka meðaltalið þá fáum við ágætis mynd af því hversu fjarri við og kannanafyrirtækin voru frá úrslitunum.
+
+Hér er mikilvægt að hafa í huga að við getum aldrei búist við því að við eða könnunaraðilar spái nákvæmlega rétt fyrir um fylgi allra flokka enda byggja kannanir yfirleitt á svörum eitt til tvö þúsund svarenda sem eru notuð til að álykta um viðhorf allra kjósenda. Nánar er fjallað um þetta í bókinni Lognmolla í ólgusjó, sem kom út nýlega, en samkvæmt henni er viðbúið að meðalfrávik kannana í íslenska flokkalandslaginu sé um 0,6 prósentustig vegna úrtaksskekkju.
+
+![](Figures/final_mae_transparent.png){.column-page}
+
+
+Á myndinni að ofan sjáum við meðalfrávik kosningaspár Metils borið saman við lokakannanir fjögurra fyrirtækja og kosningaspá kosningaspa.is. Meðalfrávikið er reiknað fyrir alla flokka sem náðu yfir 1% fylgi. Eins og sjá má voru Metill og Gallup jöfn með 1,0 prósentustiga frávik, en kosningaspa.is var skammt undan með 1,2 prósentustiga frávik. Aðrir aðilar voru fjær úrslitum kosninganna.
+
+![](Figures/fravik_flokkar2_transparent.png){.column-page}
+
+Myndin hér að ofan sýnir frávik allra aðilanna frá fylgi hvers og eins flokks. Eins og fjallað er um í texta hér að ofan þá voru kerfisbundin frávik hjá könnunaraðilum þegar kom að fylgi við Sjálfstæðisflokkinn, Flokk fólksins og Sósíalista. Á móti kemur að Metill var nokkuð fjarri fylgi Samfylkingarinnar, Framsóknarflokksins og Vinstri grænna. Þessar niðurstöður munu kalla á frekar greiningar af okkar hálfu og vonandi leiða til betra kosningalíkans fram á veginn.
+
+![](Figures/time_series_transparent.png){.column-page}
+
+Að lokum sýnum við mynd hér að ofan með þróun meðalfráviks mánuðinn fyrir kosningar. Við áréttum aftur að það er mjög mikilvægt að hafa í huga að markmið Metils er allt annað en markmið kannanafyrirtækja þegar langt er í kosningar. Kosningaspá Metils er beinlínis að spá fyrir um úrslit kosninganna og því eðlilegt að dæma hana af forspárgildi, jafnvel þegar langt er í kosningar. Kannanir eru hins vegar einungis að mæla stuðning við flokka á hverjum tíma. Það er því ekkert óeðlilegt við það ef kannanir eru fjarri úrslitum kosninga þegar vika eða vikur eru til kosninga.
+
+Samanburðurinn hér að ofan sýnir að strax í fyrstu spá Metils 7. nóvember birtist ágæt mynd af niðurstöðum kosninganna og var hún talsvert nær úrslitunum en kannanir sem birtust um svipað leyti. Þegar leið á nóvember lækkaði meðalfrávik Metils jafnt og þétt, en það sama má segja um kannanir Gallup. Kannanir tveggja kannanafyrirtækja færðust þó á sama tíma lengra frá úrslitunum en kannanir þeirra í upphafi nóvember mánaðar. Má það að mestu leyti rekja til þess að fylgi við Viðreisn var mælt mun hærra en það varð í kosningunum og fylgi við Sjálfstæðisflokkinn mun lægra en það varð. Sem dæmi má nefna þá var fylgi við Sjálfstæðisflokkinn 12% og fylgi við Viðreisn 21,5% í könnun Prósents sem birt var 15. nóvember, en í kosningaspá Metils frá 16. nóvember var Sjálftæðisflokknum spáð 17% fylgi og Viðreisn 16% fylgi.
+
+Heilt yfir teljum við að vel hafi tekist upp með kosningaspá Metils, en niðurstöður kosninganna munu nýtast vel við áframhaldandi þróun kosningalíkansins. Við þökkum fyrir góðar viðtökur og mikinn áhuga og vonum að lesendur hafi haft gagn og gaman af því að fylgjast með kosningaspánni.
+
+Brynjólfur, Agnar, Hafsteinn og Rafael
