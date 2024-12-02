@@ -158,7 +158,7 @@ Meginniðurstöðurnar eru eftirfarandi:
 
 Algeng leið til að leggja mat á forspárgildi kosningaspálíkana er að reikna meðalfrávik spáa frá fylgi allra helstu flokka í kosningum. Sem dæmi þá spáðum við Viðreisn 14,9% fylgi í lokaspá okkar, en flokkurinn fékk 15,8% upp úr kjörkössunum. Því var frávikið fyrir þann flokk 0,9 prósentustig (15,8-14,9=0,9). Með því að reikna frávikið með þessum hætti fyrir alla flokka og taka meðaltalið þá fáum við ágætis mynd af því hversu fjarri við og kannanafyrirtækin voru frá úrslitunum.
 
-Hér er mikilvægt að hafa í huga að við getum aldrei búist við því að við eða könnunaraðilar spái nákvæmlega rétt fyrir um fylgi allra flokka enda byggja kannanir yfirleitt á svörum eitt til tvö þúsund svarenda sem eru notuð til að álykta um viðhorf allra kjósenda. Nánar er fjallað um þetta í bókinni Lognmolla í ólgusjó, sem kom út nýlega, en samkvæmt henni er viðbúið að meðalfrávik kannana í íslenska flokkalandslaginu sé um 0,6 prósentustig vegna úrtaksskekkju.
+Hér er mikilvægt að hafa í huga að við getum aldrei búist við því að við eða könnunaraðilar spái nákvæmlega rétt fyrir um fylgi allra flokka enda byggja kannanir yfirleitt á svörum eitt til tvö þúsund svarenda sem eru notuð til að álykta um viðhorf allra kjósenda. Nánar er fjallað um þetta í bókinni [Lognmolla í ólgusjó](https://haskolautgafan.is/products/lognmolla-i-olgusjo-althingiskosningarnar-2021-og-kjosendur-i-aranna-ras), sem kom út nýlega, en samkvæmt henni er viðbúið að meðalfrávik kannana í íslenska flokkalandslaginu sé um 0,6 prósentustig vegna úrtaksskekkju.
 
 ![](Figures/final_mae_transparent.png){.column-page}
 
@@ -175,7 +175,7 @@ Að lokum sýnum við mynd hér að ofan með þróun meðalfráviks mánuðinn 
 
 Samanburðurinn hér að ofan sýnir að strax í fyrstu spá Metils 7. nóvember birtist ágæt mynd af niðurstöðum kosninganna og var hún talsvert nær úrslitunum en kannanir sem birtust um svipað leyti. Þegar leið á nóvember lækkaði meðalfrávik Metils jafnt og þétt, en það sama má segja um kannanir Gallup. Kannanir tveggja kannanafyrirtækja færðust þó á sama tíma lengra frá úrslitunum en kannanir þeirra í upphafi nóvember mánaðar. Má það að mestu leyti rekja til þess að fylgi við Viðreisn var mælt mun hærra en það varð í kosningunum og fylgi við Sjálfstæðisflokkinn mun lægra en það varð. Sem dæmi má nefna þá var fylgi við Sjálfstæðisflokkinn 12% og fylgi við Viðreisn 21,5% í könnun Prósents sem birt var 15. nóvember, en í kosningaspá Metils frá 16. nóvember var Sjálftæðisflokknum spáð 17% fylgi og Viðreisn 16% fylgi.
 
-Heilt yfir teljum við að vel hafi tekist til með kosningaspá Metils, en niðurstöður kosninganna munu nýtast vel við áframhaldandi þróun kosningalíkansins. Við þökkum fyrir góðar viðtökur og mikinn áhuga og vonum að lesendur hafi haft gagn og gaman af því að fylgjast með kosningaspánni.
+Heilt yfir teljum við að vel hafi tekist til með kosningaspá Metils, en niðurstöður kosninganna munu nýtast vel við áframhaldandi þróun kosningalíkansins. Við þökkum fyrir góðar viðtökur og mikinn áhuga og vonum að lesendur hafi haft gagn og gaman af því að fylgjast með kosningaspánni.  
 
 *Brynjólfur, Agnar, Hafsteinn og Rafael*
 
