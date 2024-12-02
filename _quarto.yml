@@ -19,11 +19,13 @@ website:
     creator: "@bggjonsson"
     card-style: summary_large_image
     site: "@bggjonsson"
+    title: "Metill"
+    description: "Notum gögn til að upplýsa, ekki sannfæra."
   page-footer:
     background: primary
     foreground: secondary
     center:
-      - text: "About"
+      - text: "Um Metil"
         href: about.qmd
   google-analytics: "G-J28QQV8PN9"
 
