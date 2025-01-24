@@ -61,7 +61,7 @@ Hér sjáum við mat á sóknarstyrk liðanna. Hærra gildi bendir til betri só
 
 Þessi mynd sýnir heildargetu liðanna, sem er samspil sóknar- og varnarstyrks ásamt öðrum þáttum sem hafa áhrif á frammistöðu. Hærra gildi þýðir að liðið er almennt sterkara. Þetta mat getur gefið hugmynd um líklega sigurvegara í leikjum, þó auðvitað geti alltaf komið upp óvænt úrslit. 
 
-Þótt lið 1 sé að jafnaði aðeins betra en lið 2, þá þýðir það bara að í leikjum þessara liða muni lið 1 að jafnaði skora fleiri mörk, en í hverjum tilteknum leik getur margt gerst. Ef tvö lið hafa sömu heildargetu metum við það svo að þau hafa bæti helmingslíkur á að vinna leikinn. Líkurnar verða svo ýktari eftir því sem munurinn á heildargetunni verður meiri.
+Þótt lið 1 sé að jafnaði aðeins betra en lið 2, þá þýðir það bara að í leikjum þessara liða muni lið 1 að jafnaði skora fleiri mörk, en í hverjum tilteknum leik getur margt gerst. Ef tvö lið hafa sömu heildargetu metum við það svo að þau hafa bæði helmingslíkur á að vinna leikinn. Líkurnar verða svo ýktari eftir því sem munurinn á heildargetunni verður meiri.
 
 ![](Figures/ability.png){.column-page}
 
