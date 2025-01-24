@@ -9,3 +9,4 @@
 **/**.csv
 **/**.rds
 **/**.parquet
+/.luarc.json

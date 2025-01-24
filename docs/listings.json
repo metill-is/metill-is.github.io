@@ -1,27 +1,27 @@
 [
   {
-    "listing": "/articles.html",
+    "listing": "/greinar.html",
     "items": [
-      "/articles/asylum/index.html",
-      "/articles/party_funds/index.html",
-      "/articles/workforce/index.html",
-      "/articles/hospital/index.html"
+      "/greinar/handbolti/index.html",
+      "/greinar/flottafolk/index.html",
+      "/greinar/stjornmalaflokkar/index.html",
+      "/greinar/vinnuafl/index.html",
+      "/greinar/landspitali/index.html"
+    ]
+  },
+  {
+    "listing": "/maelabord.html",
+    "items": [
+      "/maelabord/sveitarfelog/index.html",
+      "/maelabord/leikskolar/index.html",
+      "/maelabord/innflytjendur/index.html",
+      "/maelabord/skattagogn/index.html",
+      "/maelabord/fasteignir/index.html",
+      "/maelabord/verdbolga/index.html"
     ]
   },
   {
     "listing": "/index.html",
     "items": []
-  },
-  {
-    "listing": "/dashboards.html",
-    "items": [
-      "/dashboards/immigration/index.html",
-      "/dashboards/sveitarfelog/index.html",
-      "/dashboards/skattagogn/index.html",
-      "/dashboards/properties/index.html",
-      "/dashboards/wagesandexpenses/index.html",
-      "/dashboards/kindergardens/index.html",
-      "/dashboards/inflation/index.html"
-    ]
   }
 ]

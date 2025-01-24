@@ -1,48 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://metill.is/articles.html</loc>
-    <lastmod>2024-10-14T12:52:32.239Z</lastmod>
+    <loc>https://metill.is/greinar.html</loc>
+    <lastmod>2025-01-24T12:39:27.477Z</lastmod>
   </url>
   <url>
-    <loc>https://metill.is/dashboards/inflation/index.html</loc>
-    <lastmod>2024-11-28T09:18:10.184Z</lastmod>
+    <loc>https://metill.is/greinar/vinnuafl/index.html</loc>
+    <lastmod>2025-01-24T12:59:49.498Z</lastmod>
   </url>
   <url>
-    <loc>https://metill.is/dashboards/wagesandexpenses/index.html</loc>
-    <lastmod>2024-11-03T17:18:38.780Z</lastmod>
+    <loc>https://metill.is/greinar/landspitali/index.html</loc>
+    <lastmod>2025-01-24T12:57:58.138Z</lastmod>
   </url>
   <url>
-    <loc>https://metill.is/dashboards/skattagogn/index.html</loc>
-    <lastmod>2024-11-04T16:40:57.716Z</lastmod>
+    <loc>https://metill.is/greinar/handbolti/index.html</loc>
+    <lastmod>2025-01-24T14:41:50.521Z</lastmod>
   </url>
   <url>
-    <loc>https://metill.is/dashboards/immigration/index.html</loc>
-    <lastmod>2024-10-31T09:25:44.732Z</lastmod>
-  </url>
-  <url>
-    <loc>https://metill.is/index.html</loc>
-    <lastmod>2024-12-02T15:58:31.256Z</lastmod>
+    <loc>https://metill.is/maelabord.html</loc>
+    <lastmod>2025-01-24T14:42:31.742Z</lastmod>
   </url>
   <url>
     <loc>https://metill.is/Kosningar/UmLikanid.html</loc>
     <lastmod>2024-11-12T17:41:57.736Z</lastmod>
   </url>
   <url>
-    <loc>https://metill.is/articles/hospital/index.html</loc>
-    <lastmod>2024-10-22T13:48:47.430Z</lastmod>
+    <loc>https://metill.is/maelabord/verdbolga/index.html</loc>
+    <lastmod>2025-01-24T14:43:37.049Z</lastmod>
   </url>
   <url>
-    <loc>https://metill.is/articles/party_funds/index.html</loc>
-    <lastmod>2024-11-08T15:39:02.634Z</lastmod>
+    <loc>https://metill.is/maelabord/innflytjendur/index.html</loc>
+    <lastmod>2025-01-24T12:50:06.540Z</lastmod>
   </url>
   <url>
-    <loc>https://metill.is/articles/workforce/index.html</loc>
-    <lastmod>2024-11-18T16:05:25.859Z</lastmod>
+    <loc>https://metill.is/maelabord/sveitarfelog/index.html</loc>
+    <lastmod>2024-11-04T11:47:48.100Z</lastmod>
   </url>
   <url>
-    <loc>https://metill.is/articles/asylum/index.html</loc>
-    <lastmod>2024-11-27T08:27:39.961Z</lastmod>
+    <loc>https://metill.is/maelabord/leikskolar/index.html</loc>
+    <lastmod>2025-01-24T14:43:26.521Z</lastmod>
+  </url>
+  <url>
+    <loc>https://metill.is/maelabord/skattagogn/index.html</loc>
+    <lastmod>2024-11-04T16:40:57.716Z</lastmod>
+  </url>
+  <url>
+    <loc>https://metill.is/maelabord/fasteignir/index.html</loc>
+    <lastmod>2025-01-24T12:53:40.816Z</lastmod>
   </url>
   <url>
     <loc>https://metill.is/Kosningar/Posts/uppgjor/index.html</loc>
@@ -57,23 +61,19 @@
     <lastmod>2024-11-07T15:49:53.670Z</lastmod>
   </url>
   <url>
-    <loc>https://metill.is/about.html</loc>
+    <loc>https://metill.is/index.html</loc>
+    <lastmod>2025-01-24T13:56:24.222Z</lastmod>
+  </url>
+  <url>
+    <loc>https://metill.is/greinar/stjornmalaflokkar/index.html</loc>
+    <lastmod>2025-01-24T12:55:18.971Z</lastmod>
+  </url>
+  <url>
+    <loc>https://metill.is/greinar/flottafolk/index.html</loc>
+    <lastmod>2025-01-24T12:58:50.052Z</lastmod>
+  </url>
+  <url>
+    <loc>https://metill.is/um_metil.html</loc>
     <lastmod>2024-10-14T13:05:23.016Z</lastmod>
-  </url>
-  <url>
-    <loc>https://metill.is/dashboards/sveitarfelog/index.html</loc>
-    <lastmod>2024-11-04T11:47:48.100Z</lastmod>
-  </url>
-  <url>
-    <loc>https://metill.is/dashboards/properties/index.html</loc>
-    <lastmod>2024-10-22T09:10:54.641Z</lastmod>
-  </url>
-  <url>
-    <loc>https://metill.is/dashboards/kindergardens/index.html</loc>
-    <lastmod>2024-10-25T12:40:24.272Z</lastmod>
-  </url>
-  <url>
-    <loc>https://metill.is/dashboards.html</loc>
-    <lastmod>2024-10-14T13:05:45.007Z</lastmod>
   </url>
 </urlset>

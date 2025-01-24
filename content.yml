@@ -1,0 +1,40 @@
+- category: Útlendingar
+  description: "Útlendingamál eru mikið í fréttum. Þessar samantekir hjálpa þér að ná yfir þetta umræðuefni"
+  tiles:
+    - title: "Innflytjendur á Íslandi"
+      href: maelabord/innflytjendur/index.qmd
+      description: "Fjöldi og afdrif innflytjenda"
+      image: maelabord/innflytjendur/img/innfl.png
+    - title: "Tímabundin vernd og hælisleitendur"
+      href: greinar/flottafolk/index.qmd
+      description: "Samantekt á gögnum Eurostat um hælisleitendur"
+      image: greinar/flottafolk/Figures/cover_fp.png
+- category: Heimili
+  description: "Vinnumarkaður og heimili"
+  tiles:
+    - title: "Fasteignir"
+      href: maelabord/fasteignir/index.qmd
+      description: "Samantekt á gögnum um fasteignauppbyggingu"
+      image: maelabord/fasteignir/img/fp.png
+- category: Efnahagur
+  description: "Efnahagur"
+  tiles:
+    - title: "Vinnumarkaður"
+      href: greinar/vinnuafl/index.qmd
+      description: "Fjöldi starfandi á almennum og opinberum vinnumarkaði"
+      image: greinar/vinnuafl/figures/almennur_fjoldi_methaedir_fp.png
+    - title: "Verðbólga"
+      href: maelabord/verdbolga/index.qmd
+      description: "Baráttan við verðbólgudrauginn"
+      image: maelabord/verdbolga/img/img.png
+- category: Hið Opinbera
+  description: "Hið opinbera"
+  tiles:
+    - title: "Landspítalinn"
+      href: greinar/landspitali/index.qmd
+      description: "Hvaða upplýsingar eru til um rekstur Landspítalans?"
+      image: greinar/landspitali/hjukthyngd_fp.png
+    - title: "Fjármál stjórnmálaflokkanna"
+      href: greinar/stjornmalaflokkar/index.qmd
+      description: "Rýnt í ársreikninga stjórnmálaflokkanna"
+      image: greinar/stjornmalaflokkar/Figures/cover_fp.png

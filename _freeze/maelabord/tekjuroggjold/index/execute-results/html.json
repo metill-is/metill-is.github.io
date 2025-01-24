@@ -1,0 +1,15 @@
+{
+  "hash": "c6a96f65304b9b47487847f450184c99",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Tekjur, gjöld og skuldir\"\ndescription: \"Yfirlit yfir tekjur, gjöld og skuldir Íslendinga\"\nhref: dashboards/wagesandexpenses/index.qmd\nformat: \n  dashboard:\n    orientation: columns\nimage: img/image.png\nexecute:\n  eval: false\ndraft: true\n---\n\n\n\n\n\n\n\n\n# Skuldir\n\n\n\n\n\n\n::: {.cell}\n\n:::\n\n\n\n\n\n\n# Vaxtagjöld\n\n\n\n\n\n\n::: {.cell}\n\n:::",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

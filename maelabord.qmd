@@ -1,0 +1,20 @@
+---
+pagetitle: "Mælaborð"
+editor: source
+listing:
+    - id: dashboards
+      template: ejs/dashboards.ejs
+      sort: "date desc"
+      contents: maelabord
+---
+
+<br>
+
+
+::: {#dashboards}
+
+:::
+
+
+
+

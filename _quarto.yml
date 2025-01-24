@@ -26,7 +26,7 @@ website:
     foreground: secondary
     center:
       - text: "Um Metil"
-        href: about.qmd
+        href: um_metil.qmd
   google-analytics: "G-J28QQV8PN9"
 
 editor: source

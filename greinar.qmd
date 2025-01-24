@@ -1,0 +1,16 @@
+---
+pagetitle: "Greinar"
+editor: source
+listing:
+    - id: greinar
+      type: default
+      categories: true
+      sort: "date desc"
+      contents: greinar
+---
+
+<br>
+
+::: {#greinar}
+
+:::
