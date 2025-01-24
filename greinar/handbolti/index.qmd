@@ -130,6 +130,6 @@ $$
 \log\left( \frac{G_2}{G_1} \right) \sim t\left(\nu, \alpha_2- \alpha_1, \sigma\right),
 $$
 
-þar sem $\nu$ eru frígráðurt-dreifingarinnar og $\sigma$ er staðalfrávikið.
+þar sem $\nu$ eru frígráður t-dreifingarinnar og $\sigma$ er staðalfrávikið.
 
 Úrtök úr eftirádreifingu líkansins eru svo fengin með Stan.
