@@ -20,7 +20,7 @@ execute:
   freeze: false
 citation-location: margin
 reference-location: margin
-image: Figures/time_series.png
+image: greinar/handbolti/Figures/ability.png
 ---
 
 ::: {#handball .column-screen}
