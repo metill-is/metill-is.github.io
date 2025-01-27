@@ -376,7 +376,7 @@ Við sjáum að útgjöld flokkanna aukast á árum sem kosningar fara fram. Var
 ```{r}
 #| fig-asp: 0.8
 #| column: page
-breaks <- 2007:2022
+breaks <- 2007:2023
 labels <- c(
   "2007\nKosningar",
   "2008",
@@ -388,7 +388,8 @@ labels <- c(
   "2017\nKosningar",
   2018:2020,
   "2021\nKosningar",
-  2022
+  2022,
+  2023
 )
 
 
@@ -425,8 +426,8 @@ d |>
   mutate(value = eignir,
          value = value / cpi) |> 
   magn_plot(title = "Eignir",
-            breaks = seq(2007, 2022, by = 1),
-            labels = seq(2007, 2022, by = 1))
+            breaks = seq(2007, 2023, by = 1),
+            labels = seq(2007, 2023, by = 1))
 
 
 
@@ -446,15 +447,15 @@ d |>
   mutate(value = veltufjarmunir,
          value = value / cpi) |> 
   magn_plot(title = "Veltufjármunir",
-            breaks = seq(2007, 2022, by = 3),
-            labels = seq(2007, 2022, by = 3))
+            breaks = seq(2007, 2023, by = 3),
+            labels = seq(2007, 2023, by = 3))
 
 d |> 
   mutate(value = eignir - veltufjarmunir,
          value = value / cpi) |> 
   magn_plot(title = "Fastafjármunir",
-            breaks = seq(2007, 2022, by = 3),
-            labels = seq(2007, 2022, by = 3))
+            breaks = seq(2007, 2023, by = 3),
+            labels = seq(2007, 2023, by = 3))
 ```
 
 
@@ -506,8 +507,8 @@ d |>
   mutate(value = eignir - skuldir,
          value = value / cpi) |>
   magn_plot(title = "Eigið fé íslenskra stjórnmálaflokka",
-            breaks = seq(2007, 2022, by = 1),
-            labels = seq(2007, 2022, by = 1))
+            breaks = seq(2007, 2023, by = 1),
+            labels = seq(2007, 2023, by = 1))
 
 ```
 

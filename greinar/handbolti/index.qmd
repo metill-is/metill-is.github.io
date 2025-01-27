@@ -43,6 +43,66 @@ Líkanið notar þrjár tegundir upplýsinga til að spá fyrir um getu landsli�
 
 Með því að nota allar þessar upplýsingar saman getum við fengið nákvæmari mynd af styrk liðanna og spáð betur fyrir um úrslit komandi leikja.
 
+## Spár um næstu umferð
+
+```{r}
+library(tidyverse)
+library(gt)
+library(gtExtras)
+library(here)
+
+tab <- here("greinar", "handbolti", "data", "predictions.csv") |> 
+    read_csv() |> 
+    mutate(
+        percs = map2(team1_win, team2_win, \(x, y) c(x, y))
+    ) |>  
+    select(team1, percs, team2) |> 
+    gt() |> 
+    gt_plt_bar_stack(
+        percs,
+        labels = c("Lið 1", "Lið 2"),
+        palette = c("#ff4343", "#0a1c2b"),
+        fmt_fn = scales::label_percent(),
+        width = 150
+    )
+
+html_label <- tab$`_boxhead`$column_label[[match("percs", names(tab$`_data`))]][[1]]
+
+tab |> 
+    cols_label(
+        percs = html_label,
+        team1 = "",
+        team2 = ""
+    ) |> 
+    tab_header(
+        title = "Sigurlíkur liða í átta liða úrslitum",
+        subtitle = "Líkurnar eru fengnar með því að bera saman mat líkansins á getu liðanna og taka alla óvissuna með í reikningnin"
+    ) |> 
+    tab_style_body(
+        columns = c(1, 3),
+        style = cell_text(
+            weight = 500
+        ),
+        pattern = ".*"
+    ) |> 
+    tab_style(
+        locations = cells_column_labels(),
+        style = cell_text(
+            weight = 800
+        )
+    ) |> 
+    cols_align(
+        "right",
+        1
+    ) |> 
+    cols_align(
+        "center",
+        2
+    ) |> 
+    tab_options(
+        table.background.color = "#fdfcfc"
+    )
+```
 
 
 ## Vörn
