@@ -12,7 +12,7 @@ description:  |
     leikjum er hægt að meta hvernig ólíkar hliðar leiksins koma saman og móta frammistöðuna. 
     Út frá þessum gögnum spáum við bæði fyrir um líklega úrslit leikja og reiknum heildarstyrkleika liða,
     sem gefur enn dýpri innsýn í hverjir eiga bestu möguleikana á vellinum.
-date: "2025/1/26"
+date: "2025/1/30"
 draft: false
 categories:
     - íþróttir
