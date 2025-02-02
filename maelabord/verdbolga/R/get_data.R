@@ -91,7 +91,7 @@ d3 <- d_combined |>
 
 d3 |>
   write_csv(
-    here("dashboards/inflation/data/undirflokkar3.csv")
+    here("maelabord/verdbolga/data/undirflokkar3.csv")
   )
 
 d2 <- d_combined |>
@@ -103,7 +103,7 @@ d2 <- d_combined |>
 
 d2 |>
   write_csv(
-    here("dashboards/inflation/data/undirflokkar2.csv")
+    here("maelabord/verdbolga/data/undirflokkar2.csv")
   )
 
 d1 <- d_combined |>
@@ -115,7 +115,7 @@ d1 <- d_combined |>
 
 d1 |>
   write_csv(
-    here("dashboards/inflation/data/undirflokkar1.csv")
+    here("maelabord/verdbolga/data/undirflokkar1.csv")
   )
 
 d_tot <- d_combined |>
@@ -125,5 +125,5 @@ d_tot <- d_combined |>
 
 d_tot |>
   write_csv(
-    here("dashboards/inflation/data/visitala_neysluverds.csv")
+    here("maelabord/verdbolga/data/visitala_neysluverds.csv")
   )
