@@ -10,6 +10,10 @@
     ]
   },
   {
+    "listing": "/index.html",
+    "items": []
+  },
+  {
     "listing": "/maelabord.html",
     "items": [
       "/maelabord/sveitarfelog/index.html",
@@ -19,9 +23,5 @@
       "/maelabord/fasteignir/index.html",
       "/maelabord/verdbolga/index.html"
     ]
-  },
-  {
-    "listing": "/index.html",
-    "items": []
   }
 ]
