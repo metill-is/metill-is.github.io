@@ -3,7 +3,7 @@ title: "Tímabundin vernd og hælisleitendur"
 pagetitle: "Tímabundin vernd og hælisleitendur"
 subtitle: "Hvað segja gögnin um fjölda hælisleitenda og umsækjendur um tímabundna vernd ás Íslandi?"
 description: "Hvar bíða flestir einstaklingar eftir niðurstöðu í hælisumsókn sinni? Hvaða land hefur tekið við flestum hælisleitendum? Hvernig tengist löggjöf skilgreiningu á gögnum? Hér eru gögn um fjölda einstaklinga sem njóta tímabundinnar verndar eða hælis, fjölda samþykktra verndar- og hælisumsókna og fjölda umsókna í bið tekin saman úr gögnum  Eurostat."
-date: "2024/11/27"
+date: "2025/4/2"
 draft: false
 categories:
     - stjórnmál
@@ -101,13 +101,14 @@ Myndir og tafla hér að neðan sýna stutta samantekt á tölunum. Fyrir neðan
 
 ![](Figures/figure_vernd_2023.png){.column-page}
 
-### Samtals (2022 - 2023)
-
-![](Figures/figure_vernd_2022-2023.png){.column-page}
-
 ### 2024
 
 ![](Figures/figure_vernd_2024.png){.column-page}
+
+
+### Samtals (2022 - 2024)
+
+![](Figures/figure_vernd_2022-2024.png){.column-page}
 
 :::
 
@@ -191,7 +192,7 @@ data_hist |>
 data_hist |> 
   filter(
     land != "Samtals",
-    year(time) >= 2023
+    year(time) == 2023
   ) |> 
   select(time, land, name, per_pop) |>
   pivot_wider(values_from = per_pop) |> 
@@ -224,6 +225,76 @@ data_hist |>
   gt() |> 
   tab_header(
     title = "Samantekt á verndarkerfum Evrópulanda (2023)",
+    subtitle = "Tölur sýndar sem fjöldi á 100.000 íbúa móttökulands"
+  ) |> 
+  tab_source_note(
+    "Tafla eftir @bggjonsson hjá metill.is byggð á gögnum Eurostat um fólksflutninga: https://metill.is/greinar/flottafolk\nGögn og kóði: https://github.com/bgautijonsson/Metill.is/tree/master/greinar/flottafolk"
+  ) |> 
+  cols_label(
+    land = "",
+    total = "Samtals",
+    total_non_ukr = "Án Úkraínu",
+    asylum_applicants = "Samtals",
+    asylum_applicants_non_ukr = "Án Úkraínu"
+  ) |> 
+  tab_spanner(
+    label = md("**Verndarveitingar**"), columns = 2:3
+  ) |> 
+  tab_spanner(
+    label = md("**Umsóknir**"), columns = 4:5
+  ) |> 
+  fmt_number(decimals = 0) |> 
+  fmt_markdown(land) |> 
+  gt_color_rows(
+    columns = -land,
+    domain = NULL,
+    palette = "Greys"
+    ) |> 
+  opt_vertical_padding(0.7) |> 
+  tab_options(
+    table.background.color = "#faf9f9"
+  )
+```
+
+### 2023
+
+```{r}
+data_hist |> 
+  filter(
+    land != "Samtals",
+    year(time) == 2024
+  ) |> 
+  select(time, land, name, per_pop) |>
+  pivot_wider(values_from = per_pop) |> 
+  mutate(
+    asylum_applicants_non_ukr = asylum_applicants,
+    asylum_applicants = asylum_applicants + (total - total_non_ukr)
+  ) |> 
+  group_by(land) |> 
+  summarise_at(
+    vars(-time),
+    mean
+  ) |> 
+  mutate(
+    l = janitor::make_clean_names(land),
+    colour = case_when(
+      land == "Ísland" ~ litur_island,
+      land == "Danmörk" ~ litur_danmork,
+      land == "Finnland" ~ litur_finnland,
+      land == "Noregur" ~ litur_noregur,
+      land == "Svíþjóð" ~ litur_svithjod,
+      land == "Samtals" ~ litur_total,
+      TRUE ~ litur_annad
+    ),
+    textsize = if_else(colour == litur_annad, 12, 12),
+    fontweight = if_else(colour == litur_annad, "normal", "bold"),
+    land = glue("<span style='color:{colour};font-size:{textsize}pt;font-weight:{fontweight};'>{land}</span>")
+  ) |> 
+  arrange(l) |> 
+  select(1:5) |> 
+  gt() |> 
+  tab_header(
+    title = "Samantekt á verndarkerfum Evrópulanda (2024)",
     subtitle = "Tölur sýndar sem fjöldi á 100.000 íbúa móttökulands"
   ) |> 
   tab_source_note(
@@ -293,7 +364,7 @@ data_hist |>
   select(1:5) |> 
   gt() |> 
   tab_header(
-    title = "Samantekt á verndarkerfum Evrópulanda (2022 - 2023)",
+    title = "Samantekt á verndarkerfum Evrópulanda (2022 - 2024)",
     subtitle = "Tölur sýndar sem fjöldi á 100.000 íbúa móttökulands"
   ) |> 
   tab_source_note(
@@ -366,7 +437,7 @@ make_plot(
   plot_var = "grants",
   scaling_var = "per_pop",
   start_date = clock::date_build(2022, 3, 1),
-  end_date = clock::date_build(2024, 10, 1),
+  end_date = clock::date_build(2025, 2, 1),
   title = "Hvað er mörgum veitt tímabundin vernd í hverjum mánuði?",
   subtitle = "Sýnt sem fjöldi á 100.000 íbúa hvers lands",
   caption = caption,
@@ -390,7 +461,7 @@ make_plot(
   plot_var = "beneficiaries",
   scaling_var = "per_pop",
   start_date = clock::date_build(2022, 3, 1),
-  end_date = clock::date_build(2024, 10, 1),
+  end_date = clock::date_build(2025, 2, 1),
   title = "Hvar njóta flestir einstaklingar tímabundinnar verndar?",
   subtitle = "Sýnt sem fjöldi á 100.000 íbúa hvers lands",
   caption = caption,
@@ -409,7 +480,7 @@ make_plot(
 
 ::: {.panel-tabset}
 
-## Þróun fjölda hælisveitinga (2008 - 2023)
+## Þróun fjölda hælisveitinga (2008 - 2024)
 
 ```{r ggiraph2}
 #| layout-ncol: 1
@@ -422,7 +493,7 @@ make_ggiraph2(
 )
 ```
 
-## Þróun fjölda umsókna um hæli (2008 - 2023)
+## Þróun fjölda umsókna um hæli (2008 - 2024)
 
 ```{r ggiraph3}
 #| layout-ncol: 1
@@ -455,7 +526,7 @@ make_plot(
   plot_var = "asylum_applicants_non_ukraine",
   scaling_var = "per_pop",
   start_date = clock::date_build(2022, 3, 1),
-  end_date = clock::date_build(2024, 10, 1),
+  end_date = clock::date_build(2024, 12, 1),
   title = "Hvar sækja flestir einstaklingar um hæli?",
   subtitle = "Sýnt sem fjöldi á 100.000 íbúa hvers lands",
   caption = caption
@@ -472,7 +543,7 @@ make_plot(
   plot_var = "asylum_applicants_non_ukraine",
   scaling_var = "per_pop_cumsum",
   start_date = clock::date_build(2022, 3, 1),
-  end_date = clock::date_build(2024, 10, 1),
+  end_date = clock::date_build(2024, 12, 1),
   title = "Hvar hafa flestir einstaklingar sótt um hæli? (Uppsafnaðar tölur frá mars 2022)",
   subtitle = "Sýnt sem fjöldi á 100.000 íbúa hvers lands",
   caption = caption,
@@ -507,7 +578,7 @@ make_plot(
   plot_var = "total_decisions",
   scaling_var = "per_pop",
   start_date = clock::date_build(2022, 3, 1),
-  end_date = clock::date_build(2024, 4, 1),
+  end_date = clock::date_build(2024, 10, 1),
   title = "Hvar eru flestar ákvarðanir um stöðu hælisleitenda teknar á mánuði?",
   subtitle = "Sýnt sem fjöldi á 100.000 íbúa hvers lands",
   caption = caption,
@@ -526,7 +597,7 @@ make_plot(
   plot_var = "total_decisions",
   scaling_var = "per_pop_cumsum",
   start_date = clock::date_build(2022, 3, 1),
-  end_date = clock::date_build(2024, 4, 1),
+  end_date = clock::date_build(2024, 10, 1),
   title = "Hvar hafa flestar ákvarðanir verið teknar? (Uppsafnaðar tölur frá mars 2022)",
   subtitle = "Sýnt sem fjöldi á 100.000 íbúa hvers lands",
   caption = caption,
@@ -543,9 +614,7 @@ make_plot(
 
 ### Samþykktar umsóknir
 
-Í gögnum um ákvarðanir getum við séð hvort ákveðið var að veita einstakling hæli eða ekki. Í kringum sumarið 2022 samþykktu íslensk yfirvöld mun fleiri umsóknir um hæli en yfirvöld annarra þjóða. Frá ársbyrjun 2023 hefur þetta þó róast og eru íslensk yfirvöld nú undir meðaltali og nær hinum norðurlöndunum í samþykktum umsóknum á höfðatölu. Ef við berum okkur saman við Lúxemborg, Þýskaland og Grikkland þá hefur þessi tala verið mun stöðugri þar en á Íslandi.
-
-Ef við skoðum uppsafnaðar tölur, sést að Ísland hefur veitt flestum hæli en að Þýskaland, Grikkland og Lúxemborg eru ekki langt frá því að ná okkur ef þróunin heldur áfram.
+Í gögnum um ákvarðanir getum við séð hvort ákveðið var að veita einstakling hæli eða ekki. Í kringum sumarið 2022 samþykktu íslensk yfirvöld mun fleiri umsóknir um hæli en yfirvöld annarra þjóða. Frá ársbyrjun 2023 hefur þetta þó róast og eru íslensk yfirvöld nú undir meðaltali og nær hinum norðurlöndunum í samþykktum umsóknum á höfðatölu. Ef við berum okkur saman við Lúxemborg, Þýskaland og Írland þá hefur þessi tala verið mun stöðugri þar en á Íslandi.
 
 ::: {.panel-tabset}
 
@@ -559,7 +628,7 @@ make_plot(
   plot_var = "positive_decisions",
   scaling_var = "per_pop",
   start_date = clock::date_build(2022, 3, 1),
-  end_date = clock::date_build(2024, 4, 1),
+  end_date = clock::date_build(2024, 10, 1),
   title = "Hvar er flestum einstaklingum veitt hæli á mánuði?",
   subtitle = "Sýnt sem fjöldi á 100.000 íbúa hvers lands",
   caption = caption,
@@ -578,7 +647,7 @@ make_plot(
   plot_var = "positive_decisions",
   scaling_var = "per_pop_cumsum",
   start_date = clock::date_build(2022, 3, 1),
-  end_date = clock::date_build(2024, 4, 1),
+  end_date = clock::date_build(2024, 10, 1),
   title = "Hvar hefur flestum einstaklingum verið veitt hæli? (Uppsafnaðar tölur frá mars 2022)",
   subtitle = "Sýnt sem fjöldi á 100.000 íbúa hvers lands",
   caption = caption,
@@ -609,7 +678,7 @@ make_plot(
   plot_var = "applicants_non_ukraine",
   scaling_var = "per_pop",
   start_date = clock::date_build(2022, 3, 1),
-  end_date = clock::date_build(2024, 9, 1),
+  end_date = clock::date_build(2024, 12, 1),
   title = "Hvar bíða flestir einstaklingar eftir niðurstöðu hælisumsóknar sinnar?",
   subtitle = "Sýnt sem fjöldi á 100.000 íbúa hvers lands",
   caption = caption,
@@ -629,7 +698,7 @@ make_plot(
 make_samantekt(
   height = 1 * 16,
   width = 16,
-  end_date = clock::date_build(c(2024, 2024, 2024), c(10, 7, 9)),
+  end_date = clock::date_build(c(2024, 2024, 2024), c(12, 10, 12)),
   number_labels = label_number(big.mark = ".", decimal.mark = ",")
 )
 ```

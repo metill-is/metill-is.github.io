@@ -69,8 +69,8 @@ d_hg <- hg_data(url) |>
 
 d |>
   filter(country != "Iceland") |>
-  bind_rows(d_hg |> filter(ar >= 2007)) |>
-  write_csv("dashboards/properties/data/pop.csv")
+  bind_rows(d_hg |> filter(year >= 2007)) |>
+  write_csv("maelabord/fasteignir/data/pop.csv")
 
 d_hg |>
-  write_csv("dashboards/properties/data/pop_adult_iceland.csv")
+  write_csv("maelabord/fasteignir/data/pop_adult_iceland.csv")

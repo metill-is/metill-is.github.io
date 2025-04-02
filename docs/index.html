@@ -83,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
   
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-handball .list');
+    const listingTargetEl = window.document.querySelector('#listing-featured .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
@@ -96,7 +96,7 @@ ul.task-list li input[type="checkbox"] {
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-handball'] = new List('listing-handball', options);
+    window['quarto-listings']['listing-featured'] = new List('listing-featured', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -119,18 +119,18 @@ gtag('js', new Date());
 gtag('config', 'G-J28QQV8PN9', { 'anonymize_ip': true});
 </script>
 <meta property="og:title" content="Metill">
-<meta property="og:image" content="https://metill.is/greinar/handbolti/Figures/ability.png">
+<meta property="og:image" content="https://metill.is/greinar/flottafolk/Figures/cover.png">
 <meta property="og:site_name" content="Metill">
-<meta property="og:image:height" content="2016">
-<meta property="og:image:width" content="2880">
+<meta property="og:image:height" content="1937">
+<meta property="og:image:width" content="3120">
 <meta name="twitter:title" content="Metill">
 <meta name="twitter:description" content="Notum gögn til að upplýsa, ekki sannfæra.">
-<meta name="twitter:image" content="https://metill.is/greinar/handbolti/Figures/ability.png">
+<meta name="twitter:image" content="https://metill.is/greinar/flottafolk/Figures/cover.png">
 <meta name="twitter:creator" content="@bggjonsson">
 <meta name="twitter:site" content="@bggjonsson">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image-height" content="2016">
-<meta name="twitter:image-width" content="2880">
+<meta name="twitter:image-height" content="1937">
+<meta name="twitter:image-width" content="3120">
 </head><body class="fullcontent"><nav class="navbar m-0 p-0 bg-primary">
 
   <div class="container bg-primary text-secondary justify-content-center flex-wrap align-items-baseline">
@@ -199,26 +199,21 @@ window.Quarto = {
 
 
 
-<div id="listing-handball" class="column-screen quarto-listing quarto-listing-container-custom">
+<div id="listing-featured" class="column-screen quarto-listing quarto-listing-container-custom">
 <div class="container-md featured-article">
   
     <div class="row">
       <div class="col-md-6">
-        <img src="greinar/handbolti/Figures/ability.png" class="img-fluid" alt="HM í handbolta 2025">
+        <img src="greinar/flottafolk/Figures/cover_fp.png" class="img-fluid" alt="Flóttafólk og hælisleitendur">
       </div>
       <div class="col-md-6">
-        <h2 class="anchored">HM í handbolta 2025</h2>
-        <p>Fyrir áhugasöm birtum við núna tölfræðilega greiningu á frammistöðu landsliða sem keppa á HM í handbolta, 
-en hún byggir á svonefndu Bradley-Terry líkani. Þetta líkan metur líkur á sigri milli 
-liða út frá úrslitum keppna þeirra og gerir okkur kleift að bera saman getu ólíkra liða. <br><br>
-
-Við notum útvíkkaða útgáfu af Bradley-Terry líkaninu sem greinir bæði heildargetu liða og 
-þætti á borð við sóknar- og varnarstyrk. Með því að nota skottilraunir, varin skot og mörk úr 
-leikjum er hægt að meta hvernig ólíkar hliðar leiksins koma saman og móta frammistöðuna. 
-Út frá þessum gögnum spáum við bæði fyrir um líklega úrslit leikja og reiknum heildarstyrkleika liða,
-sem gefur enn dýpri innsýn í hverjir eiga bestu möguleikana á vellinum.
+        <h2 class="anchored">Flóttafólk og hælisleitendur</h2>
+        <p>Hvar bíða flestir einstaklingar eftir niðurstöðu í hælisumsókn sinni? Hvaða land hefur tekið við flestum 
+hælisleitendum? Hvernig tengist löggjöf skilgreiningu á gögnum? Hér eru gögn um fjölda einstaklinga sem 
+njóta tímabundinnar verndar eða hælis, fjölda samþykktra verndar- og hælisumsókna og fjölda umsókna í bið 
+tekin saman úr gögnum  Eurostat.
 </p>
-        <a href="./greinar/handbolti/index.html" class="btn btn-featured">Lesa meira</a>
+        <a href="./greinar/flottafolk/index.html" class="btn btn-featured">Lesa meira</a>
       </div>
     </div>
   

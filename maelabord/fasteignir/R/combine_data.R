@@ -1,29 +1,15 @@
-d <- read_csv("dashboards/properties/data/fasteignir_pop.csv")
-d_gleeson <- read_csv("dashboards/properties/data/gleeson.csv")
+d <- read_csv("maelabord/fasteignir/data/fasteignir_pop.csv")
+d_gleeson <- read_csv("maelabord/fasteignir/data/gleeson.csv")
 
 
-d_gleeson
 
-d_iceland <- d |>
-  rename(
-    year = ar,
-    new_dwellings = fasteignir,
-    population = pop
-  ) |>
-  mutate(
-    dwellings = cumsum(new_dwellings),
-    country = "Iceland",
-    new_by_pop = new_dwellings / population * 1000,
-    rolling = slider::slide_index_dbl(new_by_pop, year, sum, .before = 9)
-  )
-
-d_iceland |>
+d |>
   filter(year >= 2007) |>
   ggplot(aes(year, population / dwellings)) +
   geom_line()
 
 
-bind_rows(d_iceland, d_gleeson) |>
+bind_rows(d, d_gleeson) |>
   inner_join(
     read_csv("dashboards/properties/data/pop.csv")
   ) |>
@@ -40,4 +26,4 @@ bind_rows(d_iceland, d_gleeson) |>
   ) |>
   select(-country) |>
   rename(country = land) |>
-  write_csv("dashboards/properties/data/data_combined.csv")
+  write_csv("maelabord/fasteignir/data/data_combined.csv")

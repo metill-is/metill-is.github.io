@@ -33,7 +33,7 @@ data_hist |>
   select(1:5) |> 
   gt() |> 
   tab_header(
-    title = "Samantekt á verndarkerfum Evrópulanda (2022 - 2023)",
+    title = "Samantekt á verndarkerfum Evrópulanda (2022 - 2024)",
     subtitle = "Tölur sýndar sem fjöldi á 100.000 íbúa móttökulands"
   ) |> 
   tab_source_note(
@@ -61,7 +61,7 @@ data_hist |>
     ) |> 
   opt_vertical_padding(0.7) |> 
   gtsave(
-    filename = "Greinar/flottafolk/Figures/vernd_2022-2023.png",
+    filename = "Greinar/flottafolk/Figures/vernd_2022-2024.png",
     zoom = 1,
     delay = 0.1,
     expand = 50,

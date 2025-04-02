@@ -29,12 +29,14 @@ d_fasteignir <- tibble(
     fjoldi
   )
 
+init_db()
+
 mannfjoldi <- mtl_mannfjoldi_svf() |>
   collect() |>
   mutate(
-    vinnualdur = ifelse((aldur >= 20) & (aldur <= 64), 1, 0),
+    vinnualdur = ifelse((aldur > 18) & (aldur <= 64), 1, 0),
     heild = 1,
-    fullordin = ifelse(aldur >= 20, 1, 0)
+    fullordin = ifelse(aldur >= 18, 1, 0)
   ) |>
   group_by(sveitarfelag, ar) |>
   summarise(
@@ -44,7 +46,7 @@ mannfjoldi <- mtl_mannfjoldi_svf() |>
   )
 
 
-d <- d |>
+d <- d_fasteignir |>
   left_join(
     mannfjoldi,
     by = c("ar", "sveitarfelag")
@@ -56,9 +58,9 @@ d <- d |>
 
 d |>
   summarise(
-    new_dwellings = sum(fjoldi),
-    dwellings = sum(cum_fjoldi),
-    population = sum(mannfjoldi),
+    new_dwellings = sum(fjoldi_nyjar),
+    dwellings = sum(fjoldi),
+    population = sum(mannfjoldi_fullordin),
     .by = ar
   ) |>
   rename(year = ar) |>
@@ -68,7 +70,7 @@ d |>
     rolling = slider::slide_index_dbl(new_by_pop, year, sum, .before = 9),
     country = "Iceland"
   ) |>
-  write_parquet("greinar/fasteignafjoldi/data/data_iceland.parquet")
+  write_csv("maelabord/fasteignir/data/fasteignir_pop.csv")
 
 
 

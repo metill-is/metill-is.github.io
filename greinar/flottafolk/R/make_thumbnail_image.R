@@ -16,24 +16,24 @@ theme_set(theme_metill())
 plot_var <- "applicants_non_ukraine"
 scaling_var <- "per_pop"
 start_date <- clock::date_build(2022, 3, 1)
-end_date <- clock::date_build(2024, 9, 1)
+end_date <- clock::date_build(2024, 12, 1)
 title <- "Hvar bíða flestir einstaklingar eftir niðurstöðu hælisumsóknar sinnar?"
 subtitle <- "Sýnt sem fjöldi á 100.000 íbúa hvers lands"
 number_labels <- label_number(big.mark = ".", decimal.mark = ",")
 y_upper <- NA
 
 
-plot_dat <- d |>
-  filter(name == plot_var) |>
-  arrange(time) |>
+plot_dat <- d |> 
+  filter(name == plot_var) |> 
+  arrange(time) |> 
   rename(
-    dags = time,
+    dags = time, 
     flottafjoldi = value,
     per_pers = all_of(scaling_var)
-  ) |>
-  # filter(dags <= end_date) |>
-  drop_na(per_pers) |>
-  select(dags, land, value = per_pers) |>
+  ) |>  
+  # filter(dags <= end_date) |> 
+  drop_na(per_pers) |> 
+  select(dags, land, value = per_pers) |> 
   mutate(
     colour = case_when(
       land == "Ísland" ~ litur_island,
@@ -47,17 +47,17 @@ plot_dat <- d |>
     size = as_factor(linewidth)
   )
 
-p3 <- plot_dat |>
+p3 <- plot_dat |> 
   ggplot(aes(dags, value)) +
   geom_line_interactive(
-    data = plot_dat |>
+    data = plot_dat |> 
       filter(colour == litur_annad),
     aes(group = land, colour = litur_annad, data_id = land),
     alpha = 0.3,
     col = litur_annad
   ) +
   geom_line_interactive(
-    data = plot_dat |>
+    data = plot_dat |> 
       filter(colour != litur_annad),
     aes(group = land, colour = colour, data_id = land),
     linewidth = 1
@@ -98,13 +98,13 @@ p3
 
 ggsave(
   plot = p3,
-  filename = "articles/asylum/Figures/cover.png",
+  filename = "greinar/flottafolk/Figures/cover.png",
   width = 8, height = 0.621 * 8, scale = 1.3
 )
 
 
 ggsave(
   plot = p3 + theme_metill(type = "blog"),
-  filename = "articles/asylum/Figures/cover_fp.png",
+  filename = "greinar/flottafolk/Figures/cover_fp.png",
   width = 8, height = 0.621 * 8, scale = 1.3
 )

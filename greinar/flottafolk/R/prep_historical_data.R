@@ -19,7 +19,7 @@ litur_total <- "#005824"
 
 litur_annad <- "#737373"
 
-cache_dir <- here("articles", "asylum", "data")
+cache_dir <- here("greinar", "flottafolk", "data")
 update_cache <- TRUE
 
 #### Hælisleitendur ####

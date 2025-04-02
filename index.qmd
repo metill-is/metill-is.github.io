@@ -6,9 +6,9 @@ listing:
     - id: content
       template: ejs/content.ejs
       contents: content.yml
-    - id: handball
+    - id: featured
       template: ejs/featured-article.ejs
-      contents: handbolti.yml
+      contents: featured.yml
 filters:
   - collapse-callout
 collapse-callout:
@@ -20,10 +20,10 @@ execute:
   freeze: false
 citation-location: margin
 reference-location: margin
-image: greinar/handbolti/Figures/ability.png
+image: greinar/flottafolk/Figures/cover.png
 ---
 
-::: {#handball .column-screen}
+::: {#featured .column-screen}
 :::
 
 

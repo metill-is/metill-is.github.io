@@ -9,17 +9,19 @@ make_plot <- function(
     y_upper = NA,
     number_labels = label_number(),
     height = 1.1 * 11,
-    width = 11) {
-  p1 <- d |>
+    width = 11
+) {
+  
+  p1 <- d |> 
     filter(
       name == plot_var
-    ) |>
+    ) |> 
     rename(
-      dags = time,
+      dags = time, 
       per_pers = all_of(scaling_var)
-    ) |>
-    filter(dags == min(dags)) |>
-    drop_na(per_pers) |>
+    ) |> 
+    filter(dags == min(dags)) |> 
+    drop_na(per_pers) |> 
     mutate(
       colour = case_when(
         land == "Ísland" ~ litur_island,
@@ -34,7 +36,7 @@ make_plot <- function(
       size = as_factor(linewidth),
       land_ordered = glue("<i style='color:{colour}'>{land}</i>"),
       land_ordered = fct_reorder(land_ordered, per_pers)
-    ) |>
+    ) |> 
     ggplot(aes(per_pers, land_ordered, col = colour, size = size)) +
     geom_text_interactive(
       aes(x = 0, label = str_c(land, " "), data_id = land),
@@ -46,7 +48,7 @@ make_plot <- function(
     ) +
     geom_segment_interactive(
       aes(yend = land_ordered, xend = 0, linewidth = linewidth, data_id = land),
-      lty = 2,
+      lty = 2, 
       alpha = 0.5
     ) +
     scale_x_continuous(
@@ -77,17 +79,17 @@ make_plot <- function(
       subtitle = glue("Fjöldi í {month(start_date, label = T, abbr = F)} {year(start_date)}"),
       caption = caption
     )
-
-
-  p2 <- d |>
-    filter(name == plot_var) |>
+  
+  
+  p2 <- d |> 
+    filter(name == plot_var) |> 
     rename(
-      dags = time,
+      dags = time, 
       flottafjoldi = value,
       per_pers = all_of(scaling_var)
-    ) |>
-    filter(dags == end_date) |>
-    drop_na(per_pers) |>
+    ) |> 
+    filter(dags == end_date) |> 
+    drop_na(per_pers) |> 
     mutate(
       colour = case_when(
         land == "Ísland" ~ litur_island,
@@ -102,7 +104,7 @@ make_plot <- function(
       size = as_factor(linewidth),
       land_ordered = glue("<i style='color:{colour}'>{land}</i>"),
       land_ordered = fct_reorder(land_ordered, per_pers)
-    ) |>
+    ) |> 
     ggplot(aes(per_pers, land_ordered, col = colour, size = size, group = land)) +
     geom_text_interactive(
       aes(x = 0, label = str_c(land, " "), data_id = land),
@@ -114,7 +116,7 @@ make_plot <- function(
     ) +
     geom_segment_interactive(
       aes(yend = land_ordered, xend = 0, linewidth = linewidth, data_id = land),
-      lty = 2,
+      lty = 2, 
       alpha = 0.5
     ) +
     scale_x_continuous(
@@ -145,18 +147,18 @@ make_plot <- function(
       subtitle = glue("Fjöldi í {month(end_date, label = T, abbr = F)} {year(end_date)}"),
       caption = caption
     )
-
-  plot_dat <- d |>
-    filter(name == plot_var) |>
-    arrange(time) |>
+  
+  plot_dat <- d |> 
+    filter(name == plot_var) |> 
+    arrange(time) |> 
     rename(
-      dags = time,
+      dags = time, 
       flottafjoldi = value,
       per_pers = all_of(scaling_var)
-    ) |>
-    # filter(dags <= end_date) |>
-    drop_na(per_pers) |>
-    select(dags, land, value = per_pers) |>
+    ) |>  
+    # filter(dags <= end_date) |> 
+    drop_na(per_pers) |> 
+    select(dags, land, value = per_pers) |> 
     mutate(
       colour = case_when(
         land == "Ísland" ~ litur_island,
@@ -170,21 +172,21 @@ make_plot <- function(
       linewidth = 1 * (land == "Ísland"),
       size = as_factor(linewidth)
     )
-
-  p3 <- plot_dat |>
+  
+  p3 <- plot_dat |> 
     ggplot(aes(dags, value)) +
     geom_line_interactive(
-      data = ~ filter(.x, colour == litur_annad, land != "Þýskaland"),
+      data = ~filter(.x, colour == litur_annad, land != "Þýskaland"),
       aes(group = land, data_id = land),
       alpha = 0.3
     ) +
     geom_line_interactive(
-      data = ~ filter(.x, land == "Þýskaland"),
+      data = ~filter(.x, land == "Þýskaland"),
       aes(group = land, data_id = land),
       alpha = 0.3
     ) +
     geom_line_interactive(
-      data = ~ filter(.x, colour != litur_annad),
+      data = ~filter(.x, colour != litur_annad),
       aes(group = land, colour = colour, data_id = land),
       linewidth = 1
     ) +
@@ -215,11 +217,11 @@ make_plot <- function(
       y = NULL,
       subtitle = "Mánaðarleg þróun"
     )
-
+  
   p <- (
-    (p1 + labs(title = NULL, caption = NULL)) +
+    (p1 + labs(title = NULL, caption = NULL)) + 
       (p2 + labs(title = NULL, caption = NULL))
-  ) /
+  ) / 
     p3 +
     plot_annotation(
       title = title,
@@ -229,21 +231,20 @@ make_plot <- function(
       ),
       caption = caption
     )
-
+  
   girafe(
     ggobj = p,
     width_svg = width,
     height_svg = height,
-    bg = "transparent",
     options = list(
       opts_tooltip(
-        opacity = 0.8,
+        opacity = 0.8, 
         use_fill = TRUE,
-        use_stroke = FALSE,
+        use_stroke = FALSE, 
         css = "padding:5pt;font-family: Open Sans;font-size:1rem;color:white"
       ),
       opts_hover(css = ""),
-      opts_hover_inv(css = "opacity:0.05"),
+      opts_hover_inv(css = "opacity:0.05"), 
       opts_toolbar(saveaspng = TRUE),
       opts_zoom(max = 1)
     )

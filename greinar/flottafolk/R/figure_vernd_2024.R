@@ -1,82 +1,25 @@
-library(tidyverse)
-library(scales)
-library(visitalaneysluverds)
-library(metill)
-library(patchwork)
-library(glue)
-library(eurostat)
-library(ggh4x)
-library(ggiraph)
-library(gt)
-library(gtExtras)
-library(ggtext)
-library(here)
-
-Sys.setlocale("LC_ALL", "is_IS.UTF-8")
-
-theme_set(theme_metill(type = "blog"))
-
-
-caption <- "Mynd eftir @bggjonsson hjá metill.is byggð á gögnum Eurostat um fólksflutninga: https://metill.is/greinar/flottafolk\nGögn og kóði: https://github.com/bgautijonsson/Metill.is/tree/master/greinar/flottafolk"
-
-litur_island <- "#08306b"
-litur_danmork <- "#e41a1c"
-litur_finnland <- "#3690c0"
-litur_noregur <- "#7f0000"
-litur_svithjod <- "#fd8d3c"
-litur_luxemborg <- "black"
-litur_total <- "#005824"
-litur_annad <- "#737373"
-
-d <- here("articles", "asylum", "data", "raw_data.csv") |>
-  read_csv()
-
-data_hist <- here("articles", "asylum", "data", "data_hist.csv") |>
-  read_csv()
-
-
-d |>
-  filter(
-    year(time) >= 2024,
-    month(time) <= 7,
-    name %in% c("grants", "asylum_applicants_non_ukraine")
-  ) |>
-  filter(is.na(value)) |>
-  distinct(land)
-
-plot_dat <- d |>
-  filter(
-    year(time) >= 2024,
-    month(time) <= 8,
-    land != "Spánn",
-    name %in% c("grants", "asylum_applicants_non_ukraine")
-  ) |>
+p1 <- data_hist |> 
+  filter(year(time) >= 2024) |> 
   summarise(
-    value = sum(value, na.rm = TRUE),
-    pop = max(pop, na.rm = TRUE),
-    value = value / pop * 100000,
-    .by = c(land, name)
-  ) |>
-  select(-pop) |>
-  pivot_wider() |>
-  left_join(
-    data_hist |>
-      filter(year(time) == 2023) |>
-      select(land, colour, linewidth, size)
-  ) |>
+    value = sum(value),
+    per_pop = sum(per_pop),
+    .by = c(land, name, colour, linewidth, size)
+  ) |> 
+  pivot_longer(c(value, per_pop), names_to = "type") |> 
+  pivot_wider() |> 
   mutate(
-    total = grants + asylum_applicants_non_ukraine
-  )
-
-
-
-p1 <- plot_dat |>
+    ukraine = total - total_non_ukr,
+    applicants_ukraine = asylum_applicants + ukraine,
+    hlutf_ukraine = total / (asylum_applicants + ukraine),
+    hlutf = total_non_ukr / asylum_applicants
+  ) |> 
+  filter(type == "per_pop") |> 
   mutate(
     value = total,
     land = fct_reorder(land, value),
     land_ordered = glue("<i style='color:{colour}'>{land}</i>"),
     land_ordered = fct_reorder(land_ordered, value)
-  ) |>
+  ) |> 
   ggplot(aes(value, land_ordered, col = colour, linewidth = linewidth, size = size)) +
   geom_segment(aes(xend = 0, yend = land_ordered)) +
   geom_point() +
@@ -103,17 +46,32 @@ p1 <- plot_dat |>
   labs(
     x = NULL,
     y = NULL,
-    subtitle = "<b style='font-size:15pt;'>Umsóknir um vernd/hæli</b><br><i style='font-size:13pt;'>Samtals</i>"
+    subtitle = "<b style='font-size:15pt;'>Verndarveitingar</b><br><i style='font-size:13pt;'>Samtals</i>"
   )
 
 
-p2 <- plot_dat |>
+p2 <- data_hist |> 
+  filter(year(time) >= 2024) |> 
+  summarise(
+    value = sum(value),
+    per_pop = sum(per_pop),
+    .by = c(land, name, colour, linewidth, size)
+  ) |> 
+  pivot_longer(c(value, per_pop), names_to = "type") |> 
+  pivot_wider() |> 
   mutate(
-    value = grants,
+    ukraine = total - total_non_ukr,
+    applicants_ukraine = asylum_applicants + ukraine,
+    hlutf_ukraine = total / (asylum_applicants + ukraine),
+    hlutf = total_non_ukr / asylum_applicants
+  ) |> 
+  filter(type == "per_pop") |> 
+  mutate(
+    value = total_non_ukr,
     land = fct_reorder(land, value),
     land_ordered = glue("<i style='color:{colour}'>{land}</i>"),
     land_ordered = fct_reorder(land_ordered, value)
-  ) |>
+  ) |> 
   ggplot(aes(value, land_ordered, col = colour, linewidth = linewidth, size = size)) +
   geom_segment(aes(xend = 0, yend = land_ordered)) +
   geom_point() +
@@ -141,17 +99,88 @@ p2 <- plot_dat |>
   labs(
     x = NULL,
     y = NULL,
-    subtitle = "<br><i style='font-size:13pt;'>Flóttafólk frá Úkraínu</i>"
+    subtitle = "<br><i style='font-size:13pt;'>Án flóttafólks frá Úkraínu</i>"
   )
 
 
-p3 <- plot_dat |>
+
+
+
+
+p3 <- data_hist |> 
+  filter(year(time) >= 2024) |> 
+  summarise(
+    value = sum(value),
+    per_pop = sum(per_pop),
+    .by = c(land, name, colour, linewidth, size)
+  ) |> 
+  pivot_longer(c(value, per_pop), names_to = "type") |> 
+  pivot_wider() |> 
   mutate(
-    value = asylum_applicants_non_ukraine,
+    ukraine = total - total_non_ukr,
+    applicants_ukraine = asylum_applicants + ukraine,
+    hlutf_ukraine = total / (asylum_applicants + ukraine),
+    hlutf = total_non_ukr / asylum_applicants
+  ) |> 
+  filter(type == "per_pop") |> 
+  mutate(
+    value = applicants_ukraine,
     land = fct_reorder(land, value),
     land_ordered = glue("<i style='color:{colour}'>{land}</i>"),
     land_ordered = fct_reorder(land_ordered, value)
-  ) |>
+  ) |> 
+  ggplot(aes(value, land_ordered, col = colour, linewidth = linewidth, size = size)) +
+  geom_segment(aes(xend = 0, yend = land_ordered)) +
+  geom_point() +
+  scale_x_continuous(
+    expand = expansion(c(0, 0.12)),
+    breaks = breaks_extended(6),
+    limits = c(0, NA),
+    guide = guide_axis_truncated(
+      trunc_lower = 0
+    )
+  ) +
+  scale_colour_identity() +
+  scale_size(range = c(1.5, 3)) +
+  scale_linewidth(
+    range = c(0.2, 0.4)
+  ) +
+  theme(
+    legend.position = "none",
+    axis.line.y = element_blank(),
+    axis.text.y = element_markdown(),
+    axis.ticks.y = element_blank(),
+    plot.subtitle = element_markdown()
+  ) +
+  labs(
+    x = NULL,
+    y = NULL,
+    subtitle = "<b style='font-size:15pt;'>Umsóknir</b><br><i style='font-size:13pt;'>Samtals</i>"
+  )
+
+
+p4 <- data_hist |> 
+  filter(year(time) >= 2024) |> 
+  summarise(
+    value = sum(value),
+    per_pop = sum(per_pop),
+    .by = c(land, name, colour, linewidth, size)
+  ) |> 
+  pivot_longer(c(value, per_pop), names_to = "type") |> 
+  pivot_wider() |> 
+  mutate(
+    ukraine = total - total_non_ukr,
+    applicants_ukraine = asylum_applicants + ukraine,
+    hlutf_ukraine = total / (asylum_applicants + ukraine),
+    hlutf = total_non_ukr / asylum_applicants
+  ) |> 
+  filter(type == "per_pop") |> 
+  mutate(
+    value = asylum_applicants,
+    land = fct_reorder(land, value),
+    land_ordered = glue("<i style='color:{colour}'>{land}</i>"),
+    land_ordered = fct_reorder(land_ordered, value)
+  ) |> 
   ggplot(aes(value, land_ordered, col = colour, linewidth = linewidth, size = size)) +
   geom_segment(aes(xend = 0, yend = land_ordered)) +
   geom_point() +
@@ -179,20 +208,19 @@ p3 <- plot_dat |>
   labs(
     x = NULL,
     y = NULL,
-    subtitle = "<br><i style='font-size:13pt;'>Flóttafólk frá öðrum löndum</i>"
+    subtitle = "<br><i style='font-size:13pt;'>Án flóttafólks frá Úkraínu</i>"
   )
 
 
-
-p <- p1 + p2 + p3 +
+p <- p1 + p2 + p3 + p4 +
   plot_annotation(
-    title = "Umsóknir um vernd í Evrópulöndum (2024 janúar - ágúst)",
+    title = "Verndarkerfin í Evrópulöndum (2024)",
     subtitle = "Sýnt sem fjöldi á 100.000 íbúa móttökulands",
     caption = caption
   )
 
 ggsave(
   plot = p,
-  filename = here("articles", "asylum", "Figures", "figure_vernd_2024.png"),
-  width = 8, height = 0.4 * 8, scale = 1.8
+  filename = "Greinar/flottafolk/Figures/figure_vernd_2024.png",
+  width = 8, height = 1 * 8, scale = 1.3
 )

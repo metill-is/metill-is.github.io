@@ -2,7 +2,7 @@ library(eurostat)
 library(tidyverse)
 library(here)
 
-cache_dir <- here("articles", "asylum", "data")
+cache_dir <- here("greinar", "flottafolk", "data")
 update_cache <- TRUE
 
 #### Einstaklingar sem njóta tímabundinnar verndar ####
