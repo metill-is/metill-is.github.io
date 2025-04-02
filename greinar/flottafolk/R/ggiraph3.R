@@ -204,7 +204,7 @@ make_ggiraph3 <- function(
       x = NULL,
       y = NULL,
       title = "Evrópulöndum raðað eftir fjölda umsókna á höfðatölu",
-      subtitle = "1: Flestar umsóknir | 30: Fæstar umsóknir"
+      subtitle = "1: Flestar umsóknir | 31: Fæstar umsóknir"
     )
   
   
@@ -390,7 +390,7 @@ make_ggiraph3 <- function(
       x = NULL,
       y = NULL,
       title = "Evrópulöndum raðað eftir uppsöfnuðum fjölda frá 2008",
-      subtitle = "1: Flestar umsóknir | 30: Fæstar umsóknir"
+      subtitle = "1: Flestar umsóknir | 31: Fæstar umsóknir"
     )
   
   p <- p1 + p2 + p3 + p4 +
