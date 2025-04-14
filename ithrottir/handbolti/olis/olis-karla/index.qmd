@@ -1,0 +1,18 @@
+---
+title: "Olís deild karla"
+pagetitle: "Olís deild karla"
+subtitle: "Nýjustu greiningar á Olís deild karla"
+description:  |
+    This is text. This is text. This is text. This is text. 
+date: "2025/4/14"
+draft: false
+categories:
+    - íþróttir
+href: handbolti/greinar/hm2025/index.qmd
+image: Figures/styrkur_kk.png
+twitter-card:
+    image: Figures/styrkur_kk.png
+execute: 
+  eval: true
+toc: false
+---

@@ -1,0 +1,18 @@
+---
+title: "Olís deild kvenna"
+pagetitle: "Olís deild kvenna"
+subtitle: "Nýjustu greiningar á Olís deild kvenna"
+description:  |
+    This is text. This is text. This is text. This is text. 
+date: "2025/4/12"
+draft: false
+categories:
+    - íþróttir
+href: handbolti/greinar/hm2025/index.qmd
+image: Figures/styrkur_kvk.png
+twitter-card:
+    image: Figures/styrkur_kvk.png
+execute: 
+  eval: true
+toc: false
+---

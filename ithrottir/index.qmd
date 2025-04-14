@@ -1,0 +1,31 @@
+---
+title: " <br>"
+pagetitle: "ÍþróttaMetill"
+toc: false
+listing:
+  - id: featured-handball
+    contents: handbolti/olis
+    sort: "date desc"
+    type: grid
+    template: ../ejs/featured-sports.ejs
+  - id: featured-football
+    contents: fotbolti/besta
+    sort: "date desc"
+    type: grid
+    template: ../ejs/featured-sports.ejs
+---
+
+::: {.column-page .panel-tabset}
+
+## Fótbolti 
+
+Hér eru reglulega uppfærðar greiningar á leikjum og gögnum úr Bestu deildum karla og kvenna.
+
+::: {#featured-football}
+:::
+
+## Handbolti
+::: {#featured-handball}
+:::
+
+:::

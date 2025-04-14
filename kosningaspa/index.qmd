@@ -282,7 +282,7 @@ Til að meta áhrif þessara þátta notum við fylgiskannanir fyrir alþingisko
 
 Við vonum að líkanið komi að notum við að greina stöðu mála í íslenskum stjórnmálum í aðdraganda alþingiskosninganna. Eins og sjá má á vikmörkum fylgisspáa er mikilvægasta niðurstaða líkansins við birtingu sú að óvissan er gríðarlega mikil – það á ekki að koma okkur á óvart þó fylgi flokkanna breytist um nokkur prósentustig á lokametrunum.
 
-[Um líkanið](Kosningar/UmLikanid.qmd){.btn .btn-outline-primary .btn role="button" data-toggle="tooltip" title="Smelltu hér til að lesa um aðferðafræði spálíkansins"}
+[Um líkanið](UmLikanid.qmd){.btn .btn-outline-primary .btn role="button" data-toggle="tooltip" title="Smelltu hér til að lesa um aðferðafræði spálíkansins"}
 
 :::
 

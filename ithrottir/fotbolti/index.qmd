@@ -1,0 +1,16 @@
+---
+pagetitle: "Fótboltametill"
+toc: false
+editor: source
+filters:
+  - collapse-callout
+collapse-callout:
+  all: true
+callout-appearance: simple
+callout-icon: true
+
+execute:
+  freeze: false
+citation-location: margin
+reference-location: margin
+---

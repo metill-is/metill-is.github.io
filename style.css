@@ -136,3 +136,113 @@ h1:not(.title), h2, h3, h4 {
   transition: all 0.4s ease-in-out;
   align-items: center !important;
 }
+
+
+/* Sports section styling */
+/* Sports section styling */
+.listing-card {
+  height: 100%;
+  transition: all 0.3s ease-in-out;
+  border: none !important;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.listing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1) !important;
+}
+
+.listing-card .card-img-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.listing-card .card-img-top {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: #f8f9fa;
+  padding: 1rem;
+}
+
+.listing-card:hover .card-img-top {
+  transform: scale(1.02);
+}
+
+.listing-card .card-body {
+  padding: 1.5rem;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.95), #ffffff);
+}
+
+.listing-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.listing-card .text-muted {
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+.listing-card .card-text {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 0.75rem;
+}
+
+/* Container spacing for sports listings */
+.container-md {
+  padding: 2rem 0;
+}
+
+.container-md .row {
+  margin: 0; /* Reset margin */
+}
+
+/* Adjust padding for card columns */
+.col-md-6 {
+  padding: 0 0.75rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .listing-card {
+    margin: 0 1rem;
+  }
+  
+  .listing-card .card-img-top {
+    height: 180px;
+  }
+  
+  .listing-card .card-body {
+    padding: 1.25rem;
+  }
+  
+  .listing-card h3 {
+    font-size: 1.25rem;
+  }
+}
+
+/* Sports theme colors - you can adjust these to match your brand */
+.text-primary {
+  color: hsla(232, 20%, 35%, 1) !important;
+}
+
+.listing-card .text-muted {
+  color: hsla(232, 15%, 50%, 0.8) !important;
+}
+
+/* Add subtle border radius to images */
+.card-img-top {
+  border-bottom-right-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  border-top-left-radius: 8px !important;
+  border-top-right-radius: 8px !important;
+}
