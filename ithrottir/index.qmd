@@ -19,7 +19,7 @@ listing:
 
 ## Fótbolti 
 
-Hér eru reglulega uppfærðar greiningar á leikjum og gögnum úr Bestu deildum karla og kvenna.
+Hér má finna reglulega uppfærðar greiningar á leikjum og gögnum úr Bestu deildum karla og kvenna.
 
 ::: {#featured-football}
 :::
