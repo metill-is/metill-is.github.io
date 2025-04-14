@@ -1,0 +1,248 @@
+/* css styles */
+
+#hero-banner {
+  padding-left: 35px;
+  padding-right: 35px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #737373;
+  text-align: center;
+}
+
+#people-banner {
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 15px;
+  background-color: #f0f0f0;
+  border: 1px solid #737373;
+  text-align: center;
+}
+
+#between-content {
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #f0efef;
+  border: none;
+  color: hsla(232, 20%, 30%, 1);
+}
+
+.between-content {
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 5px 5px 5px 5px;
+  background-color: #f0efef;
+  border: none;
+  color: hsla(232, 20%, 30%, 1);
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+}
+
+@media screen and (max-width: 1100px) {
+  .between-content {
+    padding-left: 0%;
+    padding-right: 0%;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .between-content {
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 100%;
+  }
+}
+
+.padding10p {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+#quarto-content main { 
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.headline {
+font-size: 1.25em;
+font-weight: 300;
+padding-bottom: 1em;
+}
+.headline p {
+  margin: 0;
+  padding-bottom: 0.2rem;
+}
+.headline a {
+  text-decoration: none;
+}
+.headline ul li {
+  margin-bottom: 0.3em;
+}
+.carousel.card {
+  padding-top: 2em;
+}
+.carousel img {
+  width: 70%;
+  margin-bottom: 110px;
+}
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  margin-bottom: 110px;
+}
+.carousel-caption {
+  padding-top: 1em;
+}
+
+h1:not(.title), h2, h3, h4 {
+  color: hsla(232, 20%, 35%, 1);
+}
+
+.blockquote {
+  text-align: justify;
+  font-family: Bookman;
+
+}
+
+.tab-content {
+  border: none;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.btn-primary, .btn-secondary {
+  margin-top: 1rem;
+}
+
+.featured-article, .featured-dashboard {
+  margin-bottom: 2rem;
+}
+
+
+
+.girafe {
+
+  max-height: 100%;
+  margin: 0 !important;
+}
+
+
+
+.girafe_container_std {
+  margin: 0 !important;
+  
+  transition: all 0.4s ease-in-out;
+  align-items: center !important;
+}
+
+
+/* Sports section styling */
+/* Sports section styling */
+.listing-card {
+  height: 100%;
+  transition: all 0.3s ease-in-out;
+  border: none !important;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.listing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1) !important;
+}
+
+.listing-card .card-img-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.listing-card .card-img-top {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: #f8f9fa;
+  padding: 1rem;
+}
+
+.listing-card:hover .card-img-top {
+  transform: scale(1.02);
+}
+
+.listing-card .card-body {
+  padding: 1.5rem;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.95), #ffffff);
+}
+
+.listing-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.listing-card .text-muted {
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+.listing-card .card-text {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 0.75rem;
+}
+
+/* Container spacing for sports listings */
+.container-md {
+  padding: 2rem 0;
+}
+
+.container-md .row {
+  margin: 0; /* Reset margin */
+}
+
+/* Adjust padding for card columns */
+.col-md-6 {
+  padding: 0 0.75rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .listing-card {
+    margin: 0 1rem;
+  }
+  
+  .listing-card .card-img-top {
+    height: 180px;
+  }
+  
+  .listing-card .card-body {
+    padding: 1.25rem;
+  }
+  
+  .listing-card h3 {
+    font-size: 1.25rem;
+  }
+}
+
+/* Sports theme colors - you can adjust these to match your brand */
+.text-primary {
+  color: hsla(232, 20%, 35%, 1) !important;
+}
+
+.listing-card .text-muted {
+  color: hsla(232, 15%, 50%, 0.8) !important;
+}
+
+/* Add subtle border radius to images */
+.card-img-top {
+  border-bottom-right-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  border-top-left-radius: 8px !important;
+  border-top-right-radius: 8px !important;
+}
