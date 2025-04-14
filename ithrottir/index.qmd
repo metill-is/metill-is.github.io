@@ -15,7 +15,7 @@ listing:
     template: ../ejs/featured-sports.ejs
 ---
 
-::: {.column-page .panel-tabset}
+::: {.column-page}
 
 ## Fótbolti 
 
@@ -25,6 +25,9 @@ Hér eru reglulega uppfærðar greiningar á leikjum og gögnum úr Bestu deildu
 :::
 
 ## Handbolti
+
+Olís deildirnar fara að líða að lokum. Hér förum við yfir tímabilið og spáum í framhaldið í úrslitakeppninni.
+
 ::: {#featured-handball}
 :::
 
