@@ -20,7 +20,7 @@ execute:
   freeze: false
 citation-location: margin
 reference-location: margin
-image: ithrottir/fotbolti/besta/besta-karla/Figures/cover.png
+image: https://raw.githubusercontent.com/bgautijonsson/football_iceland/refs/heads/main/results/male/figures/styrkur.png
 ---
 
 ::: {#featured .column-screen}
