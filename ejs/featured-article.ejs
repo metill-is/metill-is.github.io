@@ -3,7 +3,13 @@
   <% for (const item of items) { %>
     <div class="row">
       <div class="col-md-6">
-        <img src="<%= item.image %>" class="img-fluid" alt="<%= item.title %>">
+        <% if (Array.isArray(item.images)) { %>
+          <% item.images.forEach(function(img) { %>
+            <img src="<%= img %>" class="img-fluid mb-2" alt="<%= item.title %>">
+          <% }); %>
+        <% } else { %>
+          <img src="<%= item.image %>" class="img-fluid" alt="<%= item.title %>">
+        <% } %>
       </div>
       <div class="col-md-6">
         <h2><%= item.title %></h2>

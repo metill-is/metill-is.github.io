@@ -1,8 +1,12 @@
-- title: "Flóttafólk og hælisleitendur"
+- title: "FótboltaMetill"
   description: |
-    Hvar bíða flestir einstaklingar eftir niðurstöðu í hælisumsókn sinni? Hvaða land hefur tekið við flestum 
-    hælisleitendum? Hvernig tengist löggjöf skilgreiningu á gögnum? Hér eru gögn um fjölda einstaklinga sem 
-    njóta tímabundinnar verndar eða hælis, fjölda samþykktra verndar- og hælisumsókna og fjölda umsókna í bið 
-    tekin saman úr gögnum  Eurostat.
-  href: greinar/flottafolk/index.qmd
-  image: greinar/flottafolk/Figures/cover_fp.png
+    Við kynnum FótboltaMetil - reglulega uppfærðan hluta þar sem við 
+    greinum bæði söguleg og ný gögn úr íslenskum fótbolta. Hér berum við saman 
+    styrkleika liða, spáum fyrir um úrslit leikja og þróun deilda. <br><br>
+    
+    Fylgstu með fyrir innsýn, tölfræði og áhugaverðar greiningar á íslenskum fótbolta - 
+    allt á einum stað!
+  href: ithrottir/index.qmd
+  images:
+    - https://raw.githubusercontent.com/bgautijonsson/football_iceland/refs/heads/main/results/male/figures/styrkur.png
+    - https://raw.githubusercontent.com/bgautijonsson/football_iceland/refs/heads/main/results/female/figures/styrkur.png

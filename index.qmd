@@ -20,7 +20,7 @@ execute:
   freeze: false
 citation-location: margin
 reference-location: margin
-image: greinar/flottafolk/Figures/cover.png
+image: ithrottir/fotbolti/besta/besta-karla/Figures/cover.png
 ---
 
 ::: {#featured .column-screen}

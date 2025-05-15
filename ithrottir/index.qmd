@@ -3,11 +3,6 @@ title: " <br>"
 pagetitle: "ÍþróttaMetill"
 toc: false
 listing:
-  - id: featured-handball
-    contents: handbolti/olis
-    sort: "date desc"
-    type: grid
-    template: ../ejs/featured-sports.ejs
   - id: featured-football
     contents: fotbolti/besta
     sort: "date desc"
@@ -26,9 +21,7 @@ Hér má finna reglulega uppfærðar greiningar á leikjum og gögnum úr Bestu 
 
 ## Handbolti
 
-Olís deildirnar fara að líða að lokum. Hér förum við yfir tímabilið og spáum í framhaldið í úrslitakeppninni.
-
-::: {#featured-handball}
-:::
+Greiningar á handbolta eru í vinnslu og munu birtast síðar.
 
 :::
+
