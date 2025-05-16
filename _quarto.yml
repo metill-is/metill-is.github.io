@@ -37,3 +37,4 @@ execute:
   freeze: auto
   echo: false
   warning: false
+lightbox: true

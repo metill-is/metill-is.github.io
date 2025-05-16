@@ -39,6 +39,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-b9375dcde0a4a90f0c3597c96dcc7ef1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -288,9 +291,9 @@ gtag('config', 'G-J28QQV8PN9', { 'anonymize_ip': true});
 <div id="between-content" class="column-screen shadow">
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><img src="Figures/samanburdur_page.png" class="img-fluid"></p>
+<p><a href="Figures/samanburdur_page.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="Figures/samanburdur_page.png" class="img-fluid"></a></p>
 </div><div class="column" style="width:50%;">
-<p><img src="Figures/samanburdur2_page.png" class="img-fluid"></p>
+<p><a href="Figures/samanburdur2_page.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="Figures/samanburdur2_page.png" class="img-fluid"></a></p>
 </div>
 </div>
 </div>
@@ -339,7 +342,7 @@ gtag('config', 'G-J28QQV8PN9', { 'anonymize_ip': true});
 <div class="between-content justify-content-center p-0 page-columns page-full">
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p class="page-columns page-full"><img src="Figures/fasteignir_page.png" class="img-fluid quarto-figure quarto-figure-center figure-img column-screen" style="padding:0;;width:80.0%"></p>
+<p class="page-columns page-full"><a href="Figures/fasteignir_page.png" class="lightbox page-columns page-full" data-gallery="quarto-lightbox-gallery-3"><img src="Figures/fasteignir_page.png" class="img-fluid quarto-figure quarto-figure-center figure-img column-screen" style="padding:0;;width:80.0%"></a></p>
 </figure>
 </div>
 </div>
@@ -808,6 +811,38 @@ gtag('config', 'G-J28QQV8PN9', { 'anonymize_ip': true});
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

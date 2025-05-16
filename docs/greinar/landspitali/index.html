@@ -39,6 +39,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-b9375dcde0a4a90f0c3597c96dcc7ef1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -218,7 +221,11 @@ gtag('config', 'G-J28QQV8PN9', { 'anonymize_ip': true});
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="veikindi_kjarnar.png" class="img-fluid figure-img" style="width:60.0%"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="veikindi_kjarnar.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Munur á Jan-Mars veikindahlutföllum 2021 og 2022"><img src="veikindi_kjarnar.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%" alt="Munur á Jan-Mars veikindahlutföllum 2021 og 2022"></a></p>
+</figure>
+</div>
 <figcaption>Munur á Jan-Mars veikindahlutföllum 2021 og 2022</figcaption>
 </figure>
 </div>
@@ -298,7 +305,7 @@ gtag('config', 'G-J28QQV8PN9', { 'anonymize_ip': true});
 <p>Í fyrrnefndum skrifum birtist eftirfarandi mynd</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="nyting_ryma.png" class="img-fluid figure-img"></p>
+<p><a href="nyting_ryma.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Tafla frá: Bréf til blaðsins. Skortur á legurými fyrir bráðveika á Landspítala (Læknablaðið 12. tölublað, 107. árgangur 2021)"><img src="nyting_ryma.png" class="img-fluid figure-img" alt="Tafla frá: Bréf til blaðsins. Skortur á legurými fyrir bráðveika á Landspítala (Læknablaðið 12. tölublað, 107. árgangur 2021)"></a></p>
 <figcaption>Tafla frá: Bréf til blaðsins. Skortur á legurými fyrir bráðveika á Landspítala (Læknablaðið 12. tölublað, 107. árgangur 2021)</figcaption>
 </figure>
 </div>
@@ -410,7 +417,11 @@ gtag('config', 'G-J28QQV8PN9', { 'anonymize_ip': true});
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="skrifstof_landsp.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="skrifstof_landsp.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Tilkynning vegna skrifstofustöðugilda"><img src="skrifstof_landsp.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Tilkynning vegna skrifstofustöðugilda"></a></p>
+</figure>
+</div>
 <figcaption>Tilkynning vegna skrifstofustöðugilda</figcaption>
 </figure>
 </div>
@@ -906,6 +917,38 @@ gtag('config', 'G-J28QQV8PN9', { 'anonymize_ip': true});
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

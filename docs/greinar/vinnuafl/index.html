@@ -39,6 +39,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-b9375dcde0a4a90f0c3597c96dcc7ef1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -1006,7 +1009,7 @@ Hlutfall (%)
 </section>
 <section id="fjöldi-starfsfólks-eftir-vinnumarkaði" class="level1 page-columns page-full">
 <h1>Fjöldi starfsfólks eftir vinnumarkaði</h1>
-<p class="page-columns page-full"><img src="figures/figure1.png" class="column-screen-inset img-fluid"></p>
+<p class="page-columns page-full"><a href="figures/figure1.png" class="lightbox page-columns page-full" data-gallery="quarto-lightbox-gallery-1"><img src="figures/figure1.png" class="column-screen-inset img-fluid"></a></p>
 </section>
 <section id="árstíðaleiðrétt-hlutfall-opinbers-starfsfólks" class="level1 page-columns page-full">
 <h1>Árstíðaleiðrétt hlutfall opinbers starfsfólks</h1>
@@ -1017,7 +1020,7 @@ Hlutfall (%)
 <div class="cell column-screen-inset">
 
 </div>
-<p class="page-columns page-full"><img src="figures/hlutf_opinbert_fp.png" class="column-page img-fluid"></p>
+<p class="page-columns page-full"><a href="figures/hlutf_opinbert_fp.png" class="lightbox page-columns page-full" data-gallery="quarto-lightbox-gallery-2"><img src="figures/hlutf_opinbert_fp.png" class="column-page img-fluid"></a></p>
 </div>
 <div id="tabset-2-2" class="tab-pane page-columns page-full" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <div class="tabset-margin-container"></div><div class="panel-tabset page-columns page-full">
@@ -1042,7 +1045,7 @@ Hlutfall (%)
 <div class="cell column-page">
 
 </div>
-<p><img src="Figures/yearly_sveiflur.png" class="img-fluid"></p>
+<p><a href="Figures/yearly_sveiflur.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="Figures/yearly_sveiflur.png" class="img-fluid"></a></p>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <p>Hlutall <em>(p)</em> opinbers starfsfólks <em>(O)</em> af heildarfjölda starfsfólks <em>(H)</em> má skrifa</p>
@@ -1073,7 +1076,7 @@ p = \frac{O}{H},
 </section>
 <section id="fjöldi-starfandi-á-almennum-vinnumarkaði" class="level1 page-columns page-full">
 <h1>Fjöldi starfandi á almennum vinnumarkaði</h1>
-<p class="page-columns page-full"><img src="figures/almennur_fjoldi_methaedir_fp.png" class="column-page img-fluid"></p>
+<p class="page-columns page-full"><a href="figures/almennur_fjoldi_methaedir_fp.png" class="lightbox page-columns page-full" data-gallery="quarto-lightbox-gallery-4"><img src="figures/almennur_fjoldi_methaedir_fp.png" class="column-page img-fluid"></a></p>
 
 
 </section>
@@ -1498,6 +1501,38 @@ p = \frac{O}{H},
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

@@ -39,6 +39,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../../../site_libs/bootstrap/bootstrap-b9375dcde0a4a90f0c3597c96dcc7ef1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -162,28 +165,28 @@ gtag('config', 'G-J28QQV8PN9', { 'anonymize_ip': true});
 <section id="styrkur-félagsliða" class="level2">
 <h2 class="anchored" data-anchor-id="styrkur-félagsliða">Styrkur félagsliða</h2>
 <p>Líkanið metur bæði sóknar- og varnarstyrk félagsliða ásamt því að meta áhrif heimavallar á frammistöðu hvers liðs.</p>
-<p><img src="https://raw.githubusercontent.com/bgautijonsson/football_iceland/refs/heads/main/results/male/figures/styrkur.png" class="img-fluid"></p>
+<p><a href="https://raw.githubusercontent.com/bgautijonsson/football_iceland/refs/heads/main/results/male/figures/styrkur.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://raw.githubusercontent.com/bgautijonsson/football_iceland/refs/heads/main/results/male/figures/styrkur.png" class="img-fluid"></a></p>
 </section>
 <section id="leikir-næstu-viku" class="level2">
 <h2 class="anchored" data-anchor-id="leikir-næstu-viku">Leikir næstu viku</h2>
 <p>Spár um niðurstöðu leikja komandi viku má reikna úr líkindadreifingum sem líkanið metur.</p>
-<p><img src="https://raw.githubusercontent.com/bgautijonsson/football_iceland/refs/heads/main/results/male/figures/next_week_preds.png" class="img-fluid"></p>
+<p><a href="https://raw.githubusercontent.com/bgautijonsson/football_iceland/refs/heads/main/results/male/figures/next_week_preds.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="https://raw.githubusercontent.com/bgautijonsson/football_iceland/refs/heads/main/results/male/figures/next_week_preds.png" class="img-fluid"></a></p>
 </section>
 <section id="stigafjöldi-í-lok-timabils-fyrir-umspil" class="level2">
 <h2 class="anchored" data-anchor-id="stigafjöldi-í-lok-timabils-fyrir-umspil">Stigafjöldi í lok timabils (fyrir umspil)</h2>
 <p>Við getum spáð fyrir um niðurstöðu allra leikja í deildinni og reiknað svo líkindadreifingu yfir stigafjölda hvers liðs í lok tímabilsins.</p>
 <p>Myndin að neðan sýnir þá líkindadreifingu ásamt því að sýna líkur á að félagslið nái inn í efri hluta umspilsins í lok tímabilsins.</p>
-<p><img src="https://raw.githubusercontent.com/bgautijonsson/football_iceland/refs/heads/main/results/male/figures/umspil_top.png" class="img-fluid"></p>
+<p><a href="https://raw.githubusercontent.com/bgautijonsson/football_iceland/refs/heads/main/results/male/figures/umspil_top.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="https://raw.githubusercontent.com/bgautijonsson/football_iceland/refs/heads/main/results/male/figures/umspil_top.png" class="img-fluid"></a></p>
 </section>
 <section id="sigurvegari-tímabils-fyrir-umspil" class="level2">
 <h2 class="anchored" data-anchor-id="sigurvegari-tímabils-fyrir-umspil">Sigurvegari tímabils (fyrir umspil)</h2>
 <p>Við getum reiknað líkindadreifingu yfir sigurvegara tímabilsins.</p>
-<p><img src="https://raw.githubusercontent.com/bgautijonsson/football_iceland/refs/heads/main/results/male/figures/deild_top.png" class="img-fluid"></p>
+<p><a href="https://raw.githubusercontent.com/bgautijonsson/football_iceland/refs/heads/main/results/male/figures/deild_top.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="https://raw.githubusercontent.com/bgautijonsson/football_iceland/refs/heads/main/results/male/figures/deild_top.png" class="img-fluid"></a></p>
 </section>
 <section id="heimavallaráhrif" class="level2">
 <h2 class="anchored" data-anchor-id="heimavallaráhrif">Heimavallaráhrif</h2>
 <p>Lið spila oftast betur á heimavelli. Hversu mikil eru áhrifin? Eru þau mismunandi milli liða? Eru áhrifin meiri þegar kemur að sóknarstyrk eða varnarstyrk?</p>
-<p><img src="https://raw.githubusercontent.com/bgautijonsson/football_iceland/refs/heads/main/results/male/figures/home_advantage.png" class="img-fluid"></p>
+<p><a href="https://raw.githubusercontent.com/bgautijonsson/football_iceland/refs/heads/main/results/male/figures/home_advantage.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="https://raw.githubusercontent.com/bgautijonsson/football_iceland/refs/heads/main/results/male/figures/home_advantage.png" class="img-fluid"></a></p>
 
 
 </section>
@@ -608,6 +611,38 @@ gtag('config', 'G-J28QQV8PN9', { 'anonymize_ip': true});
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

@@ -10,7 +10,7 @@ callout-appearance: simple
 callout-icon: true
 
 execute:
-  freeze: false
+  freeze: true
 citation-location: margin
 reference-location: margin
 image: Figures/time_series.png
@@ -80,7 +80,7 @@ coverage_data <- read_parquet(here("data", "y_rep_draws.parquet")) |>
     flokkur = str_to_sentence(flokkur),
     flokkur_ordered = glue("<b style='color:{litur}'>{flokkur}</b>"),
     flokkur_ordered = fct_reorder(flokkur_ordered, mean)
-  ) |> 
+  ) |>
   filter(
     (flokkur != "Lýðræðisflokkurinn") | (dags >= clock::date_build(2024, 10, 21))
   )
@@ -92,14 +92,14 @@ polling_data <- read_csv(here("data", "polling_data.csv")) |>
     flokkur = str_to_sentence(flokkur),
     .by = c(date, fyrirtaeki)
   ) |>
-  rename(dags = date) |> 
+  rename(dags = date) |>
   mutate(
     flokkur = if_else(
       flokkur == "Annað",
       "Lýðræðisflokkurinn",
       flokkur
     )
-  ) |> 
+  ) |>
   filter(
     (flokkur != "Lýðræðisflokkurinn") | (dags >= clock::date_build(2024, 10, 21))
   )
@@ -117,16 +117,16 @@ d <- read_parquet(here("data", "y_rep_draws.parquet")) |>
       "Lýðræðisflokkurinn",
       flokkur
     )
-  ) |> 
+  ) |>
   inner_join(
     colors
   ) |>
   mutate(
     flokkur = str_to_sentence(flokkur)
-  ) |> 
+  ) |>
   inner_join(
     polling_data
-  ) |> 
+  ) |>
   filter(
     (flokkur != "Lýðræðisflokkurinn") | (dags >= clock::date_build(2024, 10, 21))
   )
