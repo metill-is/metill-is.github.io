@@ -4,7 +4,7 @@ pagetitle: "Besta deild kvenna"
 subtitle: "Nýjustu greiningar á Bestu deild kvenna"
 description:  |
     Fótboltalíkan Metils býður upp á greiningar á sóknar- og varnarstyrk íslenskra félagsliða ásamt því að spá fyrir um úrslit komandi leikja og deildarinnar í heild sinni.
-date: "2025/5/15"
+date: "2025/5/29"
 draft: false
 categories:
     - íþróttir

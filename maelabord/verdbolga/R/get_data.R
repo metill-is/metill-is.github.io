@@ -6,11 +6,12 @@ url <- "https://px.hagstofa.is:443/pxis/api/v1/is/Efnahagur/visitolur/1_vnv/2_un
 
 d <- hg_data(url) |>
   filter(
-    Liður %in% c(
-      "Áhrif á vísitölu, %",
-      "Mánaðarbreyting, %",
-      "Vægi, %"
-    )
+    Liður %in%
+      c(
+        "Áhrif á vísitölu, %",
+        "Mánaðarbreyting, %",
+        "Vægi, %"
+      )
   ) |>
   collect()
 
@@ -80,7 +81,8 @@ d_combined <- d |>
   ) |>
   mutate_at(
     vars(flokkur_2, flokkur_3),
-    coalesce, "Samtals"
+    coalesce,
+    "Samtals"
   )
 
 d3 <- d_combined |>

@@ -138,10 +138,8 @@ data_hist <- data_hist |>
   pivot_longer(c(total, total_non_ukr, asylum_applicants))
 
 
-
 # d <- here(cache_dir, "raw_data.csv") |>
 #   read_csv()
-
 
 # d_2024 <- d |>
 #   filter(
@@ -157,8 +155,6 @@ data_hist <- data_hist |>
 #     )
 #   ) |>
 #   select(-gdp, -per_pop_cumsum, -per_gdp)
-
-
 
 # end_date <- d_2024 |>
 #   drop_na() |>
@@ -176,7 +172,6 @@ data_hist <- data_hist |>
 #   ) |>
 #   pull(end_date) |>
 #   min()
-
 
 # d_2024 <- d_2024 |>
 #   filter(

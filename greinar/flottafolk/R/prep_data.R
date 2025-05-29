@@ -95,7 +95,10 @@ decisions <- get_eurostat(
   select(-Total, -Ukraine) |>
   pivot_wider(names_from = decision, values_from = values) |>
   janitor::clean_names() |>
-  rename(total_decisions = total, positive_decisions = total_positive_decisions) |>
+  rename(
+    total_decisions = total,
+    positive_decisions = total_positive_decisions
+  ) |>
   mutate(
     percent_positive_decisions = positive_decisions / total_decisions
   )
@@ -167,7 +170,6 @@ gdp <- get_eurostat(
   rename(gdp = values)
 
 
-
 #### Sameining gagna ####
 d <- beneficiaries |>
   mutate(
@@ -217,7 +219,8 @@ d <- beneficiaries |>
     by = "country"
   ) |>
   select(
-    -year, -country
+    -year,
+    -country
   ) |>
   mutate(
     total_grants = grants + positive_decisions
@@ -276,7 +279,6 @@ d <- d |>
     ),
     .by = c(land, time)
   )
-
 
 
 d |>

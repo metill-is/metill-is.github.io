@@ -4,7 +4,7 @@ pagetitle: "Olís deild karla"
 subtitle: "Nýjustu greiningar á Olís deild karla"
 description:  |
     This is text. This is text. This is text. This is text. 
-date: "2025/4/14"
+date: "2025/5/29"
 draft: false
 categories:
     - íþróttir
