@@ -4,7 +4,6 @@ pagetitle: "Besta deild kvenna"
 subtitle: "Nýjustu greiningar á Bestu deild kvenna"
 description:  |
     Fótboltalíkan Metils býður upp á greiningar á sóknar- og varnarstyrk íslenskra félagsliða ásamt því að spá fyrir um úrslit komandi leikja og deildarinnar í heild sinni.
-date: "2025/5/29"
 draft: false
 categories:
     - íþróttir
@@ -29,7 +28,11 @@ Spár um niðurstöðu leikja komandi viku má reikna úr líkindadreifingum sem
 
 ![](https://raw.githubusercontent.com/bgautijonsson/football_iceland/refs/heads/main/results/female/figures/next_week_preds.png)
 
-## Stigafjöldi í lok timabils (fyrir umspil)
+## Stigafjöldi í lok timabils (fyrir umspil) 
+
+::: {.panel-tabset .nav-pills}
+
+### Nýjasta spá
 
 Við getum spáð fyrir um niðurstöðu allra leikja í deildinni og reiknað svo líkindadreifingu yfir stigafjölda hvers liðs í lok tímabilsins. 
 
@@ -37,11 +40,28 @@ Myndin að neðan sýnir þá líkindadreifingu ásamt því að sýna líkur á
 
 ![](https://raw.githubusercontent.com/bgautijonsson/football_iceland/refs/heads/main/results/female/figures/umspil_top.png)
 
-## Sigurvegari tímabils (fyrir umspil)
+### Þróun spár
+
+![](https://raw.githubusercontent.com/bgautijonsson/football_iceland/refs/heads/main/results/female/historical/points_simple.png)
+
+:::
+
+## Sigurvegari tímabils (fyrir umspil) 
+
+::: {.panel-tabset .nav-pills}
+
+### Nýjasta spá
 
 Við getum reiknað líkindadreifingu yfir sigurvegara tímabilsins.
 
 ![](https://raw.githubusercontent.com/bgautijonsson/football_iceland/refs/heads/main/results/female/figures/deild_top.png)
+
+### Þróun spár
+
+![](https://raw.githubusercontent.com/bgautijonsson/football_iceland/refs/heads/main/results/female/historical/placement_simple.png)
+
+:::
+
 
 ## Heimavallaráhrif
 

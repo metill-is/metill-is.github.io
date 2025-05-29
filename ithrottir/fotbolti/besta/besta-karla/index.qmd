@@ -4,7 +4,6 @@ pagetitle: "Besta deild karla"
 subtitle: "Nýjustu greiningar á Bestu deild karla"
 description:  |
     Fótboltalíkan Metils býður upp á greiningar á sóknar- og varnarstyrk íslenskra félagsliða ásamt því að spá fyrir um úrslit komandi leikja og deildarinnar í heild sinni.
-date: "2025/5/29"
 draft: false
 categories:
     - íþróttir
@@ -31,17 +30,37 @@ Spár um niðurstöðu leikja komandi viku má reikna úr líkindadreifingum sem
 
 ## Stigafjöldi í lok timabils (fyrir umspil)
 
+::: {.panel-tabset .nav-pills}
+
+### Nýjasta spá
+
 Við getum spáð fyrir um niðurstöðu allra leikja í deildinni og reiknað svo líkindadreifingu yfir stigafjölda hvers liðs í lok tímabilsins. 
 
 Myndin að neðan sýnir þá líkindadreifingu ásamt því að sýna líkur á að félagslið nái inn í efri hluta umspilsins í lok tímabilsins.
 
 ![](https://raw.githubusercontent.com/bgautijonsson/football_iceland/refs/heads/main/results/male/figures/umspil_top.png)
 
+### Þróun spár
+
+![](https://raw.githubusercontent.com/bgautijonsson/football_iceland/refs/heads/main/results/male/historical/points_simple.png)
+
+:::
+
 ## Sigurvegari tímabils (fyrir umspil)
+
+::: {.panel-tabset .nav-pills}
+
+### Nýjasta spá
 
 Við getum reiknað líkindadreifingu yfir sigurvegara tímabilsins.
 
 ![](https://raw.githubusercontent.com/bgautijonsson/football_iceland/refs/heads/main/results/male/figures/deild_top.png)
+
+### Þróun spár
+
+![](https://raw.githubusercontent.com/bgautijonsson/football_iceland/refs/heads/main/results/male/historical/placement_simple.png)
+
+:::
 
 ## Heimavallaráhrif
 
