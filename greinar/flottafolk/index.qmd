@@ -427,7 +427,7 @@ make_ggiraph1(
 
 ## Mánaðarlegar veitingar
 
-Yfir árið 2022 var mikið flæði flóttafólks frá Úkraínu til annarra Evrópulanda, þá sérstaklega til Tékklands og Póllands, en mikill fjöldi leitaði líka til Slóvakíu og Eistlands. Síðustu mánuði ársins 2023 jókst fjöldinn sem leitaði til Noregs og tóku norsk yfirvöld við flestum í nóvember síðastliðinn.
+Yfir árið 2022 var mikið flæði flóttafólks frá Úkraínu til annarra Evrópulanda, þá sérstaklega til Tékklands og Póllands, en mikill fjöldi leitaði líka til Slóvakíu og Eistlands.
 
 ```{r}
 #| eval: true
@@ -510,9 +510,9 @@ make_ggiraph3(
 
 ## Mánaðarlegur fjöldi umsókna
 
-Fyrst skoðum við hversu margar umsóknir um *hæli* þjóðir fá á hverjum mánuði. Frá september 2022 til júní 2023 var langur kafli þar sem Ísland fékk óvenjulega margar umsóknir, mun meira en aðrar þjóðir. Frá og með júlí 2023 hefur þetta þó aðeins róast og erum við núna farin að fá svipað magn og Lúxemborg aftur.
+Fyrst skoðum við hversu margar umsóknir um *hæli* þjóðir fá á hverjum mánuði. Frá september 2022 til júní 2023 var langur kafli þar sem Ísland fékk óvenjulega margar umsóknir, mun meira en aðrar þjóðir. Frá og með júlí 2023 hefur þetta þó aðeins róast hefur fjöldi umsókna hér á landi verið undir meðaltali allra þjóðanna í rúmt ár.
 
-Uppsafnaður fjöldi hælisumsókna er mun hærri á Íslandi en í öðrum löndum. Næsta land á eftir Íslandi er Grikkland, en þar hefur mánaðarlegum umsóknum fjölgað og munurinn milli Íslands og Grikklands því að minnka.
+Uppsafnaður fjöldi hælisumsókna (frá mars 2022) er mun hærri á Íslandi en í öðrum löndum, en bara Austurríki og Grikkland hafa fengið fleiri umsóknir um hæli á tímabilinu frá mars 2022.
 
 ::: {.panel-tabset}
 
@@ -526,7 +526,7 @@ make_plot(
   plot_var = "asylum_applicants_non_ukraine",
   scaling_var = "per_pop",
   start_date = clock::date_build(2022, 3, 1),
-  end_date = clock::date_build(2024, 12, 1),
+  end_date = clock::date_build(2025, 3, 1),
   title = "Hvar sækja flestir einstaklingar um hæli?",
   subtitle = "Sýnt sem fjöldi á 100.000 íbúa hvers lands",
   caption = caption
@@ -543,7 +543,7 @@ make_plot(
   plot_var = "asylum_applicants_non_ukraine",
   scaling_var = "per_pop_cumsum",
   start_date = clock::date_build(2022, 3, 1),
-  end_date = clock::date_build(2024, 12, 1),
+  end_date = clock::date_build(2025, 3, 1),
   title = "Hvar hafa flestir einstaklingar sótt um hæli? (Uppsafnaðar tölur frá mars 2022)",
   subtitle = "Sýnt sem fjöldi á 100.000 íbúa hvers lands",
   caption = caption,
@@ -562,9 +562,9 @@ make_plot(
 
 ### Samtals ákvarðanir
 
-Byrjum á að skoða hve margar ákvarðanir eru teknar í hverjum mánuði. Íslenskum yfirvöldum hefur tekist ágætlega í að afgreiða mál umsækjenda þegar tekið er tillit til höfðatölu og miðað er við önnur lönd. Frá sumri 2022 höfum við verið á toppnum eða nálægt toppnum í fjölda afgreiddra mála á höfðatölu. 
+Byrjum á að skoða hve margar ákvarðanir eru teknar í hverjum mánuði. Íslenskum yfirvöldum hefur tekist ágætlega í að afgreiða mál umsækjenda þegar tekið er tillit til höfðatölu og miðað er við önnur lönd. Frá sumri 2022 til hausts 2024 vorum við á toppnum eða nálægt toppnum í fjölda afgreiddra mála á höfðatölu. 
 
-Hér er þó mikilvægt að bera saman stærðargráðu á fjölda umsókna og fjölda afgreiðslna. Yfirvöld þurfa að vega kostnað vegna starfsfólks á móti kostnaði við að veita hælisleitendum skjól á meðan beðið er eftir niðurstöðu umsóknar. 
+Hér er þó mikilvægt að bera saman stærðargráðu á fjölda umsókna og fjölda afgreiðslna. Yfirvöld þurfa að vega kostnað vegna starfsfólks á móti kostnaði við að veita hælisleitendum skjól á meðan beðið er eftir niðurstöðu umsóknar. Við sjáum til dæmis að ákvörðunum hefur fækkað á Íslandi undanfarið, en það tengist því væntanlega að umsóknum hefur fækkað verulega líka.
 
 ::: {.panel-tabset}
 
@@ -578,7 +578,7 @@ make_plot(
   plot_var = "total_decisions",
   scaling_var = "per_pop",
   start_date = clock::date_build(2022, 3, 1),
-  end_date = clock::date_build(2024, 10, 1),
+  end_date = clock::date_build(2025, 1, 1),
   title = "Hvar eru flestar ákvarðanir um stöðu hælisleitenda teknar á mánuði?",
   subtitle = "Sýnt sem fjöldi á 100.000 íbúa hvers lands",
   caption = caption,
@@ -597,7 +597,7 @@ make_plot(
   plot_var = "total_decisions",
   scaling_var = "per_pop_cumsum",
   start_date = clock::date_build(2022, 3, 1),
-  end_date = clock::date_build(2024, 10, 1),
+  end_date = clock::date_build(2025, 1, 1),
   title = "Hvar hafa flestar ákvarðanir verið teknar? (Uppsafnaðar tölur frá mars 2022)",
   subtitle = "Sýnt sem fjöldi á 100.000 íbúa hvers lands",
   caption = caption,
@@ -722,7 +722,7 @@ make_plot(
   plot_var = "total_grants",
   scaling_var = "per_pop",
   start_date = clock::date_build(2022, 3, 1),
-  end_date = clock::date_build(2024, 7, 1),
+  end_date = clock::date_build(2025, 1, 1),
   title = "Samtals veitingar á hæli og tímabundinni vernd í hverjum mánuði",
   subtitle = "Sýnt sem fjöldi á 100.000 íbúa hvers lands",
   caption = caption,
@@ -741,7 +741,7 @@ make_plot(
   plot_var = "total_grants",
   scaling_var = "per_pop_cumsum",
   start_date = clock::date_build(2022, 3, 1),
-  end_date = clock::date_build(2024, 7, 1),
+  end_date = clock::date_build(2025, 1, 1),
   title = "Hvar hefur flestum verið veitt vernd og/eða hæli? (Uppsafnaðar tölur frá mars 2022)",
   subtitle = "Sýnt sem fjöldi á 100.000 íbúa hvers lands",
   caption = caption,
