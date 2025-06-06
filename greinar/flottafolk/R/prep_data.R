@@ -235,8 +235,8 @@ d_total <- d |>
   summarise_at(
     vars(-land),
     \(x, ...) {
-      perc_na <- mean(is.na(x))
-      if (perc_na > 0.05) {
+      n_na <- sum(is.na(x))
+      if (n_na > 3) {
         return(NA)
       } else {
         return(sum(x, na.rm = TRUE))
