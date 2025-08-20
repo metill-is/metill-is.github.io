@@ -58,6 +58,10 @@ Myndin að neðan sýnir þá líkindadreifingu ásamt því að sýna líkur á
 
 ### Þróun spár
 
+Á myndinni að neðan sýna svörtu línur *meðaltalið* í spá fótboltalíkansins. Líkanið fangar hins vegar mikla óvissu og því fylgir líka svokallað *89% spábil* í daufum gráum lit. Það bil sýnir þær útkomur sem líkanið telur 89% líkur á að muni raungerast, og því líka 11% líkur á að annað gerist.
+
+Þegar líður á tímabilið minnka þessi *spábil*, bæði vegna þess að líkanið verður vissara í mati sínu á getu liðanna, en líka vegna þess að færri leikir eru eftir og því færri möguleikar til að koma okkur á óvart.
+
 ![](https://raw.githubusercontent.com/bgautijonsson/football_iceland/refs/heads/main/results/male/historical/points_simple.png)
 
 :::
@@ -73,6 +77,10 @@ Við getum reiknað líkindadreifingu yfir sigurvegara tímabilsins.
 ![](https://raw.githubusercontent.com/bgautijonsson/football_iceland/refs/heads/main/results/male/figures/deild_top.png)
 
 ### Þróun spár
+
+Á myndinni að neðan sýna svörtu línur *meðaltalið* í spá fótboltalíkansins. Líkanið fangar hins vegar mikla óvissu og því fylgir líka svokallað *89% spábil* í daufum gráum lit. Það bil sýnir þær útkomur sem líkanið telur 89% líkur á að muni raungerast, og því líka 11% líkur á að annað gerist.
+
+Þegar líður á tímabilið minnka þessi *spábil*, bæði vegna þess að líkanið verður vissara í mati sínu á getu liðanna, en líka vegna þess að færri leikir eru eftir og því færri möguleikar til að koma okkur á óvart.
 
 ![](https://raw.githubusercontent.com/bgautijonsson/football_iceland/refs/heads/main/results/male/historical/placement_simple.png)
 
