@@ -24,9 +24,25 @@ Líkanið metur bæði sóknar- og varnarstyrk félagsliða ásamt því að met
 
 ## Leikir næstu viku
 
+::: {.panel-tabset .nav-pills}
+
+### Spár
+
 Spár um niðurstöðu leikja komandi viku má reikna úr líkindadreifingum sem líkanið metur.
 
 ![](https://raw.githubusercontent.com/bgautijonsson/football_iceland/refs/heads/main/results/female/figures/next_week_preds.png)
+
+### Kvörðun
+
+Fótboltalíkanið gefur líkur á að ákveðnar útkomur raungerast, en hvernig vitum við hversu gott líkanið er? Til að meta gæti slíkra spáa skoðum við *kvörðun* líkansins.
+
+Ef líkanið er vel kvarðað þá ættu atburðir að gerast jafnoft og það spáir fyrir um. Þetta þýðir að af öllum þeim skiptum sem líkanið sagði 50% líkur á að eitthvað gerðist, ættu 50% af þeim að hafa raunverulega átt sér stað. Það sama á við um 10%, 37% og 71% líkindi.
+
+Ef svo er munu punktarnir á myndinni að neðan liggja á eða nálægt brotalínunni (sem táknar y = x).
+
+![](https://raw.githubusercontent.com/bgautijonsson/football_iceland/refs/heads/main/calibration_female.png)
+
+:::
 
 ## Stigafjöldi í lok timabils (fyrir umspil) 
 
