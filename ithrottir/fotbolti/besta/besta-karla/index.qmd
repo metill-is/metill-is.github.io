@@ -56,6 +56,12 @@ Myndin að neðan sýnir þá líkindadreifingu ásamt því að sýna líkur á
 
 ![](https://raw.githubusercontent.com/bgautijonsson/football_iceland/refs/heads/main/results/male/figures/umspil_top.png)
 
+Á myndinni að ofan sést að líkanið telur víst að Valur, Víkingur, Breiðablik og Stjarnan komist áfram í umspil haustins. Sex lið eiga svo möguleika á að komast áfram í umspilin, með mismiklum líkum. Myndin að neðan sýnir hvernir sóknar- og varnarstyrkur þessara liða hefur þróast undanfarin ár. 
+
+Af þessum liðum virðist Vestri hafa sterkustu vörnina en veikustu sóknina. Því er svo öfugt farið hjá KR, en samkvæmt líkaninu er KR með öflugustu sóknina og slökustu vörnina meðal liðanna.
+
+![](https://raw.githubusercontent.com/bgautijonsson/football_iceland/refs/heads/main/results/male/figures/barattan_um_umspil_top.png)
+
 ### Þróun spár
 
 Á myndinni að neðan sýna svörtu línur *meðaltalið* í spá fótboltalíkansins. Líkanið fangar hins vegar mikla óvissu og því fylgir líka svokallað *89% spábil* í daufum gráum lit. Það bil sýnir þær útkomur sem líkanið telur 89% líkur á að muni raungerast, og því líka 11% líkur á að annað gerist.
