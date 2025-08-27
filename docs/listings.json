@@ -1,18 +1,10 @@
 [
   {
-    "listing": "/greinar.html",
+    "listing": "/ithrottir/index.html",
     "items": [
-      "/greinar/flottafolk/index.html",
-      "/greinar/handbolti/index.html",
-      "/ithrottir/handbolti/greinar/hm2025/index.html",
-      "/greinar/stjornmalaflokkar/index.html",
-      "/greinar/vinnuafl/index.html",
-      "/greinar/landspitali/index.html"
+      "/ithrottir/fotbolti/besta/besta-kvenna/index.html",
+      "/ithrottir/fotbolti/besta/besta-karla/index.html"
     ]
-  },
-  {
-    "listing": "/index.html",
-    "items": []
   },
   {
     "listing": "/maelabord.html",
@@ -26,10 +18,19 @@
     ]
   },
   {
-    "listing": "/ithrottir/index.html",
+    "listing": "/index.html",
+    "items": []
+  },
+  {
+    "listing": "/greinar.html",
     "items": [
-      "/ithrottir/fotbolti/besta/besta-kvenna/index.html",
-      "/ithrottir/fotbolti/besta/besta-karla/index.html"
+      "/ithrottir/korfubolti/greinar/em-kk-2025/index.html",
+      "/greinar/flottafolk/index.html",
+      "/greinar/handbolti/index.html",
+      "/ithrottir/handbolti/greinar/hm2025/index.html",
+      "/greinar/stjornmalaflokkar/index.html",
+      "/greinar/vinnuafl/index.html",
+      "/greinar/landspitali/index.html"
     ]
   }
 ]
