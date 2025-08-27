@@ -81,6 +81,34 @@ ul.task-list li input[type="checkbox"] {
       window['quarto-listing-loaded']();
     }
   })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-featured-basketball .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-project','listing-website','listing-editor','listing-include-in-header','listing-theme','listing-css','listing-execute','listing-lightbox','listing-language','listing-format','listing-title-block-banner','listing-author','listing-title','listing-pagetitle','listing-subtitle','listing-description','listing-date','listing-draft','listing-categories','listing-href','listing-image','listing-twitter-card','listing-toc','listing-path','listing-outputHref','listing-date-modified','listing-filename','listing-file-modified','listing-reading-time','listing-word-count',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
+      
+      searchColumns: ["listing-project","listing-website","listing-editor","listing-include-in-header","listing-theme","listing-css","listing-execute","listing-lightbox","listing-language","listing-format","listing-title-block-banner","listing-author","listing-title","listing-pagetitle","listing-subtitle","listing-description","listing-date","listing-draft","listing-categories","listing-href","listing-image","listing-twitter-card","listing-toc","listing-path","listing-outputHref","listing-date-modified","listing-filename","listing-file-modified","listing-reading-time","listing-word-count"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-featured-basketball'] = new List('listing-featured-basketball', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
   </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-J28QQV8PN9"></script>
 
@@ -192,6 +220,19 @@ window.Quarto = {
     
       <div class="col-md-6 px-2">
         <div class="card listing-card shadow-sm border-2 rounded-3 h-100">
+          <img src="https://raw.githubusercontent.com/bgautijonsson/football_iceland/refs/heads/main/results/male/figures/styrkur.png" class="card-img-top mb-0 pb-0">
+
+          <div class="card-body">
+            <h3 class="text-primary m-0 p-0 anchored">Besta deild karla</h3>
+            <div class="mb-1 text-muted"></div>
+            <p class="card-text mb-auto text-muted">Nýjustu greiningar á Bestu deild karla</p>
+            <a href="../ithrottir/fotbolti/besta/besta-karla/index.html" class="stretched-link" style="text-decoration:none;"></a>
+          </div>
+        </div>  
+      </div>
+    
+      <div class="col-md-6 px-2">
+        <div class="card listing-card shadow-sm border-2 rounded-3 h-100">
           <img src="https://raw.githubusercontent.com/bgautijonsson/football_iceland/refs/heads/main/results/female/figures/styrkur.png" class="card-img-top mb-0 pb-0">
 
           <div class="card-body">
@@ -203,15 +244,26 @@ window.Quarto = {
         </div>  
       </div>
     
+  </div>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
+</section>
+<section id="körfubolti" class="level2">
+<h2 class="anchored" data-anchor-id="körfubolti">Körfubolti</h2>
+<div id="listing-featured-basketball" class="quarto-listing quarto-listing-container-custom">
+<div class="container-md">
+  <div class="row g-2">
+    
       <div class="col-md-6 px-2">
         <div class="card listing-card shadow-sm border-2 rounded-3 h-100">
-          <img src="https://raw.githubusercontent.com/bgautijonsson/football_iceland/refs/heads/main/results/male/figures/styrkur.png" class="card-img-top mb-0 pb-0">
+          <img src="https://raw.githubusercontent.com/bgautijonsson/basketball_international/refs/heads/master/results/male/figures/styrkur_table.png" class="card-img-top mb-0 pb-0">
 
           <div class="card-body">
-            <h3 class="text-primary m-0 p-0 anchored">Besta deild karla</h3>
-            <div class="mb-1 text-muted"></div>
-            <p class="card-text mb-auto text-muted">Nýjustu greiningar á Bestu deild karla</p>
-            <a href="../ithrottir/fotbolti/besta/besta-karla/index.html" class="stretched-link" style="text-decoration:none;"></a>
+            <h3 class="text-primary m-0 p-0 anchored">EM karla í körfubolta</h3>
+            <div class="mb-1 text-muted">Aug 27, 2025</div>
+            <p class="card-text mb-auto text-muted">Körfuboltaspá Metils fyrir EM karla í körfubolta</p>
+            <a href="../ithrottir/korfubolti/greinar/em-kk-2025/index.html" class="stretched-link" style="text-decoration:none;"></a>
           </div>
         </div>  
       </div>

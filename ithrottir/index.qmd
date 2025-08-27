@@ -5,8 +5,9 @@ toc: false
 listing:
   - id: featured-football
     contents: fotbolti/besta
-    sort: "date desc"
-    type: grid
+    template: ../ejs/featured-sports.ejs
+  - id: featured-basketball
+    contents: korfubolti/greinar/em-kk-2025
     template: ../ejs/featured-sports.ejs
 ---
 
@@ -18,6 +19,12 @@ Hér má finna reglulega uppfærðar greiningar á leikjum og gögnum úr Bestu 
 
 ::: {#featured-football}
 :::
+
+## Körfubolti
+
+::: {#featured-basketball}
+:::
+
 
 ## Handbolti
 
