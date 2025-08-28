@@ -4,7 +4,6 @@ pagetitle: "EM karla í körfubolta"
 subtitle: "Körfuboltaspá Metils fyrir EM karla í körfubolta"
 description:  |
     Körfuboltalíkan Metils býður upp á greiningar á sóknar- og varnarstyrk landsliða ásamt því að spá fyrir um úrslit komandi leikja og greina hvaða landslið fær mestan stuðning á heimavelli.
-date: "2025/8/27"
 draft: false
 categories:
     - íþróttir
@@ -16,6 +15,8 @@ execute:
   eval: true
 toc: false
 ---
+
+*Uppfært með leikjum gærdagsins (27. ágúst)*
 
 ## Styrkur landsliða
 
