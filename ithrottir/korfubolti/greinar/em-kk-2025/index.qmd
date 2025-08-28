@@ -20,13 +20,19 @@ toc: false
 
 ## Styrkur landsliða
 
+
+
 ::: {.panel-tabset .nav-pills}
 
 ### Tafla
 
+Mat líkansins á sóknar- og varnarstyrk landsliða byggir á samanburði þeirra við einhvers konar *meðaltalslið* sem er í raun ekki til í alvörunni. Til að gera matið túlkanlegra hefur tölunum verið breytt þannig að liðin eru borin saman við landslið Kýpur.
+
 ![](https://raw.githubusercontent.com/bgautijonsson/basketball_international/refs/heads/master/results/male/figures/styrkur_table.png)
 
 ### Mynd
+
+Hér sést mat líkansins á sóknar- og varnarstyrk landsliða án þessa samanburðar við Kýpur. 
 
 ![](https://raw.githubusercontent.com/bgautijonsson/basketball_international/refs/heads/master/results/male/figures/styrkur.png)
 
