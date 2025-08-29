@@ -48,17 +48,7 @@ Hér sést mat líkansins á sóknar- og varnarstyrk landsliða án þessa saman
 
 ### Fyrri spár
 
-::: {.panel-tabset .nav-pills}
-
-#### Stigamismunur
-
-![](https://raw.githubusercontent.com/bgautijonsson/basketball_international/refs/heads/master/results/male/accuracy.png)
-
-#### Heildarfjöldi stiga
-
-![](https://raw.githubusercontent.com/bgautijonsson/basketball_international/refs/heads/master/results/male/accuracy_totalgoals.png)
-
-:::
+![](https://raw.githubusercontent.com/bgautijonsson/basketball_international/refs/heads/master/results/male/accuracy_home_away.png)
 
 :::
 
