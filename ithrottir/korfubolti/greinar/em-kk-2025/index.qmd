@@ -8,9 +8,9 @@ draft: false
 categories:
     - íþróttir
 href: korfubolti/greinar/em-kk-2025/index.qmd
-image: https://raw.githubusercontent.com/bgautijonsson/basketball_international/refs/heads/master/results/male/figures/styrkur_table.png
+image: https://raw.githubusercontent.com/bgautijonsson/basketball_international/refs/heads/master/results/male/2025-08-28/figures/styrkur_table.png
 twitter-card:
-    image: https://raw.githubusercontent.com/bgautijonsson/basketball_international/refs/heads/master/results/male/figures/styrkur_table.png
+    image: https://raw.githubusercontent.com/bgautijonsson/basketball_international/refs/heads/master/results/male/2025-08-28/figures/styrkur_table.png
 execute: 
   eval: true
 toc: false
@@ -48,7 +48,17 @@ Hér sést mat líkansins á sóknar- og varnarstyrk landsliða án þessa saman
 
 ### Fyrri spár
 
+::: {.panel-tabset .nav-pills}
+
+#### Stigamismunur
+
 ![](https://raw.githubusercontent.com/bgautijonsson/basketball_international/refs/heads/master/results/male/accuracy.png)
+
+#### Heildarfjöldi stiga
+
+![](https://raw.githubusercontent.com/bgautijonsson/basketball_international/refs/heads/master/results/male/accuracy_totalgoals.png)
+
+:::
 
 :::
 
