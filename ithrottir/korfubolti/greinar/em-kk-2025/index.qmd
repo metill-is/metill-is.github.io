@@ -16,7 +16,7 @@ execute:
 toc: false
 ---
 
-*Uppfært með leikjum gærdagsins (29. ágúst)*
+*Uppfært með leikjum frá 30. ágúst*
 
 ## Styrkur landsliða
 
@@ -28,13 +28,13 @@ toc: false
 
 Mat líkansins á sóknar- og varnarstyrk landsliða byggir á samanburði þeirra við einhvers konar *meðaltalslið* sem er í raun ekki til í alvörunni. Til að gera matið túlkanlegra hefur tölunum verið breytt þannig að liðin eru borin saman við landslið Kýpur.
 
-![](https://raw.githubusercontent.com/bgautijonsson/basketball_international/refs/heads/master/results/male/2025-08-29/figures/styrkur_table.png)
+![](https://raw.githubusercontent.com/bgautijonsson/basketball_international/refs/heads/master/results/male/2025-08-30/figures/styrkur_table.png)
 
 ### Mynd
 
 Hér sést mat líkansins á sóknar- og varnarstyrk landsliða án þessa samanburðar við Kýpur. 
 
-![](https://raw.githubusercontent.com/bgautijonsson/basketball_international/refs/heads/master/results/male/2025-08-29/figures/styrkur.png)
+![](https://raw.githubusercontent.com/bgautijonsson/basketball_international/refs/heads/master/results/male/2025-08-30/figures/styrkur.png)
 
 :::
 
@@ -44,7 +44,7 @@ Hér sést mat líkansins á sóknar- og varnarstyrk landsliða án þessa saman
 
 ### Spá
 
-![](https://raw.githubusercontent.com/bgautijonsson/basketball_international/refs/heads/master/results/male/2025-08-29/figures/next_round_predictions.png)
+![](https://raw.githubusercontent.com/bgautijonsson/basketball_international/refs/heads/master/results/male/2025-08-30/figures/next_round_predictions.png)
 
 ### Fyrri spár
 
@@ -54,7 +54,7 @@ Hér sést mat líkansins á sóknar- og varnarstyrk landsliða án þessa saman
 
 ## Riðlar
 
-![](https://raw.githubusercontent.com/bgautijonsson/basketball_international/refs/heads/master/results/male/2025-08-29/figures/group_table.png)
+![](https://raw.githubusercontent.com/bgautijonsson/basketball_international/refs/heads/master/results/male/2025-08-30/figures/group_table.png)
 
 
 ## Heimavallaráhrif
@@ -63,4 +63,4 @@ Lið spila oftast betur á heimavelli. Hversu mikil eru áhrifin? Eru þau mismu
 
 Með því að bera saman gengi landsliða heima og sem gestir getur líkanið fengið mat á áhrifum heimavallar fyrir hvert lið. Myndin að neðan sýnir hversu mörgum fleiri stigum lið skora (eða verjast gegn) að jafnaði á heimavelli og samanlögð heimavallaráhrif á stigamismun liðanna.
 
-![](https://raw.githubusercontent.com/bgautijonsson/basketball_international/refs/heads/master/results/male/2025-08-29/figures/home_advantage.png)
+![](https://raw.githubusercontent.com/bgautijonsson/basketball_international/refs/heads/master/results/male/2025-08-30/figures/home_advantage.png)
