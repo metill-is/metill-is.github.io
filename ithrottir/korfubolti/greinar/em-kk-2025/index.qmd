@@ -54,8 +54,39 @@ Hér sést mat líkansins á sóknar- og varnarstyrk landsliða án þessa saman
 
 ## Riðlar
 
+::: {.panel-tabset .nav-pills}
+
+### Nýjasta spá
+
 ![](https://raw.githubusercontent.com/bgautijonsson/basketball_international/refs/heads/master/results/male/2025-08-30/figures/group_table.png)
 
+### Allar spár
+
+::: {.panel-tabset .nav-pills}
+
+#### 31. Ágúst
+
+![](https://raw.githubusercontent.com/bgautijonsson/basketball_international/refs/heads/master/results/male/2025-08-30/figures/group_table.png)
+
+#### 30. ágúst
+
+![](https://raw.githubusercontent.com/bgautijonsson/basketball_international/refs/heads/master/results/male/2025-08-29/figures/group_table.png)
+
+#### 29. ágúst
+
+![](https://raw.githubusercontent.com/bgautijonsson/basketball_international/refs/heads/master/results/male/2025-08-28/figures/group_table.png)
+
+#### 28. ágúst
+
+![](https://raw.githubusercontent.com/bgautijonsson/basketball_international/refs/heads/master/results/male/2025-08-27/figures/group_table.png)
+
+#### 27. ágúst
+
+![](https://raw.githubusercontent.com/bgautijonsson/basketball_international/refs/heads/master/results/male/2025-08-26/figures/group_table.png)
+
+:::
+
+:::
 
 ## Heimavallaráhrif
 
