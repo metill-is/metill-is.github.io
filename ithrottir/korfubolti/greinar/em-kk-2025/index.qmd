@@ -8,15 +8,15 @@ draft: false
 categories:
     - íþróttir
 href: korfubolti/greinar/em-kk-2025/index.qmd
-image: https://raw.githubusercontent.com/bgautijonsson/basketball_international/refs/heads/master/results/male/2025-08-29/figures/styrkur_table.png
+image: https://raw.githubusercontent.com/bgautijonsson/basketball_international/refs/heads/master/results/male/2025-09-01/figures/styrkur_table.png
 twitter-card:
-    image: https://raw.githubusercontent.com/bgautijonsson/basketball_international/refs/heads/master/results/male/2025-08-29/figures/styrkur_table.png
+    image: https://raw.githubusercontent.com/bgautijonsson/basketball_international/refs/heads/master/results/male/2025-09-01/figures/styrkur_table.png
 execute: 
   eval: true
 toc: false
 ---
 
-*Uppfært með leikjum frá 31. ágúst*
+*Uppfært með leikjum frá 1. september*
 
 ## Styrkur landsliða
 
@@ -28,13 +28,13 @@ toc: false
 
 Mat líkansins á sóknar- og varnarstyrk landsliða byggir á samanburði þeirra við einhvers konar *meðaltalslið* sem er í raun ekki til í alvörunni. Til að gera matið túlkanlegra hefur tölunum verið breytt þannig að liðin eru borin saman við landslið Kýpur.
 
-![](https://raw.githubusercontent.com/bgautijonsson/basketball_international/refs/heads/master/results/male/2025-08-31/figures/styrkur_table.png)
+![](https://raw.githubusercontent.com/bgautijonsson/basketball_international/refs/heads/master/results/male/2025-09-01/figures/styrkur_table.png)
 
 ### Mynd
 
 Hér sést mat líkansins á sóknar- og varnarstyrk landsliða án þessa samanburðar við Kýpur. 
 
-![](https://raw.githubusercontent.com/bgautijonsson/basketball_international/refs/heads/master/results/male/2025-08-31/figures/styrkur.png)
+![](https://raw.githubusercontent.com/bgautijonsson/basketball_international/refs/heads/master/results/male/2025-09-01/figures/styrkur.png)
 
 :::
 
@@ -44,7 +44,7 @@ Hér sést mat líkansins á sóknar- og varnarstyrk landsliða án þessa saman
 
 ### Spá
 
-![](https://raw.githubusercontent.com/bgautijonsson/basketball_international/refs/heads/master/results/male/2025-08-31/figures/next_round_predictions.png)
+![](https://raw.githubusercontent.com/bgautijonsson/basketball_international/refs/heads/master/results/male/2025-09-01/figures/next_round_predictions.png)
 
 ### Fyrri spár
 
@@ -58,11 +58,15 @@ Hér sést mat líkansins á sóknar- og varnarstyrk landsliða án þessa saman
 
 ### Nýjasta spá
 
-![](https://raw.githubusercontent.com/bgautijonsson/basketball_international/refs/heads/master/results/male/2025-08-31/figures/group_table.png)
+![](https://raw.githubusercontent.com/bgautijonsson/basketball_international/refs/heads/master/results/male/2025-09-01/figures/group_table.png)
 
 ### Allar spár
 
 ::: {.panel-tabset .nav-pills}
+
+#### 2. September
+
+![](https://raw.githubusercontent.com/bgautijonsson/basketball_international/refs/heads/master/results/male/2025-09-01/figures/group_table.png)
 
 #### 1. September
 
