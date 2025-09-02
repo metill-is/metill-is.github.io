@@ -36,6 +36,13 @@ Hér sést mat líkansins á sóknar- og varnarstyrk landsliða án þessa saman
 
 ![](https://raw.githubusercontent.com/bgautijonsson/basketball_international/refs/heads/master/results/male/2025-09-01/figures/styrkur.png)
 
+
+### Stórmót
+
+Sum lið spila betur á stórmótum en í forkeppnum og vináttuleikjum. Það getur til dæmis verið vegna þess að stórstjörnum fá ekki frí til að spila með þeim nema á sjálfum stórmótunum. Myndin að neðan sýnir mat líkansins á þessum áhrifum, þ.e. hvort sum landslið bæta sig meira en önnur þegar á stórmót er komið.
+
+![](https://raw.githubusercontent.com/bgautijonsson/basketball_international/refs/heads/master/results/male/2025-09-01/figures/casual_table.png)
+
 :::
 
 ## Næstu leikir
