@@ -85,7 +85,7 @@ decisions <- get_eurostat(
     citizen = c("TOTAL", "UA"),
     sex = "T",
     age = "TOTAL",
-    decision = c("TOTAL", "TOTAL_POS")
+    decision = c("TOTAL", "POS")
   )
 ) |>
   select(-sex, -age, -unit, -freq) |>
@@ -97,7 +97,7 @@ decisions <- get_eurostat(
   janitor::clean_names() |>
   rename(
     total_decisions = total,
-    positive_decisions = total_positive_decisions
+    positive_decisions = positive_decision
   ) |>
   mutate(
     percent_positive_decisions = positive_decisions / total_decisions
@@ -136,11 +136,11 @@ asylum_applicants <- get_eurostat(
   filters = list(
     sex = "T",
     age = "TOTAL",
-    asyl_app = "ASY_APP",
+    applicant = "TOTAL",
     citizen = c("TOTAL", "UA")
   )
 ) |>
-  select(-sex, -age, -freq, -unit, -asyl_app) |>
+  select(-sex, -age, -freq, -unit, -applicant) |>
   drop_na() |>
   label_eurostat() |>
   rename(asylum_applicants = values) |>

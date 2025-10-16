@@ -29,7 +29,7 @@ asylum_applicants_hist <- get_eurostat(
     citizen = list("TOTAL", "UA"),
     sex = "T",
     age = "TOTAL",
-    asyl_app = "ASY_APP"
+    applicant = "TOTAL"
   )
 )
 
@@ -96,8 +96,8 @@ data_hist <- decisions_hist |>
   ) |>
   pivot_wider(names_from = decision, values_from = decisions) |>
   janitor::clean_names() |>
-  select(citizen:pop, total_positive_decisions) |>
-  pivot_wider(names_from = citizen, values_from = total_positive_decisions) |>
+  select(citizen:pop, positive_decisions = positive_decision) |> 
+  pivot_wider(names_from = citizen, values_from = positive_decisions) |>
   left_join(
     temporary_protection_hist,
     by = join_by(geo, time)

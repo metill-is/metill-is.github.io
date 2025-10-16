@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -31,14 +31,15 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-b9375dcde0a4a90f0c3597c96dcc7ef1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-188d6145c8646a75d430bf4997a40e5e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -115,7 +116,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -690,7 +691,7 @@ window.Quarto = {
 }
 </style>
 
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 16%">
 <col style="width: 16%">
@@ -701,10 +702,10 @@ window.Quarto = {
 </colgroup>
 <thead>
 <tr class="gt_heading header">
-<th colspan="6" class="gt_heading gt_title gt_font_normal"><strong>Fjöldatölur eftir rekstrarformum</strong></th>
+<td colspan="6" class="gt_heading gt_title gt_font_normal"><strong>Fjöldatölur eftir rekstrarformum</strong></td>
 </tr>
 <tr class="gt_heading even">
-<th colspan="6" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">Samkvæmt nýjustu tölum Hagstofu</th>
+<td colspan="6" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">Samkvæmt nýjustu tölum Hagstofu</td>
 </tr>
 <tr class="gt_col_headings gt_spanner_row header">
 <th rowspan="2" id="a::stub" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"></th>
@@ -725,10 +726,10 @@ Hlutfall (%)
 </thead>
 <tbody class="gt_table_body">
 <tr class="gt_group_heading_row odd">
-<td colspan="6" id="<span data-qmd-base64=&quot;PHN0cm9uZz5PcGluYmVydCBzdGFyZnNmw7Nsazwvc3Ryb25nPg==&quot;><span class='gt_from_md'><strong>Opinbert starfsfólk</strong></span></span>" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup"><strong>Opinbert starfsfólk</strong></td>
+<th colspan="6" id="<span data-qmd-base64=&quot;PHN0cm9uZz5PcGluYmVydCBzdGFyZnNmw7Nsazwvc3Ryb25nPg==&quot;><span class='gt_from_md'><strong>Opinbert starfsfólk</strong></span></span>" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup"><strong>Opinbert starfsfólk</strong></th>
 </tr>
 <tr class="gt_row_group_first even">
-<td id="stub_1_1" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">B2, C2 og D4: opinber fyrirtæki</td>
+<th id="stub_1_1" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">B2, C2 og D4: opinber fyrirtæki</th>
 <td class="gt_row gt_right" headers="opinbert-starfsf-lk stub_1_1 dags">1 sep. 2024</td>
 <td class="gt_row gt_right" headers="opinbert-starfsf-lk stub_1_1 starfandi">4.128</td>
 <td class="gt_row gt_center" headers="opinbert-starfsf-lk stub_1_1 starfandi_gogn"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17">
@@ -744,7 +745,7 @@ Hlutfall (%)
 </svg></td>
 </tr>
 <tr class="odd">
-<td id="stub_1_2" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">K1: ríkisstofnun</td>
+<th id="stub_1_2" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">K1: ríkisstofnun</th>
 <td class="gt_row gt_right" headers="opinbert-starfsf-lk stub_1_2 dags">1 sep. 2024</td>
 <td class="gt_row gt_right" headers="opinbert-starfsf-lk stub_1_2 starfandi">24.045</td>
 <td class="gt_row gt_center" headers="opinbert-starfsf-lk stub_1_2 starfandi_gogn"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17">
@@ -760,7 +761,7 @@ Hlutfall (%)
 </svg></td>
 </tr>
 <tr class="even">
-<td id="stub_1_3" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">K2: stofnun sveitarfélags</td>
+<th id="stub_1_3" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">K2: stofnun sveitarfélags</th>
 <td class="gt_row gt_right" headers="opinbert-starfsf-lk stub_1_3 dags">1 sep. 2024</td>
 <td class="gt_row gt_right" headers="opinbert-starfsf-lk stub_1_3 starfandi">30.284</td>
 <td class="gt_row gt_center" headers="opinbert-starfsf-lk stub_1_3 starfandi_gogn"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17">
@@ -776,7 +777,7 @@ Hlutfall (%)
 </svg></td>
 </tr>
 <tr class="odd">
-<td id="stub_1_4" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">K: aðrar opinberar stofnanir</td>
+<th id="stub_1_4" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">K: aðrar opinberar stofnanir</th>
 <td class="gt_row gt_right" headers="opinbert-starfsf-lk stub_1_4 dags">1 sep. 2024</td>
 <td class="gt_row gt_right" headers="opinbert-starfsf-lk stub_1_4 starfandi">1.198</td>
 <td class="gt_row gt_center" headers="opinbert-starfsf-lk stub_1_4 starfandi_gogn"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17">
@@ -792,7 +793,7 @@ Hlutfall (%)
 </svg></td>
 </tr>
 <tr class="even">
-<td id="stub_1_5" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Samtals</td>
+<th id="stub_1_5" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Samtals</th>
 <td class="gt_row gt_right" headers="opinbert-starfsf-lk stub_1_5 dags">1 sep. 2024</td>
 <td class="gt_row gt_right" headers="opinbert-starfsf-lk stub_1_5 starfandi">59.655</td>
 <td class="gt_row gt_center" headers="opinbert-starfsf-lk stub_1_5 starfandi_gogn"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17">
@@ -808,10 +809,10 @@ Hlutfall (%)
 </svg></td>
 </tr>
 <tr class="gt_group_heading_row odd">
-<td colspan="6" id="<span data-qmd-base64=&quot;PHN0cm9uZz5BbG1lbm51ciB2aW5udW1hcmthw7B1cjwvc3Ryb25nPg==&quot;><span class='gt_from_md'><strong>Almennur vinnumarkaður</strong></span></span>" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup"><strong>Almennur vinnumarkaður</strong></td>
+<th colspan="6" id="<span data-qmd-base64=&quot;PHN0cm9uZz5BbG1lbm51ciB2aW5udW1hcmthw7B1cjwvc3Ryb25nPg==&quot;><span class='gt_from_md'><strong>Almennur vinnumarkaður</strong></span></span>" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup"><strong>Almennur vinnumarkaður</strong></th>
 </tr>
 <tr class="gt_row_group_first even">
-<td id="stub_1_6" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">AX og E: einkahlutafélög</td>
+<th id="stub_1_6" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">AX og E: einkahlutafélög</th>
 <td class="gt_row gt_right" headers="almennur-vinnumarka-ur stub_1_6 dags">1 sep. 2024</td>
 <td class="gt_row gt_right" headers="almennur-vinnumarka-ur stub_1_6 starfandi">114.349</td>
 <td class="gt_row gt_center" headers="almennur-vinnumarka-ur stub_1_6 starfandi_gogn"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17">
@@ -827,7 +828,7 @@ Hlutfall (%)
 </svg></td>
 </tr>
 <tr class="odd">
-<td id="stub_1_7" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">B: einkarekin sameignarfélög</td>
+<th id="stub_1_7" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">B: einkarekin sameignarfélög</th>
 <td class="gt_row gt_right" headers="almennur-vinnumarka-ur stub_1_7 dags">1 sep. 2024</td>
 <td class="gt_row gt_right" headers="almennur-vinnumarka-ur stub_1_7 starfandi">2.013</td>
 <td class="gt_row gt_center" headers="almennur-vinnumarka-ur stub_1_7 starfandi_gogn"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17">
@@ -843,7 +844,7 @@ Hlutfall (%)
 </svg></td>
 </tr>
 <tr class="even">
-<td id="stub_1_8" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">C: einkarekin samlagsfélög</td>
+<th id="stub_1_8" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">C: einkarekin samlagsfélög</th>
 <td class="gt_row gt_right" headers="almennur-vinnumarka-ur stub_1_8 dags">1 sep. 2024</td>
 <td class="gt_row gt_right" headers="almennur-vinnumarka-ur stub_1_8 starfandi">2.629</td>
 <td class="gt_row gt_center" headers="almennur-vinnumarka-ur stub_1_8 starfandi_gogn"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17">
@@ -859,7 +860,7 @@ Hlutfall (%)
 </svg></td>
 </tr>
 <tr class="odd">
-<td id="stub_1_9" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">D &amp; F: einkarekin hluta- og samlagshlutafélög</td>
+<th id="stub_1_9" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">D &amp; F: einkarekin hluta- og samlagshlutafélög</th>
 <td class="gt_row gt_right" headers="almennur-vinnumarka-ur stub_1_9 dags">1 sep. 2024</td>
 <td class="gt_row gt_right" headers="almennur-vinnumarka-ur stub_1_9 starfandi">25.201</td>
 <td class="gt_row gt_center" headers="almennur-vinnumarka-ur stub_1_9 starfandi_gogn"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17">
@@ -875,7 +876,7 @@ Hlutfall (%)
 </svg></td>
 </tr>
 <tr class="even">
-<td id="stub_1_10" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">G: samvinnufélög</td>
+<th id="stub_1_10" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">G: samvinnufélög</th>
 <td class="gt_row gt_right" headers="almennur-vinnumarka-ur stub_1_10 dags">1 sep. 2024</td>
 <td class="gt_row gt_right" headers="almennur-vinnumarka-ur stub_1_10 starfandi">1.163</td>
 <td class="gt_row gt_center" headers="almennur-vinnumarka-ur stub_1_10 starfandi_gogn"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17">
@@ -891,7 +892,7 @@ Hlutfall (%)
 </svg></td>
 </tr>
 <tr class="odd">
-<td id="stub_1_11" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">H: sjálfseignarstofnanir</td>
+<th id="stub_1_11" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">H: sjálfseignarstofnanir</th>
 <td class="gt_row gt_right" headers="almennur-vinnumarka-ur stub_1_11 dags">1 sep. 2024</td>
 <td class="gt_row gt_right" headers="almennur-vinnumarka-ur stub_1_11 starfandi">3.101</td>
 <td class="gt_row gt_center" headers="almennur-vinnumarka-ur stub_1_11 starfandi_gogn"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17">
@@ -907,7 +908,7 @@ Hlutfall (%)
 </svg></td>
 </tr>
 <tr class="even">
-<td id="stub_1_12" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">L &amp; M: spari- og lífeyrissjóðir</td>
+<th id="stub_1_12" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">L &amp; M: spari- og lífeyrissjóðir</th>
 <td class="gt_row gt_right" headers="almennur-vinnumarka-ur stub_1_12 dags">1 sep. 2024</td>
 <td class="gt_row gt_right" headers="almennur-vinnumarka-ur stub_1_12 starfandi">379</td>
 <td class="gt_row gt_center" headers="almennur-vinnumarka-ur stub_1_12 starfandi_gogn"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17">
@@ -923,7 +924,7 @@ Hlutfall (%)
 </svg></td>
 </tr>
 <tr class="odd">
-<td id="stub_1_13" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">N &amp; P: félagasamtök</td>
+<th id="stub_1_13" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">N &amp; P: félagasamtök</th>
 <td class="gt_row gt_right" headers="almennur-vinnumarka-ur stub_1_13 dags">1 sep. 2024</td>
 <td class="gt_row gt_right" headers="almennur-vinnumarka-ur stub_1_13 starfandi">6.967</td>
 <td class="gt_row gt_center" headers="almennur-vinnumarka-ur stub_1_13 starfandi_gogn"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17">
@@ -939,7 +940,7 @@ Hlutfall (%)
 </svg></td>
 </tr>
 <tr class="even">
-<td id="stub_1_14" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">R &amp; Z: erlend félög</td>
+<th id="stub_1_14" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">R &amp; Z: erlend félög</th>
 <td class="gt_row gt_right" headers="almennur-vinnumarka-ur stub_1_14 dags">1 sep. 2024</td>
 <td class="gt_row gt_right" headers="almennur-vinnumarka-ur stub_1_14 starfandi">196</td>
 <td class="gt_row gt_center" headers="almennur-vinnumarka-ur stub_1_14 starfandi_gogn"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17">
@@ -955,7 +956,7 @@ Hlutfall (%)
 </svg></td>
 </tr>
 <tr class="odd">
-<td id="stub_1_15" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Rekstur á eigin kennitölu</td>
+<th id="stub_1_15" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Rekstur á eigin kennitölu</th>
 <td class="gt_row gt_right" headers="almennur-vinnumarka-ur stub_1_15 dags">1 sep. 2024</td>
 <td class="gt_row gt_right" headers="almennur-vinnumarka-ur stub_1_15 starfandi">8.068</td>
 <td class="gt_row gt_center" headers="almennur-vinnumarka-ur stub_1_15 starfandi_gogn"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17">
@@ -971,7 +972,7 @@ Hlutfall (%)
 </svg></td>
 </tr>
 <tr class="even">
-<td id="stub_1_16" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Samtals</td>
+<th id="stub_1_16" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Samtals</th>
 <td class="gt_row gt_right" headers="almennur-vinnumarka-ur stub_1_16 dags">1 sep. 2024</td>
 <td class="gt_row gt_right" headers="almennur-vinnumarka-ur stub_1_16 starfandi">164.066</td>
 <td class="gt_row gt_center" headers="almennur-vinnumarka-ur stub_1_16 starfandi_gogn"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="svglite" width="85.04pt" height="14.17pt" viewbox="0 0 85.04 14.17">
@@ -987,7 +988,7 @@ Hlutfall (%)
 </svg></td>
 </tr>
 <tr class="odd">
-<td id="grand_summary_stub_1" class="gt_row gt_left gt_stub gt_grand_summary_row gt_first_grand_summary_row gt_last_summary_row" data-quarto-table-cell-role="th" scope="row">Heildarfjöldi</td>
+<th id="grand_summary_stub_1" class="gt_row gt_left gt_stub gt_grand_summary_row gt_first_grand_summary_row gt_last_summary_row" data-quarto-table-cell-role="th" scope="row">Heildarfjöldi</th>
 <td class="gt_row gt_right gt_grand_summary_row gt_first_grand_summary_row gt_last_summary_row" headers="grand_summary_stub_1 dags">—</td>
 <td class="gt_row gt_right gt_grand_summary_row gt_first_grand_summary_row gt_last_summary_row" headers="grand_summary_stub_1 starfandi">223.721</td>
 <td class="gt_row gt_center gt_grand_summary_row gt_first_grand_summary_row gt_last_summary_row" headers="grand_summary_stub_1 starfandi_gogn">—</td>
@@ -1014,7 +1015,7 @@ Hlutfall (%)
 <section id="árstíðaleiðrétt-hlutfall-opinbers-starfsfólks" class="level1 page-columns page-full">
 <h1>Árstíðaleiðrétt hlutfall opinbers starfsfólks</h1>
 <div class="tabset-margin-container"></div><div class="panel-tabset page-columns page-full">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Mynd</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Aðferð</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Mynd</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Aðferð</a></li></ul>
 <div class="tab-content page-columns page-full">
 <div id="tabset-2-1" class="tab-pane active page-columns page-full" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <div class="cell column-screen-inset">
@@ -1024,7 +1025,7 @@ Hlutfall (%)
 </div>
 <div id="tabset-2-2" class="tab-pane page-columns page-full" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <div class="tabset-margin-container"></div><div class="panel-tabset page-columns page-full">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Leiðrétting fyrir árstíðarsveiflum</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Teljarinn og nefnarinn</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Leiðrétting fyrir árstíðarsveiflum</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Teljarinn og nefnarinn</a></li></ul>
 <div class="tab-content page-columns page-full">
 <div id="tabset-1-1" class="tab-pane active page-columns page-full" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <p>Við getum hugsað að þetta séu tvö ferli:</p>
@@ -1133,13 +1134,14 @@ p = \frac{O}{H},
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

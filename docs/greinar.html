@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -30,14 +30,15 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b9375dcde0a4a90f0c3597c96dcc7ef1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-188d6145c8646a75d430bf4997a40e5e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -139,7 +140,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -207,7 +208,7 @@ Brynjólfur Gauti Guðrúnar Jónsson
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="c3RqJUMzJUIzcm5tJUMzJUExbCUyQ2YlQzMlQjNsa3NmbHV0bmluZ2FyJTJDZmwlQzMlQjN0dGFmJUMzJUIzbGslMkNldXJvc3RhdCUyQ2V2ciVDMyVCM3Bh" data-listing-date-sort="1748559600000" data-listing-file-modified-sort="1749220104443" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="21" data-listing-word-count-sort="4199">
+<div class="quarto-post image-right" data-index="1" data-categories="c3RqJUMzJUIzcm5tJUMzJUExbCUyQ2YlQzMlQjNsa3NmbHV0bmluZ2FyJTJDZmwlQzMlQjN0dGFmJUMzJUIzbGslMkNldXJvc3RhdCUyQ2V2ciVDMyVCM3Bh" data-listing-date-sort="1759881600000" data-listing-file-modified-sort="1759942170368" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="21" data-listing-word-count-sort="4199">
 <div class="thumbnail"><a href="./greinar/flottafolk/index.html" class="no-external">
 
 <img loading="lazy" src="./greinar/flottafolk/Figures/cover_fp.png" class="thumbnail-image">
@@ -240,7 +241,7 @@ Brynjólfur Gauti Guðrúnar Jónsson
 <div class="metadata">
 <a href="./greinar/flottafolk/index.html" class="no-external">
 <div class="listing-date">
-May 30, 2025
+Oct 8, 2025
 </div>
 <div class="listing-author">
 Brynjólfur Gauti Guðrúnar Jónsson
@@ -313,7 +314,7 @@ Feb 2, 2025
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="c3RqJUMzJUIzcm5tJUMzJUExbCUyQ2VmbmFoYWd1ciUyQyVDMyVBMXJzcmVpa25pbmdhcg==" data-listing-date-sort="1728946800000" data-listing-file-modified-sort="1737988964897" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13" data-listing-word-count-sort="2574">
+<div class="quarto-post image-right" data-index="4" data-categories="c3RqJUMzJUIzcm5tJUMzJUExbCUyQ2VmbmFoYWd1ciUyQyVDMyVBMXJzcmVpa25pbmdhcg==" data-listing-date-sort="1728950400000" data-listing-file-modified-sort="1737988964897" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13" data-listing-word-count-sort="2574">
 <div class="thumbnail"><a href="./greinar/stjornmalaflokkar/index.html" class="no-external">
 
 <img loading="lazy" src="./greinar/stjornmalaflokkar/Figures/eigidfe_page.png" class="thumbnail-image">
@@ -350,7 +351,7 @@ Brynjólfur Gauti Guðrúnar Jónsson
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-listing-date-sort="1728428400000" data-listing-file-modified-sort="1737723589498" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="17" data-listing-word-count-sort="3328">
+<div class="quarto-post image-right" data-index="5" data-listing-date-sort="1728432000000" data-listing-file-modified-sort="1737723589498" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="17" data-listing-word-count-sort="3328">
 <div class="thumbnail"><a href="./greinar/vinnuafl/index.html" class="no-external">
 
 <img loading="lazy" src="./greinar/vinnuafl/figures/hlutf_opinbert_fp.png" class="thumbnail-image">
@@ -378,7 +379,7 @@ Brynjólfur Gauti Guðrúnar Jónsson
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="6" data-categories="bGFuZHNwJUMzJUFEdGFsaSUyQ1IlMkMlQzMlQURzbGVuc2th" data-listing-date-sort="1661295600000" data-listing-file-modified-sort="1737723478138" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="45" data-listing-word-count-sort="8821">
+<div class="quarto-post image-right" data-index="6" data-categories="bGFuZHNwJUMzJUFEdGFsaSUyQ1IlMkMlQzMlQURzbGVuc2th" data-listing-date-sort="1661299200000" data-listing-file-modified-sort="1737723478138" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="45" data-listing-word-count-sort="8821">
 <div class="thumbnail"><a href="./greinar/landspitali/index.html" class="no-external">
 
 <img loading="lazy" src="./greinar/landspitali/hjukthyngd_fp.png" class="thumbnail-image">
@@ -474,13 +475,14 @@ Brynjólfur Gauti Guðrúnar Jónsson
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
