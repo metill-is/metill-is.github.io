@@ -3,7 +3,7 @@ title: "Vinnuafl"
 pagetitle: "Vinnuafl"
 subtitle: "Hver er fjöldi starfandi einstaklinga og hvernig skiptast þeir á vinnumarkaði?"
 description: "Reglulega sjást fyrirsagnir þar sem talað er um að opinbert starfsfólk sé allt of margt og að hlutfall þess af heildarfjölda vinnandi fólks sé of hátt. Hér kryf ég reglulega nýjustu gögnin til að geta vitað hvort slíkar fullyrðingar séu teknar úr samhengi eða endurspegli raunveruleikann."
-date: "2024/10/9"
+date: "2025/10/16"
 image: figures/hlutf_opinbert_fp.png
 twitter-card:
     image: figures/hlutf_opinbert.png
@@ -40,8 +40,54 @@ library(ggh4x)
 theme_set(theme_metill(type = "standalone"))
 caption <- "Mynd frá metill.is byggð á gögnum Hagstofu um vinnuafl frá skráargögnum"
 
+```
+
+```{r}
+url <- "https://px.hagstofa.is:443/pxis/api/v1/is/Samfelag/vinnumarkadur/vinnuaflskraargogn/VIN10052.px"
+
+hg_dat <- hg_data(url) |> 
+  filter(
+    Aldur == "Alls",
+    Lögheimili == "Alls"
+  )
+
+hg_date <- hg_dat |> 
+  pull(Mánuður) |> 
+  str_c("D01") |> 
+  as.Date(format = "%YM%mD%d") |> 
+  max()
+
 file_path <- here::here("greinar", "vinnuafl", "data", "vinnuafl.csv")
-d <- vroom::vroom(file_path)
+
+data_date <- file_path |> 
+  read_csv() |> 
+  pull(dags) |> 
+  max()
+
+new_data <- hg_date > data_date
+
+if (!file.exists(file_path) | new_data) {
+  
+  d <- hg_dat |>  
+    collect() |> 
+    janitor::clean_names() |>  
+    separate(manudur, into = c("ar", "manudur"), sep = "M") |>  
+    mutate(dags = str_c(ar, "-", manudur, "-01") |> ymd()) |>  
+    select(dags, kyn, rekstrarform, starfandi, bakgrunnur) |>  
+    drop_na() |>  
+    mutate(
+      tegund = case_when(
+        str_detect(rekstrarform, "^B2") ~ "Opinbert",
+        str_detect(rekstrarform, "^K") ~ "Opinbert",  
+        TRUE ~ "Annad"
+      )
+    )
+  
+  d |> 
+    write_csv(file_path)
+} else {
+  d <- vroom::vroom(file_path)
+}
 ```
 
 
@@ -51,7 +97,7 @@ d <- vroom::vroom(file_path)
 
 Gagnasafnið á bak við þessa skýrslu er gagnasafn Hagstofu:
 
-* [Fjöldi starfandi í rekstrarformum samkvæmt skrám eftir mánuðum, kyni, aldri og bakgrunni 2008-2023](https://px.hagstofa.is/pxis/pxweb/is/Samfelag/Samfelag__vinnumarkadur__vinnuaflskraargogn/VIN10052.px)
+* [Fjöldi starfandi í rekstrarformum samkvæmt skrám eftir mánuðum, kyni, aldri og bakgrunni 2008-2025](https://px.hagstofa.is/pxis/pxweb/is/Samfelag/Samfelag__vinnumarkadur__vinnuaflskraargogn/VIN10052.px)
 
 Þar er starfandi einstaklingum skipt upp meðal annars eftir rekstrarformum. Hér eru eftirfarandi rekstrarform talin ná utan um opinbert vinnuafl:
 

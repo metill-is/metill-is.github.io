@@ -6,7 +6,9 @@ library(ggh4x)
 library(ggforce)
 theme_set(theme_metill(type = "standalone"))
 
-d <- vroom::vroom("articles/workforce/data/vinnuafl.csv")
+file_path <- here::here("greinar", "vinnuafl", "data", "vinnuafl.csv")
+
+d <- vroom::vroom(file_path)
 
 prev_record <- d |>
   filter(
@@ -92,14 +94,14 @@ p <- d |>
     con.arrow = arrow(type = "closed", length = unit(0.25, "cm"))
   ) +
   scale_x_date(
-    breaks = clock::date_build(2008:2024),
+    breaks = clock::date_build(2008:2025),
     labels = label_date_short(),
-    guide = guide_axis_truncated()
+    guide = guide_axis(cap = "both")
   ) +
   scale_y_continuous(
     labels = label_number(),
     breaks = breaks_extended(8),
-    guide = guide_axis_truncated()
+    guide = guide_axis(cap = "both")
   ) +
   labs(
     x = NULL,
@@ -115,13 +117,13 @@ p <- d |>
 
 ggsave(
   plot = p,
-  filename = "articles/workforce/figures/almennur_fjoldi_methaedir.png",
+  filename = "greinar/vinnuafl/figures/almennur_fjoldi_methaedir.png",
   width = 8, height = 0.621 * 8, scale = 1.3
 )
 
 ggsave(
   plot = p + theme_metill(type = "blog"),
-  filename = "articles/workforce/figures/almennur_fjoldi_methaedir_fp.png",
+  filename = "greinar/vinnuafl/figures/almennur_fjoldi_methaedir_fp.png",
   width = 8, height = 0.621 * 8, scale = 1.3
 )
 
