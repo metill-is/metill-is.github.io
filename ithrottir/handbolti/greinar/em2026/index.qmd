@@ -1,0 +1,91 @@
+---
+title: "EM í handbolta 2026"
+pagetitle: "EM í handbolta 2026"
+subtitle: "Greining á frammistöðu landsliða með útvíkkuðu Bradley-Terry líkani"
+description:  |
+    Fyrir áhugasöm birtir Metill núna tölfræðilega greiningu á frammistöðu landsliða sem keppa á EM í handbolta, en hún byggir á útvíkkun svonefnds Bradley-Terry líkans. Þetta líkan metur líkur á sigri milli liða út frá úrslitum keppna þeirra og gerir okkur kleift að bera saman getu ólíkra liða.
+date: "2025/2/2"
+draft: false
+categories:
+    - íþróttir
+href: ithrottir/handbolti/greinar/em2026/index.qmd
+image: https://raw.githubusercontent.com/bgautijonsson/handball_international/refs/heads/main/results/male/2026-01-26/figures/styrkur_table.png
+twitter-card:
+    image: https://raw.githubusercontent.com/bgautijonsson/handball_international/refs/heads/main/results/male/2026-01-26/figures/styrkur_table.png
+execute: 
+  eval: true
+toc: false
+---
+
+## Styrkur landsliða
+
+![](https://raw.githubusercontent.com/bgautijonsson/handball_international/refs/heads/main/results/male/2026-01-26/figures/styrkur_table.png)
+
+## Spá um úrslit næstu leikja
+
+![](https://raw.githubusercontent.com/bgautijonsson/handball_international/refs/heads/main/results/male/2026-01-26/figures/next_round_predictions.png)
+
+## Spá um lokaniðurstöður riðla
+
+![](https://raw.githubusercontent.com/bgautijonsson/handball_international/refs/heads/main/results/male/2026-01-26/figures/main_group_table.png)
+
+## Söguleg þróun landsliða
+
+::: {.panel-tabset .nav-pills}
+
+### Ísland - Sviss
+
+![](https://raw.githubusercontent.com/bgautijonsson/handball_international/refs/heads/main/results/male/evolution_iceland_switzerland.png)
+
+### Ísland - Svíþjóð
+
+![](https://raw.githubusercontent.com/bgautijonsson/handball_international/refs/heads/main/results/male/evolution_iceland_sweden.png)
+
+### Ísland - Króatía
+
+![](https://raw.githubusercontent.com/bgautijonsson/handball_international/refs/heads/main/results/male/evolution_iceland_croatia.png)
+
+### Ísland - Ungverjaland
+
+![](https://raw.githubusercontent.com/bgautijonsson/handball_international/refs/heads/main/results/male/evolution_iceland_hungary.png)
+
+### Ísland - Ítalía
+
+![](https://raw.githubusercontent.com/bgautijonsson/handball_international/refs/heads/main/results/male/evolution_iceland_italy.png)
+
+### Ísland - Pólland
+
+![](https://raw.githubusercontent.com/bgautijonsson/handball_international/refs/heads/main/results/male/evolution_iceland_poland.png)
+
+:::
+
+## Söguleg nákvæmni spáa
+
+### Niðurstöður riðla
+
+Fyrir fyrsta leik mótsins var handboltalíkanið fengið til að spá fyrir um alla leiki riðlanna og spárnar notaðar til að reikna hvernig riðlarnir myndu fara. Við sjáum að spárnar hafa gengið ágætlega.
+
+::: {.columns}
+::: {.column width="50%"}
+### Spá
+![](https://raw.githubusercontent.com/bgautijonsson/handball_international/refs/heads/main/results/male/2026-01-14/figures/group_table.png)
+:::
+::: {.column width="50%"}
+### Raun
+![](https://raw.githubusercontent.com/bgautijonsson/handball_international/refs/heads/main/results/male/finished_group_table.png)
+:::
+::: 
+
+### Fyrri spár
+
+Líkanið spáir fyrir um fjölda marka sem bæði lið munu skora. Því er um að gera að líta aftur yfir öxl og sjá hvernig því gekk í fyrri leikjum. Á myndinni að neðan eru raunveruleg úrslit merkt með rauðum línum en spárnar í svörtu. 
+
+![](https://raw.githubusercontent.com/bgautijonsson/handball_international/refs/heads/main/results/male/accuracy_home_away.png)
+
+### Kvörðun
+
+Í tölfræðilegum spám er kvörðun mikilvægt hugtak. Ef líkanið er vel kvarðað þá ættu atburðir að gerast jafnoft og það spáir fyrir um. Þetta þýðir að af öllum þeim skiptum sem líkanið sagði 50% líkur á að eitthvað gerðist, ættu 50% af þeim að hafa raunverulega átt sér stað. Það sama á við um 10%, 37% og 71% líkindi.
+
+Ef punktarnir á myndinni að neðan liggja á línunum er líkanið fullkomlega kvarðað. Við sjáum að punktarnir eru flestir mjög nálægt línunni sem gefur til kynna að líkanið er vel kvarðað.
+
+![](https://raw.githubusercontent.com/bgautijonsson/handball_international/refs/heads/main/results/male/calibration.png)

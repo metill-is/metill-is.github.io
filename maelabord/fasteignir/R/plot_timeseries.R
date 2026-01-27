@@ -22,8 +22,8 @@ d <- d |>
 plot_dat <- d |>
   mutate(
     fasteignir = if_else(
-      ar == 2024,
-      fasteignir / (10 / 12),
+      ar == 2025,
+      fasteignir / (11 / 12),
       fasteignir
     )
   ) |>
@@ -72,7 +72,7 @@ plot_dat |>
   labs(
     x = NULL,
     y = NULL,
-    title = "Fjöldi nýbyggðra fasteigna á 1.000 fullorðna íbúa Íslands frá 1900 til 2024",
+    title = "Fjöldi nýbyggðra fasteigna á 1.000 fullorðna íbúa Íslands frá 1900 til 2025",
     subtitle = "Grunngögn sýnd með fölum lit | Leitni sýnd með svörtum lit"
   )
 

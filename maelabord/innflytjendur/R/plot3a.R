@@ -70,7 +70,7 @@ make_plot3a <- function() {
       size = 3.5
     ) +
     scale_x_continuous(
-      breaks = tufte_breaks(c(0, max(plot_data$n))),
+      breaks = breaks_extended(5),
       labels = label_number(),
       limits = c(0, NA),
       expand = expansion(c(0, 0.1)),

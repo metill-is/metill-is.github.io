@@ -5,7 +5,7 @@ library(ggtext)
 library(ggh4x)
 
 theme_set(theme_metill(type = "blog"))
-d <- read_csv(here("dashboards/kindergardens/data/kindergardens.csv"))
+d <- read_csv(here("maelabord/leikskolar/data/kindergardens.csv"))
 
 samtals <- d |>
   group_by(ar, aldur) |>
@@ -95,6 +95,6 @@ d |>
   )
 
 ggsave(
-  filename = here::here("dashboards", "kindergardens", "img", "fp.png"),
+  filename = here::here("maelabord", "leikskolar", "img", "fp.png"),
   width = 8, height = 0.55 * 8, scale = 1.75
 )

@@ -126,12 +126,12 @@ d |>
     atv = atvinnugrein_balkar
   ) |> 
   mutate(
-    starfandi = slider::slide_dbl(starfandi, mean, .before = 11),
+    starfandi = slider::slide_dbl(starfandi, mean, .before = 7),
     .by = c(atv, bakgrunnur)
   ) |> 
   filter(
     bakgrunnur != "Alls",
-    dags %in% clock::date_build(c(2023, 2018, 2013), 1, 1),
+    dags %in% clock::date_build(c(2025, 2023, 2018, 2013), 8, 1),
     str_detect(atv, "^[A-Z]+ |Alls|^O-Q")
   ) |> 
   janitor::remove_constant() |> 
@@ -150,7 +150,8 @@ d |>
   slice(c(1, 3:18, 2)) |> 
   gt() |> 
   tab_header(
-    title = "Fjöldi og hlutfall innflytjenda meðal starfandi eftir atvinnugrein"
+    title = "Fjöldi og hlutfall innflytjenda meðal starfandi eftir atvinnugrein",
+    subtitle = "Tölur eru meðaltöl fyrstu átta mánaða (janúar - ágúst) á hverju ári"
   ) |> 
   tab_spanner(
     "2013",
@@ -164,6 +165,10 @@ d |>
     "2023",
     columns = 6:7
   ) |> 
+  tab_spanner(
+    "2025",
+    columns = 8:9
+  ) |> 
   cols_label(
     atv = "Atvinnugrein",
     contains("starfandi") ~ "Fjöldi (n)",
@@ -176,10 +181,11 @@ d |>
     columns = contains("starfandi")
   ) |> 
   gt_color_rows(
-    columns = c(3, 5, 7),
+    columns = c(3, 5, 7, 9),
     palette = "Greys"
   ) |> 
-  sub_missing() 
+  sub_missing() |> 
+  gtExtras::gt_theme_538()
 
 
 
@@ -194,7 +200,7 @@ d |>
   ) |> 
   filter(
     bakgrunnur != "Alls",
-    dags <= clock::date_build(2023, 1, 1),
+    dags <= clock::date_build(2026, 1, 1),
     str_detect(atv, "^[A-Z]+ |^O-Q")
   ) |> 
   janitor::remove_constant() |> 
@@ -212,3 +218,98 @@ d |>
   geom_area(
     aes(group = atv, fill = atv,col = atv, position = "stack")
     )
+
+
+d |> 
+  rename(
+    atv = atvinnugrein_balkar
+  ) |> 
+  mutate(
+    starfandi = slider::slide_dbl(starfandi, mean, .before = 11),
+    .by = c(atv, bakgrunnur)
+  ) |> 
+  filter(
+    bakgrunnur != "Alls",
+    dags >= clock::date_build(2010, 1, 1),
+    str_detect(atv, "^[A-Z]+ |^O-Q")
+  ) |> 
+  janitor::remove_constant() |> 
+  mutate(
+    change = starfandi - starfandi[dags == min(dags)],
+    .by = c(atv, bakgrunnur)
+  ) |> 
+  filter(bakgrunnur == "Innflytjendur") |> 
+  filter(
+    max(change) >= 2000,
+    .by = atv
+  ) |> 
+  janitor::clean_names() |> 
+  select(atv, dags, starfandi, change) |> 
+  mutate(
+    atv = fct_reorder(atv, change)
+  ) |> 
+  ggplot(aes(dags, change)) +
+  geom_hline(
+    yintercept = 0,
+    lty = 2
+  ) +
+  geom_line(
+    aes(col = atv),
+    linewidth = 1
+  ) +
+  geom_text(
+    data = ~ filter(.x, dags == max(dags)),
+    aes(col = atv, label = str_wrap(atv, width = 100)),
+    hjust = 0,
+    nudge_x = 30
+  ) +
+  scale_x_date(
+    guide = guide_axis(cap = "both"),
+    limits = date_build(c(2010, 2026)),
+    breaks = date_build(c(2010, 2015, 2020, 2025)),
+    labels = label_date_short()
+  ) +
+  scale_y_continuous(
+    guide = guide_axis(cap = "both")
+  ) +
+  scale_colour_brewer(
+    palette = "Set2"
+  ) +
+  coord_cartesian(
+    clip = "off",
+    xlim = date_build(c(2010, 2038))
+  ) +
+  theme(
+    legend.position = "none"
+  )
+
+
+d |> 
+  rename(
+    atv = atvinnugrein_balkar
+  ) |> 
+  mutate(
+    starfandi = slider::slide_dbl(starfandi, mean, .before = 11),
+    .by = c(atv, bakgrunnur)
+  ) |> 
+  filter(
+    bakgrunnur != "Alls",
+    dags >= clock::date_build(2010, 1, 1),
+    str_detect(atv, "^[A-Z]+ |^O-Q")
+  ) |> 
+  janitor::remove_constant() |> 
+  mutate(
+    change = starfandi - starfandi[dags == min(dags)],
+    .by = c(atv, bakgrunnur)
+  ) |> 
+  filter(bakgrunnur == "Innflytjendur") |> 
+  janitor::clean_names() |> 
+  select(atv, dags, starfandi, change) |> 
+  mutate(
+    atv = fct_reorder(atv, change)
+  ) |> 
+  filter(dags == max(dags)) |> 
+  pull(change) |> sum()
+
+
+36 / (63 - 21)

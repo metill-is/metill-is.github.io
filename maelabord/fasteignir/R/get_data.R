@@ -64,7 +64,7 @@ d_combined <- d_fasteignir |>
   )
 
 d_combined |>
-  write_csv(here::here("dashboards/properties/data/fasteignir_pop.csv"))
+  write_csv(here::here("maelabord/fasteignir/data/fasteignir_pop.csv"))
 
 
 d_combined |>

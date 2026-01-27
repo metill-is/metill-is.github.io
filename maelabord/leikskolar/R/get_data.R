@@ -80,4 +80,4 @@ d <- d |>
 
 
 d |>
-  write_csv(here("dashboards/kindergardens/data/kindergardens.csv"))
+  write_csv(here("maelabord/leikskolar/data/kindergardens.csv"))

@@ -1,7 +1,7 @@
 library(tidyverse)
 library(hagstofa)
 
-cache_dir <- here::here("dashboards", "immigration", "data")
+cache_dir <- here::here("maelabord", "innflytjendur", "data")
 
 d_is <- read_csv(
   here::here(cache_dir, "origin.csv")

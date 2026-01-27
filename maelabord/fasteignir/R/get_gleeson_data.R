@@ -25,4 +25,4 @@ d_gleeson <- read_csv("https://raw.githubusercontent.com/jgleeson/PublicHouse/ma
   ) |>
   drop_na()
 
-d_gleeson |> write_csv("dashboards/properties/data/gleeson.csv")
+d_gleeson |> write_csv("maelabord/fasteignir/data/gleeson.csv")

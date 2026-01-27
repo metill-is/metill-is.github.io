@@ -8,8 +8,18 @@
     ]
   },
   {
-    "listing": "/index.html",
-    "items": []
+    "listing": "/greinar.html",
+    "items": [
+      "/ithrottir/korfubolti/greinar/em-kk-2025/index.html",
+      "/greinar/launagognfjarsyslu/index.html",
+      "/greinar/flottafolk/index.html",
+      "/greinar/vinnuafl/index.html",
+      "/greinar/handbolti/index.html",
+      "/ithrottir/handbolti/greinar/hm2025/index.html",
+      "/ithrottir/handbolti/greinar/em2026/index.html",
+      "/greinar/stjornmalaflokkar/index.html",
+      "/greinar/landspitali/index.html"
+    ]
   },
   {
     "listing": "/maelabord.html",
@@ -23,16 +33,7 @@
     ]
   },
   {
-    "listing": "/greinar.html",
-    "items": [
-      "/ithrottir/korfubolti/greinar/em-kk-2025/index.html",
-      "/greinar/launagognfjarsyslu/index.html",
-      "/greinar/flottafolk/index.html",
-      "/greinar/vinnuafl/index.html",
-      "/greinar/handbolti/index.html",
-      "/ithrottir/handbolti/greinar/hm2025/index.html",
-      "/greinar/stjornmalaflokkar/index.html",
-      "/greinar/landspitali/index.html"
-    ]
+    "listing": "/index.html",
+    "items": []
   }
 ]

@@ -1,7 +1,7 @@
 library(tidyverse)
 library(hagstofa)
-
-cache_dir <- here::here("dashboards", "immigration", "data")
+library(pxweb)
+cache_dir <- here::here("maelabord", "innflytjendur", "data")
 
 url <- "https://px.hagstofa.is:443/pxis/api/v1/is/Ibuar/mannfjoldi/3_bakgrunnur/Rikisfang/MAN04103.px"
 

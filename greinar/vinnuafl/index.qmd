@@ -285,8 +285,8 @@ p1 <- plot_dat |>
     expand = expansion(add = 31),
     limits = c(min(plot_dat$dags), max(plot_dat$dags) + 15)
   ) +  
-  scale_y_tufte(
-    breaks = tufte_breaks(plot_dat$Annad),
+  scale_y_continuous(
+    breaks = breaks_pretty(),
     limits = c(1e5, NA),
     labels = label_number()
   ) +
@@ -316,8 +316,8 @@ p2 <- plot_dat |>
     expand = expansion(add = 31),
     limits = c(min(plot_dat$dags), max(plot_dat$dags) + 15)
   ) +  
-  scale_y_tufte(
-    breaks = tufte_breaks(plot_dat$Opinbert),
+  scale_y_continuous(
+    breaks = breaks_pretty(),
     labels = label_number()
   ) +
   labs(
@@ -359,8 +359,8 @@ p3 <- plot_dat |>
     expand = expansion(add = 31),
     limits = c(min(plot_dat$dags), max(plot_dat$dags) + 15)
   ) +  
-  scale_y_tufte(
-    breaks = tufte_breaks(plot_dat$n),
+  scale_y_continuous(
+    breaks = breaks_pretty(),
     labels = label_number(),
     limits = c(0, NA),
     expand = expansion()
@@ -502,8 +502,8 @@ p1 <- plot_dat |>
     expand = expansion(),
     limits = c(min(plot_dat$dags), max(plot_dat$dags) + 20)
   ) +
-  scale_y_tufte(
-    breaks = tufte_breaks(plot_dat$hlutf),
+  scale_y_continuous(
+    breaks = breaks_pretty(),
     labels = label_percent(accuracy = 0.01)
   ) +  
   labs(x = NULL, y = NULL,  
@@ -538,7 +538,7 @@ p2 <- plot_dat2 |>
     expand = expansion(),
     limits = c(min(plot_dat$dags), max(plot_dat$dags) + 20)
   ) +
-  scale_y_tufte(
+  scale_y_continuous(
     labels = function(x) percent(x - 1, prefix = ""),
     breaks = c(1, range(plot_dat2$perc_change), 1.005, 0.995),
     trans = "log10"
@@ -638,13 +638,13 @@ p <- plot_dat |>
   ggplot(aes(manudur, response)) +
   geom_hline(yintercept = 1, lty = 2) +
   geom_line() +
-  scale_x_tufte(breaks = 1:12,
+  scale_x_continuous(breaks = 1:12,
                 labels = c("Janúar", "Febrúar", "Mars",
                            "Apríl", "Maí", "Júní",
                            "Júli", "Ágúst", "September",
                            "Október", "Nóvember", "Desember")) +
-  scale_y_tufte(labels = function(x) percent(x - 1),
-                breaks = tufte_breaks(plot_dat$response),
+  scale_y_continuous(labels = function(x) percent(x - 1),
+                breaks = breaks_pretty(),
                 limits = c(0.92, 1.08)) +
   labs(x = "Mánuður",
        y = "Árstíðarbundnar sveiflur",

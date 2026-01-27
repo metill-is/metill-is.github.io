@@ -1,12 +1,10 @@
-- title: "FótboltaMetill"
+- title: "Handboltaspá Metils fyrir EM í handbolta 2026"
   description: |
-    Við kynnum FótboltaMetil - reglulega uppfærðan hluta þar sem við 
-    greinum bæði söguleg og ný gögn úr íslenskum fótbolta. Hér berum við saman 
-    styrkleika liða, spáum fyrir um úrslit leikja og þróun deilda. <br><br>
+    Hverjar eru líkurnar á að Ísland vinnni næsta leik? Hvaða lið munu mætast í undanúrslitum? Hefur íslenska landsliðið bætt sig í sóknar- og varnarstyrk síðasta áratuginn?
     
-    Fylgstu með fyrir innsýn, tölfræði og áhugaverðar greiningar á íslenskum fótbolta - 
-    allt á einum stað!
-  href: ithrottir/index.qmd
+    Handboltalíkan Metils býður upp á greiningu á frammistöðu landsliða sem keppa á EM í handbolta, en hún byggir á útvíkkun svonefnds Bradley-Terry líkans. Þetta líkan metur líkur á sigri milli liða út frá úrslitum keppna þeirra og gerir okkur kleift að bera saman getu ólíkra liða.
+
+    
+  href: ithrottir/handbolti/greinar/em2026/index.qmd
   images:
-    - https://raw.githubusercontent.com/bgautijonsson/football_iceland/refs/heads/main/results/male/figures/styrkur.png
-    - https://raw.githubusercontent.com/bgautijonsson/football_iceland/refs/heads/main/results/female/figures/styrkur.png
+    - https://raw.githubusercontent.com/bgautijonsson/handball_international/refs/heads/main/results/male/2026-01-26/figures/styrkur_table.png
