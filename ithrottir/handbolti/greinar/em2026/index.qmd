@@ -33,6 +33,10 @@ toc: false
 
 ::: {.panel-tabset .nav-pills}
 
+### Ísland - Slóvenía
+
+![](https://raw.githubusercontent.com/bgautijonsson/handball_international/refs/heads/main/results/male/evolution_iceland_slovenia.png)
+
 ### Ísland - Sviss
 
 ![](https://raw.githubusercontent.com/bgautijonsson/handball_international/refs/heads/main/results/male/evolution_iceland_switzerland.png)
