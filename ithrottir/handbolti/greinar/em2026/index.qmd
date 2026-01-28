@@ -9,9 +9,9 @@ draft: false
 categories:
     - íþróttir
 href: ithrottir/handbolti/greinar/em2026/index.qmd
-image: https://raw.githubusercontent.com/bgautijonsson/handball_international/refs/heads/main/results/male/2026-01-26/figures/styrkur_table.png
+image: https://raw.githubusercontent.com/bgautijonsson/handball_international/refs/heads/main/results/male/2026-01-27/figures/styrkur_table.png
 twitter-card:
-    image: https://raw.githubusercontent.com/bgautijonsson/handball_international/refs/heads/main/results/male/2026-01-26/figures/styrkur_table.png
+    image: https://raw.githubusercontent.com/bgautijonsson/handball_international/refs/heads/main/results/male/2026-01-27/figures/styrkur_table.png
 execute: 
   eval: true
 toc: false
@@ -19,15 +19,15 @@ toc: false
 
 ## Styrkur landsliða
 
-![](https://raw.githubusercontent.com/bgautijonsson/handball_international/refs/heads/main/results/male/2026-01-26/figures/styrkur_table.png)
+![](https://raw.githubusercontent.com/bgautijonsson/handball_international/refs/heads/main/results/male/2026-01-27/figures/styrkur_table.png)
 
 ## Spá um úrslit næstu leikja
 
-![](https://raw.githubusercontent.com/bgautijonsson/handball_international/refs/heads/main/results/male/2026-01-26/figures/next_round_predictions.png)
+![](https://raw.githubusercontent.com/bgautijonsson/handball_international/refs/heads/main/results/male/2026-01-27/figures/next_round_predictions.png)
 
 ## Spá um lokaniðurstöður riðla
 
-![](https://raw.githubusercontent.com/bgautijonsson/handball_international/refs/heads/main/results/male/2026-01-26/figures/main_group_table.png)
+![](https://raw.githubusercontent.com/bgautijonsson/handball_international/refs/heads/main/results/male/2026-01-27/figures/main_group_table.png)
 
 ## Söguleg þróun landsliða
 
