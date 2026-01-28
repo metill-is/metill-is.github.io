@@ -4,7 +4,7 @@ pagetitle: "EM í handbolta 2026"
 subtitle: "Greining á frammistöðu landsliða með útvíkkuðu Bradley-Terry líkani"
 description:  |
     Fyrir áhugasöm birtir Metill núna tölfræðilega greiningu á frammistöðu landsliða sem keppa á EM í handbolta, en hún byggir á útvíkkun svonefnds Bradley-Terry líkans. Þetta líkan metur líkur á sigri milli liða út frá úrslitum keppna þeirra og gerir okkur kleift að bera saman getu ólíkra liða.
-date: "2025/2/2"
+date: "2026/1/28"
 draft: false
 categories:
     - íþróttir
