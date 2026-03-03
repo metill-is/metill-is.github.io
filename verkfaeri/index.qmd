@@ -1,0 +1,11 @@
+---
+title: "Verkfæri"
+description: "Gagnvirk mælaborð til að kanna gögn"
+listing:
+  contents: "*/index.qmd"
+  type: grid
+  fields: [title, description]
+  sort: "title"
+---
+
+Gagnvirk verkfæri sem gera þér kleift að skoða og bera saman gögn á þinn eigin hátt.

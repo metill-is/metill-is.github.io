@@ -1,0 +1,358 @@
+---
+title: "Fjármál sveitarfélaga"
+description: "Samanburður á fjármálum sveitarfélaga á Íslandi"
+css: styles.css
+---
+
+```{ojs}
+//| echo: false
+// ---- Data Loading ----
+throunRaw = FileAttachment("data/throun.csv").csv({typed: true})
+```
+
+```{ojs}
+//| echo: false
+// ---- Derived: unique municipalities and metrics ----
+municipalities = [...new Set(throunRaw.map(d => d.sveitarfelag))].sort((a, b) => a.localeCompare(b, "is"))
+```
+
+```{ojs}
+//| echo: false
+metrics = [...new Set(throunRaw.map(d => d.name))]
+```
+
+```{ojs}
+//| echo: false
+// ---- Metric Configuration ----
+metricConfig = ({
+  "Eiginfjárhlutfall": {
+    isPercent: true,
+    digits: 3,
+    hlines: [0, 1],
+    suffix: "",
+    subtitle: "Eiginfjárhlutfall (100% - skuldahlutfall) sýnir hlutfall eigna sem er fjármagnað með hagnaði og hlutafé. 100% þýðir engar skuldir, 0% þýðir engar eigin eignir.",
+    yLim: [0, 1]
+  },
+  "Fjármagnsliðir á íbúa": {
+    isPercent: false,
+    digits: 0,
+    hlines: [0],
+    suffix: " kr",
+    subtitle: null,
+    yLim: null
+  },
+  "Framlag jöfnunarsjóðs á íbúa": {
+    isPercent: false,
+    digits: 0,
+    hlines: null,
+    suffix: " kr",
+    subtitle: null,
+    yLim: null
+  },
+  "Framlegð sem hlutfall af tekjum": {
+    isPercent: true,
+    digits: 3,
+    hlines: [0],
+    suffix: "",
+    subtitle: "Framlegð er reglulegar tekjur mínus gjöld að frádregnum rekstrargjöldum",
+    yLim: null
+  },
+  "Handbært fé á íbúa": {
+    isPercent: false,
+    digits: 0,
+    hlines: null,
+    suffix: " kr",
+    subtitle: "Handbært fé er það fé sem sveitarfélög eiga eftir þegar búið er að greiða skuldir og skuldbindingar.",
+    yLim: null
+  },
+  "Heildarskuldir": {
+    isPercent: false,
+    digits: 0,
+    hlines: [0],
+    suffix: " kr",
+    subtitle: "Samanburður hér er óæskilegur því stærð sveitarfélaga hefur áhrif á heildarskuldir",
+    yLim: null
+  },
+  "Launa- og launatengd gjöld sem hlutfall af útgjöldum": {
+    isPercent: true,
+    digits: 3,
+    hlines: null,
+    suffix: "",
+    subtitle: null,
+    yLim: null
+  },
+  "Launa- og launatengd gjöld á íbúa": {
+    isPercent: false,
+    digits: 0,
+    hlines: null,
+    suffix: " kr",
+    subtitle: null,
+    yLim: null
+  },
+  "Nettóskuldir sem hlutfall af tekjum": {
+    isPercent: true,
+    digits: 3,
+    hlines: [1],
+    suffix: "",
+    subtitle: "Nettóskuldir eru heildarskuldir að frádregnum peningalegum eignum án eigin fyrirtækja og eru notaðar í viðmiðum eftirlitsnefndar.",
+    yLim: null
+  },
+  "Ný langtímalán á íbúa": {
+    isPercent: false,
+    digits: 0,
+    hlines: null,
+    suffix: " kr",
+    subtitle: null,
+    yLim: null
+  },
+  "Rekstrarniðurstaða sem hlutfall af tekjum": {
+    isPercent: true,
+    digits: 3,
+    hlines: [0],
+    suffix: "",
+    subtitle: null,
+    yLim: null
+  },
+  "Rekstrarniðurstaða undanfarinna 3 ára sem hlutfall af tekjum": {
+    isPercent: true,
+    digits: 3,
+    hlines: [0],
+    suffix: "",
+    subtitle: null,
+    yLim: null
+  },
+  "Rekstrarniðurstaða á íbúa": {
+    isPercent: false,
+    digits: 0,
+    hlines: [0],
+    suffix: " kr",
+    subtitle: null,
+    yLim: null
+  },
+  "Skuldir sem hlutfall af tekjum": {
+    isPercent: true,
+    digits: 3,
+    hlines: [1],
+    suffix: "",
+    subtitle: null,
+    yLim: null
+  },
+  "Skuldir á íbúa": {
+    isPercent: false,
+    digits: 0,
+    hlines: null,
+    suffix: " kr",
+    subtitle: null,
+    yLim: null
+  },
+  "Tekjur á íbúa": {
+    isPercent: false,
+    digits: 0,
+    hlines: null,
+    suffix: " kr",
+    subtitle: null,
+    yLim: null
+  },
+  "Veltufjárhlutfall": {
+    isPercent: true,
+    digits: 3,
+    hlines: [1],
+    suffix: "",
+    subtitle: "Veltufjárhlutfall er hlutfall skammtímaskulda deilt upp í eignir sem er hægt að nota í að borga í skammtímaskuldir",
+    yLim: [0, 3]
+  },
+  "Veltufé frá rekstri sem hlutfall af tekjum": {
+    isPercent: true,
+    digits: 3,
+    hlines: [0],
+    suffix: "",
+    subtitle: null,
+    yLim: null
+  },
+  "Útgjöld á íbúa": {
+    isPercent: false,
+    digits: 0,
+    hlines: null,
+    suffix: " kr",
+    subtitle: null,
+    yLim: null
+  },
+  "Útsvar og fasteignaskattur á íbúa": {
+    isPercent: false,
+    digits: 0,
+    hlines: null,
+    suffix: " kr",
+    subtitle: null,
+    yLim: null
+  }
+})
+```
+
+```{ojs}
+//| echo: false
+// ---- Formatting Utilities ----
+function formatIcelandic(value, {isPercent = false, digits = 0, suffix = ""} = {}) {
+  if (value == null || isNaN(value)) return "";
+  if (isPercent) {
+    const pct = (value * 100).toFixed(1);
+    return pct.replace(".", ",") + "%";
+  }
+  const fixed = Math.abs(value).toFixed(digits);
+  const [intPart, decPart] = fixed.split(".");
+  const withThousands = intPart.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  const sign = value < 0 ? "-" : "";
+  if (decPart && digits > 0) {
+    return sign + withThousands + "," + decPart + suffix;
+  }
+  return sign + withThousands + suffix;
+}
+
+function formatValue(value, metricName) {
+  if (value == null || isNaN(value)) return "";
+  const cfg = metricConfig[metricName] || {};
+  if (cfg.isPercent) return formatIcelandic(value, {isPercent: true, digits: 1});
+  return formatIcelandic(value, {digits: cfg.digits || 0, suffix: cfg.suffix || ""});
+}
+```
+
+```{ojs}
+//| echo: false
+// ---- Data Filtering ----
+throunFiltered = {
+  return throunRaw.filter(d =>
+    d.hluti === selectedHluti &&
+    selectedMunicipalities.includes(d.sveitarfelag) &&
+    d.name === selectedMetric
+  );
+}
+```
+
+::: {.sveitarfelog-dashboard .column-screen-inset}
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-3 .dashboard-sidebar}
+
+```{ojs}
+//| echo: false
+viewof selectedMunicipalities = Inputs.select(
+  municipalities,
+  {
+    multiple: true,
+    value: ["Reykjavíkurborg", "Kópavogsbær", "Hafnarfjarðarkaupstaður",
+            "Garðabær", "Mosfellsbær", "Seltjarnarnesbær"],
+    label: "Sveitarfélag",
+    width: "100%"
+  }
+)
+```
+
+```{ojs}
+//| echo: false
+viewof selectedHluti = Inputs.select(
+  ["A-hluti", "A og B-hluti"],
+  {
+    value: "A-hluti",
+    label: "Hluti",
+    width: "100%"
+  }
+)
+```
+
+```{ojs}
+//| echo: false
+viewof selectedMetric = Inputs.select(
+  metrics,
+  {
+    value: "Nettóskuldir sem hlutfall af tekjum",
+    label: "Mælikvarði",
+    width: "100%"
+  }
+)
+```
+
+::: {.dashboard-footer}
+**Höfundur:** Brynjólfur Gauti Guðrúnar Jónsson
+
+[Kóði og gögn](https://github.com/metill-is/shiny_sveitarfelog)
+:::
+
+:::
+
+::: {.g-col-12 .g-col-md-9 .dashboard-main}
+
+```{ojs}
+//| echo: false
+{
+  const cfg = metricConfig[selectedMetric] || {};
+  const isPercent = cfg.isPercent || false;
+
+  const title = `${selectedMetric} (${selectedHluti})`;
+
+  const tickFormat = isPercent
+    ? d => formatIcelandic(d, {isPercent: true, digits: 1})
+    : d => formatIcelandic(d, {digits: 0, suffix: cfg.suffix || ""});
+
+  const hlineMarks = (cfg.hlines || []).map(v =>
+    Plot.ruleY([v], {stroke: "#999", strokeDasharray: "4,4", strokeOpacity: 0.5})
+  );
+
+  const yDomain = cfg.yLim || undefined;
+
+  const subtitle = cfg.subtitle || undefined;
+
+  return Plot.plot({
+    width: width,
+    height: 550,
+    marginLeft: 90,
+    marginRight: 20,
+    marginTop: 40,
+    marginBottom: 40,
+    style: {
+      fontFamily: "Lato, sans-serif",
+      background: "#faf9f9",
+      fontSize: "12px"
+    },
+    color: {
+      scheme: "tableau10",
+      legend: true
+    },
+    x: {
+      label: null,
+      tickFormat: d => String(d)
+    },
+    y: {
+      label: null,
+      tickFormat: tickFormat,
+      grid: true,
+      domain: yDomain
+    },
+    title: title,
+    subtitle: subtitle,
+    marks: [
+      ...hlineMarks,
+      Plot.lineY(throunFiltered, {
+        x: "ar",
+        y: "y",
+        stroke: "sveitarfelag",
+        strokeWidth: 2,
+        curve: "linear"
+      }),
+      Plot.dot(throunFiltered, {
+        x: "ar",
+        y: "y",
+        fill: "sveitarfelag",
+        r: 3,
+        tip: true,
+        title: d => `${d.sveitarfelag} (${d.ar}): ${formatValue(d.y, selectedMetric)}`
+      })
+    ]
+  });
+}
+```
+
+:::
+
+:::
+
+:::

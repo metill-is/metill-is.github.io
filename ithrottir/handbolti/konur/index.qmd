@@ -1,0 +1,46 @@
+---
+title: "Olís deild kvenna"
+subtitle: "Handbolti"
+description: "Spár fyrir Olís deild kvenna í handbolta"
+date: last-modified
+---
+
+## Spár fyrir næstu umferð
+
+![](figures/next_round_predictions.png){.prediction-image}
+
+## Staðan
+
+::: {.columns}
+
+::: {.column width="45%"}
+![](figures/group_table.png){.table-image}
+:::
+
+::: {.column width="55%"}
+![](figures/deild_points.png){.chart-image}
+:::
+
+:::
+
+## Styrkur liða
+
+::: {.columns}
+
+::: {.column width="50%"}
+![](figures/styrkur.png){.strength-image}
+:::
+
+::: {.column width="50%"}
+![](figures/strengths_table.png){.table-image}
+:::
+
+:::
+
+## Heimavöllur
+
+![](figures/home_advantage.png){.chart-image}
+
+---
+
+[← Handbolti](../index.qmd) | [Um spálíkönin](../../um-spalikon/index.qmd)

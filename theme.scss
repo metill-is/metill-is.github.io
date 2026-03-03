@@ -1,380 +1,307 @@
 /*-- scss:defaults --*/
 
-@import "https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css";
-@import "https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js";
+// Core palette - keep it simple
+$primary:                       #484D6D;
+$primary-light:                 #5a6080;
+$secondary:                     #fafafa;
+$accent:                        #2c5aa0;
 
-$primary:                       hsla(232, 20%, 35%, 1);
-$secondary:                     hsla(0, 9%, 99%, 1);
+$body-bg:                       #ffffff;
+$body-color:                    #333333;
+$text-muted:                    #6b7280;
 
-$success:                       hsla(192, 100%, 33%, 1);
-$body-bg:                       $secondary;
+// Typography
+$font-size-base:                1rem;
+$font-family-base:              "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+$font-family-sans-serif:        $font-family-base;
+$headings-font-family:          "Playfair Display", Georgia, serif;
+$font-family-monospace:         "SF Mono", Menlo, Monaco, Consolas, monospace;
 
-$font-size-base:                1rem; 
-$font-family-sans-serif:        "Lato", "Open Sans", "Montserrat", "Roboto", 
-                                // Cross-platform generic font family (default user interface font)
-                                system-ui, 
-                                // Safari for macOS and iOS (San Francisco)
-                                -apple-system
-                                // Windows
-                                "Segoe UI",
-                                // Android
-                                Roboto,
-                                // older macOS and iOS
-                                "Helvetica Neue"
-                                // Linux
-                                "Noto Sans",
-                                "Liberation Sans",
-                                // Basic web fallback
-                                Arial,
-                                // Sans serif fallback
-                                sans-serif,
-                                // Emoji fonts
-                                "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$headings-font-weight:          600;
+$headings-color:                $primary;
 
+// Links
+$link-color:                    $accent;
+$link-hover-color:              darken($accent, 10%);
+$link-decoration:               none;
+$link-hover-decoration:         underline;
 
-$font-family-base:              "Lato";
-$font-family-monospace:         SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+// Borders
+$border-color:                  #e5e7eb;
+$border-radius:                 0.5rem;
+$border-radius-lg:              0.75rem;
 
-$headings-font-family:          "Bookman", "Playfair Display";
-
-  
+// Carousel (if used)
 $carousel-control-color:        $primary;
 $carousel-caption-color:        $primary;
 $carousel-indicator-active-bg:  $primary;
-$icelandic-blue: #02529C;
-$icelandic-red: #DC1E35;
-$icelandic-white: #FFFFFF;
 
 
-/*-- scss:rules --*/  
+/*-- scss:rules --*/
 
 html {
-  scroll-behavior: smooth !important;
+  scroll-behavior: smooth;
 }
 
-.icelandic-text {
-  font-weight: bold; /* Optional: makes the text bold */
-  background: linear-gradient(to bottom,
-      $icelandic-blue 0%, $icelandic-blue 48%,
-      $icelandic-white 48%, $icelandic-white 53%,
-      $icelandic-red 53%, $icelandic-red 61%,
-      $icelandic-white 61%, $icelandic-white 66%,
-      $icelandic-blue 66%, $icelandic-blue 100%);
-  background-clip: text;
-  -webkit-background-clip: text; /* For Safari compatibility */
-  color: transparent;
-  -webkit-text-fill-color: transparent; /* For Safari compatibility */
-  -webkit-text-stroke: 0.7px $secondary; /* For Safari and Chrome */
-  text-stroke: 0.7px $secondary; /* For future compatibility */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.icelandic-text:hover {
-  transform: scale(1.05);
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+// Clean heading styles
+h1, h2, h3, h4, h5, h6 {
+  color: $primary;
+  letter-spacing: -0.01em;
 }
 
+h1 { font-weight: 700; }
+h2 { font-weight: 600; }
 
-body > nav > div > {
-  
-  div.d-flex.flex-row > header > div {
-    font-size: 48px !important;
-    font-family: "Playfair Display";
-    color: $secondary !important;
+// Navbar - light, clean and minimal
+.navbar {
+  background-color: #fff !important;
+  border-bottom: 1px solid $border-color;
 
-    a {
-      font-size: 48px !important;
-    font-family: "Playfair Display";
-    color: $secondary !important;
-    }
+  .navbar-brand {
+    font-size: 1.75rem;
+    font-family: $headings-font-family;
+    font-weight: 700;
+    color: $primary !important;
+    letter-spacing: -0.02em;
+    transition: color 0.2s ease;
 
-    a:hover {
-      transform: scale(1.03);
+    &:hover {
+      color: $accent !important;
     }
   }
 
-  div.col-12.d-flex.justify-content-center {
-    font-size: 24px;
-    border-top: 1px solid $secondary;
-    width: 100%;
-    font-family: "Segoe UI";
-  
-    a:hover {
-      transform: scale(1.03);
+  .nav-link {
+    color: $text-muted !important;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $primary !important;
     }
   }
-}
 
-.latest-update {
-  background-color: $secondary;
-  padding: 1.5rem;
-  border-left: 4px solid $primary;
-  border-radius: 0.25rem;
-  margin: 1.5rem 0;
-  position: relative;
-  
-  &::before {
-    content: "Nýjasta uppfærsla";
-    position: absolute;
-    top: -0.75rem;
-    left: 1rem;
-    background-color: $primary;
-    color: $secondary;
-    padding: 0.25rem 0.75rem;
-    border-radius: 0.25rem;
-    font-size: 0.9rem;
+  // Active nav item
+  .nav-link.active,
+  .nav-item.active .nav-link {
+    color: $primary !important;
     font-weight: 600;
   }
+
+  .navbar-toggler {
+    border-color: $border-color;
+  }
+
+  // Search icon
+  .navbar-search {
+    color: $text-muted;
+  }
 }
 
-@media (max-width: 576px) {
-  .latest-update {
-    padding: 1.25rem;
-    margin: 1.25rem 0;
-    
-    &::before {
-      font-size: 0.8rem;
-      padding: 0.2rem 0.5rem;
+// Footer - light and clean
+.nav-footer {
+  background-color: #fafafa !important;
+  border-top: 1px solid $border-color !important;
+  padding: 1.5rem 0;
+
+  a {
+    color: $text-muted;
+    text-decoration: none;
+
+    &:hover {
+      color: $primary;
     }
   }
 }
 
-.nav-pills {
-  .nav-link {
-    color: $primary;
-    background-color: $secondary !important;
-    margin-right: 0.25rem;
-    padding: 0.375rem 0.75rem;
-    border-radius: 0.25rem;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-    font-size: 0.9rem;
-    white-space: nowrap;
-    
-    // Mobile styles
-    @media (max-width: 576px) {
-      padding: 0.25rem 0.5rem;
-      margin-right: 0.15rem;
-      font-size: 0.85rem;
-    }
-    
-    // Tablet styles
-    @media (min-width: 577px) and (max-width: 991px) {
-      padding: 0.5rem 1rem;
-      margin-right: 0.3rem;
-      font-size: 1rem;
-    }
-    
-    // Desktop styles
-    @media (min-width: 992px) {
-      padding: 0.75rem 1.5rem;
-      margin-right: 0.5rem;
-      font-size: 1.1rem;
-    }
-    
-    &:hover {
-      background-color: hsla(0, 12%, 96%, 1);
-    }
-    
-    &.active {
-      color: $primary;
-      background-color: $secondary;
-      font-weight: 600;
-      border: 2px solid $primary;
-      
+// Back to top button
+#quarto-back-to-top {
+  background-color: $primary;
+  color: #fff;
+  border: none;
+  border-radius: $border-radius;
+
+  &:hover {
+    background-color: darken($primary, 8%);
+  }
+}
+
+// Breadcrumbs
+.breadcrumb {
+  background: transparent;
+  padding: 0;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+
+  .breadcrumb-item {
+    color: $text-muted;
+
+    a {
+      color: $text-muted;
+      text-decoration: none;
+
       &:hover {
-        background-color: hsla(0, 12%, 96%, 1);
+        color: $primary;
       }
     }
-  }
 
-  .nav-item {
-    background-color: transparent !important;
+    &.active {
+      color: $primary;
+    }
   }
 }
 
+// Cards - minimal, no heavy shadows
+.card {
+  background-color: $body-bg;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  transition: border-color 0.2s ease;
+
+  &:hover {
+    border-color: darken($border-color, 10%);
+  }
+}
+
+.card-header {
+  background-color: transparent !important;
+  border-bottom: 1px solid $border-color;
+}
+
+// Tabs - clean pill style
+.nav-pills {
+  gap: 0.5rem;
+
+  .nav-link {
+    color: $text-muted;
+    background-color: transparent;
+    padding: 0.5rem 1rem;
+    border-radius: $border-radius;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+
+    &:hover {
+      color: $primary;
+      background-color: rgba($primary, 0.05);
+    }
+
+    &.active {
+      color: $primary;
+      background-color: transparent;
+      border: 1px solid $primary;
+      font-weight: 600;
+    }
+  }
+}
+
+.tab-content {
+  margin-top: 1.5rem;
+  border: none;
+  padding: 0;
+}
+
+// Panel tabset responsive
 .panel-tabset > .nav-pills {
   @media (max-width: 576px) {
     display: flex;
     overflow-x: auto;
     flex-wrap: nowrap;
     -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+
     &::-webkit-scrollbar {
       display: none;
     }
-    scrollbar-width: none;
-    margin-bottom: 1rem;
   }
 }
 
-.tab-content {
-  margin-top: 1rem;
-}
-
-
-.card { 
-  background-color: $secondary;
-  transition: 0.5s;
-}
-
-.card-header {
-  background-color: $body-bg !important;
-}
-
-.fp-card {
-  border: 2px solid $primary;
-  border-radius: 0.25rem !important;
-}
-
-.fp-card:hover {
-  background-color: hsla(0, 12%, 96%, 1);
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-  transform: scale(1.03);
-}
-
-.fp-card-header {
-  background-color: $body-bg;
-
-  h5 {
-    color: $primary;
-    font-weight: 600;
-    font-size: 1.25rem;
-  }
+// Latest update callout
+.latest-update {
+  background-color: rgba($primary, 0.03);
+  padding: 1.25rem 1.5rem;
+  border-left: 3px solid $primary;
+  border-radius: 0 $border-radius $border-radius 0;
+  margin: 1.5rem 0;
 
   p {
-    color: #6c757d;
-    font-size: 0.875rem;
+    margin: 0;
+    color: $body-color;
   }
 }
 
-.photo-of-the-week {
-  padding: 0;  // No padding by default for small screens
-  background-color: hsla(0, 0%, 98%, 1);
-  margin: 0;
-  border: none;
-  color: hsla(232, 20%, 30%, 1);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-  border-radius: 0.25rem;
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  
-  @media (min-width: 768px) {  // Medium screens and up
-    padding-left: clamp(0rem, 10%, 24rem);
-    padding-right: clamp(0rem, 10%, 24rem);
-  }
-
-  @media (min-width: 1200px) {  // Large screens
-    padding-left: clamp(0rem, 15%, 32rem);
-    padding-right: clamp(0rem, 15%, 32rem);
-  }
-  
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.15);
-  }
-}
-
-
-.fp-card-body {
-  padding: 1rem;
-}
-
-.fp-card-link {
-  text-decoration: none;
-}
-
-
-.hero-row {
-  background-color: $secondary;
-}
-
-.hero-row:hover {
-  background-color: hsla(0, 12%, 96%, 1);
-}
-
-.footer {
-  font-family: "Playfair Display";
-  }
-
-
+// Featured article - cleaner style
 .featured-article {
-  background-color: hsla(0, 0%, 98%, 1);
-  border: 2px solid $primary;
-  border-radius: 0.5rem;
+  background-color: $body-bg;
+  border: 1px solid $border-color;
+  border-radius: $border-radius-lg;
   padding: 2rem;
-  margin: 2rem 0 2rem 0;
-  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease-in-out;
-  
-  .row {
-    position: relative;
-    min-height: 200px;
-    align-items: center;
+  margin: 2rem 0;
+  transition: border-color 0.2s ease;
+
+  &:hover {
+    border-color: $primary;
   }
-  
-  .col-md-6:last-child {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-  
+
   h2 {
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
   }
-  
+
   p {
-    flex-grow: 1;
-    margin-bottom: 1.5rem;
-  }
-  
-  .btn-featured {
-    align-self: flex-start;
-    margin-top: auto;
-    font-size: 1.25rem;
-    font-weight: 600;
-  }
-  
-  @media (max-width: 768px) {
-    .row {
-      min-height: auto;
-    }
-    
-    p {
-      margin-bottom: 1rem;
-    }
-    
-    .btn-featured {
-      margin-bottom: 1rem;
-    }
+    color: $text-muted;
+    line-height: 1.6;
   }
 }
 
+// Buttons
 .btn-featured {
-  color: $primary !important;
+  color: $primary;
   background-color: transparent;
-  border: 2px solid $primary !important;
-  border-radius: 0.25rem;
-  padding: 0.75rem 1.5rem;
-  font-size: 1.1rem;
+  border: 1px solid $primary;
+  border-radius: $border-radius;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.95rem;
   font-weight: 600;
   text-decoration: none;
-  transition: all 0.2s ease-in-out;
-  
+  transition: all 0.2s ease;
+
   &:hover {
-    background-color: $primary !important;
-    color: $secondary !important;
-    transform: translateY(-2px);
-    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
-  }
-  
-  &:active {
-    transform: translateY(0);
-    box-shadow: none;
-  }
-  
-  @media (max-width: 576px) {
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
+    background-color: $primary;
+    color: #fff;
   }
 }
 
-/* Styles for dashboards */
+// Footer
+.footer, footer {
+  border-top: 1px solid $border-color;
+}
 
+// Remove Quarto's default content padding for cleaner hero
+#quarto-content main {
+  padding-top: 0;
+}
+
+// Blockquotes
+blockquote, .blockquote {
+  border-left: 3px solid $border-color;
+  padding-left: 1rem;
+  color: $text-muted;
+  font-style: italic;
+}
+
+// Selection color
+::selection {
+  background-color: rgba($accent, 0.2);
+}
+
+// Smooth image rendering
+img {
+  image-rendering: -webkit-optimize-contrast;
+}

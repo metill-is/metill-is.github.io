@@ -1,39 +1,22 @@
 [
   {
-    "listing": "/ithrottir/index.html",
+    "listing": "/hagvisar/index.html",
     "items": [
-      "/ithrottir/fotbolti/besta/besta-karla/index.html",
-      "/ithrottir/fotbolti/besta/besta-kvenna/index.html",
-      "/ithrottir/korfubolti/greinar/em-kk-2025/index.html"
-    ]
-  },
-  {
-    "listing": "/greinar.html",
-    "items": [
-      "/ithrottir/korfubolti/greinar/em-kk-2025/index.html",
-      "/ithrottir/handbolti/greinar/em2026/index.html",
-      "/greinar/launagognfjarsyslu/index.html",
-      "/greinar/flottafolk/index.html",
-      "/greinar/vinnuafl/index.html",
-      "/greinar/handbolti/index.html",
-      "/ithrottir/handbolti/greinar/hm2025/index.html",
-      "/greinar/stjornmalaflokkar/index.html",
-      "/greinar/landspitali/index.html"
-    ]
-  },
-  {
-    "listing": "/maelabord.html",
-    "items": [
-      "/maelabord/sveitarfelog/index.html",
-      "/maelabord/leikskolar/index.html",
-      "/maelabord/innflytjendur/index.html",
-      "/maelabord/skattagogn/index.html",
-      "/maelabord/fasteignir/index.html",
-      "/maelabord/verdbolga/index.html"
+      "/hagvisar/sveitarfelog/index.html"
     ]
   },
   {
     "listing": "/index.html",
+    "items": [
+      "/hagvisar/sveitarfelog/index.html",
+      "/ithrottir/fotbolti/index.html",
+      "/ithrottir/handbolti/index.html",
+      "/ithrottir/korfubolti/index.html",
+      "/ithrottir/um-spalikon/index.html"
+    ]
+  },
+  {
+    "listing": "/verkfaeri/index.html",
     "items": []
   }
 ]

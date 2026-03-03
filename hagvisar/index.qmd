@@ -1,0 +1,11 @@
+---
+title: "Hagvísar"
+description: "Gagnastýrðar yfirlitssíður um íslenskt efnahagslíf og samfélag"
+listing:
+  contents: "*/index.qmd"
+  type: grid
+  fields: [title, description]
+  sort: "title"
+---
+
+Þessar síður sýna helstu hagvísa um íslenskt efnahagslíf og samfélag. Gögnin eru uppfærð reglulega.

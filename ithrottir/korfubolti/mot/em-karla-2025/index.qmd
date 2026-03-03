@@ -1,0 +1,33 @@
+---
+title: "EM karla 2025"
+subtitle: "Körfubolti"
+description: "Spár fyrir Evrópumeistaramótið í körfubolta karla 2025"
+date: last-modified
+active: false
+---
+
+## Spár fyrir næstu leiki
+
+![](figures/next_round_predictions.png){.prediction-image}
+
+## Staða riðla
+
+![](figures/group_table.png){.table-image}
+
+## Styrkur liða
+
+::: {.columns}
+
+::: {.column width="50%"}
+![](figures/styrkur.png){.strength-image}
+:::
+
+::: {.column width="50%"}
+![](figures/styrkur_table.png){.table-image}
+:::
+
+:::
+
+---
+
+[← Mót](../index.qmd) | [Um spálíkönin](../../../um-spalikon/index.qmd)

@@ -24,10 +24,14 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
 <link href="./favicon/favicon-32x32.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-listing/list.min.js"></script>
 <script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -35,11 +39,23 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-8a3ea2fa674e616b048184d8997600c3.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-188d6145c8646a75d430bf4997a40e5e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-865581ae7a271bbaa017c3fc421c466b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -57,48 +73,20 @@ ul.task-list li input[type="checkbox"] {
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-content .list');
+    const listingTargetEl = window.document.querySelector('#listing-nyjast .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
     }
 
     const options = {
-      valueNames: ['listing-category','listing-description','listing-tiles',{ data: ['index'] },{ data: ['categories'] }],
+      valueNames: ['listing-image','listing-title','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-category","listing-description","listing-tiles"],
+      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-content'] = new List('listing-content', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-featured .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-description','listing-href','listing-images',{ data: ['index'] },{ data: ['categories'] }],
-      
-      searchColumns: ["listing-title","listing-description","listing-href","listing-images"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-featured'] = new List('listing-featured', options);
+    window['quarto-listings']['listing-nyjast'] = new List('listing-nyjast', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -120,35 +108,6 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-J28QQV8PN9', { 'anonymize_ip': true});
 </script>
-<meta property="og:title" content="Metill">
-<meta property="og:image" content="https://raw.githubusercontent.com/bgautijonsson/football_iceland/refs/heads/main/results/male/figures/styrkur.png">
-<meta property="og:site_name" content="Metill">
-<meta name="twitter:title" content="Metill">
-<meta name="twitter:description" content="Notum gögn til að upplýsa, ekki sannfæra.">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/bgautijonsson/football_iceland/refs/heads/main/results/male/figures/styrkur.png">
-<meta name="twitter:creator" content="@bggjonsson">
-<meta name="twitter:site" content="@bggjonsson">
-<meta name="twitter:card" content="summary_large_image">
-</head><body class="fullcontent quarto-light"><nav class="navbar m-0 p-0 bg-primary">
-
-  <div class="container bg-primary text-secondary justify-content-center flex-wrap align-items-baseline">
-    <div class="d-flex flex-row">
-      <header class="blog-header m-0 p-0 justify-content-center">
-          <div class="col-12 d-flex">
-            <a href="./index.html" style="text-decoration: none;">
-                Metill
-              
-            </a>
-          </div>   
-      </header>
-    </div>  
-        <div class="col-12 d-flex justify-content-center">
-          <a class="p-2 pt-0 link-secondary navbar-link text-secondary" href="./ithrottir/index.html" style="text-decoration: none;">Íþróttir</a>
-          <a class="p-2 pt-0 link-secondary navbar-link text-secondary" href="./um_metil.html" style="text-decoration: none;">Um Metil</a>
-          <a class="p-2 pt-0 link-secondary navbar-link text-secondary" href="./kosningaspa/index.html" style="text-decoration: none;">Kosningaspá</a>
-        </div>
-  </div>
-</nav>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -181,13 +140,68 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="style.css">
+<meta property="og:title" content="Metill">
+<meta property="og:description" content="Notum gögn til að upplýsa, ekki sannfæra.">
+<meta property="og:image" content="https://metill.is/placeholder_images/vinnuafl.png">
+<meta property="og:site_name" content="Metill">
+<meta property="og:image:height" content="1937">
+<meta property="og:image:width" content="3120">
+<meta name="twitter:title" content="Metill">
+<meta name="twitter:description" content="Notum gögn til að upplýsa, ekki sannfæra.">
+<meta name="twitter:image" content="https://metill.is/placeholder_images/vinnuafl.png">
+<meta name="twitter:creator" content="@bggjonsson">
+<meta name="twitter:site" content="@bggjonsson">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image-height" content="1937">
+<meta name="twitter:image-width" content="3120">
+</head>
 
-
-
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Metill</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./hagvisar/index.html"> 
+<span class="menu-text">Hagvísar</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./ithrottir/index.html"> 
+<span class="menu-text">Íþróttir</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./verkfaeri/index.html"> 
+<span class="menu-text">Verkfæri</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://kosningar.metill.is" target="_blank"> 
+<span class="menu-text">Kosningar</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./um/index.html"> 
+<span class="menu-text">Um Metil</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
@@ -197,156 +211,106 @@ window.Quarto = {
 
 
 
-<div id="listing-featured" class="column-screen quarto-listing quarto-listing-container-custom">
-<div class="container-md featured-article">
-  
-    <div class="row">
-      <div class="col-md-6">
-        
-          
-            <img src="https://raw.githubusercontent.com/bgautijonsson/handball_international/refs/heads/main/results/male/2026-01-26/figures/styrkur_table.png" class="img-fluid mb-2" alt="Handboltaspá Metils fyrir EM í handbolta 2026">
-          
-        
-      </div>
-      <div class="col-md-6">
-        <h2 class="anchored">Handboltaspá Metils fyrir EM í handbolta 2026</h2>
-        <p>Hverjar eru líkurnar á að Ísland vinnni næsta leik? Hvaða lið munu mætast í undanúrslitum? Hefur íslenska landsliðið bætt sig í sóknar- og varnarstyrk síðasta áratuginn?
-
-Handboltalíkan Metils býður upp á greiningu á frammistöðu landsliða sem keppa á EM í handbolta, en hún byggir á útvíkkun svonefnds Bradley-Terry líkans. Þetta líkan metur líkur á sigri milli liða út frá úrslitum keppna þeirra og gerir okkur kleift að bera saman getu ólíkra liða.
-</p>
-        <a href="./ithrottir/handbolti/greinar/em2026/index.html" class="btn btn-featured">Lesa meira</a>
-      </div>
-    </div>
-  
+<section id="metill" class="level1 hero column-screen-inset">
+<h1>Metill</h1>
+<p><strong>Notum gögn til að upplýsa, ekki sannfæra.</strong></p>
+<div class="featured">
+<p><a href="./hagvisar/index.html"><img src="placeholder_images/vinnuafl.png" class="featured-image img-fluid"></a></p>
+<p><a href="./hagvisar/index.html" class="featured-title"><strong>Fjöldi starfandi á almennum vinnumarkaði er í methæðum</strong></a></p>
+<p>Að öllu óbreyttu verður minnsti fjöldi starfandi árið 2024 jafnhár og metfjöldinn fyrir COVID-19 faraldur.</p>
+</div>
+</section>
+<section id="nýjast" class="level2 column-page">
+<h2 class="anchored" data-anchor-id="nýjast">Nýjast</h2>
+<div id="listing-nyjast" class="quarto-listing quarto-listing-container-grid">
+<div class="list grid quarto-listing-cols-4">
+<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1770652592506" data-listing-reading-time-sort="9" data-listing-word-count-sort="1629">
+<a href="./hagvisar/sveitarfelog/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Fjármál sveitarfélaga
+</h5>
+<div class="card-text listing-description delink">
+<p>Samanburður á fjármálum sveitarfélaga á Íslandi</p>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="1" data-listing-file-modified-sort="1770290605736" data-listing-reading-time-sort="1" data-listing-word-count-sort="41">
+<a href="./ithrottir/fotbolti/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Fótbolti
+</h5>
+<div class="card-text listing-description delink">
+<p>Spálíkön fyrir íslenska fótboltann</p>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="2" data-listing-file-modified-sort="1770291926858" data-listing-reading-time-sort="1" data-listing-word-count-sort="67">
+<a href="./ithrottir/handbolti/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Handbolti
+</h5>
+<div class="card-text listing-description delink">
+<p>Spálíkön fyrir íslenskan og alþjóðlegan handbolta</p>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="3" data-listing-file-modified-sort="1770291455681" data-listing-reading-time-sort="1" data-listing-word-count-sort="72">
+<a href="./ithrottir/korfubolti/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Körfubolti
+</h5>
+<div class="card-text listing-description delink">
+<p>Spálíkön fyrir íslenskan og alþjóðlegan körfubolta</p>
+</div>
+</div>
+</div></a>
+</div>
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
 </div>
-<section id="málefni" class="level1 column-page">
-<h1 class="">Málefni</h1>
-<div id="listing-content" class="quarto-listing quarto-listing-container-custom">
-<div class="container-md">
-  
-    <h2 class="mt-4 mb-3 anchored" data-anchor-id="málefni">Útlendingar</h2>
-    <div class="row row-cols-1 row-cols-md-2 g-4">
-      
-        <div class="col">
-          <a class="fp-card-link" href="./maelabord/innflytjendur/index.html" passhref="">
-            <div class="card fp-card h-100">
-              <div class="card-header fp-card-header">
-                <h5 class="card-title mb-0 anchored">Innflytjendur á Íslandi</h5>
-                <p class="card-text mb-0">Fjöldi og afdrif innflytjenda</p>
-              </div>
-              <div class="card-body">
-                <img src="maelabord/innflytjendur/img/innfl.png" class="img-fluid" alt="Innflytjendur á Íslandi">
-              </div>
-            </div>
-          </a>
-        </div>
-      
-        <div class="col">
-          <a class="fp-card-link" href="./greinar/flottafolk/index.html" passhref="">
-            <div class="card fp-card h-100">
-              <div class="card-header fp-card-header">
-                <h5 class="card-title mb-0 anchored">Tímabundin vernd og hælisleitendur</h5>
-                <p class="card-text mb-0">Samantekt á gögnum Eurostat um hælisleitendur</p>
-              </div>
-              <div class="card-body">
-                <img src="greinar/flottafolk/Figures/cover_fp.png" class="img-fluid" alt="Tímabundin vernd og hælisleitendur">
-              </div>
-            </div>
-          </a>
-        </div>
-      
-    </div>
-  
-    <h2 class="mt-4 mb-3 anchored">Heimili</h2>
-    <div class="row row-cols-1 row-cols-md-2 g-4">
-      
-        <div class="col">
-          <a class="fp-card-link" href="./maelabord/fasteignir/index.html" passhref="">
-            <div class="card fp-card h-100">
-              <div class="card-header fp-card-header">
-                <h5 class="card-title mb-0 anchored">Fasteignir</h5>
-                <p class="card-text mb-0">Samantekt á gögnum um fasteignauppbyggingu</p>
-              </div>
-              <div class="card-body">
-                <img src="maelabord/fasteignir/img/fp.png" class="img-fluid" alt="Fasteignir">
-              </div>
-            </div>
-          </a>
-        </div>
-      
-    </div>
-  
-    <h2 class="mt-4 mb-3 anchored">Efnahagur</h2>
-    <div class="row row-cols-1 row-cols-md-2 g-4">
-      
-        <div class="col">
-          <a class="fp-card-link" href="./greinar/vinnuafl/index.html" passhref="">
-            <div class="card fp-card h-100">
-              <div class="card-header fp-card-header">
-                <h5 class="card-title mb-0 anchored">Vinnumarkaður</h5>
-                <p class="card-text mb-0">Fjöldi starfandi á almennum og opinberum vinnumarkaði</p>
-              </div>
-              <div class="card-body">
-                <img src="greinar/vinnuafl/figures/almennur_fjoldi_methaedir_fp.png" class="img-fluid" alt="Vinnumarkaður">
-              </div>
-            </div>
-          </a>
-        </div>
-      
-        <div class="col">
-          <a class="fp-card-link" href="./maelabord/verdbolga/index.html" passhref="">
-            <div class="card fp-card h-100">
-              <div class="card-header fp-card-header">
-                <h5 class="card-title mb-0 anchored">Verðbólga</h5>
-                <p class="card-text mb-0">Baráttan við verðbólgudrauginn</p>
-              </div>
-              <div class="card-body">
-                <img src="maelabord/verdbolga/img/img.png" class="img-fluid" alt="Verðbólga">
-              </div>
-            </div>
-          </a>
-        </div>
-      
-    </div>
-  
-    <h2 class="mt-4 mb-3 anchored">Hið Opinbera</h2>
-    <div class="row row-cols-1 row-cols-md-2 g-4">
-      
-        <div class="col">
-          <a class="fp-card-link" href="./greinar/landspitali/index.html" passhref="">
-            <div class="card fp-card h-100">
-              <div class="card-header fp-card-header">
-                <h5 class="card-title mb-0 anchored">Landspítalinn</h5>
-                <p class="card-text mb-0">Hvaða upplýsingar eru til um rekstur Landspítalans?</p>
-              </div>
-              <div class="card-body">
-                <img src="greinar/landspitali/hjukthyngd_fp.png" class="img-fluid" alt="Landspítalinn">
-              </div>
-            </div>
-          </a>
-        </div>
-      
-        <div class="col">
-          <a class="fp-card-link" href="./greinar/stjornmalaflokkar/index.html" passhref="">
-            <div class="card fp-card h-100">
-              <div class="card-header fp-card-header">
-                <h5 class="card-title mb-0 anchored">Fjármál stjórnmálaflokkanna</h5>
-                <p class="card-text mb-0">Rýnt í ársreikninga stjórnmálaflokkanna</p>
-              </div>
-              <div class="card-body">
-                <img src="greinar/stjornmalaflokkar/Figures/cover_fp.png" class="img-fluid" alt="Fjármál stjórnmálaflokkanna">
-              </div>
-            </div>
-          </a>
-        </div>
-      
-    </div>
-  
+<div class="no-content-message">
+<p><em>Efni í vinnslu — fylgstu með!</em></p>
 </div>
-<div class="listing-no-matching d-none">No matching items</div>
+</section>
+<section id="efnisflokkar" class="level2 column-page">
+<h2 class="anchored" data-anchor-id="efnisflokkar">Efnisflokkar</h2>
+<div class="section-cards">
+<section id="hagvísar" class="level3 section-card">
+<h3 class="anchored" data-anchor-id="hagvísar"><a href="./hagvisar/index.html">Hagvísar</a></h3>
+<p><img src="placeholder_images/verdbolga.png" class="section-image img-fluid"></p>
+<p>Gagnastýrðar yfirlitssíður um verðbólgu, vinnumarkað, innflytjendur og fleira. Uppfært reglulega með nýjustu gögnum.</p>
+</section>
+<section id="íþróttir" class="level3 section-card">
+<h3 class="anchored" data-anchor-id="íþróttir"><a href="./ithrottir/index.html">Íþróttir</a></h3>
+<p><img src="placeholder_images/basketball_male.png" class="section-image img-fluid"></p>
+<p>Bayesian spálíkön fyrir íslenskar boltaíþróttir. Líkindadreifingar fyrir úrslit og styrk liða.</p>
+</section>
+<section id="verkfæri" class="level3 section-card">
+<h3 class="anchored" data-anchor-id="verkfæri"><a href="./verkfaeri/index.html">Verkfæri</a></h3>
+<p><img src="placeholder_images/leikskolar.png" class="section-image img-fluid"></p>
+<p>Gagnvirk mælaborð þar sem þú getur kannað og borið saman gögn á þinn eigin hátt.</p>
+</section>
 </div>
+</section>
+<section id="um-metil" class="level2 column-page um-metil-teaser">
+<h2 class="um-metil-teaser anchored" data-anchor-id="um-metil">Um Metil</h2>
+<p>Metill býður upp á ráðgjöf í <strong>gagnablaðamennsku</strong> og <strong>Bayesian tölfræði</strong> fyrir fyrirtæki, stofnanir og fjölmiðla sem vilja nýta gögn til að taka betri ákvarðanir.</p>
+<p><a href="./um/index.html">Nánar →</a></p>
 
 
 
@@ -757,12 +721,12 @@ Handboltalíkan Metils býður upp á greiningu á frammistöðu landsliða sem 
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-      &nbsp;
-    </div>   
+<p>© 2025 Metill</p>
+</div>   
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="./um_metil.html">
+    <a class="nav-link" href="./um/index.html">
 <p>Um Metil</p>
 </a>
   </li>  

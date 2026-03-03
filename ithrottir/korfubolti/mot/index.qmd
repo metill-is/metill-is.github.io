@@ -1,0 +1,24 @@
+---
+title: "Mót"
+subtitle: "Körfubolti"
+description: "Alþjóðleg körfuboltamót"
+toc: false
+---
+
+Spálíkön Metils fyrir alþjóðleg körfuboltamót.
+
+::: {.tournament-cards}
+
+::: {.tournament-card}
+### [EM karla 2025](em-karla-2025/index.qmd)
+
+Evrópumeistaramótið í körfubolta karla 2025.
+
+[Skoða spár →](em-karla-2025/index.qmd)
+:::
+
+:::
+
+---
+
+[← Körfubolti](../index.qmd)

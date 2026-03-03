@@ -1,248 +1,488 @@
-/* css styles */
+/* ========================================
+   Metill - Clean, Professional Styles
+   ======================================== */
 
-#hero-banner {
-  padding-left: 35px;
-  padding-right: 35px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  background-color: #f0f0f0;
-  border: 1px solid #737373;
-  text-align: center;
-}
-
-#people-banner {
-  padding-left: 5px;
-  padding-right: 5px;
-  padding-top: 15px;
-  background-color: #f0f0f0;
-  border: 1px solid #737373;
-  text-align: center;
-}
-
-#between-content {
-  padding-left: 5px;
-  padding-right: 5px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  background-color: #f0efef;
-  border: none;
-  color: hsla(232, 20%, 30%, 1);
-}
-
-.between-content {
-  padding-left: 10%;
-  padding-right: 10%;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin: 5px 5px 5px 5px;
-  background-color: #f0efef;
-  border: none;
-  color: hsla(232, 20%, 30%, 1);
-  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
-}
-
-@media screen and (max-width: 1100px) {
-  .between-content {
-    padding-left: 0%;
-    padding-right: 0%;
-    width: 100%;
-  }
-}
-
-@media screen and (max-width: 1500px) {
-  .between-content {
-    padding-left: 5%;
-    padding-right: 5%;
-    width: 100%;
-  }
-}
-
-.padding10p {
-  padding-left: 10%;
-  padding-right: 10%;
-}
-
-#quarto-content main { 
-  margin-top: 0;
+/* Base refinements */
+#quarto-content main {
   padding-top: 0;
 }
 
-.headline {
-font-size: 1.25em;
-font-weight: 300;
-padding-bottom: 1em;
+h1:not(.title), h2, h3, h4 {
+  color: #484D6D;
 }
-.headline p {
+
+/* ========================================
+   Landing Page - Hero
+   ======================================== */
+
+.hero {
+  text-align: center;
+  padding: 3rem 1.5rem 4rem 1.5rem;
+  background: #fff;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #484D6D;
+  letter-spacing: -0.02em;
+}
+
+.hero > p:first-of-type strong {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #6b7280;
+}
+
+/* ========================================
+   Landing Page - Featured Content
+   ======================================== */
+
+.featured {
+  max-width: 800px;
+  margin: 3rem auto 0 auto;
+  text-align: left;
+}
+
+.featured > p:first-child {
   margin: 0;
-  padding-bottom: 0.2rem;
+  line-height: 0;
 }
-.headline a {
+
+.featured > p:first-child a {
+  display: block;
+}
+
+.featured-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+.featured-title {
+  display: block;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #484D6D;
+  text-decoration: none;
+  margin-top: 1rem;
+  line-height: 1.3;
+}
+
+.featured-title:hover {
+  color: #2c5aa0;
+}
+
+.featured > p:last-child {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  color: #6b7280;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ========================================
+   Landing Page - Nýjast Section
+   ======================================== */
+
+.no-content-message {
+  text-align: center;
+  color: #9ca3af;
+  padding: 3rem 1rem;
+  font-size: 0.95rem;
+}
+
+#nyjast:not(:empty) + .no-content-message {
+  display: none;
+}
+
+/* ========================================
+   Landing Page - Section Cards
+   ======================================== */
+
+.section-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 1.5rem 0 3rem 0;
+}
+
+.section-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.section-card:hover {
+  border-color: #484D6D;
+}
+
+.section-card h3 {
+  margin: 0;
+  padding: 1.25rem 1.25rem 0.75rem 1.25rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.section-card h3 a {
+  color: #484D6D;
   text-decoration: none;
 }
-.headline ul li {
-  margin-bottom: 0.3em;
-}
-.carousel.card {
-  padding-top: 2em;
-}
-.carousel img {
-  width: 70%;
-  margin-bottom: 110px;
-}
-.carousel-control-prev-icon, .carousel-control-next-icon {
-  margin-bottom: 110px;
-}
-.carousel-caption {
-  padding-top: 1em;
+
+.section-card h3 a:hover {
+  color: #2c5aa0;
 }
 
-h1:not(.title), h2, h3, h4 {
-  color: hsla(232, 20%, 35%, 1);
+.section-image {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
 }
 
-.blockquote {
-  text-align: justify;
-  font-family: Bookman;
-
+.section-card > p:last-child {
+  padding: 0.75rem 1.25rem 1.25rem 1.25rem;
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.9rem;
+  line-height: 1.55;
 }
 
-.tab-content {
-  border: none;
-  padding-right: 0;
-  padding-left: 0;
+/* ========================================
+   Landing Page - Um Metil Teaser
+   ======================================== */
+
+.um-metil-teaser {
+  border-top: 1px solid #e5e7eb;
+  padding: 3rem 1rem;
+  text-align: center;
+  margin-top: 2rem;
+  background: #fafafa;
 }
 
-.btn-primary, .btn-secondary {
-  margin-top: 1rem;
-}
-
-.featured-article, .featured-dashboard {
-  margin-bottom: 2rem;
-}
-
-
-
-.girafe {
-
-  max-height: 100%;
-  margin: 0 !important;
-}
-
-
-
-.girafe_container_std {
-  margin: 0 !important;
-  
-  transition: all 0.4s ease-in-out;
-  align-items: center !important;
-}
-
-
-/* Sports section styling */
-/* Sports section styling */
-.listing-card {
-  height: 100%;
-  transition: all 0.3s ease-in-out;
-  border: none !important;
-  overflow: hidden;
+.um-metil-teaser h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #484D6D;
   margin-bottom: 1rem;
 }
 
-.listing-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1) !important;
+.um-metil-teaser > p {
+  max-width: 600px;
+  margin: 0 auto 1.25rem auto;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #4b5563;
 }
 
-.listing-card .card-img-container {
-  position: relative;
-  width: 100%;
-  height: 200px;
+.um-metil-teaser > p:last-child {
+  margin-bottom: 0;
+}
+
+.um-metil-teaser a {
+  color: #2c5aa0;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.um-metil-teaser a:hover {
+  text-decoration: underline;
+}
+
+/* ========================================
+   Listings - Grid Cards
+   ======================================== */
+
+.listing-card {
+  border: 1px solid #e5e7eb !important;
+  border-radius: 8px !important;
   overflow: hidden;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  transition: border-color 0.2s ease;
+  box-shadow: none !important;
+}
+
+.listing-card:hover {
+  border-color: #484D6D !important;
+  transform: none;
+  box-shadow: none !important;
 }
 
 .listing-card .card-img-top {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  background-color: #f8f9fa;
-  padding: 1rem;
-}
-
-.listing-card:hover .card-img-top {
-  transform: scale(1.02);
+  border-radius: 0 !important;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .listing-card .card-body {
-  padding: 1.5rem;
-  background: linear-gradient(to bottom, rgba(255,255,255,0.95), #ffffff);
+  padding: 1.25rem;
+  background: #fff;
 }
 
 .listing-card h3 {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   font-weight: 600;
+  line-height: 1.3;
   margin-bottom: 0.5rem;
-  line-height: 1.2;
-}
-
-.listing-card .text-muted {
-  font-size: 0.9rem;
-  letter-spacing: 0.5px;
 }
 
 .listing-card .card-text {
-  font-size: 1rem;
+  font-size: 0.9rem;
+  color: #6b7280;
   line-height: 1.5;
-  margin-top: 0.75rem;
 }
 
-/* Container spacing for sports listings */
-.container-md {
-  padding: 2rem 0;
+/* ========================================
+   Section Index Pages
+   ======================================== */
+
+.quarto-listing {
+  margin-top: 1.5rem;
 }
 
-.container-md .row {
-  margin: 0; /* Reset margin */
+/* ========================================
+   Interactive Elements
+   ======================================== */
+
+.girafe,
+.girafe_container_std {
+  margin: 0 !important;
 }
 
-/* Adjust padding for card columns */
-.col-md-6 {
-  padding: 0 0.75rem;
+/* ========================================
+   Responsive
+   ======================================== */
+
+@media (max-width: 992px) {
+  .section-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-/* Responsive adjustments */
+@media (max-width: 640px) {
+  .hero h1 {
+    font-size: 2.25rem;
+  }
+
+  .hero > p:first-of-type strong {
+    font-size: 1rem;
+  }
+
+  .section-cards {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .featured-title {
+    font-size: 1.15rem;
+  }
+
+  .section-card h3 {
+    font-size: 1rem;
+  }
+
+  .section-image {
+    height: 120px;
+  }
+}
+
+/* ========================================
+   Sports Pages
+   ======================================== */
+
+/* Methodology link */
+.methodology-link {
+  color: #2c5aa0;
+  font-weight: 500;
+}
+
+/* Sport cards on hub page */
+.sport-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.sport-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: border-color 0.2s ease;
+}
+
+.sport-card:hover {
+  border-color: #484D6D;
+}
+
+.sport-card h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.sport-image {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.sport-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.sport-links a {
+  color: #2c5aa0;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.sport-links a:hover {
+  text-decoration: underline;
+}
+
+/* League cards on sport pages */
+.league-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.league-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: border-color 0.2s ease;
+}
+
+.league-card:hover {
+  border-color: #484D6D;
+}
+
+.league-card h3 {
+  margin-top: 0;
+}
+
+.league-card h3 a {
+  color: #484D6D;
+  text-decoration: none;
+}
+
+.league-card h3 a:hover {
+  color: #2c5aa0;
+}
+
+/* Prediction page images */
+.prediction-image,
+.chart-image,
+.strength-image,
+.table-image {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  display: block;
+}
+
+.prediction-image {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Responsive sports */
 @media (max-width: 768px) {
-  .listing-card {
-    margin: 0 1rem;
+  .sport-cards {
+    grid-template-columns: 1fr;
   }
-  
-  .listing-card .card-img-top {
-    height: 180px;
-  }
-  
-  .listing-card .card-body {
-    padding: 1.25rem;
-  }
-  
-  .listing-card h3 {
-    font-size: 1.25rem;
+
+  .league-cards {
+    grid-template-columns: 1fr;
   }
 }
 
-/* Sports theme colors - you can adjust these to match your brand */
-.text-primary {
-  color: hsla(232, 20%, 35%, 1) !important;
+/* ========================================
+   Tournament Styles
+   ======================================== */
+
+/* Active tournament banner */
+.active-tournament {
+  background: linear-gradient(135deg, #484D6D 0%, #2c5aa0 100%);
+  color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
 }
 
-.listing-card .text-muted {
-  color: hsla(232, 15%, 50%, 0.8) !important;
+.active-tournament h3 {
+  color: #fff;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
 }
 
-/* Add subtle border radius to images */
-.card-img-top {
-  border-bottom-right-radius: 0 !important;
-  border-bottom-left-radius: 0 !important;
-  border-top-left-radius: 8px !important;
-  border-top-right-radius: 8px !important;
+.active-tournament p {
+  margin: 0 0 1rem 0;
+  opacity: 0.9;
+}
+
+.active-tournament a {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  background: rgba(255,255,255,0.15);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.active-tournament a:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+/* Tournament cards (same as league cards) */
+.tournament-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.tournament-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: border-color 0.2s ease;
+}
+
+.tournament-card:hover {
+  border-color: #484D6D;
+}
+
+.tournament-card h3 {
+  margin-top: 0;
+}
+
+.tournament-card h3 a {
+  color: #484D6D;
+  text-decoration: none;
+}
+
+.tournament-card h3 a:hover {
+  color: #2c5aa0;
+}
+
+@media (max-width: 768px) {
+  .tournament-cards {
+    grid-template-columns: 1fr;
+  }
 }

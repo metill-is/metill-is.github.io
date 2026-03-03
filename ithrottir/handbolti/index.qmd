@@ -1,19 +1,57 @@
 ---
-pagetitle: "HandboltaMetill"
+title: "Handbolti"
+description: "Spálíkön fyrir íslenskan og alþjóðlegan handbolta"
 toc: false
-editor: source
-filters:
-  - collapse-callout
-collapse-callout:
-  all: true
-callout-appearance: simple
-callout-icon: true
-
-execute:
-  freeze: false
-citation-location: margin
-reference-location: margin
 ---
 
+Bayesian spálíkön fyrir íslenskan og alþjóðlegan handbolta.
 
 
+<!-- ::: {.active-tournament}
+### 🏆 EM karla 2026 — Í gangi
+
+Fylgstu með spám Metils fyrir Evrópumeistaramótið.
+
+[Skoða spár →](mot/em-karla-2026/index.qmd)
+::: -->
+
+
+## Íslensku deildirnar
+
+::: {.league-cards}
+
+::: {.league-card}
+### [Olís deild karla](karlar/index.qmd)
+
+Spár og greining fyrir efstu deild karla í handbolta.
+
+[Skoða spár →](karlar/index.qmd)
+:::
+
+::: {.league-card}
+### [Olís deild kvenna](konur/index.qmd)
+
+Spár og greining fyrir efstu deild kvenna í handbolta.
+
+[Skoða spár →](konur/index.qmd)
+:::
+
+:::
+
+## Alþjóðleg mót
+
+::: {.league-cards}
+
+::: {.league-card}
+### [Mót](mot/index.qmd)
+
+Spár fyrir alþjóðleg mót — Evrópumót, heimsmót og fleira.
+
+[Skoða mót →](mot/index.qmd)
+:::
+
+:::
+
+---
+
+[← Íþróttir](../index.qmd) | [Um spálíkönin](../um-spalikon/index.qmd)

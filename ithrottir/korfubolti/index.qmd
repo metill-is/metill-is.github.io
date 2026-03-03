@@ -1,0 +1,57 @@
+---
+title: "Körfubolti"
+description: "Spálíkön fyrir íslenskan og alþjóðlegan körfubolta"
+toc: false
+---
+
+Bayesian spálíkön fyrir íslenskan og alþjóðlegan körfubolta.
+
+<!-- Active tournament banner - uncomment when tournament is live
+::: {.active-tournament}
+### 🏆 EM karla 2025 — Í gangi
+
+Fylgstu með spám Metils fyrir Evrópumeistaramótið.
+
+[Skoða spár →](mot/em-karla-2025/index.qmd)
+:::
+-->
+
+## Íslensku deildirnar
+
+::: {.league-cards}
+
+::: {.league-card}
+### [Bónusdeild karla](karlar/index.qmd)
+
+Spár og greining fyrir efstu deild karla í körfubolta.
+
+[Skoða spár →](karlar/index.qmd)
+:::
+
+::: {.league-card}
+### [Bónusdeild kvenna](konur/index.qmd)
+
+Spár og greining fyrir efstu deild kvenna í körfubolta.
+
+[Skoða spár →](konur/index.qmd)
+:::
+
+:::
+
+## Alþjóðleg mót
+
+::: {.league-cards}
+
+::: {.league-card}
+### [Mót](mot/index.qmd)
+
+Spár fyrir alþjóðleg mót — Evrópumót, heimsmót og fleira.
+
+[Skoða mót →](mot/index.qmd)
+:::
+
+:::
+
+---
+
+[← Íþróttir](../index.qmd) | [Um spálíkönin](../um-spalikon/index.qmd)

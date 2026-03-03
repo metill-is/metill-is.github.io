@@ -1,0 +1,73 @@
+name: Render and Deploy Site
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Setup R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: "release"
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libcurl4-openssl-dev libssl-dev libxml2-dev libfontconfig1-dev libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev libharfbuzz-dev libfribidi-dev
+
+      - name: Install R dependencies
+        uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          packages: |
+            any::tidyverse
+            any::here
+            any::gt
+            any::gtExtras
+            any::plotly
+            any::ggiraph
+            any::scales
+            any::glue
+            any::pxweb
+            any::eurostat
+            any::gganimate
+            any::patchwork
+            any::ggh4x
+            any::cowplot
+            any::kableExtra
+            any::rnaturalearth
+            any::sf
+            any::visitalaneysluverds
+            any::janitor
+            github::bgautijonsson/metill@c6f8e4a0aaa23a522de8ac8f69eed2c2997e871f
+
+      - name: Validate sports figure contracts
+        run: Rscript scripts/check_sports_figures.R
+
+      - name: Render site
+        run: quarto render
+
+      - name: Commit and push docs/
+        if: github.event_name == 'push'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/
+          git diff --quiet --staged || git commit -m "Auto-render site [skip ci]"
+          git push

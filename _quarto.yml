@@ -1,8 +1,8 @@
 project:
   type: website
-  resources: 
-    - "*.png"
   output-dir: docs
+  render:
+    - "**/*.qmd"
   preview:
     port: 4212
 
@@ -11,30 +11,51 @@ website:
   description: Notum gögn til að upplýsa, ekki sannfæra.
   site-url: https://metill.is
   favicon: "favicon/favicon-32x32.png"
-  search: false
-  navbar: false
+
+  navbar:
+    background: light
+    foreground: dark
+    title: "Metill"
+    pinned: true
+    left:
+      - text: "Hagvísar"
+        href: hagvisar/index.qmd
+      - text: "Íþróttir"
+        href: ithrottir/index.qmd
+      - text: "Verkfæri"
+        href: verkfaeri/index.qmd
+      - text: "Kosningar"
+        href: https://kosningar.metill.is
+        target: _blank
+      - text: "Um Metil"
+        href: um/index.qmd
+    search: true
+
+  page-footer:
+    left: "© 2025 Metill"
+    center:
+      - text: "Um Metil"
+        href: um/index.qmd
+    background: light
+    border: true
+
   open-graph: true
-  reader-mode: true
-  twitter-card: 
+  twitter-card:
     creator: "@bggjonsson"
     card-style: summary_large_image
     site: "@bggjonsson"
     title: "Metill"
     description: "Notum gögn til að upplýsa, ekki sannfæra."
-  page-footer:
-    background: primary
-    foreground: secondary
-    center:
-      - text: "Um Metil"
-        href: um_metil.qmd
   google-analytics: "G-J28QQV8PN9"
 
+format:
+  html:
+    back-to-top: true
+
 editor: source
-include-in-header: header/header.html
 theme: [flatly, theme.scss]
 css: style.css
-execute: 
+execute:
   freeze: auto
   echo: false
   warning: false
-lightbox: true

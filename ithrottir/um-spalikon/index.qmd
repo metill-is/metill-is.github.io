@@ -1,0 +1,63 @@
+---
+title: "Um spálíkön Metils"
+description: "Hvernig Bayesian tölfræðilíkön spá fyrir um íslenskar boltaíþróttir"
+---
+
+## Aðferðafræði
+
+Spálíkön Metils byggja á Bayesian tölfræði og nota svokallaða *Student's t* dreifingu til að meta styrk liða í íslenskum boltaíþróttum. Líkönin taka tillit til bæði sóknar- og varnarstyrkleika hvers liðs, auk heimavallarforskots.
+
+### Grunnatriði líkansins
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Líkanið metur styrk hvers liðs í tveimur víddum:
+
+1. **Sóknarstyrkur** — Hversu mörg mörk/stig liðið skorar að jafnaði
+2. **Varnarstyrkur** — Hversu mörg mörk/stig liðið hleypir inn að jafnaði
+
+Þessar tvær stærðir eru metnar samtímis með MCMC (Markov Chain Monte Carlo) aðferðum.
+
+### Óvissa og líkindadreifingar
+
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Bayesian aðferðir gefa okkur ekki bara eina tölu, heldur heila *líkindadreifingu* fyrir hverja spá. Þetta þýðir að við getum sagt:
+
+> "Það eru 73% líkur á að lið A vinni, 15% líkur á jafntefli, og 12% líkur á að lið B vinni."
+
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+### Heimavallarforskotsmat
+
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Líkanið metur heimavallarforskot sérstaklega fyrir hverja deild og íþróttagrein.
+
+### Tæknileg útfærsla
+
+Líkönin eru útfærð í [Stan](https://mc-stan.org/), öflugu forritunarmáli fyrir Bayesian tölfræði. Við notum `cmdstanr` pakkann í R til að keyra líkönin.
+
+```
+Fjöldi MCMC ítrana: 4 × 1000 (eftir 1000 upphitun)
+Dreifing: Multivariate Student's t
+Breytur: Sókn, vörn, heimavöllur
+```
+
+### Gögn
+
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Gögnin koma frá opinberum heimildum:
+
+- **Körfubolti**: Baskethotel.com
+- **Handbolti**: Handknattleikssamband Íslands
+- **Fótbolti**: KSÍ
+
+### Takmarkanir
+
+Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit:
+
+- Líkönin taka ekki tillit til meiðsla eða annarra utanaðkomandi þátta
+- Spilarabreytingar innan tímabils eru ekki teknar með
+- Gögn frá fyrri tímabilum hafa minni vægi en nýleg gögn
+
+### Uppfærslur
+
+Spár eru uppfærðar vikulega á tímabilum, venjulega á miðvikudögum eftir að úrslit umferðar liggja fyrir.
+
+---
+
+*Ef þú hefur spurningar um aðferðafræðina, hafðu samband í gegnum [Um Metil](/um/index.qmd) síðuna.*

@@ -1,37 +1,73 @@
 ---
 pagetitle: "Metill"
 toc: false
-editor: source
 listing:
-    - id: content
-      template: ejs/content.ejs
-      contents: content.yml
-    - id: featured
-      template: ejs/featured-article.ejs
-      contents: featured.yml
-filters:
-  - collapse-callout
-collapse-callout:
-  all: true
-callout-appearance: simple
-callout-icon: true
-
-execute:
-  freeze: false
-citation-location: margin
-reference-location: margin
-image: https://raw.githubusercontent.com/bgautijonsson/football_iceland/refs/heads/main/results/male/figures/styrkur.png
+  - id: nyjast
+    contents:
+      - "hagvisar/*/index.qmd"
+      - "ithrottir/*/index.qmd"
+      - "verkfaeri/*/index.qmd"
+    type: grid
+    max-items: 4
+    sort: "date desc"
+    fields: [image, title, description]
+    grid-columns: 4
 ---
 
-::: {#featured .column-screen}
+::: {.hero .column-screen-inset}
+
+# Metill
+
+**Notum gögn til að upplýsa, ekki sannfæra.**
+
+::: {.featured}
+[![](placeholder_images/vinnuafl.png){.featured-image}](hagvisar/index.qmd)
+
+[**Fjöldi starfandi á almennum vinnumarkaði er í methæðum**](hagvisar/index.qmd){.featured-title}
+
+Að öllu óbreyttu verður minnsti fjöldi starfandi árið 2024 jafnhár og metfjöldinn fyrir COVID-19 faraldur.
 :::
 
-
-
-# Málefni {.column-page}
-
-::: {#content .column-page}
 :::
 
+## Nýjast {.column-page}
 
- 
+::: {#nyjast .column-page}
+:::
+
+::: {.no-content-message}
+*Efni í vinnslu — fylgstu með!*
+:::
+
+## Efnisflokkar {.column-page}
+
+::: {.section-cards}
+
+::: {.section-card}
+### [Hagvísar](hagvisar/index.qmd)
+![](placeholder_images/verdbolga.png){.section-image}
+
+Gagnastýrðar yfirlitssíður um verðbólgu, vinnumarkað, innflytjendur og fleira. Uppfært reglulega með nýjustu gögnum.
+:::
+
+::: {.section-card}
+### [Íþróttir](ithrottir/index.qmd)
+![](placeholder_images/basketball_male.png){.section-image}
+
+Bayesian spálíkön fyrir íslenskar boltaíþróttir. Líkindadreifingar fyrir úrslit og styrk liða.
+:::
+
+::: {.section-card}
+### [Verkfæri](verkfaeri/index.qmd)
+![](placeholder_images/leikskolar.png){.section-image}
+
+Gagnvirk mælaborð þar sem þú getur kannað og borið saman gögn á þinn eigin hátt.
+:::
+
+:::
+
+## Um Metil {.column-page .um-metil-teaser}
+
+Metill býður upp á ráðgjöf í **gagnablaðamennsku** og **Bayesian tölfræði** fyrir fyrirtæki, stofnanir og fjölmiðla sem vilja nýta gögn til að taka betri ákvarðanir.
+
+[Nánar →](um/index.qmd)

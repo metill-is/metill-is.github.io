@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Bayesian spálíkön fyrir íslenskar boltaíþróttir">
 
-<title>ÍþróttaMetill – Metill</title>
+<title>Íþróttaspár – Metill</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,10 +25,12 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<link href="../favicon/favicon-32x32.png" rel="icon" type="image/png">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../favicon/favicon-32x32.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -35,11 +38,23 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-8a3ea2fa674e616b048184d8997600c3.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-188d6145c8646a75d430bf4997a40e5e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-865581ae7a271bbaa017c3fc421c466b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -54,63 +69,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-featured-football .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-project','listing-website','listing-editor','listing-include-in-header','listing-theme','listing-css','listing-execute','listing-lightbox','listing-language','listing-format','listing-title-block-banner','listing-author','listing-title','listing-pagetitle','listing-subtitle','listing-description','listing-draft','listing-categories','listing-href','listing-image','listing-twitter-card','listing-toc','listing-path','listing-outputHref','listing-filename','listing-file-modified','listing-reading-time','listing-word-count',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
-      
-      searchColumns: ["listing-project","listing-website","listing-editor","listing-include-in-header","listing-theme","listing-css","listing-execute","listing-lightbox","listing-language","listing-format","listing-title-block-banner","listing-author","listing-title","listing-pagetitle","listing-subtitle","listing-description","listing-draft","listing-categories","listing-href","listing-image","listing-twitter-card","listing-toc","listing-path","listing-outputHref","listing-filename","listing-file-modified","listing-reading-time","listing-word-count"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-featured-football'] = new List('listing-featured-football', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-featured-basketball .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-project','listing-website','listing-editor','listing-include-in-header','listing-theme','listing-css','listing-execute','listing-lightbox','listing-language','listing-format','listing-title-block-banner','listing-author','listing-title','listing-pagetitle','listing-subtitle','listing-description','listing-draft','listing-categories','listing-href','listing-image','listing-twitter-card','listing-toc','listing-path','listing-outputHref','listing-filename','listing-file-modified','listing-reading-time','listing-word-count',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
-      
-      searchColumns: ["listing-project","listing-website","listing-editor","listing-include-in-header","listing-theme","listing-css","listing-execute","listing-lightbox","listing-language","listing-format","listing-title-block-banner","listing-author","listing-title","listing-pagetitle","listing-subtitle","listing-description","listing-draft","listing-categories","listing-href","listing-image","listing-twitter-card","listing-toc","listing-path","listing-outputHref","listing-filename","listing-file-modified","listing-reading-time","listing-word-count"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-featured-basketball'] = new List('listing-featured-basketball', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-J28QQV8PN9"></script>
 
 <script type="text/javascript">
@@ -120,83 +78,87 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-J28QQV8PN9', { 'anonymize_ip': true});
 </script>
-<meta property="og:title" content="ÍþróttaMetill">
+
+
+<link rel="stylesheet" href="../style.css">
+<meta property="og:title" content="Íþróttaspár – Metill">
+<meta property="og:description" content="Bayesian spálíkön fyrir íslenskar boltaíþróttir">
+<meta property="og:image" content="https://metill.is/placeholder_images/basketball_male.png">
 <meta property="og:site_name" content="Metill">
+<meta property="og:image:height" content="3671">
+<meta property="og:image:width" content="4080">
 <meta name="twitter:title" content="Metill">
 <meta name="twitter:description" content="Notum gögn til að upplýsa, ekki sannfæra.">
+<meta name="twitter:image" content="https://metill.is/placeholder_images/basketball_male.png">
 <meta name="twitter:creator" content="@bggjonsson">
 <meta name="twitter:site" content="@bggjonsson">
 <meta name="twitter:card" content="summary_large_image">
-</head><body class="fullcontent quarto-light"><nav class="navbar m-0 p-0 bg-primary">
+<meta name="twitter:image-height" content="3671">
+<meta name="twitter:image-width" content="4080">
+</head>
 
-  <div class="container bg-primary text-secondary justify-content-center flex-wrap align-items-baseline">
-    <div class="d-flex flex-row">
-      <header class="blog-header m-0 p-0 justify-content-center">
-          <div class="col-12 d-flex">
-            <a href="../index.html" style="text-decoration: none;">
-                Metill
-              
-            </a>
-          </div>   
-      </header>
-    </div>  
-        <div class="col-12 d-flex justify-content-center">
-          <a class="p-2 pt-0 link-secondary navbar-link text-secondary" href="../ithrottir/index.html" style="text-decoration: none;">Íþróttir</a>
-          <a class="p-2 pt-0 link-secondary navbar-link text-secondary" href="../um_metil.html" style="text-decoration: none;">Um Metil</a>
-          <a class="p-2 pt-0 link-secondary navbar-link text-secondary" href="../kosningaspa/index.html" style="text-decoration: none;">Kosningaspá</a>
-        </div>
-  </div>
-</nav>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="../style.css">
-
-
-
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Metill</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../hagvisar/index.html"> 
+<span class="menu-text">Hagvísar</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../ithrottir/index.html" aria-current="page"> 
+<span class="menu-text">Íþróttir</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../verkfaeri/index.html"> 
+<span class="menu-text">Verkfæri</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://kosningar.metill.is" target="_blank"> 
+<span class="menu-text">Kosningar</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../um/index.html"> 
+<span class="menu-text">Um Metil</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><br></h1>
+<h1 class="title">Íþróttaspár</h1>
 </div>
 
+<div>
+  <div class="description">
+    Bayesian spálíkön fyrir íslenskar boltaíþróttir
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -211,75 +173,35 @@ window.Quarto = {
 </header>
 
 
-<div class="column-page">
-<section id="fótbolti" class="level2">
-<h2 class="anchored" data-anchor-id="fótbolti">Fótbolti</h2>
-<p>Hér má finna reglulega uppfærðar greiningar á leikjum og gögnum úr Bestu deildum karla og kvenna.</p>
-<div id="listing-featured-football" class="quarto-listing quarto-listing-container-custom">
-<div class="container-md">
-  <div class="row g-2">
-    
-      <div class="col-md-6 px-2">
-        <div class="card listing-card shadow-sm border-2 rounded-3 h-100">
-          <img src="https://raw.githubusercontent.com/bgautijonsson/football_iceland/refs/heads/main/results/male/figures/styrkur.png" class="card-img-top mb-0 pb-0">
-
-          <div class="card-body">
-            <h3 class="text-primary m-0 p-0 anchored">Besta deild karla</h3>
-            <div class="mb-1 text-muted"></div>
-            <p class="card-text mb-auto text-muted">Nýjustu greiningar á Bestu deild karla</p>
-            <a href="../ithrottir/fotbolti/besta/besta-karla/index.html" class="stretched-link" style="text-decoration:none;"></a>
-          </div>
-        </div>  
-      </div>
-    
-      <div class="col-md-6 px-2">
-        <div class="card listing-card shadow-sm border-2 rounded-3 h-100">
-          <img src="https://raw.githubusercontent.com/bgautijonsson/football_iceland/refs/heads/main/results/female/figures/styrkur.png" class="card-img-top mb-0 pb-0">
-
-          <div class="card-body">
-            <h3 class="text-primary m-0 p-0 anchored">Besta deild kvenna</h3>
-            <div class="mb-1 text-muted"></div>
-            <p class="card-text mb-auto text-muted">Nýjustu greiningar á Bestu deild kvenna</p>
-            <a href="../ithrottir/fotbolti/besta/besta-kvenna/index.html" class="stretched-link" style="text-decoration:none;"></a>
-          </div>
-        </div>  
-      </div>
-    
-  </div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
+<p>Metill notar Bayesian tölfræðilíkön til að spá fyrir um úrslit í íslenskum boltaíþróttum. Líkönin meta styrk hvers liðs og gefa líkindadreifingu fyrir væntanleg úrslit.</p>
+<p><a href="../ithrottir/um-spalikon/index.html" class="methodology-link">Um spálíkönin →</a></p>
+<hr>
+<div class="sport-cards">
+<section id="körfubolti" class="level3 sport-card">
+<h3 class="anchored" data-anchor-id="körfubolti">Körfubolti</h3>
+<p><img src="../placeholder_images/basketball_male.png" class="sport-image img-fluid"></p>
+<p>Spár fyrir Bónusdeild karla og kvenna.</p>
+<div class="sport-links">
+<p><a href="../ithrottir/korfubolti/karlar/index.html">Karlar →</a> <a href="../ithrottir/korfubolti/konur/index.html">Konur →</a></p>
 </div>
 </section>
-<section id="körfubolti" class="level2">
-<h2 class="anchored" data-anchor-id="körfubolti">Körfubolti</h2>
-<div id="listing-featured-basketball" class="quarto-listing quarto-listing-container-custom">
-<div class="container-md">
-  <div class="row g-2">
-    
-      <div class="col-md-6 px-2">
-        <div class="card listing-card shadow-sm border-2 rounded-3 h-100">
-          <img src="https://raw.githubusercontent.com/bgautijonsson/basketball_international/refs/heads/master/results/male/2025-09-03/figures/styrkur_table.png" class="card-img-top mb-0 pb-0">
-
-          <div class="card-body">
-            <h3 class="text-primary m-0 p-0 anchored">EM karla í körfubolta</h3>
-            <div class="mb-1 text-muted"></div>
-            <p class="card-text mb-auto text-muted">Körfuboltaspá Metils fyrir EM karla í körfubolta</p>
-            <a href="../ithrottir/korfubolti/greinar/em-kk-2025/index.html" class="stretched-link" style="text-decoration:none;"></a>
-          </div>
-        </div>  
-      </div>
-    
-  </div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
+<section id="handbolti" class="level3 sport-card">
+<h3 class="anchored" data-anchor-id="handbolti">Handbolti</h3>
+<p><img src="../placeholder_images/handball_male.png" class="sport-image img-fluid"></p>
+<p>Spár fyrir Olís deild karla og kvenna.</p>
+<div class="sport-links">
+<p><a href="../ithrottir/handbolti/karlar/index.html">Karlar →</a> <a href="../ithrottir/handbolti/konur/index.html">Konur →</a></p>
 </div>
 </section>
-<section id="handbolti" class="level2">
-<h2 class="anchored" data-anchor-id="handbolti">Handbolti</h2>
-<p>Greiningar á handbolta eru í vinnslu og munu birtast síðar.</p>
+<section id="fótbolti" class="level3 sport-card">
+<h3 class="anchored" data-anchor-id="fótbolti">Fótbolti</h3>
+<p><img src="../placeholder_images/football_male.png" class="sport-image img-fluid"></p>
+<p>Spár fyrir Besta deild karla og kvenna.</p>
+<div class="sport-links">
+<p><a href="../ithrottir/fotbolti/karlar/index.html">Karlar →</a> <a href="../ithrottir/fotbolti/konur/index.html">Konur →</a></p>
+</div>
 </section>
 </div>
-
 
 
 
@@ -688,12 +610,12 @@ window.Quarto = {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-      &nbsp;
-    </div>   
+<p>© 2025 Metill</p>
+</div>   
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="../um_metil.html">
+    <a class="nav-link" href="../um/index.html">
 <p>Um Metil</p>
 </a>
   </li>  

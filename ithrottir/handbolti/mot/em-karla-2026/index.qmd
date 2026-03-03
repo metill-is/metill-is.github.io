@@ -1,0 +1,51 @@
+---
+title: "EM karla 2026"
+subtitle: "Handbolti"
+description: "Spár fyrir Evrópumeistaramótið í handbolta karla 2026"
+date: last-modified
+active: false
+---
+
+## Spár fyrir næstu leiki
+
+![](figures/next_round_predictions.png){.prediction-image}
+
+## Leikir Íslands
+
+![](figures/iceland_games.png){.prediction-image}
+
+## Staða riðla
+
+::: {.columns}
+
+::: {.column width="50%"}
+![](figures/group_table.png){.table-image}
+:::
+
+::: {.column width="50%"}
+![](figures/main_group_table.png){.table-image}
+:::
+
+:::
+
+## Styrkur liða
+
+::: {.columns}
+
+::: {.column width="50%"}
+![](figures/styrkur.png){.strength-image}
+:::
+
+::: {.column width="50%"}
+![](figures/styrkur_table.png){.table-image}
+:::
+
+:::
+
+## Heimavöllur
+
+![](figures/home_advantage.png){.chart-image}
+
+---
+
+[← Mót](../index.qmd) | [Um spálíkönin](../../../um-spalikon/index.qmd)

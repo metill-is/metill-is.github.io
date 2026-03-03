@@ -1,0 +1,30 @@
+---
+title: "Besta deild kvenna"
+subtitle: "Fótbolti"
+description: "Spár fyrir Besta deild kvenna í fótbolta"
+date: last-modified
+---
+
+## Spár fyrir næstu umferð
+
+![](figures/next_week_preds.png){.prediction-image}
+
+## Líkur á deildarsigri
+
+![](figures/deild_top.png){.prediction-image}
+
+## Baráttan um Evrópusæti
+
+![](figures/umspil_top.png){.prediction-image}
+
+## Styrkur liða
+
+![](figures/styrkur.png){.strength-image}
+
+## Heimavöllur
+
+![](figures/home_advantage.png){.chart-image}
+
+---
+
+[← Fótbolti](../index.qmd) | [Um spálíkönin](../../um-spalikon/index.qmd)

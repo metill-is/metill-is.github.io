@@ -1,34 +1,54 @@
 ---
-title: " <br>"
-pagetitle: "ÍþróttaMetill"
+title: "Íþróttaspár"
+description: "Bayesian spálíkön fyrir íslenskar boltaíþróttir"
 toc: false
-listing:
-  - id: featured-football
-    contents: fotbolti/besta
-    template: ../ejs/featured-sports.ejs
-  - id: featured-basketball
-    contents: korfubolti/greinar/em-kk-2025
-    template: ../ejs/featured-sports.ejs
 ---
 
-::: {.column-page}
+Metill notar Bayesian tölfræðilíkön til að spá fyrir um úrslit í íslenskum boltaíþróttum. Líkönin meta styrk hvers liðs og gefa líkindadreifingu fyrir væntanleg úrslit.
 
-## Fótbolti 
+[Um spálíkönin →](um-spalikon/index.qmd){.methodology-link}
 
-Hér má finna reglulega uppfærðar greiningar á leikjum og gögnum úr Bestu deildum karla og kvenna.
+---
 
-::: {#featured-football}
+::: {.sport-cards}
+
+::: {.sport-card}
+### Körfubolti
+
+![](../placeholder_images/basketball_male.png){.sport-image}
+
+Spár fyrir Bónusdeild karla og kvenna.
+
+::: {.sport-links}
+[Karlar →](korfubolti/karlar/index.qmd)
+[Konur →](korfubolti/konur/index.qmd)
+:::
 :::
 
-## Körfubolti
+::: {.sport-card}
+### Handbolti
 
-::: {#featured-basketball}
+![](../placeholder_images/handball_male.png){.sport-image}
+
+Spár fyrir Olís deild karla og kvenna.
+
+::: {.sport-links}
+[Karlar →](handbolti/karlar/index.qmd)
+[Konur →](handbolti/konur/index.qmd)
+:::
 :::
 
+::: {.sport-card}
+### Fótbolti
 
-## Handbolti
+![](../placeholder_images/football_male.png){.sport-image}
 
-Greiningar á handbolta eru í vinnslu og munu birtast síðar.
+Spár fyrir Besta deild karla og kvenna.
 
+::: {.sport-links}
+[Karlar →](fotbolti/karlar/index.qmd)
+[Konur →](fotbolti/konur/index.qmd)
+:::
 :::
 
+:::

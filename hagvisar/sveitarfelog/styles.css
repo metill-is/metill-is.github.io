@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap');
+
+/* Expand page container to full width for this dashboard */
+.page-columns .column-page,
+#quarto-content > * {
+  max-width: 100%;
+}
+#quarto-content .content {
+  max-width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.sveitarfelog-dashboard {
+  --metill-primary: #484D6D;
+  --metill-bg: #faf9f9;
+  --metill-text: #4A4C45;
+  --metill-gray: #737373;
+  font-family: "Lato", sans-serif;
+}
+
+/* Sidebar styling */
+.sveitarfelog-dashboard .dashboard-sidebar {
+  background-color: white;
+  border-right: 1px solid #e0e0e0;
+  padding: 1.5rem 1rem;
+  border-radius: 4px;
+}
+
+.sveitarfelog-dashboard .dashboard-sidebar label {
+  font-weight: 700;
+  color: var(--metill-primary);
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.sveitarfelog-dashboard .dashboard-sidebar select,
+.sveitarfelog-dashboard .dashboard-sidebar input[type="text"] {
+  width: 100% !important;
+}
+
+.sveitarfelog-dashboard .dashboard-sidebar form {
+  margin-bottom: 1rem;
+}
+
+/* Chart area */
+.sveitarfelog-dashboard .dashboard-main {
+  background-color: var(--metill-bg);
+  padding: 1rem;
+}
+
+/* Author footer */
+.sveitarfelog-dashboard .dashboard-footer {
+  font-size: 0.85rem;
+  color: var(--metill-gray);
+  border-top: 1px solid #e0e0e0;
+  padding-top: 0.75rem;
+  margin-top: 1rem;
+}
+
+.sveitarfelog-dashboard .dashboard-footer a {
+  color: var(--metill-primary);
+}
+
+/* Subtitle text */
+.sveitarfelog-dashboard .metric-subtitle {
+  font-size: 0.85rem;
+  color: var(--metill-gray);
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}

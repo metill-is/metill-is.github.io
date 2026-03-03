@@ -1,0 +1,30 @@
+---
+title: "Um Metil"
+description: "Hver er Metill og hvaða þjónustu býður hann upp á"
+---
+
+## Um verkefnið
+
+Metill er gagnadrifið fréttamiðlunarverk sem notar gögn til að upplýsa, ekki sannfæra. Verkefnið byggir á gagnsæjum aðferðum og traustum tölfræðilíkönum.
+
+## Þjónusta
+
+### Ráðgjöf
+
+Bayesian tölfræðilíkön fyrir fyrirtæki og stofnanir sem þurfa áreiðanlegar spár með réttu mati á óvissu. Dæmi:
+
+- Spálíkön með líkindamati (t.d. "60% líkur á X, þannig að besta stefnan er Y")
+- Áhættugreining og ákvarðanataka undir óvissu
+- Sérsniðin líkön að þörfum viðskiptavinar
+
+### Fræðsla
+
+Námskeið og ráðgjöf fyrir fréttamiðla og stofnanir um:
+
+- Gagnablaðamennsku og sjónræna framsetningu gagna
+- Túlkun tölfræði og óvissu
+- Notkun Bayesian aðferða í spám
+
+## Tengiliður
+
+<!-- Bættu við tengiliðaupplýsingum -->
