@@ -37,7 +37,6 @@ Website/
 │   └── verdbolga/           # Inflation dashboard
 ├── ithrottir/               # Sports section
 │   ├── index.qmd            # Sports hub page with listings
-│   ├── _render_sport.R      # Shared sport page renderer
 │   ├── fotbolti/            # Football predictions
 │   │   └── besta/           # Besta deild (besta-karla, besta-kvenna)
 │   ├── handbolti/           # Handball predictions
@@ -134,22 +133,9 @@ Dashboard-specific libraries are loaded after the shared setup.
 
 ### Sports pages
 
-All 6 sport prediction pages (3 sports × 2 sexes) are thin wrappers calling `ithrottir/_render_sport.R`:
+Sport prediction pages display images from the Sports repos via raw GitHub URLs. Basketball and handball pages use parameterised `.qmd` files that construct image URLs from `params$repo` and `params$sex`. Updating predictions in the sport repos automatically updates the website.
 
-```r
-source(here::here("ithrottir", "_render_sport.R"))
-render_sport_page(
-  repo = params$repo,        # e.g., "basketball_iceland"
-  sex = params$sex,           # "male" or "female"
-  show_group_table = TRUE,    # Sport-specific features
-  show_calibration = FALSE,
-  show_historical = FALSE
-)
-```
-
-The function constructs raw GitHub URLs to display prediction images from the sports repos. Updating predictions in the sport repos automatically updates the website.
-
-**Exception: Football** — the football pages (`ithrottir/fotbolti/`) are hand-authored `.qmd` files with local figure paths (`figures/*.png`), not using `render_sport_page()`. Figures are manually copied from the `football_iceland` repo's results directory.
+**Exception: Football** — the football pages (`ithrottir/fotbolti/`) are hand-authored `.qmd` files with local figure paths (`figures/*.png`). Figures are manually copied from the `football/iceland` repo's results directory.
 
 ### Iframe dashboards
 

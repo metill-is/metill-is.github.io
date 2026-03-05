@@ -13,17 +13,17 @@ website_dir <- here::here()
 # Domestic leagues
 domestic <- list(
   list(
-    from = "basketball_iceland",
+    from = "basketball/iceland",
     to = "korfubolti",
     sexes = c("male" = "karlar", "female" = "konur")
   ),
   list(
-    from = "handball_iceland",
+    from = "handball/iceland",
     to = "handbolti",
     sexes = c("male" = "karlar", "female" = "konur")
   ),
   list(
-    from = "football_iceland",
+    from = "football/iceland",
     to = "fotbolti",
     sexes = c("male" = "karlar", "female" = "konur")
   )
@@ -32,12 +32,12 @@ domestic <- list(
 # International tournaments
 international <- list(
   list(
-    from = "handball_international",
+    from = "handball/international",
     to = "handbolti/mot/em-karla-2026",
     sex = "male"
   ),
   list(
-    from = "basketball_international",
+    from = "basketball/international",
     to = "korfubolti/mot/em-karla-2025",
     sex = "male"
   )
