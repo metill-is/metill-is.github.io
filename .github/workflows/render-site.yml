@@ -55,7 +55,7 @@ jobs:
             any::sf
             any::visitalaneysluverds
             any::janitor
-            github::bgautijonsson/metill@c6f8e4a0aaa23a522de8ac8f69eed2c2997e871f
+            github::bgautijonsson/metill@140e0117b83f6c74d3b3c08c78af51dea783ef32
 
       - name: Validate sports figure contracts
         run: Rscript scripts/check_sports_figures.R
